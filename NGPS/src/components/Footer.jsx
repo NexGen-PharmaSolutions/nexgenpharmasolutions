@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <div className="p-4 rounded-2xl bg-[#F7F9FB] text-black">
       <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
-        {/* Left side: Logo and Company Name */}
+        {/*----------------------------------------- Left side: Logo and Company Name -----------------------------------------*/}
         <div className="flex items-center justify-center w-full md:w-1/2 space-x-4">
           <img
             src="/logo.png"
@@ -19,8 +19,8 @@ const Footer = () => {
           />
         </div>
 
-        {/* Right side: Links */}
-        <div className="flex justify-center w-full md:w-1/2 mt-4 md:mt-0 space-x-5 lg:space-x-[150px] font-semibold text-[#2C3E50] outfit">
+        {/*----------------------------------------- Right side: Links -----------------------------------------*/}
+        <div className="flex justify-center w-full md:w-1/2 mt-4 md:mt-0 space-x-5 lg:space-x-[150px] md:pl-0 pl-5 font-semibold text-[#2C3E50] outfit">
           <div className="flex flex-col space-y-4 text-left">
             <Link to="/" className="hover:underline">
               Home
@@ -28,18 +28,21 @@ const Footer = () => {
             <Link to="/aboutus" className="hover:underline">
               About Us
             </Link>
-            <Link to="/gmp-audits" className="hover:underline">
+            <Link to="/gmpaudits" className="hover:underline">
               GMP Audits
+            </Link>
+            <Link to="/qualityconsulting" className="hover:underline">
+              Quality Consulting
             </Link>
           </div>
           <div className="flex flex-col space-y-4 text-left">
-            <Link to="/quality-consulting" className="hover:underline">
-              Quality Consulting
-            </Link>
-            <Link to="/computer-system-validations" className="hover:underline">
+            <Link to="/computersystemvalidations" className="hover:underline">
               Computer System Validations
             </Link>
-            <Link to="/contact-us" className="hover:underline">
+            <Link to="/training" className="hover:underline">
+              Training
+            </Link>
+            <Link to="/contactus" className="hover:underline">
               Contact Us
             </Link>
           </div>

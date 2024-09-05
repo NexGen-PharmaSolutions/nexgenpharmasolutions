@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import Navbar from "../components/navbar";
 import Footer from "../components/Footer";
 
@@ -137,7 +138,7 @@ const Aboutus = () => {
       <main className="relative z-10">
         {/*------------------------------------------ Hero Section ------------------------------------------------------------*/}
         <section
-          className="relative flex flex-col justify-center items-start h-screen bg-cover bg-center p-8"
+          className="relative flex flex-col justify-center items-start h-[300px] md:h-[600px] bg-cover bg-center p-8"
           style={{ backgroundImage: "url('/herobg.png')" }}
           id="hero"
         >
@@ -243,9 +244,9 @@ const Aboutus = () => {
             What Do We Do
             <div className="md:w-[280px] w-[150px] h-1 mx-auto my-4 bg-[#34495E]"></div>
           </h2>
-          <div className="flex flex-col md:flex-row justify-center gap-8">
+          <div className="flex flex-col md:flex-row justify-center gap-8 fadeIn">
             {/*------------------------------------------ GMP AUDITS ---------------------------------------------------------------*/}
-            <div className="bg-transparent shadow-2xl rounded-lg p-4 md:w-1/3">
+            <div className="bg-transparent shadow-2xl rounded-lg p-4 md:w-1/4">
               <div className="flex justify-center items-center">
                 <img
                   src="/GMPlogo.png"
@@ -259,17 +260,19 @@ const Aboutus = () => {
               <p className="font-medium mt-2 montserrat">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               </p>
-              <button className="mt-4 text-blue-600 font-semibold outfit">
-                Read More
-              </button>
+              <Link to="/gmpaudits">
+                <button className="mt-4 text-blue-600 font-semibold outfit">
+                  Read More
+                </button>
+              </Link>
             </div>
             {/*-------------------------------------- Consulting Services ---------------------------------------------------------*/}
-            <div className="bg-transparent shadow-2xl rounded-lg p-4 md:w-1/3">
+            <div className="bg-transparent shadow-2xl rounded-lg p-4 md:w-1/4">
               <div className="flex justify-center items-center">
                 <img
                   src="/CSlogo.png"
                   alt="Consulting Services"
-                  className="w-[200px] h-[200px] object-fit md:px-4 rounded-t-lg"
+                  className="w-[200px] h-[200px] object-fit rounded-t-lg"
                 />
               </div>
               <h3 className="text-xl font-semibold text-[#34495E] outfit mt-4">
@@ -279,17 +282,19 @@ const Aboutus = () => {
                 Sed do eiusmod tempor incididunt ut labore et dolore magna
                 aliqua.
               </p>
-              <button className="mt-4 text-blue-600 font-semibold outfit">
-                Read More
-              </button>
+              <Link to="/qualityconsulting">
+                <button className="mt-4 text-blue-600 font-semibold outfit">
+                  Read More
+                </button>
+              </Link>
             </div>
             {/*---------------------------------- Computer System Validations -----------------------------------------------------*/}
-            <div className="bg-transparent shadow-2xl rounded-lg p-4 md:w-1/3">
+            <div className="bg-transparent shadow-2xl rounded-lg p-4 md:w-1/4">
               <div className="flex justify-center items-center">
                 <img
                   src="/CSVlogo.png"
                   alt="Computer System Validations"
-                  className="w-[200px] h-[200px] object-fit md:pl-8 rounded-t-lg"
+                  className="w-[200px] h-[200px] object-fit rounded-t-lg"
                 />
               </div>
               <h3 className="text-xl font-semibold text-[#34495E] outfit mt-4">
@@ -298,9 +303,32 @@ const Aboutus = () => {
               <p className="montserrat font-medium mt-2">
                 Ut enim ad minim veniam, quis nostrud exercitation ullamco.
               </p>
+              <Link to="/computersystemvalidations">
+                <button className="mt-4 text-blue-600 font-semibold outfit">
+                  Read More
+                </button>
+              </Link>
+            </div>
+            {/*---------------------------------- Training -----------------------------------------------------*/}
+            <div className="bg-transparent shadow-2xl rounded-lg p-4 md:w-1/4">
+              <div className="flex justify-center items-center">
+                <img
+                  src="/Trainlogo.png"
+                  alt="Training"
+                  className="w-[200px] h-[200px] object-fit rounded-t-lg"
+                />
+              </div>
+              <h3 className="text-xl font-semibold text-[#34495E] outfit mt-4">
+                Training
+              </h3>
+              <p className="montserrat font-medium mt-2">
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+              </p>
+              <Link to="/training">
               <button className="mt-4 text-blue-600 font-semibold outfit">
                 Read More
               </button>
+              </Link>
             </div>
           </div>
           <style jsx>{`
@@ -326,35 +354,31 @@ const Aboutus = () => {
           className="p-8 opacity-0 transition-opacity duration-1000"
           ref={hwavSectionDivRef}
         >
-          {/* Section Title */}
+          {/*----------------------------------------- Section Title -----------------------------------------*/}
           <h2 className="text-3xl md:text-5xl text-center font-semibold outfit text-[#34495E] mb-8">
             How We Add Value
             <div className="md:w-[280px] w-[150px] h-1 mx-auto my-4 bg-[#34495E]"></div>
           </h2>
 
-          {/* Content Div */}
+          {/*----------------------------------------- Content Div -----------------------------------------*/}
           <div
             ref={hwavSectionDivRef}
             className="flex flex-col md:flex-row justify-between items-center"
           >
-            {/* Left Part */}
+            {/*----------------------------------------- Left Part -----------------------------------------*/}
             <div className="md:w-1/2 w-full p-4" ref={hwavLeftRef}>
-              {/* First Item */}
+              {/*----------------------------------------- First Item -----------------------------------------*/}
               <div className="flex items-center mb-4 fade-item opacity-0">
-                <img
-                  src="eteplogo.png"
-                  alt="Image 1"
-                  className="w-12 h-12 mr-4"
-                />
+                <img src="eteplogo.png" alt="etep" className="w-12 h-12 mr-4" />
                 <div>
                   <h3 className="text-xl font-semibold outfit text-[#34495E]">
-                    Title 1
+                    End To End Process
                   </h3>
                   <p className="montserrat font-medium">Description 1</p>
                 </div>
               </div>
 
-              {/* Vertical Bars */}
+              {/*----------------------------------------- Vertical Bars -----------------------------------------*/}
               <div className="flex flex-col items-start mb-4 pl-5">
                 <div className="w-1 h-4 bg-gray-400 mb-2 fade-item opacity-0"></div>
                 <div className="w-1 h-4 bg-gray-400 mb-2 fade-item opacity-0"></div>
@@ -362,22 +386,22 @@ const Aboutus = () => {
                 <div className="w-1 h-4 bg-gray-400 fade-item opacity-0"></div>
               </div>
 
-              {/* Second Item */}
+              {/*----------------------------------------- Second Item -----------------------------------------*/}
               <div className="flex items-center mb-4 fade-item opacity-0">
                 <img
                   src="ielogo.png"
-                  alt="Image 2"
+                  alt="ie"
                   className="w-12 h-12 object-fit mr-4"
                 />
                 <div>
                   <h3 className="text-xl font-semibold outfit text-[#34495E]">
-                    Title 2
+                    Industry Expertise
                   </h3>
                   <p className="montserrat font-medium">Description 2</p>
                 </div>
               </div>
 
-              {/* Vertical Bars */}
+              {/*----------------------------------------- Vertical Bars -----------------------------------------*/}
               <div className="flex flex-col items-start mb-4 pl-5">
                 <div className="w-1 h-4 bg-gray-400 mb-2 fade-item opacity-0"></div>
                 <div className="w-1 h-4 bg-gray-400 mb-2 fade-item opacity-0"></div>
@@ -385,22 +409,22 @@ const Aboutus = () => {
                 <div className="w-1 h-4 bg-gray-400 fade-item opacity-0"></div>
               </div>
 
-              {/* Third Item */}
+              {/*----------------------------------------- Third Item -----------------------------------------*/}
               <div className="flex items-center mb-4 fade-item opacity-0">
                 <img
                   src="gplogo.png"
-                  alt="Image 3"
+                  alt="gp"
                   className="w-12 h-12 mr-4 object-fit"
                 />
                 <div>
                   <h3 className="text-xl font-semibold outfit text-[#34495E]">
-                    Title 3
+                    Global Presence
                   </h3>
                   <p className="montserrat font-medium">Description 3</p>
                 </div>
               </div>
 
-              {/* Vertical Bars */}
+              {/*----------------------------------------- Vertical Bars -----------------------------------------*/}
               <div className="flex flex-col items-start mb-4 pl-5">
                 <div className="w-1 h-4 bg-gray-400 mb-2 fade-item opacity-0"></div>
                 <div className="w-1 h-4 bg-gray-400 mb-2 fade-item opacity-0"></div>
@@ -408,23 +432,23 @@ const Aboutus = () => {
                 <div className="w-1 h-4 bg-gray-400 fade-item opacity-0"></div>
               </div>
 
-              {/* Fourth Item */}
+              {/*----------------------------------------- Fourth Item -----------------------------------------*/}
               <div className="flex items-center fade-item opacity-0">
                 <img
                   src="csslogo.png"
-                  alt="Image 4"
+                  alt="css"
                   className="w-12 h-12 mr-4 object-fit"
                 />
                 <div>
                   <h3 className="text-xl font-semibold outfit text-[#34495E]">
-                    Title 4
+                    Customized Solutions
                   </h3>
                   <p className="montserrat font-medium">Description 4</p>
                 </div>
               </div>
             </div>
 
-            {/* Right Part */}
+            {/*----------------------------------------- Right Part -----------------------------------------*/}
             <div
               className="md:w-1/2 w-full md:pt-0 pt-4"
               style={{
@@ -478,18 +502,18 @@ const Aboutus = () => {
 
         {/*----------------------------------------- Our Values -------------------------------------------------------------*/}
         <section id="OV" className="p-8">
-          {/* Section Title */}
+          {/*----------------------------------------- Section Title -----------------------------------------*/}
           <h2 className="text-3xl md:text-5xl text-center font-semibold outfit text-[#34495E] mb-8">
             Our Values
             <div className="md:w-[190px] w-[110px] h-1 mx-auto my-4 bg-[#34495E]"></div>
           </h2>
 
-          {/* Container Div */}
+          {/*----------------------------------------- Container Div -----------------------------------------*/}
           <div
             className="opacity-0 transition-opacity duration-1000 ease-out flex flex-col md:flex-row"
             ref={ovSectionDivRef}
           >
-            {/* Left Side */}
+            {/*----------------------------------------- Left Side -----------------------------------------*/}
             <div className="md:w-[70%] w-full p-4">
               <p className="montserrat font-medium">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
@@ -499,7 +523,7 @@ const Aboutus = () => {
               </p>
             </div>
 
-            {/* Right Side */}
+            {/*----------------------------------------- Right Side -----------------------------------------*/}
             <div className="md:w-[30%] w-full p-4">
               <img src="1.png" alt="Image" className="w-full h-auto" />
             </div>
@@ -550,6 +574,7 @@ const Aboutus = () => {
             ref={sectionRef}
             className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-auto max-w-7xl px-6"
           >
+            {/*---------------------------------------- Ingenious ---------------------------------------------------------*/}
             <div className="card p-6 rounded-lg shadow-2xl text-center">
               <div className="flex justify-center items-center">
                 <img
@@ -565,6 +590,7 @@ const Aboutus = () => {
                 Description for the first value card.
               </p>
             </div>
+            {/*---------------------------------------- Illustrious ---------------------------------------------------------*/}
             <div className="card p-6 rounded-lg shadow-2xl text-center">
               <div className="flex justify-center items-center">
                 <img
@@ -580,6 +606,7 @@ const Aboutus = () => {
                 Description for the second value card.
               </p>
             </div>
+            {/*---------------------------------------- Immaculate ---------------------------------------------------------*/}
             <div className="card p-6 rounded-lg shadow-2xl text-center">
               <div className="flex justify-center items-center">
                 <img
