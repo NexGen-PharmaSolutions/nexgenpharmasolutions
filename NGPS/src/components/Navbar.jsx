@@ -7,11 +7,13 @@ const Navbar = () => {
 
   return (
     <nav className="bg-[#F7F9FB] p-4 rounded-[30px] shadow-lg flex justify-between items-center">
-      <div className="flex items-center space-x-2 md:pl-3">
-        <img src="/logo.png" alt="Logo" className="h-10 w-10" />
-        <img src="/compname.png" alt="Company Name" className="h-8" />
-      </div>
-      {/* Hamburger Menu for Mobile */}
+      <Link to="/">
+        <div className="flex items-center space-x-2 md:pl-3">
+          <img src="/logo.png" alt="Logo" className="h-10 w-10" />
+          <img src="/compname.png" alt="Company Name" className="h-8" />
+        </div>
+      </Link>
+      {/*----------------------------------------- Hamburger Menu for Mobile -----------------------------------------*/}
       <div className="md:hidden font-bold text-[#2C3E50] outfit">
         <button
           onClick={() => setDropdownOpen(!dropdownOpen)}
@@ -79,7 +81,7 @@ const Navbar = () => {
                 <ul className="absolute left-[-197px] top-0 w-29 text-sm bg-white rounded-lg shadow-lg py-2 animate-slide-in-right">
                   <li>
                     <Link
-                      to="/gmp-audits"
+                      to="/gmpaudits"
                       className="block px-2 py-2 hover:bg-gray-100"
                       onClick={() => {
                         setDropdownOpen(false);
@@ -91,7 +93,7 @@ const Navbar = () => {
                   </li>
                   <li>
                     <Link
-                      to="/quality-consulting"
+                      to="/qualityconsulting"
                       className="block px-2 py-2 hover:bg-gray-100"
                       onClick={() => {
                         setDropdownOpen(false);
@@ -103,7 +105,7 @@ const Navbar = () => {
                   </li>
                   <li>
                     <Link
-                      to="/computer-system-validations"
+                      to="/computersystemvalidations"
                       className="block px-2 py-2 hover:bg-gray-100"
                       onClick={() => {
                         setDropdownOpen(false);
@@ -130,7 +132,7 @@ const Navbar = () => {
             </li>
             <li>
               <Link
-                to="/contact"
+                to="/contactus"
                 className="block px-4 py-2 hover:bg-gray-100"
                 onClick={() => setDropdownOpen(false)}
               >
@@ -159,41 +161,53 @@ const Navbar = () => {
           >
             Services
             <svg
-                  className={`w-4 h-4 inline ml-2 transform ${
-                    servicesOpen ? "rotate-180" : ""
-                  }`}
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M19 9l-7 7-7-7"
-                  ></path>
-                </svg>
+              className={`w-4 h-4 inline ml-2 transform ${
+                servicesOpen ? "rotate-180" : ""
+              }`}
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M19 9l-7 7-7-7"
+              ></path>
+            </svg>
           </button>
           {dropdownOpen && (
             <ul className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 animate-slide-in-top">
               <li>
-                <Link to="/gmp-audits" className="block px-4 py-2 hover:bg-gray-100">
+                <Link
+                  to="/gmpaudits"
+                  className="block px-4 py-2 hover:bg-gray-100"
+                >
                   GMP Audits
                 </Link>
               </li>
               <li>
-                <Link to="/quality-consulting" className="block px-4 py-2 hover:bg-gray-100">
+                <Link
+                  to="/qualityconsulting"
+                  className="block px-4 py-2 hover:bg-gray-100"
+                >
                   Quality Consulting
                 </Link>
               </li>
               <li>
-                <Link to="/computer-system-validations" className="block px-4 py-2 hover:bg-gray-100">
+                <Link
+                  to="/computersystemvalidations"
+                  className="block px-4 py-2 hover:bg-gray-100"
+                >
                   Computer System Validations
                 </Link>
               </li>
               <li>
-                <Link to="/training" className="block px-4 py-2 hover:bg-gray-100">
+                <Link
+                  to="/training"
+                  className="block px-4 py-2 hover:bg-gray-100"
+                >
                   Training
                 </Link>
               </li>
@@ -201,7 +215,7 @@ const Navbar = () => {
           )}
         </li>
         <li>
-          <Link to="/contact" className="hover:text-gray-700">
+          <Link to="/contactus" className="hover:text-gray-700">
             Contact Us
           </Link>
         </li>
