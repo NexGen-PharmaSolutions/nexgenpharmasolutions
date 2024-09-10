@@ -106,6 +106,30 @@ const Aboutus = () => {
     };
   }, []);
 
+  const omSectionDivRef = useRef(null);
+useEffect(() => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("animate-wngps-div");
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+  const sectionDiv = omSectionDivRef.current;
+  if (sectionDiv) {
+    observer.observe(sectionDiv);
+  }
+  return () => {
+    if (sectionDiv) {
+      observer.unobserve(sectionDiv);
+    }
+  };
+}, []);
+
+
   const sectionRef = useRef(null);
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -551,12 +575,85 @@ const Aboutus = () => {
             }
           `}</style>
         </section>
-
+        
         {/*----------------------------------------- Our Mission -------------------------------------------------------------*/}
-        <section id="OV" className="p-8">
+        <section id="OM" className="p-8">
           {/*----------------------------------------- Section Title -----------------------------------------*/}
           <h2 className="text-3xl md:text-5xl text-center font-semibold outfit text-[#34495E] mb-8">
             Our Mission
+            <div className="md:w-[190px] w-[110px] h-1 mx-auto my-4 bg-[#34495E]"></div>
+          </h2>
+
+          {/*----------------------------------------- Container Div -----------------------------------------*/}
+          <div
+            className="opacity-0 transition-opacity duration-1000 ease-out flex flex-col md:flex-row"
+            ref={omSectionDivRef}
+          >
+            {/*----------------------------------------- Left Side -----------------------------------------*/}
+            <div className="md:w-[70%] w-full p-4">
+              <p className="montserrat font-medium">
+                Our vision at NexGen Pharma Solutions is to be the global leader
+                in GMP consulting, driving excellence and innovation in
+                pharmaceutical manufacturing. We aim to empower companies with
+                the highest standards of quality and regulatory compliance,
+                fostering a safer, more efficient, and sustainable healthcare
+                industry worldwide. Through our expertise and commitment, we
+                envision a future where every product meets uncompromising
+                safety and efficacy standards, ensuring better health outcomes
+                for all.
+                <br />
+                <b>Industry-Leading GMP Consulting Services:</b> Dedicated to
+                empowering pharmaceutical companies to meet the highest levels
+                of quality and regulatory compliance.
+                <br />
+                <b>Expert Team:</b> Seasoned professionals with deep expertise
+                and a hands-on approach to every project. Tailored Solutions:
+                Optimizing manufacturing processes and ensuring data integrity.
+                Upholding global standards.
+                <br />
+                <b>Lasting Value:</b> Identifying compliance gaps and
+                implementing practical corrective actions. Fostering a culture
+                of excellence within clients' organizations.
+                <br />
+                <b>Commitment to Excellence:</b> Focused on precision,
+                integrity, and client satisfaction. Ensuring partners are fully
+                prepared for regulatory audits and long-term success.
+                <br />
+                <b>Operational Efficiency and Product Safety:</b> Helping
+                maintain operational efficiency and enhance product safety.
+                Achieving sustainable growth through uncompromising quality.
+              </p>
+            </div>
+
+            {/*----------------------------------------- Right Side -----------------------------------------*/}
+            <div className="md:w-[30%] w-full p-4">
+              <img src="1.png" alt="Image" className="w-full h-auto" />
+            </div>
+          </div>
+
+          <style jsx>{`
+            @keyframes popOut {
+              0% {
+                transform: scale(0.8);
+                opacity: 0;
+              }
+              100% {
+                transform: scale(1);
+                opacity: 1;
+              }
+            }
+
+            .animate-wngps-div {
+              animation: popOut 0.8s ease-out forwards;
+            }
+          `}</style>
+        </section>
+
+        {/*----------------------------------------- Our Vision -------------------------------------------------------------*/}
+        <section id="OV" className="p-8">
+          {/*----------------------------------------- Section Title -----------------------------------------*/}
+          <h2 className="text-3xl md:text-5xl text-center font-semibold outfit text-[#34495E] mb-8">
+            Our Vision
             <div className="md:w-[190px] w-[110px] h-1 mx-auto my-4 bg-[#34495E]"></div>
           </h2>
 
