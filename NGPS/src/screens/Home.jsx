@@ -119,7 +119,7 @@ const Home = () => {
                     <h3 className="text-xl font-semibold mb-2 text-[#34495E] outfit">
                       GMP Audits
                     </h3>
-                    <p className="text-gray-700 mb-4 montserrat">
+                    <p className="text-gray-700 mb-4 montserrat text-sm">
                       NexGen Pharma Solutions has been the most credible pattern
                       for GMP Audit Service. We have a team of highly
                       experienced GMP Auditors with comprehensive experience in
@@ -145,7 +145,7 @@ const Home = () => {
                     <h3 className="text-xl font-semibold mb-2 text-[#34495E] outfit">
                       Quality Consulting
                     </h3>
-                    <p className="text-gray-700 mb-4 montserrat">
+                    <p className="text-gray-700 mb-4 montserrat text-sm">
                       NexGen Pharma Solutions offers expert GMP consulting to
                       ensure compliance with global quality standards. Our
                       experienced team provides tailored advice on GMP
@@ -171,15 +171,15 @@ const Home = () => {
                     <h3 className="text-xl font-semibold mb-2 text-[#34495E] outfit">
                       Computer System Validation
                     </h3>
-                    <p className="text-gray-700 mb-4 montserrat">
-                      NexGen Pharma Solutions offers expert GMP consulting to
-                      ensure compliance with global quality standards. Our
-                      experienced team provides tailored advice on GMP
-                      regulations for pharmaceuticals, covering APIs,
-                      intermediates, packaging, and finished products. We help
-                      identify compliance gaps, implement corrective actions,
-                      and support successful regulatory audits and inspections
-                      globally.
+                    <p className="text-gray-700 mb-4 montserrat text-sm">
+                      NexGen Pharma Solutions offers GMP-compliant computer
+                      system validation services to ensure your systems meet
+                      regulatory standards. Our expert team ensures data
+                      integrity, system reliability, and compliance with
+                      industry guidelines for seamless audits. We provide
+                      comprehensive validation plans, risk assessments, and
+                      continuous support to maintain your systems optimal
+                      performance and compliance.
                     </p>
                     <Link to="/computersystemvalidations">
                       <button className="mt-auto bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-600 transition duration-200 outfit">
@@ -202,7 +202,7 @@ const Home = () => {
                     <h3 className="text-xl font-semibold mb-2 text-[#34495E] outfit">
                       Training
                     </h3>
-                    <p className="text-gray-700 mb-4 montserrat">
+                    <p className="text-gray-700 mb-4 montserrat text-sm">
                       NexGen Pharma Solutions offers comprehensive GMP training
                       tailored to your team's needs. Our expert-led sessions
                       cover key areas of Good Manufacturing Practices, ensuring
@@ -228,15 +228,15 @@ const Home = () => {
                     <h3 className="text-xl font-semibold mb-2 text-[#34495E] outfit">
                       Regulatory Affairs
                     </h3>
-                    <p className="text-gray-700 mb-4 montserrat">
-                      NexGen Pharma Solutions offers comprehensive GMP training
-                      tailored to your team's needs. Our expert-led sessions
-                      cover key areas of Good Manufacturing Practices, ensuring
-                      staff understand regulatory requirements, quality
-                      standards, and best practices. We help enhance operational
-                      efficiency, maintain compliance, and prepare for
-                      successful audits, fostering a culture of quality in your
-                      organization.
+                    <p className="text-gray-700 mb-4 montserrat text-sm">
+                      At NexGen Pharma Solutions, we excel in preparing and
+                      submitting Drug Master Files (DMFs) for regulatory
+                      approval. Our services include meticulous documentation,
+                      technical writing, compliance with cGMP, and handling
+                      submissions and inquiries. We ensure confidentiality and
+                      manage all DMF types, ensuring your pharmaceutical
+                      products meet the highest regulatory standards and
+                      facilitate smooth approval processes.
                     </p>
                     <Link to="/training">
                       <button className="mt-auto bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-600 transition duration-200 outfit">
