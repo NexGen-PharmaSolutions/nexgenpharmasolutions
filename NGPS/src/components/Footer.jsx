@@ -42,6 +42,9 @@ const Footer = () => {
             <Link to="/training" className="hover:underline">
               Training
             </Link>
+            <Link to="/regulatoryaffairs" className="hover:underline">
+            Regulatory Affairs
+            </Link>
             <Link to="/contactus" className="hover:underline">
               Contact Us
             </Link>

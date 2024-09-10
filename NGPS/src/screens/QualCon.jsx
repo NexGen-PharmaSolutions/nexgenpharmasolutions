@@ -174,17 +174,17 @@ const QualCon = () => {
             </div>
           </div>
         </section>
-        {/*----------------------------------------- GCP Services -----------------------------------------*/}
-        <section id="GCPS" className="p-6">
+        {/*----------------------------------------- GMP Services -----------------------------------------*/}
+        <section id="GMPS" className="p-6">
           {/*----------------------------------------- Top Div with Image and Title -----------------------------------------*/}
           <div className="flex justify-center items-center mb-8 mt-3">
             <img
               src="/gcps.png"
-              alt="GCP SERVICE"
+              alt="GMP SERVICE"
               className="w-16 h-16 object-cover mr-4"
             />
             <h1 className="text-2xl md:text-3xl font-semibold outfit text-[#34495E]">
-              GCP SERVICE{" "}
+              GMP SERVICE{" "}
               <div className="md:w-[120px] w-[100px] h-1 mx-auto my-4 bg-[#34495E]"></div>
             </h1>
           </div>

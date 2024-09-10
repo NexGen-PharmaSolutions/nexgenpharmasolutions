@@ -87,113 +87,164 @@ const Home = () => {
               Our Services
             </h2>
             <div className="w-[150px] h-1 mx-auto my-4 bg-[#34495E]"></div>
-            <div className="card-container flex flex-col md:flex-row justify-between items-center mt-8 space-y-8 md:space-y-0 md:space-x-6 animate-pop-out">
+            <div className="card-container mt-8 animate-pop-out">
               <style>
                 {`
-                 @keyframes popOut {
-                   0% {
-                     transform: scale(0.5);
-                     opacity: 0;
-                   }
-                   100% {
-                     transform: scale(1);
-                     opacity: 1;
-                   }
-                 }
-           
-                 .animate-pop-out {
-                   animation: popOut 0.9s ease-out forwards;
-                 }
-               `}
+              @keyframes popOut {
+                0% {
+                  transform: scale(0.5);
+                  opacity: 0;
+                }
+                100% {
+                  transform: scale(1);
+                  opacity: 1;
+                }
+              }
+          
+              .animate-pop-out {
+                animation: popOut 0.9s ease-out forwards;
+              }
+                `}
               </style>
-              {/*-------------------------------------------------- GMP AUDITS ----------------------------------------------*/}
-              <div className="bg-white p-5 rounded-2xl shadow-md w-full md:w-1/4">
-                <img
-                  src="/gmpaudits.png"
-                  alt="gmp audits"
-                  className="w-full h-[230px] object-cover rounded-t-xl mb-4"
-                />
-                <h3 className="text-xl font-semibold mb-2 text-[#34495E] outfit">
-                  GMP Audits
-                </h3>
-                <p className="text-gray-700 mb-4 montserrat">
-                  Description for service one. Description for service one.
-                  Description for service one. Description for service one.
-                  Description for service one. Description for service one.
-                  Description for service one. Description for service one.
-                </p>
-                <Link to="/gmpaudits">
-                  <button className="mt-auto bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-600 transition duration-200 outfit">
-                    View More
-                  </button>
-                </Link>
-              </div>
+              <div className="flex justify-center flex-wrap">
+                {/* First Row: 3 Cards Centered */}
+                <div className="flex flex-wrap justify-center w-full gap-6">
+                  {/*-------------------------------------------------- GMP AUDITS ----------------------------------------------*/}
+                  <div className="bg-white p-5 rounded-2xl shadow-md w-full md:w-1/4">
+                    <img
+                      src="/gmpaudits.png"
+                      alt="gmp audits"
+                      className="w-full h-[230px] object-cover rounded-t-xl mb-4"
+                    />
+                    <h3 className="text-xl font-semibold mb-2 text-[#34495E] outfit">
+                      GMP Audits
+                    </h3>
+                    <p className="text-gray-700 mb-4 montserrat">
+                      NexGen Pharma Solutions has been the most credible pattern
+                      for GMP Audit Service. We have a team of highly
+                      experienced GMP Auditors with comprehensive experience in
+                      conducting GMP audit services across the globe. Our GMP
+                      auditors are highly qualified and have undertaken numerous
+                      audits of API, Intermediates, Key Starting Materials,
+                      Packaging Material Facilities and Finished dosage plants.
+                    </p>
+                    <Link to="/gmpaudits">
+                      <button className="mt-auto bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-600 transition duration-200 outfit">
+                        View More
+                      </button>
+                    </Link>
+                  </div>
 
-              {/*---------------------------------------- Quality Consulting ----------------------------------------------------*/}
-              <div className="bg-white p-5 rounded-2xl shadow-md w-full md:w-1/4">
-                <img
-                  src="/qualityconsult.png"
-                  alt="quality consulting"
-                  className="w-full h-[230px] object-cover rounded-t-lg mb-4"
-                />
-                <h3 className="text-xl font-semibold mb-2 text-[#34495E] outfit">
-                  Quality Consulting
-                </h3>
-                <p className="text-gray-700 mb-4 montserrat">
-                  Description for service one. Description for service one.
-                  Description for service one. Description for service one.
-                  Description for service one. Description for service one.
-                  Description for service one. Description for service one.
-                </p>
-                <Link to="/qualityconsulting">
-                  <button className="mt-auto bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-600 transition duration-200 outfit">
-                    View More
-                  </button>
-                </Link>
+                  {/*---------------------------------------- Quality Consulting ----------------------------------------------------*/}
+                  <div className="bg-white p-5 rounded-2xl shadow-md w-full md:w-1/4">
+                    <img
+                      src="/qualityconsult.png"
+                      alt="quality consulting"
+                      className="w-full h-[230px] object-cover rounded-t-lg mb-4"
+                    />
+                    <h3 className="text-xl font-semibold mb-2 text-[#34495E] outfit">
+                      Quality Consulting
+                    </h3>
+                    <p className="text-gray-700 mb-4 montserrat">
+                      NexGen Pharma Solutions offers expert GMP consulting to
+                      ensure compliance with global quality standards. Our
+                      experienced team provides tailored advice on GMP
+                      regulations for pharmaceuticals, covering APIs,
+                      intermediates, packaging, and finished products. We help
+                      identify compliance gaps, implement corrective actions,
+                      and support successful regulatory audits and inspections
+                      globally.
+                    </p>
+                    <Link to="/qualityconsulting">
+                      <button className="mt-auto bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-600 transition duration-200 outfit">
+                        View More
+                      </button>
+                    </Link>
+                  </div>
+                  {/*------------------------------------- Computer System Validation -----------------------------------------------*/}
+                  <div className="bg-white p-5 rounded-2xl shadow-md w-full md:w-1/4">
+                    <img
+                      src="/computersysval.png"
+                      alt="computer system validations"
+                      className="w-full h-[230px] object-cover rounded-t-lg mb-4"
+                    />
+                    <h3 className="text-xl font-semibold mb-2 text-[#34495E] outfit">
+                      Computer System Validation
+                    </h3>
+                    <p className="text-gray-700 mb-4 montserrat">
+                      NexGen Pharma Solutions offers expert GMP consulting to
+                      ensure compliance with global quality standards. Our
+                      experienced team provides tailored advice on GMP
+                      regulations for pharmaceuticals, covering APIs,
+                      intermediates, packaging, and finished products. We help
+                      identify compliance gaps, implement corrective actions,
+                      and support successful regulatory audits and inspections
+                      globally.
+                    </p>
+                    <Link to="/computersystemvalidations">
+                      <button className="mt-auto bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-600 transition duration-200 outfit">
+                        View More
+                      </button>
+                    </Link>
+                  </div>
+                </div>
               </div>
-              {/*------------------------------------- Computer System Validation -----------------------------------------------*/}
-              <div className="bg-white p-5 rounded-2xl shadow-md w-full md:w-1/4">
-                <img
-                  src="/computersysval.png"
-                  alt="computer system validations"
-                  className="w-full h-[230px] object-cover rounded-t-lg mb-4"
-                />
-                <h3 className="text-xl font-semibold mb-2 text-[#34495E] outfit">
-                  Computer System Validation
-                </h3>
-                <p className="text-gray-700 mb-4 montserrat">
-                  Description for service one. Description for service one.
-                  Description for service one. Description for service one.
-                  Description for service one. Description for service one.
-                  Description for service one. Description for service one.
-                </p>
-                <Link to="/computersystemvalidations">
-                  <button className="mt-auto bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-600 transition duration-200 outfit">
-                    View More
-                  </button>
-                </Link>
-              </div>
-              {/*------------------------------------- Training -----------------------------------------------*/}
-              <div className="bg-white p-5 rounded-2xl shadow-md w-full md:w-1/4">
-                <img
-                  src="/training.png"
-                  alt="Training"
-                  className="w-full h-[230px] object-cover rounded-t-lg mb-4"
-                />
-                <h3 className="text-xl font-semibold mb-2 text-[#34495E] outfit">
-                  Training
-                </h3>
-                <p className="text-gray-700 mb-4 montserrat">
-                  Description for service one. Description for service one.
-                  Description for service one. Description for service one.
-                  Description for service one. Description for service one.
-                  Description for service one. Description for service one.
-                </p>
-                <Link to="/training">
-                <button className="mt-auto bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-600 transition duration-200 outfit">
-                  View More
-                </button>
-                </Link>
+              <div className="flex justify-center flex-wrap mt-8">
+                {/* Second Row: 2 Cards Centered */}
+                <div className="flex flex-wrap justify-center w-full gap-6">
+                  {/*------------------------------------- Training -----------------------------------------------*/}
+                  <div className="bg-white p-5 rounded-2xl shadow-md w-full md:w-1/4">
+                    <img
+                      src="/training.png"
+                      alt="Training"
+                      className="w-full h-[230px] object-cover rounded-t-lg mb-4"
+                    />
+                    <h3 className="text-xl font-semibold mb-2 text-[#34495E] outfit">
+                      Training
+                    </h3>
+                    <p className="text-gray-700 mb-4 montserrat">
+                      NexGen Pharma Solutions offers comprehensive GMP training
+                      tailored to your team's needs. Our expert-led sessions
+                      cover key areas of Good Manufacturing Practices, ensuring
+                      staff understand regulatory requirements, quality
+                      standards, and best practices. We help enhance operational
+                      efficiency, maintain compliance, and prepare for
+                      successful audits, fostering a culture of quality in your
+                      organization.
+                    </p>
+                    <Link to="/training">
+                      <button className="mt-auto bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-600 transition duration-200 outfit">
+                        View More
+                      </button>
+                    </Link>
+                  </div>
+                  {/*------------------------------------- Regulatory Affairs -----------------------------------------------*/}
+                  <div className="bg-white p-5 rounded-2xl shadow-md w-full md:w-1/4">
+                    <img
+                      src="/training.png"
+                      alt="Regulatory Affairs"
+                      className="w-full h-[230px] object-cover rounded-t-lg mb-4"
+                    />
+                    <h3 className="text-xl font-semibold mb-2 text-[#34495E] outfit">
+                      Regulatory Affairs
+                    </h3>
+                    <p className="text-gray-700 mb-4 montserrat">
+                      NexGen Pharma Solutions offers comprehensive GMP training
+                      tailored to your team's needs. Our expert-led sessions
+                      cover key areas of Good Manufacturing Practices, ensuring
+                      staff understand regulatory requirements, quality
+                      standards, and best practices. We help enhance operational
+                      efficiency, maintain compliance, and prepare for
+                      successful audits, fostering a culture of quality in your
+                      organization.
+                    </p>
+                    <Link to="/training">
+                      <button className="mt-auto bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-600 transition duration-200 outfit">
+                        View More
+                      </button>
+                    </Link>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

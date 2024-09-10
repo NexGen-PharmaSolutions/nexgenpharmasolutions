@@ -127,6 +127,18 @@ const Navbar = () => {
                       Training
                     </Link>
                   </li>
+                  <li>
+                    <Link
+                      to="/regulatoryaffairs"
+                      className="block px-2 py-2 hover:bg-gray-100"
+                      onClick={() => {
+                        setDropdownOpen(false);
+                        setServicesOpen(false);
+                      }}
+                    >
+                      Regulatory Affairs
+                    </Link>
+                  </li>
                 </ul>
               )}
             </li>
@@ -209,6 +221,14 @@ const Navbar = () => {
                   className="block px-4 py-2 hover:bg-gray-100"
                 >
                   Training
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/regulatoryaffairs"
+                  className="block px-4 py-2 hover:bg-gray-100"
+                >
+                  Regulatory Affairs
                 </Link>
               </li>
             </ul>
