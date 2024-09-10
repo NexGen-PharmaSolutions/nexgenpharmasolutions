@@ -166,29 +166,29 @@ const Aboutus = () => {
         </section>
 
         {/*----------------------------------------- Owner Section -------------------------------------------------------------*/}
-        <section
+        {/* <section
           ref={ownerSectionRef}
           className="flex flex-col justify-between items-center p-8 gap-8 opacity-0"
           id="owner"
-        >
+        > */}
           {/*------------------------------------------------- Owner Section Heading -------------------------------------------*/}
-          <h2 className="text-3xl md:text-5xl font-semibold outfit text-[#34495E]">
+          {/* <h2 className="text-3xl md:text-5xl font-semibold outfit text-[#34495E]">
             Owner's Details
             <div className="md:w-[260px] w-[150px] h-1 mx-auto my-4 bg-[#34495E]"></div>
           </h2>
 
-          <div className="w-full md:flex md:justify-between bg-black bg-opacity-30 rounded-xl">
+          <div className="w-full md:flex md:justify-between bg-black bg-opacity-30 rounded-xl"> */}
             {/*--------------------------------------------------- Owner Image ---------------------------------------------------*/}
-            <div className="w-full md:w-1/2 slide-in-left p-4">
+            {/* <div className="w-full md:w-1/2 slide-in-left p-4">
               <img
                 src="/tempowner.jpg"
                 alt="Owner"
                 className="w-full md:h-[600px] h-[300px] rounded-br-[50px] rounded-tl-[50px] shadow-lg"
               />
-            </div>
+            </div> */}
 
             {/*---------------------------------------------------- Owner Details ------------------------------------------------*/}
-            <div className="w-full md:w-1/2 flex flex-col justify-center slide-in-right mt-8 md:mt-0 p-4 md:space-y-[80px]">
+            {/* <div className="w-full md:w-1/2 flex flex-col justify-center slide-in-right mt-8 md:mt-0 p-4 md:space-y-[80px]">
               <h3 className="text-2xl md:text-4xl font-semibold outfit text-[#34495E]">
                 Owner's Name
               </h3>
@@ -236,7 +236,7 @@ const Aboutus = () => {
               animation: slideInRight 1s ease-out forwards;
             }
           `}</style>
-        </section>
+        </section> */}
 
         {/*----------------------------------------- WDWD Section -------------------------------------------------------------*/}
         <section ref={wdwdSectionRef} className="p-8 text-center opacity-0">
@@ -244,91 +244,122 @@ const Aboutus = () => {
             What Do We Do
             <div className="md:w-[280px] w-[150px] h-1 mx-auto my-4 bg-[#34495E]"></div>
           </h2>
-          <div className="flex flex-col md:flex-row justify-center gap-8 fadeIn">
-            {/*------------------------------------------ GMP AUDITS ---------------------------------------------------------------*/}
-            <div className="bg-transparent shadow-2xl rounded-lg p-4 md:w-1/4">
-              <div className="flex justify-center items-center">
-                <img
-                  src="/GMPlogo.png"
-                  alt="GMP Audits"
-                  className="w-[200px] h-[200px] object-fit rounded-t-lg"
-                />
+          <div className="container mx-auto px-4 fadeIn">
+            <div className="flex justify-center flex-wrap">
+              {/* First Row: 3 Cards Centered */}
+              <div className="flex flex-wrap justify-center w-full gap-6">
+                {/*------------------------------------------ GMP AUDITS ---------------------------------------------------------------*/}
+                <div className="bg-transparent shadow-2xl rounded-lg p-4 md:w-1/4">
+                  <div className="flex justify-center items-center">
+                    <img
+                      src="/GMPlogo.png"
+                      alt="GMP Audits"
+                      className="w-[200px] h-[200px] object-fit rounded-t-lg"
+                    />
+                  </div>
+                  <h3 className="text-xl font-semibold text-[#34495E] outfit mt-4">
+                    GMP Audits
+                  </h3>
+                  <p className="font-medium mt-2 montserrat">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  </p>
+                  <Link to="/gmpaudits">
+                    <button className="mt-4 text-blue-600 font-semibold outfit">
+                      Read More
+                    </button>
+                  </Link>
+                </div>
+                {/*-------------------------------------- Consulting Services ---------------------------------------------------------*/}
+                <div className="bg-transparent shadow-2xl rounded-lg p-4 md:w-1/4">
+                  <div className="flex justify-center items-center">
+                    <img
+                      src="/CSlogo.png"
+                      alt="Consulting Services"
+                      className="w-[200px] h-[200px] object-fit rounded-t-lg"
+                    />
+                  </div>
+                  <h3 className="text-xl font-semibold text-[#34495E] outfit mt-4">
+                    Consulting Services
+                  </h3>
+                  <p className="mt-2 montserrat font-medium">
+                    Sed do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua.
+                  </p>
+                  <Link to="/qualityconsulting">
+                    <button className="mt-4 text-blue-600 font-semibold outfit">
+                      Read More
+                    </button>
+                  </Link>
+                </div>
+                {/*---------------------------------- Computer System Validations -----------------------------------------------------*/}
+                <div className="bg-transparent shadow-2xl rounded-lg p-4 md:w-1/4">
+                  <div className="flex justify-center items-center">
+                    <img
+                      src="/CSVlogo.png"
+                      alt="Computer System Validations"
+                      className="w-[200px] h-[200px] object-fit rounded-t-lg"
+                    />
+                  </div>
+                  <h3 className="text-xl font-semibold text-[#34495E] outfit mt-4">
+                    Computer System Validations
+                  </h3>
+                  <p className="montserrat font-medium mt-2">
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+                  </p>
+                  <Link to="/computersystemvalidations">
+                    <button className="mt-4 text-blue-600 font-semibold outfit">
+                      Read More
+                    </button>
+                  </Link>
+                </div>
               </div>
-              <h3 className="text-xl font-semibold text-[#34495E] outfit mt-4">
-                GMP Audits
-              </h3>
-              <p className="font-medium mt-2 montserrat">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              </p>
-              <Link to="/gmpaudits">
-                <button className="mt-4 text-blue-600 font-semibold outfit">
-                  Read More
-                </button>
-              </Link>
             </div>
-            {/*-------------------------------------- Consulting Services ---------------------------------------------------------*/}
-            <div className="bg-transparent shadow-2xl rounded-lg p-4 md:w-1/4">
-              <div className="flex justify-center items-center">
-                <img
-                  src="/CSlogo.png"
-                  alt="Consulting Services"
-                  className="w-[200px] h-[200px] object-fit rounded-t-lg"
-                />
+            <div className="flex justify-center flex-wrap mt-8">
+              {/* Second Row: 2 Cards Centered */}
+              <div className="flex flex-wrap justify-center w-full gap-6">
+                {/*---------------------------------- Training -----------------------------------------------------*/}
+                <div className="bg-transparent shadow-2xl rounded-lg p-4 md:w-1/4">
+                  <div className="flex justify-center items-center">
+                    <img
+                      src="/Trainlogo.png"
+                      alt="Training"
+                      className="w-[200px] h-[200px] object-fit rounded-t-lg"
+                    />
+                  </div>
+                  <h3 className="text-xl font-semibold text-[#34495E] outfit mt-4">
+                    Training
+                  </h3>
+                  <p className="montserrat font-medium mt-2">
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+                  </p>
+                  <Link to="/training">
+                    <button className="mt-4 text-blue-600 font-semibold outfit">
+                      Read More
+                    </button>
+                  </Link>
+                </div>
+                {/*---------------------------------- Training -----------------------------------------------------*/}
+                <div className="bg-transparent shadow-2xl rounded-lg p-4 md:w-1/4">
+                  <div className="flex justify-center items-center">
+                    <img
+                      src="/Trainlogo.png"
+                      alt="Training"
+                      className="w-[200px] h-[200px] object-fit rounded-t-lg"
+                    />
+                  </div>
+                  <h3 className="text-xl font-semibold text-[#34495E] outfit mt-4">
+                    Training
+                  </h3>
+                  <p className="montserrat font-medium mt-2">
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+                  </p>
+                  <Link to="/training">
+                    <button className="mt-4 text-blue-600 font-semibold outfit">
+                      Read More
+                    </button>
+                  </Link>
+                </div>
               </div>
-              <h3 className="text-xl font-semibold text-[#34495E] outfit mt-4">
-                Consulting Services
-              </h3>
-              <p className="mt-2 montserrat font-medium">
-                Sed do eiusmod tempor incididunt ut labore et dolore magna
-                aliqua.
-              </p>
-              <Link to="/qualityconsulting">
-                <button className="mt-4 text-blue-600 font-semibold outfit">
-                  Read More
-                </button>
-              </Link>
-            </div>
-            {/*---------------------------------- Computer System Validations -----------------------------------------------------*/}
-            <div className="bg-transparent shadow-2xl rounded-lg p-4 md:w-1/4">
-              <div className="flex justify-center items-center">
-                <img
-                  src="/CSVlogo.png"
-                  alt="Computer System Validations"
-                  className="w-[200px] h-[200px] object-fit rounded-t-lg"
-                />
-              </div>
-              <h3 className="text-xl font-semibold text-[#34495E] outfit mt-4">
-                Computer System Validations
-              </h3>
-              <p className="montserrat font-medium mt-2">
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco.
-              </p>
-              <Link to="/computersystemvalidations">
-                <button className="mt-4 text-blue-600 font-semibold outfit">
-                  Read More
-                </button>
-              </Link>
-            </div>
-            {/*---------------------------------- Training -----------------------------------------------------*/}
-            <div className="bg-transparent shadow-2xl rounded-lg p-4 md:w-1/4">
-              <div className="flex justify-center items-center">
-                <img
-                  src="/Trainlogo.png"
-                  alt="Training"
-                  className="w-[200px] h-[200px] object-fit rounded-t-lg"
-                />
-              </div>
-              <h3 className="text-xl font-semibold text-[#34495E] outfit mt-4">
-                Training
-              </h3>
-              <p className="montserrat font-medium mt-2">
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco.
-              </p>
-              <Link to="/training">
-              <button className="mt-4 text-blue-600 font-semibold outfit">
-                Read More
-              </button>
-              </Link>
             </div>
           </div>
           <style jsx>{`
@@ -372,9 +403,15 @@ const Aboutus = () => {
                 <img src="eteplogo.png" alt="etep" className="w-12 h-12 mr-4" />
                 <div>
                   <h3 className="text-xl font-semibold outfit text-[#34495E]">
-                    End To End Process
+                    Comprehensive Process Management
                   </h3>
-                  <p className="montserrat font-medium">Description 1</p>
+                  <p className="montserrat font-medium">
+                    We enhance manufacturing efficiency and quality while
+                    maintaining GMP compliance through process optimization and
+                    thorough risk assessments. Our team ensures accurate
+                    documentation, comprehensive audit support, and effective
+                    quality management systems.
+                  </p>
                 </div>
               </div>
 
@@ -395,9 +432,14 @@ const Aboutus = () => {
                 />
                 <div>
                   <h3 className="text-xl font-semibold outfit text-[#34495E]">
-                    Industry Expertise
+                    Specialized Industrial Expertise
                   </h3>
-                  <p className="montserrat font-medium">Description 2</p>
+                  <p className="montserrat font-medium">
+                    NexGen Pharma Solutions provides specialized GMP knowledge
+                    and training programs to ensure regulatory compliance. We
+                    keep clients informed of regulatory changes to maintain
+                    up-to-date practices.
+                  </p>
                 </div>
               </div>
 
@@ -418,9 +460,14 @@ const Aboutus = () => {
                 />
                 <div>
                   <h3 className="text-xl font-semibold outfit text-[#34495E]">
-                    Global Presence
+                    International Reach
                   </h3>
-                  <p className="montserrat font-medium">Description 3</p>
+                  <p className="montserrat font-medium">
+                    We support internal and external audits globally, helping
+                    clients prepare and respond effectively. Our team keeps
+                    clients current with global regulations and ensures supplier
+                    compliance with GMP standards.
+                  </p>
                 </div>
               </div>
 
@@ -441,9 +488,14 @@ const Aboutus = () => {
                 />
                 <div>
                   <h3 className="text-xl font-semibold outfit text-[#34495E]">
-                    Customized Solutions
+                    Tailored Solutions
                   </h3>
-                  <p className="montserrat font-medium">Description 4</p>
+                  <p className="montserrat font-medium">
+                    Our tailored solutions optimize processes and ensure data
+                    integrity. We troubleshoot GMP-related issues, design custom
+                    quality systems, and manage supplier compliance with GMP
+                    standards.
+                  </p>
                 </div>
               </div>
             </div>
@@ -500,11 +552,11 @@ const Aboutus = () => {
           `}</style>
         </section>
 
-        {/*----------------------------------------- Our Values -------------------------------------------------------------*/}
+        {/*----------------------------------------- Our Mission -------------------------------------------------------------*/}
         <section id="OV" className="p-8">
           {/*----------------------------------------- Section Title -----------------------------------------*/}
           <h2 className="text-3xl md:text-5xl text-center font-semibold outfit text-[#34495E] mb-8">
-            Our Values
+            Our Mission
             <div className="md:w-[190px] w-[110px] h-1 mx-auto my-4 bg-[#34495E]"></div>
           </h2>
 
@@ -516,10 +568,36 @@ const Aboutus = () => {
             {/*----------------------------------------- Left Side -----------------------------------------*/}
             <div className="md:w-[70%] w-full p-4">
               <p className="montserrat font-medium">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-                lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod
-                malesuada. Fusce bibendum felis non est facilisis, at tempus ex
-                vehicula. Integer ut pulvinar libero, et aliquet dui.
+                Our vision at NexGen Pharma Solutions is to be the global leader
+                in GMP consulting, driving excellence and innovation in
+                pharmaceutical manufacturing. We aim to empower companies with
+                the highest standards of quality and regulatory compliance,
+                fostering a safer, more efficient, and sustainable healthcare
+                industry worldwide. Through our expertise and commitment, we
+                envision a future where every product meets uncompromising
+                safety and efficacy standards, ensuring better health outcomes
+                for all.
+                <br />
+                <b>Industry-Leading GMP Consulting Services:</b> Dedicated to
+                empowering pharmaceutical companies to meet the highest levels
+                of quality and regulatory compliance.
+                <br />
+                <b>Expert Team:</b> Seasoned professionals with deep expertise
+                and a hands-on approach to every project. Tailored Solutions:
+                Optimizing manufacturing processes and ensuring data integrity.
+                Upholding global standards.
+                <br />
+                <b>Lasting Value:</b> Identifying compliance gaps and
+                implementing practical corrective actions. Fostering a culture
+                of excellence within clients' organizations.
+                <br />
+                <b>Commitment to Excellence:</b> Focused on precision,
+                integrity, and client satisfaction. Ensuring partners are fully
+                prepared for regulatory audits and long-term success.
+                <br />
+                <b>Operational Efficiency and Product Safety:</b> Helping
+                maintain operational efficiency and enhance product safety.
+                Achieving sustainable growth through uncompromising quality.
               </p>
             </div>
 
@@ -574,52 +652,60 @@ const Aboutus = () => {
             ref={sectionRef}
             className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-auto max-w-7xl px-6"
           >
-            {/*---------------------------------------- Ingenious ---------------------------------------------------------*/}
+            {/*---------------------------------------- Innovative Solutions ---------------------------------------------------------*/}
             <div className="card p-6 rounded-lg shadow-2xl text-center">
               <div className="flex justify-center items-center">
                 <img
                   src="/inge.png"
-                  alt="Ingenious"
+                  alt="Innovative Solutions"
                   className="w-[200px] h-[200px] object-fit rounded-t-lg mb-4"
                 />
               </div>
               <h3 className="text-xl font-semibold outfit text-[#34495E] mb-2">
-                Ingenious
+                Innovative Solutions
               </h3>
               <p className="montserrat font-medium">
-                Description for the first value card.
+                At NexGen Pharma Solutions, we offer cutting-edge GMP
+                consultation services, leveraging the latest technologies and
+                creative problem-solving to ensure compliance and optimize
+                efficiency..
               </p>
             </div>
-            {/*---------------------------------------- Illustrious ---------------------------------------------------------*/}
+            {/*---------------------------------------- Distinguished Expertise ---------------------------------------------------------*/}
             <div className="card p-6 rounded-lg shadow-2xl text-center">
               <div className="flex justify-center items-center">
                 <img
                   src="/illu.png"
-                  alt="Illustrious"
+                  alt="Distinguished Expertise"
                   className="w-[200px] h-[200px] object-fit rounded-t-lg mb-4"
                 />
               </div>
               <h3 className="text-xl font-semibold outfit text-[#34495E] mb-2">
-                Illustrious
+                Distinguished Expertise
               </h3>
               <p className="montserrat font-medium">
-                Description for the second value card.
+                Our team at NexGen Pharma Solutions brings unparalleled
+                expertise and a distinguished track record in GMP regulations,
+                providing top-tier consultation services for enhanced
+                manufacturing quality.
               </p>
             </div>
-            {/*---------------------------------------- Immaculate ---------------------------------------------------------*/}
+            {/*---------------------------------------- Pristine Quality ---------------------------------------------------------*/}
             <div className="card p-6 rounded-lg shadow-2xl text-center">
               <div className="flex justify-center items-center">
                 <img
                   src="/imma.png"
-                  alt="Immaculate"
+                  alt="Pristine Quality"
                   className="w-[200px] h-[200px] object-fit rounded-t-lg mb-4"
                 />
               </div>
               <h3 className="text-xl font-semibold outfit text-[#34495E] mb-2">
-                Immaculate
+                Pristine Quality
               </h3>
               <p className="montserrat font-medium">
-                Description for the third value card.
+                NexGen Pharma Solutions maintains the highest standards of
+                quality in GMP processes, ensuring meticulous compliance and
+                audit-readiness for all your operations.
               </p>
             </div>
           </div>
