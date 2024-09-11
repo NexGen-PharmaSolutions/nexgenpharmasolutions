@@ -54,9 +54,14 @@ const Comsysval = () => {
             <h1 className="text-4xl md:text-6xl font-bold outfit text-[#34495E] animate-[pop-out_1s_ease-out_forwards]">
               Computer System Validations
             </h1>
-            <p className="mt-4 text-lg md:text-xl text-black inter font-normal animate-[pop-out_1s_ease-out_forwards] md:w-[500px] ">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-              nec odio. Praesent libero. Sed cursus ante dapibus diam.
+            <p className="mt-4 text-[10px] md:text-[16px] text-black inter font-normal animate-[pop-out_1s_ease-out_forwards] md:w-[500px] ">
+              At NexGen Pharma Solutions, we ensure that your computerized
+              systems used in GxP processes, from production to quality control,
+              meet necessary qualifications and are fully validated. By
+              employing a risk-based approach guided by the GAMP 5 'V-Model,' we
+              safeguard product quality, data accuracy, and patient safety
+              through comprehensive planning, setup, verification, and
+              reporting.
             </p>
           </div>
           <style jsx>{`
@@ -79,7 +84,9 @@ const Comsysval = () => {
             <div className="md:w-[320px] w-[140px] h-1 mx-auto my-4 bg-[#34495E]"></div>
           </h2>
           <h3 className="text-lg md:text-xl inter font-medium text-left mb-4">
-            Our Key Systems
+            NexGen Pharma Solutions offers complete end-end solutions for
+            validation as per USFDA 21 CFR Part 11 and EU Annex 11. The systems
+            consist of:
           </h3>
           <div
             ref={fadeInRef}
@@ -89,28 +96,34 @@ const Comsysval = () => {
               {/*------------------------------------------ Left div ------------------------------------------*/}
               <div className="p-4 rounded-2xl">
                 <ul className="list-disc list-inside space-y-4 montserrat font-medium">
-                  <li>Important Point 1</li>
-                  <li>Important Point 2</li>
-                  <li>Important Point 3</li>
-                  <li>Important Point 4</li>
+                  <li>Local Control System (SCADA, PLC)</li>
+                  <li>Plant Control System (SCADA, PLC)</li>
+                  <li>Data Integrity Risk Assessment</li>
+                  <li>Computer System Validation</li>
+                  <li>
+                    Building Management System, Environment management system
+                  </li>
                 </ul>
               </div>
               {/*------------------------------------------ Mid Div ------------------------------------------*/}
               <div className="p-4 rounded-2xl">
                 <ul className="list-disc list-inside space-y-4 montserrat font-medium">
-                  <li>Important Point 1</li>
-                  <li>Important Point 2</li>
-                  <li>Important Point 3</li>
-                  <li>Important Point 4</li>
+                  <li>Manufacturing Equipment</li>
+                  <li>CAPA System</li>
+                  <li>Automated Packaging & Labeling Equipment</li>
+                  <li>Track & Trace system</li>
+                  <li>Sterilization System</li>
+                  <li>Laboratory Systems (LIMS: Stand-alone & networked)</li>
                 </ul>
               </div>
               {/*------------------------------------------ Right Div ------------------------------------------*/}
               <div className="p-4 rounded-2xl">
                 <ul className="list-disc list-inside space-y-4 montserrat font-medium">
-                  <li>Important Point 1</li>
-                  <li>Important Point 2</li>
-                  <li>Important Point 3</li>
-                  <li>Important Point 4</li>
+                  <li>Management Systems (ERP, SAP)</li>
+                  <li>Document Management System</li>
+                  <li>Warehouse Management System</li>
+                  <li>E-BMR System</li>
+                  <li>Sterilization System</li>
                 </ul>
               </div>
             </div>
@@ -123,10 +136,10 @@ const Comsysval = () => {
           className="py-16 px-4 md:px-8 opacity-0 transition-opacity duration-700 ease-in-out"
         >
           <h2 className="text-2xl md:text-4xl font-bold outfit text-[#34495E] text-center mb-8">
-          What we bring to customer
+            What we bring to customer
             <div className="md:w-[300px] w-[160px] h-1 mx-auto my-4 bg-[#34495E]"></div>
           </h2>
-          {/*------------------------------------------ Cost Saving & Time Optimization ------------------------------------------*/}
+          {/*------------------------------------------ Efficiency and Cost Reduction ------------------------------------------*/}
           <div className="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0">
             <div className="p-4 rounded-2xl shadow-2xl flex-1">
               <img
@@ -135,13 +148,14 @@ const Comsysval = () => {
                 className="h-20 w-20 mx-auto mb-4"
               />
               <h4 className="text-lg font-bold outfit text-[#34495E] text-center mb-2">
-              Cost Saving & Time Optimization
+                Efficiency and Cost Reduction
               </h4>
-              <p className="text-sm md:text-base text-center font-medium montserrat">
-                Description for card 1.
+              <p className="text-sm md:text-[14px] text-center font-medium montserrat">
+                By adopting effective CSV and CSA practices, we ensure timely
+                compliance and significant reductions in operational costs.
               </p>
             </div>
-            {/*------------------------------------------ Committed To Compliance ------------------------------------------*/}
+            {/*------------------------------------------ Dedicated to Compliance ------------------------------------------*/}
             <div className="p-4 rounded-2xl shadow-2xl flex-1">
               <img
                 src="/comtcom.png"
@@ -149,13 +163,14 @@ const Comsysval = () => {
                 className="h-20 w-20 mx-auto mb-4"
               />
               <h4 className="text-lg font-bold outfit text-[#34495E] text-center mb-2">
-              Committed To Compliance
+                Dedicated to Compliance
               </h4>
-              <p className="text-sm md:text-base text-center font-medium montserrat">
-                Description for card 2.
+              <p className="text-sm md:text-[14px] text-center font-medium montserrat">
+                We rigorously adhere to 21 CFR Part 11 and Annex 11 standards,
+                providing clear evidence and comprehensive audit trails.
               </p>
             </div>
-            {/*------------------------------------------ Confidence ------------------------------------------*/}
+            {/*------------------------------------------ Assurance ------------------------------------------*/}
             <div className="p-4 rounded-2xl shadow-2xl flex-1">
               <img
                 src="/confidence.png"
@@ -163,24 +178,27 @@ const Comsysval = () => {
                 className="h-20 w-20 mx-auto mb-4"
               />
               <h4 className="text-lg font-bold outfit text-[#34495E] text-center mb-2">
-              Confidence
+                Assurance
               </h4>
-              <p className="text-sm md:text-base text-center font-medium montserrat">
-                Description for card 3.
+              <p className="text-sm md:text-[14px] text-center font-medium montserrat">
+                Our meticulous processes guarantee accuracy, reliability, and
+                consistency, preserving data integrity and delivering dependable
+                results for our clients.
               </p>
             </div>
-            {/*------------------------------------------ Hybrid Execution Models ------------------------------------------*/}
+            {/*------------------------------------------ Flexible Execution Models ------------------------------------------*/}
             <div className="p-4 rounded-2xl shadow-2xl flex-1">
               <img
                 src="/hybrid.png"
-                alt="Hybrid Execution Models"
+                alt="Flexible Execution Models"
                 className="h-20 w-20 mx-auto mb-4"
               />
               <h4 className="text-lg font-bold outfit text-[#34495E] text-center mb-2">
-              Hybrid Execution Models
+                Flexible Execution Models
               </h4>
-              <p className="text-sm md:text-base text-center font-medium montserrat">
-                Description for card 3.
+              <p className="text-sm md:text-[14px] text-center font-medium montserrat">
+                We offer adaptable delivery models utilizing Onsite, Remote, and
+                Offshore resources to meet your specific needs.
               </p>
             </div>
           </div>

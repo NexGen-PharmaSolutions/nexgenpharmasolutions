@@ -69,9 +69,8 @@ const QualCon = () => {
             <h1 className="text-4xl md:text-6xl font-bold outfit text-[#34495E] animate-[pop-out_1s_ease-out_forwards]">
               Quality Consulting
             </h1>
-            <p className="mt-4 text-lg md:text-xl text-black inter font-normal animate-[pop-out_1s_ease-out_forwards] md:w-[500px] ">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-              nec odio. Praesent libero. Sed cursus ante dapibus diam.
+            <p className="mt-4 text-[10px] md:text-[16px] text-black inter font-normal animate-[pop-out_1s_ease-out_forwards] md:w-[500px] ">
+            We craft sustainable solutions to manage compliance, offering proactive measures before audits and responsive actions afterward, leveraging extensive GxP expertise from product development to patient delivery.
             </p>
           </div>
           <style jsx>{`
@@ -127,11 +126,11 @@ const QualCon = () => {
               <h3 className="text-xl font-semibold outfit text-[#34495E] mb-2">
                 We Inspect
               </h3>
-              <p className="montserrat font-medium">
-                Description for the first value card.Description for the first
-                value card.Description for the first value card.Description for
-                the first value card.Description for the first value
-                card.Description for the first value card.
+              <p className="montserrat font-medium text-[12px]">
+                At NexGen Pharma Solutions, we conduct rigorous inspections to
+                evaluate your processes, systems, and facilities. Our thorough
+                assessments ensure that every aspect of your operations meets
+                stringent regulatory and quality standards.
               </p>
             </div>
             {/*----------------------------------------------------- We Collaborate ---------------------------------------------*/}
@@ -146,11 +145,11 @@ const QualCon = () => {
               <h3 className="text-xl font-semibold outfit text-[#34495E] mb-2">
                 We Collaborate
               </h3>
-              <p className="montserrat font-medium">
-                Description for the first value card.Description for the first
-                value card.Description for the first value card.Description for
-                the first value card.Description for the first value
-                card.Description for the first value card.
+              <p className="montserrat font-medium text-[12px]">
+                We work closely with your team, providing expert guidance and
+                support to address compliance issues and implement effective
+                solutions. Our collaborative approach ensures seamless
+                integration of best practices tailored to your specific needs.
               </p>
             </div>
             {/*----------------------------------------------------- We ensure Readiness ---------------------------------------------*/}
@@ -165,11 +164,11 @@ const QualCon = () => {
               <h3 className="text-xl font-semibold outfit text-[#34495E] mb-2">
                 We Ensure Readiness
               </h3>
-              <p className="montserrat font-medium">
-                Description for the first value card.Description for the first
-                value card.Description for the first value card.Description for
-                the first value card.Description for the first value
-                card.Description for the first value card.
+              <p className="montserrat font-medium text-[12px]">
+                We prepare your organization for successful regulatory audits
+                and ongoing compliance. By identifying gaps and implementing
+                corrective actions, we ensure your readiness for any regulatory
+                scrutiny, safeguarding your operations and reputation.
               </p>
             </div>
           </div>
@@ -188,6 +187,12 @@ const QualCon = () => {
               <div className="md:w-[120px] w-[100px] h-1 mx-auto my-4 bg-[#34495E]"></div>
             </h1>
           </div>
+          <p className="font-normal inter text-[16px] md:px-20 pb-8">
+            Our audit reports are detailed and of top quality, gaining global
+            acceptance from regulators, Qualified Persons (QPs), and subject
+            matter experts. We audit a wide range of suppliers, including
+            but not limited to:
+          </p>
           {/* Fade-in Div */}
           <div
             id="fadeDiv"
@@ -196,16 +201,56 @@ const QualCon = () => {
             <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
               {/* Left Side (60%) */}
               <div className="md:col-span-3 md:pl-20">
-                <ul className="list-disc list-inside space-y-4 montserrat font-medium">
-                  <li>Important Point 1</li>
-                  <li>Important Point 2</li>
-                  <li>Important Point 3</li>
-                  <li>Important Point 4</li>
+                <ul className="list-disc list-inside space-y-4 montserrat font-medium text-[10px]">
+                  <li>
+                    GMP Audits We conduct thorough and detailed GMP audits to
+                    ensure your operations are compliant with international
+                    standards such as EU GMP, ICH Q7, 21 CFR 210/211, and ISO.
+                    Our audits cover all types of suppliers and can be
+                    customized to focus on specific areas, products, or systems
+                    as needed.
+                  </li>
+                  <li>
+                    Quality Consulting Our quality consulting services help you
+                    optimize your manufacturing processes and systems. We
+                    provide expert advice and support on all aspects of GMP
+                    compliance, from initial assessments to implementation of
+                    best practices and corrective actions.
+                  </li>
+                  <li>
+                    Computer System Validation (CSV) We ensure your computer
+                    systems are reliable and compliant with industry regulations
+                    through meticulous validation processes. Our CSV services
+                    guarantee data integrity, system accuracy, and regulatory
+                    adherence, supporting seamless audits and operations.
+                  </li>
+                  <li>
+                    Training and Development We offer comprehensive training
+                    programs designed to equip your staff with the knowledge and
+                    skills required for GMP compliance. Our training covers
+                    regulatory requirements, best practices, and practical
+                    applications to ensure your team is well-prepared to
+                    maintain high standards of quality.
+                  </li>
+                  <li>
+                    Regulatory Affairs Our regulatory affairs services include
+                    the preparation and submission of Drug Master Files (DMFs)
+                    and other regulatory documents. We ensure your submissions
+                    are thorough, accurate, and compliant with global regulatory
+                    standards, facilitating smooth approval processes.
+                  </li>
+                  <li>
+                    Supplier Qualification and Management We assist in
+                    evaluating and managing your suppliers to ensure they meet
+                    GMP standards. Our supplier qualification services include
+                    risk assessments, audits, and ongoing monitoring to maintain
+                    high-quality supply chains.
+                  </li>
                 </ul>
               </div>
 
               {/* Right Side (40%) */}
-              <div className="md:col-span-2">
+              <div className="md:col-span-2 md:pr-12">
                 <img
                   src="/1.png"
                   alt="Photo"
@@ -233,87 +278,122 @@ const QualCon = () => {
 
           {/*----------------------------------------- Fade-in Divs -----------------------------------------*/}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 fade-in-div opacity-0 transition-opacity duration-1000 ease-in-out">
-            {/*----------------------------------------- Left Div -----------------------------------------*/}
+            {/*----------------------------------------- Industry-Leading GMP Consulting Services: -----------------------------------------*/}
             <div>
-              <p className="text-base lg:text-lg montserrat font-medium">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
-                interdum pharetra felis, non fermentum magna.
-              </p>
+              <div className="flex items-center mb-4">
+                <div className="w-1/3">
+                  <img
+                    src="/consultation.png"
+                    alt="Industry-Leading GMP Consulting Services"
+                    className="w-12 h-12 object-cover"
+                  />
+                </div>
+                <div className="w-2/3">
+                  <h3 className="font-semibold outfit text-[#34495E] text-[16px]">
+                  Industry-Leading GMP Consulting Services:
+                  </h3>
+                  <p className="text-[12px] montserrat font-medium">
+                  Dedicated to empowering pharmaceutical companies to meet the highest levels of quality and regulatory compliance.
+                  </p>
+                </div>
+              </div>
+              {/*----------------------------------------- Expert Team: -----------------------------------------*/}
+              <div className="flex items-center">
+                <div className="w-1/3">
+                  <img
+                    src="/experts.png"
+                    alt="Expert Team:"
+                    className="w-12 h-12 object-cover"
+                  />
+                </div>
+                <div className="w-2/3">
+                  <h3 className="font-semibold outfit text-[#34495E] text-[16px]">
+                  Expert Team:
+                  </h3>
+                  <p className="text-[12px] montserrat font-medium">
+                  Seasoned professionals with deep expertise and a hands-on approach to every project.
+                  </p>
+                </div>
+              </div>
             </div>
 
-            {/*----------------------------------------- One Stop Solution -----------------------------------------*/}
+            {/*----------------------------------------- Tailored Solutions: -----------------------------------------*/}
             <div>
               <div className="flex items-center mb-4">
                 <div className="w-1/3">
                   <img
                     src="/ossolution.png"
-                    alt="One Stop Solution"
+                    alt="Tailored Solutions:"
                     className="w-12 h-12 object-cover"
                   />
                 </div>
                 <div className="w-2/3">
                   <h3 className="font-semibold outfit text-[#34495E] text-[16px]">
-                    One Stop Solution
+                  Tailored Solutions:
                   </h3>
-                  <p className="text-sm montserrat font-medium">
-                    This is the description for the first middle content.
+                  <p className="text-[12px] montserrat font-medium">
+                  Optimizing manufacturing processes and ensuring data integrity.
+                  Upholding global standards.
                   </p>
                 </div>
               </div>
-              {/*----------------------------------------- Solution Oriented and Transparent -----------------------------------------*/}
+              {/*----------------------------------------- Lasting Value: -----------------------------------------*/}
               <div className="flex items-center">
                 <div className="w-1/3">
                   <img
-                    src="/soat.png"
-                    alt="Solution Oriented and Transparent"
+                    src="/lasting.png"
+                    alt="Lasting Value:"
                     className="w-12 h-12 object-cover"
                   />
                 </div>
                 <div className="w-2/3">
                   <h3 className="font-semibold outfit text-[#34495E] text-[16px]">
-                    Solution Oriented and Transparent
+                  Lasting Value:
                   </h3>
-                  <p className="text-sm montserrat font-medium">
-                    This is the description for the second middle content.
+                  <p className="text-[12px] montserrat font-medium">
+                  Identifying compliance gaps and implementing practical corrective actions.
+                  Fostering a culture of excellence within clients' organizations.
                   </p>
                 </div>
               </div>
             </div>
 
-            {/*----------------------------------------- Trunkey sloutions -----------------------------------------*/}
+            {/*----------------------------------------- Commitment to Excellence: -----------------------------------------*/}
             <div>
               <div className="flex items-center mb-4">
                 <div className="w-1/3">
                   <img
-                    src="/trusol.png"
-                    alt="Trunkey sloutions"
+                    src="/commitment.png"
+                    alt="Commitment to Excellence:"
                     className="w-12 h-12 object-cover"
                   />
                 </div>
                 <div className="w-2/3">
                   <h3 className="font-semibold outfit text-[#34495E] text-[16px]">
-                    Trunkey sloutions
+                  Commitment to Excellence:
                   </h3>
-                  <p className="text-sm montserrat font-medium">
-                    This is the description for the first right content.
+                  <p className="text-[12px] montserrat font-medium">
+                  Focused on precision, integrity, and client satisfaction.
+                  Ensuring partners are fully prepared for regulatory audits and long-term success.
                   </p>
                 </div>
               </div>
-              {/*----------------------------------------- Global at Heart, Local in Spirit -----------------------------------------*/}
+              {/*----------------------------------------- Operational Efficiency and Product Safety: -----------------------------------------*/}
               <div className="flex items-center">
                 <div className="w-1/3">
                   <img
-                    src="/ghls.png"
-                    alt="Global at Heart, Local in Spirit"
+                    src="/opertional.png"
+                    alt="Operational Efficiency and Product Safety:"
                     className="w-12 h-12 object-cover"
                   />
                 </div>
                 <div className="w-2/3">
-                  <h3 className="font-semibold outfit text-[#34495E] [16px]">
-                    Global at Heart, Local in Spirit
+                  <h3 className="font-semibold outfit text-[#34495E] text-[14px]">
+                  Operational Efficiency and Product Safety:
                   </h3>
-                  <p className="text-sm montserrat font-medium">
-                    This is the description for the second right content.
+                  <p className="text-[12px] montserrat font-medium">
+                  Helping maintain operational efficiency and enhance product safety.
+                  Achieving sustainable growth through uncompromising quality.
                   </p>
                 </div>
               </div>

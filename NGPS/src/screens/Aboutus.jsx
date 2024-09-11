@@ -107,28 +107,27 @@ const Aboutus = () => {
   }, []);
 
   const omSectionDivRef = useRef(null);
-useEffect(() => {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("animate-wngps-div");
-        }
-      });
-    },
-    { threshold: 0.1 }
-  );
-  const sectionDiv = omSectionDivRef.current;
-  if (sectionDiv) {
-    observer.observe(sectionDiv);
-  }
-  return () => {
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate-wngps-div");
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+    const sectionDiv = omSectionDivRef.current;
     if (sectionDiv) {
-      observer.unobserve(sectionDiv);
+      observer.observe(sectionDiv);
     }
-  };
-}, []);
-
+    return () => {
+      if (sectionDiv) {
+        observer.unobserve(sectionDiv);
+      }
+    };
+  }, []);
 
   const sectionRef = useRef(null);
   useEffect(() => {
@@ -170,9 +169,16 @@ useEffect(() => {
             <h1 className="text-4xl md:text-6xl font-bold outfit text-[#34495E] animate-[pop-out_1s_ease-out_forwards]">
               About Us
             </h1>
-            <p className="mt-4 text-lg md:text-xl text-black inter font-normal animate-[pop-out_1s_ease-out_forwards] md:w-[500px] ">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-              nec odio. Praesent libero. Sed cursus ante dapibus diam.
+            <p className="mt-4 text-[10px] md:text-[16px] text-black inter font-normal animate-[pop-out_1s_ease-out_forwards] md:w-[500px] ">
+              NexGen Pharma Solutions is a leading provider of GMP consulting
+              and regulatory affairs services. With a team of seasoned experts,
+              we offer innovative solutions for pharmaceutical compliance,
+              process optimization, and quality assurance. Our comprehensive
+              services include GMP audits, DMF preparation, computer system
+              validation, and training, ensuring our clients achieve excellence
+              and regulatory compliance globally. Dedicated to precision,
+              integrity, and client satisfaction, we empower our partners to
+              thrive in the highly regulated pharmaceutical industry.
             </p>
           </div>
           <style jsx>{`
@@ -195,15 +201,15 @@ useEffect(() => {
           className="flex flex-col justify-between items-center p-8 gap-8 opacity-0"
           id="owner"
         > */}
-          {/*------------------------------------------------- Owner Section Heading -------------------------------------------*/}
-          {/* <h2 className="text-3xl md:text-5xl font-semibold outfit text-[#34495E]">
+        {/*------------------------------------------------- Owner Section Heading -------------------------------------------*/}
+        {/* <h2 className="text-3xl md:text-5xl font-semibold outfit text-[#34495E]">
             Owner's Details
             <div className="md:w-[260px] w-[150px] h-1 mx-auto my-4 bg-[#34495E]"></div>
           </h2>
 
           <div className="w-full md:flex md:justify-between bg-black bg-opacity-30 rounded-xl"> */}
-            {/*--------------------------------------------------- Owner Image ---------------------------------------------------*/}
-            {/* <div className="w-full md:w-1/2 slide-in-left p-4">
+        {/*--------------------------------------------------- Owner Image ---------------------------------------------------*/}
+        {/* <div className="w-full md:w-1/2 slide-in-left p-4">
               <img
                 src="/tempowner.jpg"
                 alt="Owner"
@@ -211,8 +217,8 @@ useEffect(() => {
               />
             </div> */}
 
-            {/*---------------------------------------------------- Owner Details ------------------------------------------------*/}
-            {/* <div className="w-full md:w-1/2 flex flex-col justify-center slide-in-right mt-8 md:mt-0 p-4 md:space-y-[80px]">
+        {/*---------------------------------------------------- Owner Details ------------------------------------------------*/}
+        {/* <div className="w-full md:w-1/2 flex flex-col justify-center slide-in-right mt-8 md:mt-0 p-4 md:space-y-[80px]">
               <h3 className="text-2xl md:text-4xl font-semibold outfit text-[#34495E]">
                 Owner's Name
               </h3>
@@ -362,17 +368,17 @@ useEffect(() => {
                     </button>
                   </Link>
                 </div>
-                {/*---------------------------------- Training -----------------------------------------------------*/}
+                {/*---------------------------------- Regulatory Affairs -----------------------------------------------------*/}
                 <div className="bg-transparent shadow-2xl rounded-lg p-4 md:w-1/4">
                   <div className="flex justify-center items-center">
                     <img
-                      src="/Trainlogo.png"
-                      alt="Training"
+                      src="/regulatorylogo.png"
+                      alt="Regulatory Affairs"
                       className="w-[200px] h-[200px] object-fit rounded-t-lg"
                     />
                   </div>
                   <h3 className="text-xl font-semibold text-[#34495E] outfit mt-4">
-                    Training
+                    Regulatory Affairs
                   </h3>
                   <p className="montserrat font-medium mt-2">
                     Ut enim ad minim veniam, quis nostrud exercitation ullamco.
@@ -575,7 +581,7 @@ useEffect(() => {
             }
           `}</style>
         </section>
-        
+
         {/*----------------------------------------- Our Mission -------------------------------------------------------------*/}
         <section id="OM" className="p-8">
           {/*----------------------------------------- Section Title -----------------------------------------*/}
@@ -592,42 +598,22 @@ useEffect(() => {
             {/*----------------------------------------- Left Side -----------------------------------------*/}
             <div className="md:w-[70%] w-full p-4">
               <p className="montserrat font-medium">
-                Our vision at NexGen Pharma Solutions is to be the global leader
-                in GMP consulting, driving excellence and innovation in
-                pharmaceutical manufacturing. We aim to empower companies with
-                the highest standards of quality and regulatory compliance,
-                fostering a safer, more efficient, and sustainable healthcare
-                industry worldwide. Through our expertise and commitment, we
-                envision a future where every product meets uncompromising
-                safety and efficacy standards, ensuring better health outcomes
-                for all.
-                <br />
-                <b>Industry-Leading GMP Consulting Services:</b> Dedicated to
-                empowering pharmaceutical companies to meet the highest levels
-                of quality and regulatory compliance.
-                <br />
-                <b>Expert Team:</b> Seasoned professionals with deep expertise
-                and a hands-on approach to every project. Tailored Solutions:
-                Optimizing manufacturing processes and ensuring data integrity.
-                Upholding global standards.
-                <br />
-                <b>Lasting Value:</b> Identifying compliance gaps and
-                implementing practical corrective actions. Fostering a culture
-                of excellence within clients' organizations.
-                <br />
-                <b>Commitment to Excellence:</b> Focused on precision,
-                integrity, and client satisfaction. Ensuring partners are fully
-                prepared for regulatory audits and long-term success.
-                <br />
-                <b>Operational Efficiency and Product Safety:</b> Helping
-                maintain operational efficiency and enhance product safety.
-                Achieving sustainable growth through uncompromising quality.
+                Our mission at NexGen Pharma Solutions is to deliver exceptional
+                GMP consulting services that ensure the highest standards of
+                quality, compliance, and safety in pharmaceutical manufacturing.
+                We are dedicated to providing expert guidance, innovative
+                solutions, and personalized support to help our clients navigate
+                complex regulatory environments, optimize their operations, and
+                achieve long-term success. By fostering a culture of integrity,
+                excellence, and collaboration, we strive to enhance product
+                quality and safeguard public health, driving meaningful
+                advancements in the global pharmaceutical industry.
               </p>
             </div>
 
             {/*----------------------------------------- Right Side -----------------------------------------*/}
             <div className="md:w-[30%] w-full p-4">
-              <img src="1.png" alt="Image" className="w-full h-auto" />
+              <img src="1.png" alt="Image" className="w-full h-[200px]" />
             </div>
           </div>
 

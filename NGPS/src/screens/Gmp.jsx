@@ -21,9 +21,10 @@ const Gmp = () => {
             <h1 className="text-4xl md:text-6xl font-bold outfit text-[#34495E] animate-[pop-out_1s_ease-out_forwards]">
               GMP Audits
             </h1>
-            <p className="mt-4 text-lg md:text-xl inter font-normal animate-[pop-out_1s_ease-out_forwards] md:w-[500px] ">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-              nec odio. Praesent libero. Sed cursus ante dapibus diam.
+            <p className="mt-4 text-[10px] md:text-[16px] inter font-normal animate-[pop-out_1s_ease-out_forwards] md:w-[500px] ">
+              NexGen Pharma Solutions conducts thorough GMP audits globally,
+              ensuring compliance and quality. Our detailed reports are widely
+              recognized and accepted.
             </p>
           </div>
           <style jsx>{`
@@ -40,35 +41,58 @@ const Gmp = () => {
           `}</style>
         </section>
         {/*--------------------------------------------- GMPD -----------------------------------------------------------*/}
-        <section
-          id="GMPD"
-          className="animate-fade-in"
-        >
-          <div className="max-w-[1000px] mx-auto p-4">
+        <section id="GMPD" className="animate-fade-in">
+          <div className="max-w-auto mx-auto px-14 pt-4">
             <div className="mb-8">
-              <p className="font-normal inter text-[16px]">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-                lacinia odio vitae vestibulum vestibulum.
+              <p className="font-normal inter md:text-[16px] text-[12px]">
+                We conduct high-standard GMP audits for various suppliers
+                worldwide, adhering to regulatory standards such as EU GMP, ICH
+                Q7, 21 CFR 210/211, and ISO, as requested by our clients. We
+                also offer tailor-made audits customized to specific client
+                requirements, focusing on particular areas, standards, products,
+                systems, criticalities, or for-cause audits.
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div>
-                <h2 className="text-lg font-semibold outfit text-[#34495E]">
-                  Left Title
-                </h2>
-                <p className="text-sm font-normal inter mt-2">
-                  Nullam quis risus eget urna mollis ornare vel eu leo. Sed
-                  posuere consectetur est at lobortis.
-                </p>
+            <div className="mb-8">
+              <p className="font-normal inter md:text-[16px] text-[12px]">
+                Our audit reports are detailed and of top quality, gaining
+                global acceptance from regulators, Qualified Persons (QPs), and
+                subject matter experts. We audit a wide range of suppliers,
+                including but not limited to:
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
+              {/* Left Side (60%) */}
+              <div className="md:col-span-3 md:pl-20">
+                <ul className="list-disc list-inside space-y-4 montserrat font-medium">
+                  <li>API / API intermediates; sterile/non-sterile</li>
+                  <li>Formulated medicinal products; sterile/non-sterile</li>
+                  <li>
+                    Biological, fermentation-based APIs and formulation products
+                  </li>
+                  <li>
+                    Excipients / Key Starting Materials (KSMs)/ raw materials/
+                    cosmetics
+                  </li>
+                  <li>Contract testing Laboratories</li>
+                  <li>Different services providers</li>
+                  <li>Distributors; GDP</li>
+                  <li>Packaging materials</li>
+                  <li>Components used in the pharmaceutical industries</li>
+                  <li>
+                    Processing sites (i.e. micronization, sterilization,
+                    radiation etc.)
+                  </li>
+                </ul>
               </div>
-              <div>
-                <h2 className="text-lg font-semibold outfit text-[#34495E]">
-                  Right Title
-                </h2>
-                <p className="text-sm font-normal inter mt-2">
-                  Praesent commodo cursus magna, vel scelerisque nisl
-                  consectetur et. Donec id elit non mi porta gravida.
-                </p>
+
+              {/* Right Side (40%) */}
+              <div className="md:col-span-2 md:pr-8">
+                <img
+                  src="/1.png"
+                  alt="Photo"
+                  className="w-full md:h-[390px] h-[200px] object-cover rounded-2xl"
+                />
               </div>
             </div>
           </div>
