@@ -9,6 +9,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import Comsysval from "./screens/Comsysval";
 import Training from "./screens/Training";
 import Contactus from "./screens/Contactus";
+import Regaff from "./screens/Regaff";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             <Route path="/computersystemvalidations" element={<Comsysval />} />
             <Route path="/training" element={<Training />} />
             <Route path="/contactus" element={<Contactus />} />
+            <Route path="/regulatoryaffairs" element={<Regaff />} />
           </Routes>
         </div>
       </Router>
