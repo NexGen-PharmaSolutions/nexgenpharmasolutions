@@ -13,15 +13,15 @@ const Gmp = () => {
       <main className="relative z-10">
         {/*------------------------------------------ Hero Section ------------------------------------------------------------*/}
         <section
-          className="relative flex flex-col justify-center items-start h-[300px] md:h-[600px] bg-cover bg-center p-8"
-          style={{ backgroundImage: "url('/herobg.png')" }}
+          className="relative flex flex-col justify-center items-center h-[300px] md:h-[600px] bg-cover bg-center p-8"
+          style={{ backgroundImage: "url('/gmpaudits.png')" }}
           id="hero"
         >
           <div className="max-w-4xl">
             <h1 className="text-4xl md:text-6xl font-bold outfit text-[#34495E] animate-[pop-out_1s_ease-out_forwards]">
               GMP Audits
             </h1>
-            <p className="mt-4 text-[10px] md:text-[16px] inter font-normal animate-[pop-out_1s_ease-out_forwards] md:w-[500px] ">
+            <p className=" mt-4 text-[10px] md:text-[16px] inter font-bold animate-[pop-out_1s_ease-out_forwards] md:w-[500px]">
               NexGen Pharma Solutions conducts thorough GMP audits globally,
               ensuring compliance and quality. Our detailed reports are widely
               recognized and accepted.

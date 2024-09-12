@@ -61,15 +61,15 @@ const QualCon = () => {
       <main className="relative z-10">
         {/*------------------------------------------ Hero Section ------------------------------------------------------------*/}
         <section
-          className="relative flex flex-col justify-center items-start h-[300px] md:h-[600px] bg-cover bg-center p-8"
-          style={{ backgroundImage: "url('/herobg.png')" }}
+          className="relative flex flex-col justify-center items-center h-[300px] md:h-[600px] bg-cover bg-center p-8"
+          style={{ backgroundImage: "url('/qualityconsult.png')" }}
           id="hero"
         >
-          <div className="max-w-4xl">
+          <div className="max-w-4xl md:mt-[-80px]">
             <h1 className="text-4xl md:text-6xl font-bold outfit text-[#34495E] animate-[pop-out_1s_ease-out_forwards]">
               Quality Consulting
             </h1>
-            <p className="mt-4 text-[10px] md:text-[16px] text-black inter font-normal animate-[pop-out_1s_ease-out_forwards] md:w-[500px] ">
+            <p className="mt-4 text-[10px] md:text-[16px] text-black inter font-bold animate-[pop-out_1s_ease-out_forwards] md:w-[500px] ">
             We craft sustainable solutions to manage compliance, offering proactive measures before audits and responsive actions afterward, leveraging extensive GxP expertise from product development to patient delivery.
             </p>
           </div>

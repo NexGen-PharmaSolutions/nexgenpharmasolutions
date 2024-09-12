@@ -427,7 +427,7 @@ const Aboutus = () => {
             className="flex flex-col md:flex-row justify-between items-center"
           >
             {/*----------------------------------------- Left Part -----------------------------------------*/}
-            <div className="md:w-1/2 w-full p-4" ref={hwavLeftRef}>
+            <div className="md:w-1/2 w-full p-4 z-10" ref={hwavLeftRef}>
               {/*----------------------------------------- First Item -----------------------------------------*/}
               <div className="flex items-center mb-4 fade-item opacity-0">
                 <img src="eteplogo.png" alt="etep" className="w-12 h-12 mr-4" />
@@ -546,9 +546,9 @@ const Aboutus = () => {
                 }}
               >
                 {/* Yellow Rectangle with Rounded Left Side */}
-                <div className="bg-yellow-500 w-[310px] md:w-[740px] h-[400px] rounded-l-[120px]"></div>
+                <div className="bg-[#5D6D7E] w-[310px] md:w-[740px] h-[400px] rounded-l-[120px]"></div>
                 {/* Black Rectangle with Rounded Left Side (on top) */}
-                <div className="bg-black w-[290px] h-[400px] md:w-[710px] rounded-l-[150px] mt-[-400px]"></div>
+                <div className="bg-[#1F3A4D] w-[290px] h-[400px] md:w-[710px] rounded-l-[150px] mt-[-400px]"></div>
                 <img
                   src="1.png"
                   alt="Image 4"
