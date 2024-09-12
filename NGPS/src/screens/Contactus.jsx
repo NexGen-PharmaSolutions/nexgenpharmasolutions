@@ -226,15 +226,15 @@ const Contactus = () => {
                         onChange={handleRequestChange}
                       >
                         <option value="">Please choose an option</option>
-                        <option value="audit">Request a new audit</option>
+                        <option value="new audit">Request a new audit</option>
                         <option value="consultation">
                           Request for quality consultation
                         </option>
-                        <option value="dmf">Request for DMF filing</option>
+                        <option value="DMF filing">Request for DMF filing</option>
                         <option value="training">
                           Request for industrial training
                         </option>
-                        <option value="csv">Request for CSV</option>
+                        <option value="CSV">Request for CSV</option>
                         <option value="others">Others</option>
                       </select>
                     </div>

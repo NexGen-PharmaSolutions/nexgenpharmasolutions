@@ -383,7 +383,7 @@ const Aboutus = () => {
                   <p className="montserrat font-medium mt-2">
                     Ut enim ad minim veniam, quis nostrud exercitation ullamco.
                   </p>
-                  <Link to="/training">
+                  <Link to="/regulatoryaffairs">
                     <button className="mt-4 text-blue-600 font-semibold outfit">
                       Read More
                     </button>
