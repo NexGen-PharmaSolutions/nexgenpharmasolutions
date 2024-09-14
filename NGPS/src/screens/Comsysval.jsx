@@ -18,6 +18,7 @@ const Comsysval = () => {
       { threshold: 0.1 }
     );
 
+    
     const fadeInElement = fadeInRef.current;
     const wbsFadeInElement = wbsFadeInRef.current;
 
