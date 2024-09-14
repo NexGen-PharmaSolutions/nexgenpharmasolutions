@@ -51,7 +51,7 @@ const Regaff = () => {
             <h1 className="text-4xl md:text-6xl font-bold outfit text-[#34495E] animate-[pop-out_1s_ease-out_forwards]">
               Regulatory Affairs
             </h1>
-            <p className="mt-4 text-lg md:text-xl text-black inter font-normal animate-[pop-out_1s_ease-out_forwards] md:w-[500px] ">
+            <p className="mt-4 text-[14px] md:text-xl text-black inter font-medium animate-[pop-out_1s_ease-out_forwards] md:w-[500px] ">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
               nec odio. Praesent libero. Sed cursus ante dapibus diam.
             </p>
@@ -71,7 +71,7 @@ const Regaff = () => {
         </section>
         {/*------------------------------------------ RA Info ------------------------------------------*/}
         <section id="RAIN" className="md:py-16 py-8 px-4 md:px-8">
-          <h3 className="text-[14px] md:text-lg inter font-semibold text-left mb-4">
+          <h3 className="text-[12px] md:text-lg inter font-semibold text-left mb-4">
             Information is Strength, and Technology is Rapidly Advancing. To
             Stay Ahead in the Competitive Landscape, particularly as a
             Pharmaceutical Professional, it's Essential to Stay Up-to-Date on
@@ -86,7 +86,7 @@ const Regaff = () => {
             ref={fadeInRef}
             className="opacity-0 transition-opacity duration-1000 ease-in-out"
           >
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-[12px] md:text-[14px]">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-[10px] md:text-[14px]">
               {/*------------------------------------------ Left div ------------------------------------------*/}
               <div className="p-4 rounded-2xl">
                 <ul className="list-disc list-inside space-y-4 montserrat font-medium">
@@ -116,7 +116,7 @@ const Regaff = () => {
                 </ul>
               </div>
             </div>
-            <p className="text-[14px] md:text-lg montserrat font-medium text-left">
+            <p className="text-[12px] md:text-lg montserrat font-medium text-left">
               Join us to build a foundation of quality that enhances your
               reputation and meets regulatory requirements.
             </p>

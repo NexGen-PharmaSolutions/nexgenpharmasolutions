@@ -187,7 +187,7 @@ const QualCon = () => {
               <div className="md:w-[120px] w-[100px] h-1 mx-auto my-4 bg-[#34495E]"></div>
             </h1>
           </div>
-          <p className="font-normal inter text-[16px] md:px-20 pb-8">
+          <p className="font-normal inter text-[16px] lg:px-20 md:px-[25px] pb-8">
             Our audit reports are detailed and of top quality, gaining global
             acceptance from regulators, Qualified Persons (QPs), and subject
             matter experts. We audit a wide range of suppliers, including
@@ -198,9 +198,9 @@ const QualCon = () => {
             id="fadeDiv"
             className="opacity-0 transition-opacity duration-1000 ease-in-out"
           >
-            <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-5 gap-8 lg:px-0 md:px-[25px]">
               {/* Left Side (60%) */}
-              <div className="md:col-span-3 md:pl-20">
+              <div className="md:col-span-3 lg:pl-20">
                 <ul className="list-disc list-inside space-y-4 montserrat font-medium text-[10px]">
                   <li>
                     GMP Audits We conduct thorough and detailed GMP audits to
@@ -250,7 +250,7 @@ const QualCon = () => {
               </div>
 
               {/* Right Side (40%) */}
-              <div className="md:col-span-2 md:pr-12">
+              <div className="md:col-span-2 lg:pr-12">
                 <img
                   src="/1.png"
                   alt="Photo"
@@ -267,13 +267,13 @@ const QualCon = () => {
           `}</style>
         </section>
         {/*----------------------------------------- Why Choose NGPS -----------------------------------------*/}
-        <section id="WCNGPS" className="p-6 md:px-[100px]">
+        <section id="WCNGPS" className="p-6 lg:px-[100px] md:px-[50px]">
           {/* Title */}
           <div className="mb-8 ">
             <h2 className="text-left text-2xl md:text-3xl lg:text-4xl font-bold outfit text-[#34495E]">
               Why Choose NexGen Pharma Solutions
             </h2>
-            <div className="md:w-[570px] w-[260px] h-1 md:ml-[30px] ml-5 my-4 bg-[#34495E]"></div>
+            <div className="md:w-[570px] w-[260px] h-1 lg:ml-[30px] md:ml-0 ml-5 my-4 bg-[#34495E]"></div>
           </div>
 
           {/*----------------------------------------- Fade-in Divs -----------------------------------------*/}

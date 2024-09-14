@@ -11,8 +11,6 @@ const Home = () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("animate-pop-out");
-          } else {
-            entry.target.classList.remove("animate-pop-out");
           }
         });
       },
@@ -110,7 +108,7 @@ const Home = () => {
                 {/* First Row: 3 Cards Centered */}
                 <div className="flex flex-wrap justify-center w-full gap-6">
                   {/*-------------------------------------------------- GMP AUDITS ----------------------------------------------*/}
-                  <div className="bg-white p-5 rounded-2xl shadow-md w-full md:w-1/4">
+                  <div className="bg-white p-5 rounded-2xl shadow-md w-full lg:w-1/4">
                     <img
                       src="/gmpaudits.png"
                       alt="gmp audits"
@@ -136,7 +134,7 @@ const Home = () => {
                   </div>
 
                   {/*---------------------------------------- Quality Consulting ----------------------------------------------------*/}
-                  <div className="bg-white p-5 rounded-2xl shadow-md w-full md:w-1/4">
+                  <div className="bg-white p-5 rounded-2xl shadow-md w-full lg:w-1/4">
                     <img
                       src="/qualityconsult.png"
                       alt="quality consulting"
@@ -162,7 +160,7 @@ const Home = () => {
                     </Link>
                   </div>
                   {/*------------------------------------- Computer System Validation -----------------------------------------------*/}
-                  <div className="bg-white p-5 rounded-2xl shadow-md w-full md:w-1/4">
+                  <div className="bg-white p-5 rounded-2xl shadow-md w-full lg:w-1/4">
                     <img
                       src="/computersysval.png"
                       alt="computer system validations"
@@ -193,7 +191,7 @@ const Home = () => {
                 {/* Second Row: 2 Cards Centered */}
                 <div className="flex flex-wrap justify-center w-full gap-6">
                   {/*------------------------------------- Training -----------------------------------------------*/}
-                  <div className="bg-white p-5 rounded-2xl shadow-md w-full md:w-1/4">
+                  <div className="bg-white p-5 rounded-2xl shadow-md w-full lg:w-1/4">
                     <img
                       src="/training.png"
                       alt="Training"
@@ -219,7 +217,7 @@ const Home = () => {
                     </Link>
                   </div>
                   {/*------------------------------------- Regulatory Affairs -----------------------------------------------*/}
-                  <div className="bg-white p-5 rounded-2xl shadow-md w-full md:w-1/4">
+                  <div className="bg-white p-5 rounded-2xl shadow-md w-full lg:w-1/4">
                     <img
                       src="/regbg.png"
                       alt="Regulatory Affairs"

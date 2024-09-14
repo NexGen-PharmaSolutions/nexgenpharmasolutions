@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 
 const Contactus = () => {
   const sectionRef = useRef(null);
+  const newsectionRef = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -20,9 +21,15 @@ const Contactus = () => {
     if (sectionRef.current) {
       observer.observe(sectionRef.current);
     }
+    if (newsectionRef.current) {
+      observer.observe(newsectionRef.current);
+    }
     return () => {
       if (sectionRef.current) {
         observer.unobserve(sectionRef.current);
+      }
+      if (newsectionRef.current) {
+        observer.unobserve(newsectionRef.current);
       }
     };
   }, []);
@@ -75,11 +82,11 @@ const Contactus = () => {
       <main className="relative z-10">
         {/*------------------------------------------ Hero Section ------------------------------------------------------------*/}
         <section
-          className="relative flex flex-col justify-center items-center h-[150px] md:h-[200px] bg-cover bg-center p-8"
+          className="relative flex flex-col justify-center items-start h-[100px] md:h-[200px] bg-cover bg-center lg:p-8"
           id="hero"
-          style={{ backgroundImage: "url('/herobg.png')" }}
+          style={{ backgroundImage: "url('/ct2.png')", backgroundPosition: "center 80%" }}
         >
-          <div className="max-w-4xl text-center">
+          <div className="max-w-4xl text-left lg:pl-[340px] md:pl-10 pl-[2px] md:pt-20 pt-9">
             <h1 className="text-4xl md:text-6xl font-bold outfit text-[#34495E] animate-[pop-out_1s_ease-out_forwards]">
               Contact Us
             </h1>
@@ -147,7 +154,7 @@ const Contactus = () => {
                 </p>
               </div>
             </div>
-            <div className="flex flex-wrap justify-center mt-8">
+            <div className="flex flex-wrap justify-center mt-8" ref={newsectionRef}>
               <div className="w-full lg:w-1/2 p-2 md:p-4">
                 {/*------------------------------------------ Google Map ------------------------------------------*/}
                 <div className="bg-[#c5d2e7] shadow-xl md:p-4 p-2 rounded-2xl">

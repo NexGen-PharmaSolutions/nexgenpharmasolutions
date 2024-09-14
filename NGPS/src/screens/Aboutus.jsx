@@ -279,7 +279,7 @@ const Aboutus = () => {
               {/* First Row: 3 Cards Centered */}
               <div className="flex flex-wrap justify-center w-full gap-6">
                 {/*------------------------------------------ GMP AUDITS ---------------------------------------------------------------*/}
-                <div className="bg-transparent shadow-2xl rounded-lg p-4 md:w-1/4">
+                <div className="bg-transparent shadow-2xl rounded-lg p-4 lg:w-1/4">
                   <div className="flex justify-center items-center">
                     <img
                       src="/GMPlogo.png"
@@ -301,7 +301,7 @@ const Aboutus = () => {
                   </Link>
                 </div>
                 {/*-------------------------------------- Consulting Services ---------------------------------------------------------*/}
-                <div className="bg-transparent shadow-2xl rounded-lg p-4 md:w-1/4">
+                <div className="bg-transparent shadow-2xl rounded-lg p-4 lg:w-1/4">
                   <div className="flex justify-center items-center">
                     <img
                       src="/CSlogo.png"
@@ -323,7 +323,7 @@ const Aboutus = () => {
                   </Link>
                 </div>
                 {/*---------------------------------- Computer System Validations -----------------------------------------------------*/}
-                <div className="bg-transparent shadow-2xl rounded-lg p-4 md:w-1/4">
+                <div className="bg-transparent shadow-2xl rounded-lg p-4 lg:w-1/4">
                   <div className="flex justify-center items-center">
                     <img
                       src="/CSVlogo.png"
@@ -349,7 +349,7 @@ const Aboutus = () => {
               {/* Second Row: 2 Cards Centered */}
               <div className="flex flex-wrap justify-center w-full gap-6">
                 {/*---------------------------------- Training -----------------------------------------------------*/}
-                <div className="bg-transparent shadow-2xl rounded-lg p-4 md:w-1/4">
+                <div className="bg-transparent shadow-2xl rounded-lg p-4 lg:w-1/4">
                   <div className="flex justify-center items-center">
                     <img
                       src="/Trainlogo.png"
@@ -370,7 +370,7 @@ const Aboutus = () => {
                   </Link>
                 </div>
                 {/*---------------------------------- Regulatory Affairs -----------------------------------------------------*/}
-                <div className="bg-transparent shadow-2xl rounded-lg p-4 md:w-1/4">
+                <div className="bg-transparent shadow-2xl rounded-lg p-4 lg:w-1/4">
                   <div className="flex justify-center items-center">
                     <img
                       src="/regulatorylogo.png"
@@ -425,7 +425,7 @@ const Aboutus = () => {
           {/*----------------------------------------- Content Div -----------------------------------------*/}
           <div
             ref={hwavSectionDivRef}
-            className="flex flex-col md:flex-row justify-between items-center"
+            className="flex flex-col lg:flex-row justify-between items-center"
           >
             {/*----------------------------------------- Left Part -----------------------------------------*/}
             <div className="md:w-1/2 w-full p-4 z-10" ref={hwavLeftRef}>
@@ -533,7 +533,7 @@ const Aboutus = () => {
 
             {/*----------------------------------------- Right Part -----------------------------------------*/}
             <div
-              className="md:w-1/2 w-full md:pt-0 pt-4"
+              className="lg:w-1/2 w-full lg:pt-0 pt-4"
               style={{
                 display: "flex",
                 justifyContent: "flex-end" /* Align children to the right */,
