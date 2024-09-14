@@ -221,9 +221,9 @@ const Home = () => {
                   {/*------------------------------------- Regulatory Affairs -----------------------------------------------*/}
                   <div className="bg-white p-5 rounded-2xl shadow-md w-full md:w-1/4">
                     <img
-                      src="/training.png"
+                      src="/regbg.png"
                       alt="Regulatory Affairs"
-                      className="w-full h-[230px] object-cover rounded-t-lg mb-4"
+                      className="w-full h-[200px] object-cover rounded-t-lg mb-[40px]"
                     />
                     <h3 className="text-xl font-semibold mb-2 text-[#34495E] outfit">
                       Regulatory Affairs

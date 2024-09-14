@@ -12,8 +12,8 @@ const Training = () => {
       <main className="relative z-10">
         {/*------------------------------------------ Hero Section ------------------------------------------------------------*/}
         <section
-          className="relative flex flex-col justify-center items-start h-[300px] md:h-[600px] bg-cover bg-center p-8"
-          style={{ backgroundImage: "url('/herobg.png')" }}
+          className="relative flex flex-col justify-center items-center h-[300px] md:h-[600px] bg-cover bg-center p-8"
+          style={{ backgroundImage: "url('/training.png')" }}
           id="hero"
         >
           <div className="max-w-4xl">
