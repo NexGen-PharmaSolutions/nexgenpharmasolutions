@@ -42,7 +42,7 @@ const Contactus = () => {
     const formData = new FormData(event.target);
 
     // Ensure to use your actual access key here
-    formData.append("access_key", "8f056dc4-21a2-4dcd-a428-10cda721b2a9");
+    formData.append("access_key", "0badc78d-df2c-4a64-b2b6-70722b4cf30d");
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
