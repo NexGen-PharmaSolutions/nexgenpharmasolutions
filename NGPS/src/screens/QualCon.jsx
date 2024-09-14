@@ -65,11 +65,11 @@ const QualCon = () => {
           style={{ backgroundImage: "url('/qualityconsult.png')" }}
           id="hero"
         >
-          <div className="max-w-4xl md:mt-[-80px]">
+          <div className="backdrop-blur-lg max-w-4xl md:mt-[-80px]">
             <h1 className="text-4xl md:text-6xl font-bold outfit text-[#34495E] animate-[pop-out_1s_ease-out_forwards]">
               Quality Consulting
             </h1>
-            <p className="mt-4 text-[10px] md:text-[16px] text-black inter font-bold animate-[pop-out_1s_ease-out_forwards] md:w-[500px] ">
+            <p className="mt-4 text-[10px] md:text-[16px] text-black inter font-medium animate-[pop-out_1s_ease-out_forwards] md:w-[500px] ">
             We craft sustainable solutions to manage compliance, offering proactive measures before audits and responsive actions afterward, leveraging extensive GxP expertise from product development to patient delivery.
             </p>
           </div>
