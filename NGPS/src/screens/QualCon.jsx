@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import Footer from "../components/Footer";
-import Navbar from "../components/navbar";
+import Navbar from "../components/Navbar";
 
 const QualCon = () => {
   const sectionRef = useRef(null);
