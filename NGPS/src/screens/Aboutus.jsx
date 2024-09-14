@@ -162,7 +162,7 @@ const Aboutus = () => {
         {/*------------------------------------------ Hero Section ------------------------------------------------------------*/}
         <section
           className="relative flex flex-col justify-center items-start h-[300px] md:h-[600px] bg-cover bg-center p-8"
-          style={{ backgroundImage: "url('/herobg.png')" }}
+          style={{ backgroundImage: "url('/aboutbg.png')" }}
           id="hero"
         >
           <div className="max-w-4xl">
@@ -279,7 +279,7 @@ const Aboutus = () => {
               {/* First Row: 3 Cards Centered */}
               <div className="flex flex-wrap justify-center w-full gap-6">
                 {/*------------------------------------------ GMP AUDITS ---------------------------------------------------------------*/}
-                <div className="bg-transparent shadow-2xl rounded-lg p-4 md:w-1/4">
+                <div className="bg-transparent shadow-2xl rounded-lg p-4 lg:w-1/4">
                   <div className="flex justify-center items-center">
                     <img
                       src="/GMPlogo.png"
@@ -290,8 +290,9 @@ const Aboutus = () => {
                   <h3 className="text-xl font-semibold text-[#34495E] outfit mt-4">
                     GMP Audits
                   </h3>
-                  <p className="font-medium mt-2 montserrat">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  <p className="font-medium md:text-[16px] text-[14px] mt-2 montserrat">
+                  We conduct comprehensive GMP audits to ensure your operations meet regulatory standards.
+
                   </p>
                   <Link to="/gmpaudits">
                     <button className="mt-4 text-blue-600 font-semibold outfit">
@@ -300,7 +301,7 @@ const Aboutus = () => {
                   </Link>
                 </div>
                 {/*-------------------------------------- Consulting Services ---------------------------------------------------------*/}
-                <div className="bg-transparent shadow-2xl rounded-lg p-4 md:w-1/4">
+                <div className="bg-transparent shadow-2xl rounded-lg p-4 lg:w-1/4">
                   <div className="flex justify-center items-center">
                     <img
                       src="/CSlogo.png"
@@ -311,9 +312,9 @@ const Aboutus = () => {
                   <h3 className="text-xl font-semibold text-[#34495E] outfit mt-4">
                     Consulting Services
                   </h3>
-                  <p className="mt-2 montserrat font-medium">
-                    Sed do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua.
+                  <p className="mt-2 montserrat font-medium md:text-[16px] text-[14px]">
+                  Our expert consulting services optimize your manufacturing processes and ensure compliance.
+
                   </p>
                   <Link to="/qualityconsulting">
                     <button className="mt-4 text-blue-600 font-semibold outfit">
@@ -322,7 +323,7 @@ const Aboutus = () => {
                   </Link>
                 </div>
                 {/*---------------------------------- Computer System Validations -----------------------------------------------------*/}
-                <div className="bg-transparent shadow-2xl rounded-lg p-4 md:w-1/4">
+                <div className="bg-transparent shadow-2xl rounded-lg p-4 lg:w-1/4">
                   <div className="flex justify-center items-center">
                     <img
                       src="/CSVlogo.png"
@@ -333,8 +334,8 @@ const Aboutus = () => {
                   <h3 className="text-xl font-semibold text-[#34495E] outfit mt-4">
                     Computer System Validations
                   </h3>
-                  <p className="montserrat font-medium mt-2">
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+                  <p className="montserrat font-medium mt-2 md:text-[16px] text-[14px]">
+                  We validate your computer systems to guarantee data integrity and regulatory adherence.
                   </p>
                   <Link to="/computersystemvalidations">
                     <button className="mt-4 text-blue-600 font-semibold outfit">
@@ -348,7 +349,7 @@ const Aboutus = () => {
               {/* Second Row: 2 Cards Centered */}
               <div className="flex flex-wrap justify-center w-full gap-6">
                 {/*---------------------------------- Training -----------------------------------------------------*/}
-                <div className="bg-transparent shadow-2xl rounded-lg p-4 md:w-1/4">
+                <div className="bg-transparent shadow-2xl rounded-lg p-4 lg:w-1/4">
                   <div className="flex justify-center items-center">
                     <img
                       src="/Trainlogo.png"
@@ -359,8 +360,8 @@ const Aboutus = () => {
                   <h3 className="text-xl font-semibold text-[#34495E] outfit mt-4">
                     Training
                   </h3>
-                  <p className="montserrat font-medium mt-2">
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+                  <p className="montserrat font-medium mt-2 md:text-[16px] text-[14px]">
+                  Our tailored training programs equip your staff with essential GMP knowledge and best practices.
                   </p>
                   <Link to="/training">
                     <button className="mt-4 text-blue-600 font-semibold outfit">
@@ -369,7 +370,7 @@ const Aboutus = () => {
                   </Link>
                 </div>
                 {/*---------------------------------- Regulatory Affairs -----------------------------------------------------*/}
-                <div className="bg-transparent shadow-2xl rounded-lg p-4 md:w-1/4">
+                <div className="bg-transparent shadow-2xl rounded-lg p-4 lg:w-1/4">
                   <div className="flex justify-center items-center">
                     <img
                       src="/regulatorylogo.png"
@@ -380,8 +381,8 @@ const Aboutus = () => {
                   <h3 className="text-xl font-semibold text-[#34495E] outfit mt-4">
                     Regulatory Affairs
                   </h3>
-                  <p className="montserrat font-medium mt-2">
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+                  <p className="montserrat font-medium mt-2 md:text-[16px] text-[14px]">
+                  We manage the preparation and submission of regulatory documents, ensuring smooth approval processes.
                   </p>
                   <Link to="/regulatoryaffairs">
                     <button className="mt-4 text-blue-600 font-semibold outfit">
@@ -424,7 +425,7 @@ const Aboutus = () => {
           {/*----------------------------------------- Content Div -----------------------------------------*/}
           <div
             ref={hwavSectionDivRef}
-            className="flex flex-col md:flex-row justify-between items-center"
+            className="flex flex-col lg:flex-row justify-between items-center"
           >
             {/*----------------------------------------- Left Part -----------------------------------------*/}
             <div className="md:w-1/2 w-full p-4 z-10" ref={hwavLeftRef}>
@@ -532,7 +533,7 @@ const Aboutus = () => {
 
             {/*----------------------------------------- Right Part -----------------------------------------*/}
             <div
-              className="md:w-1/2 w-full md:pt-0 pt-4"
+              className="lg:w-1/2 w-full lg:pt-0 pt-4"
               style={{
                 display: "flex",
                 justifyContent: "flex-end" /* Align children to the right */,
