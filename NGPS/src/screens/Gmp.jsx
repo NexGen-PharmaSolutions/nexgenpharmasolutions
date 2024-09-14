@@ -1,6 +1,3 @@
-import React, { useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
-import Navbar from "../components/navbar";
 import Footer from "../components/Footer";
 
 const Gmp = () => {
@@ -24,10 +21,10 @@ const Gmp = () => {
             <p className=" mt-4 text-[10px] md:text-[16px] inter font-medium animate-[pop-out_1s_ease-out_forwards] md:w-[500px]">
               NexGen Pharma Solutions conducts thorough GMP audits globally,
               ensuring compliance and quality. Our detailed reports are widely
-              recognized and accepted.
+              recognized and accepted.
             </p>
           </div>
-          <style jsx>{`
+          <style >{`
             @keyframes pop-out {
               0% {
                 transform: scale(0);
@@ -58,7 +55,7 @@ const Gmp = () => {
                 Our audit reports are detailed and of top quality, gaining
                 global acceptance from regulators, Qualified Persons (QPs), and
                 subject matter experts. We audit a wide range of suppliers,
-                including but not limited to:
+                including but not limited to:
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
@@ -96,7 +93,7 @@ const Gmp = () => {
               </div>
             </div>
           </div>
-          <style jsx>{`
+          <style >{`
             @keyframes fadeIn {
               0% {
                 opacity: 0;

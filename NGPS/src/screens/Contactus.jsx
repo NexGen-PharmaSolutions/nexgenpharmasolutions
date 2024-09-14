@@ -1,7 +1,7 @@
-import React, { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
-import Navbar from "../components/navbar";
+/* eslint-disable react-hooks/exhaustive-deps */
+import  { useEffect, useRef, useState } from "react";
 import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
 
 const Contactus = () => {
   const sectionRef = useRef(null);
@@ -91,7 +91,7 @@ const Contactus = () => {
               Contact Us
             </h1>
           </div>
-          <style jsx>{`
+          <style >{`
             @keyframes pop-out {
               0% {
                 transform: scale(0);
@@ -305,7 +305,7 @@ const Contactus = () => {
               </div>
             </div>
           </div>
-          <style jsx>{`
+          <style >{`
             @keyframes popUp {
               0% {
                 transform: translateY(100px);

@@ -1,6 +1,6 @@
-import React, { useEffect, useRef } from "react";
-import Navbar from "../components/navbar";
+import  { useEffect, useRef } from "react";
 import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
 
 const Comsysval = () => {
   const fadeInRef = useRef(null);
@@ -18,6 +18,7 @@ const Comsysval = () => {
       { threshold: 0.1 }
     );
 
+    
     const fadeInElement = fadeInRef.current;
     const wbsFadeInElement = wbsFadeInRef.current;
 
@@ -58,13 +59,13 @@ const Comsysval = () => {
               At NexGen Pharma Solutions, we ensure that your computerized
               systems used in GxP processes, from production to quality control,
               meet necessary qualifications and are fully validated. By
-              employing a risk-based approach guided by the GAMP 5 'V-Model,' we
+              employing a risk-based approach guided by the GAMP 5 &rsquo;V-Model,&rsquo; we
               safeguard product quality, data accuracy, and patient safety
               through comprehensive planning, setup, verification, and
               reporting.
             </p>
           </div>
-          <style jsx>{`
+          <style >{`
             @keyframes pop-out {
               0% {
                 transform: scale(0);
@@ -207,7 +208,7 @@ const Comsysval = () => {
       <footer className="p-4">
         <Footer />
       </footer>
-      <style jsx>{`
+      <style >{`
         .fade-in {
           opacity: 1 !important;
         }

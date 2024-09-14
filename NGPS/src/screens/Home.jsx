@@ -1,7 +1,7 @@
-import React, { useEffect, useRef } from "react";
+import  { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import Navbar from "../components/navbar";
 import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
 
 const Home = () => {
   const servicesRef = useRef(null);
@@ -36,7 +36,7 @@ const Home = () => {
           className="relative h-[300px] md:h-[600px] bg-cover bg-center flex items-center justify-center"
           style={{ backgroundImage: `url('/herobg.png')` }} // Background image
         >
-          <style jsx>{`
+          <style >{`
             @keyframes fadeIn {
               0% {
                 opacity: 0;
@@ -202,7 +202,7 @@ const Home = () => {
                     </h3>
                     <p className="text-gray-700 mb-4 montserrat text-sm">
                       NexGen Pharma Solutions offers comprehensive GMP training
-                      tailored to your team's needs. Our expert-led sessions
+                      tailored to your team&rsquo;s needs. Our expert-led sessions
                       cover key areas of Good Manufacturing Practices, ensuring
                       staff understand regulatory requirements, quality
                       standards, and best practices. We help enhance operational

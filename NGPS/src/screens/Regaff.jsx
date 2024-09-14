@@ -1,7 +1,6 @@
-import React, { useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
-import Navbar from "../components/navbar";
+import { useEffect, useRef } from "react";
 import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
 
 const Regaff = () => {
   const PRSfadeInRef = useRef(null);
@@ -59,10 +58,11 @@ const Regaff = () => {
               compliance standards. Our regulatory affairs team stays up-to-date
               with the latest regulations, facilitating smooth approval
               processes and helping you navigate the complex landscape of
-              pharmaceutical regulations.
+              pharmaceutical regulations.
             </p>
           </div>
-          <style jsx>{`
+          <style>
+            {`
             @keyframes pop-out {
               0% {
                 transform: scale(0);
@@ -73,7 +73,8 @@ const Regaff = () => {
                 opacity: 1;
               }
             }
-          `}</style>
+          `}
+          </style>
         </section>
         {/*------------------------------------------ NGPSP Info ------------------------------------------*/}
         <section id="NGPSPIN" className="md:py-16 py-8 px-4 md:px-8">
@@ -113,7 +114,7 @@ const Regaff = () => {
                 </h4>
                 <p className="text-[12px] md:text-[14px] text-center font-medium montserrat">
                   From product development to post-market monitoring, we provide
-                  seamless support at every stage of the regulatory journey.
+                  seamless support at every stage of the regulatory journey.
                 </p>
               </div>
               {/*------------------------------------------ Comprehensive Lifecycle Support ------------------------------------------*/}
@@ -134,11 +135,13 @@ const Regaff = () => {
               </div>
             </div>
           </div>
-          <style jsx>{`
+          <style>
+            {`
             .fade-in {
               opacity: 1 !important;
             }
-          `}</style>
+          `}
+          </style>
         </section>
         {/*------------------------------------------ PRS Info ------------------------------------------*/}
         <section id="PRSIN" className="md:py-16 py-8 px-4 md:px-8">
@@ -228,11 +231,13 @@ const Regaff = () => {
               </div>
             </div>
           </div>
-          <style jsx>{`
+          <style>
+            {`
             .fade-in {
               opacity: 1 !important;
             }
-          `}</style>
+          `}
+          </style>
         </section>
       </main>
       <footer className="p-4">
