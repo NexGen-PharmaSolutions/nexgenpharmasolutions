@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
-import Navbar from "../components/navbar";
 import Footer from "../components/Footer";
+import Navbar from "../components/navbar";
 
 const Regaff = () => {
   const PRSfadeInRef = useRef(null);

@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import  { useEffect, useRef, useState } from "react";
-import Navbar from "../components/navbar";
 import Footer from "../components/Footer";
+import Navbar from "../components/navbar";
 
 const Contactus = () => {
   const sectionRef = useRef(null);
