@@ -1,11 +1,11 @@
-import React, { useEffect, useRef } from "react";
+import  { useEffect, useRef } from "react";
 import Navbar from "../components/navbar";
 import Footer from "../components/Footer";
 
 const Training = () => {
 
   const fadeInRef = useRef(null);
-  const PRSfadeInRef = useRef(null);
+  // Remove the unused variable declaration
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -49,7 +49,7 @@ const Training = () => {
 
             </p>
           </div>
-          <style jsx>{`
+          <style >{`
             @keyframes pop-out {
               0% {
                 transform: scale(0);
@@ -67,7 +67,7 @@ const Training = () => {
           <h3 className="text-[12px] md:text-lg inter font-semibold text-left mb-4">
             Information is Strength, and Technology is Rapidly Advancing. To
             Stay Ahead in the Competitive Landscape, particularly as a
-            Pharmaceutical Professional, it's Essential to Stay Up-to-Date on
+            Pharmaceutical Professional, it&rsquo;s Essential to Stay Up-to-Date on
             the Latest Developments, Cutting-Edge Innovations, and Global
             Regulatory Changes. At NexGen Pharma Solutions, We Design and
             Deliver Tailored Training Initiatives for Pharma and Biotech
@@ -114,7 +114,7 @@ const Training = () => {
               reputation and meets regulatory requirements.
             </p>
           </div>
-          <style jsx>{`
+          <style >{`
             .fade-in {
               opacity: 1 !important;
             }

@@ -1,4 +1,5 @@
-import React, { useEffect, useRef, useState } from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+import  { useEffect, useRef, useState } from "react";
 import Navbar from "../components/navbar";
 import Footer from "../components/Footer";
 
@@ -90,7 +91,7 @@ const Contactus = () => {
               Contact Us
             </h1>
           </div>
-          <style jsx>{`
+          <style >{`
             @keyframes pop-out {
               0% {
                 transform: scale(0);
@@ -304,7 +305,7 @@ const Contactus = () => {
               </div>
             </div>
           </div>
-          <style jsx>{`
+          <style >{`
             @keyframes popUp {
               0% {
                 transform: translateY(100px);

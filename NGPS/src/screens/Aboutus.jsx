@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import  { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../components/navbar";
 import Footer from "../components/Footer";
@@ -181,7 +181,7 @@ const Aboutus = () => {
               thrive in the highly regulated pharmaceutical industry.
             </p>
           </div>
-          <style jsx>{`
+          <style>{`
             @keyframes pop-out {
               0% {
                 transform: scale(0);
@@ -393,7 +393,7 @@ const Aboutus = () => {
               </div>
             </div>
           </div>
-          <style jsx>{`
+          <style>{`
             @keyframes fadeIn {
               0% {
                 opacity: 0;
@@ -558,7 +558,7 @@ const Aboutus = () => {
               </div>
             </div>
           </div>
-          <style jsx>{`
+          <style>{`
             @keyframes fadeIn {
               0% {
                 opacity: 0;
@@ -618,7 +618,7 @@ const Aboutus = () => {
             </div>
           </div>
 
-          <style jsx>{`
+          <style >{`
             @keyframes popOut {
               0% {
                 transform: scale(0.8);
@@ -673,7 +673,7 @@ const Aboutus = () => {
                 <br />
                 <b>Lasting Value:</b> Identifying compliance gaps and
                 implementing practical corrective actions. Fostering a culture
-                of excellence within clients' organizations.
+                of excellence within clients&apos; organizations.
                 <br />
                 <b>Commitment to Excellence:</b> Focused on precision,
                 integrity, and client satisfaction. Ensuring partners are fully
@@ -691,7 +691,7 @@ const Aboutus = () => {
             </div>
           </div>
 
-          <style jsx>{`
+          <style >{`
             @keyframes popOut {
               0% {
                 transform: scale(0.8);

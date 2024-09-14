@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import Navbar from "../components/navbar";
 import Footer from "../components/Footer";
 
@@ -15,12 +15,13 @@ const QualCon = () => {
       },
       { threshold: 0.1 }
     );
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+    const currentSectionRef = sectionRef.current;
+    if (currentSectionRef) {
+      observer.observe(currentSectionRef);
     }
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
+      if (currentSectionRef) {
+        observer.unobserve(currentSectionRef);
       }
     };
   }, []);
@@ -69,10 +70,11 @@ const QualCon = () => {
               Quality Consulting
             </h1>
             <p className="mt-4 text-[10px] md:text-[16px] text-black inter font-medium animate-[pop-out_1s_ease-out_forwards] md:w-[500px] ">
-            We craft sustainable solutions to manage compliance, offering proactive measures before audits and responsive actions afterward, leveraging extensive GxP expertise from product development to patient delivery.
+              We craft sustainable solutions to manage compliance, offering proactive measures before audits and responsive actions afterward, leveraging extensive GxP expertise from product development to patient delivery.
             </p>
           </div>
-          <style jsx>{`
+          <style>
+            {`
             @keyframes pop-out {
               0% {
                 transform: scale(0);
@@ -83,7 +85,8 @@ const QualCon = () => {
                 opacity: 1;
               }
             }
-          `}</style>
+          `}
+          </style>
         </section>
         {/*---------------------------------------- Compliance Upgradation & Certification ---------------------------------------------------------*/}
         <section id="CUC" className="p-8">
@@ -96,7 +99,7 @@ const QualCon = () => {
               }
               100% {
                 transform: scale(1);
-                opacity: 1;
+                opacity: 1);
               }
             }
 
@@ -190,7 +193,7 @@ const QualCon = () => {
             Our audit reports are detailed and of top quality, gaining global
             acceptance from regulators, Qualified Persons (QPs), and subject
             matter experts. We audit a wide range of suppliers, including
-            but not limited to:
+            but&nbsp;not&nbsp;limited&nbsp;to:
           </p>
           {/* Fade-in Div */}
           <div
@@ -259,11 +262,13 @@ const QualCon = () => {
             </div>
           </div>
 
-          <style jsx>{`
+          <style>
+            {`
             #fadeDiv.fade-in {
               opacity: 1;
             }
-          `}</style>
+          `}
+          </style>
         </section>
         {/*----------------------------------------- Why Choose NGPS -----------------------------------------*/}
         <section id="WCNGPS" className="p-6 lg:px-[100px] md:px-[50px]">
@@ -289,10 +294,10 @@ const QualCon = () => {
                 </div>
                 <div className="w-2/3">
                   <h3 className="font-semibold outfit text-[#34495E] text-[16px]">
-                  Industry-Leading GMP Consulting Services:
+                    Industry-Leading GMP Consulting Services:
                   </h3>
                   <p className="text-[12px] montserrat font-medium">
-                  Dedicated to empowering pharmaceutical companies to meet the highest levels of quality and regulatory compliance.
+                    Dedicated to empowering pharmaceutical companies to meet the highest levels of quality and regulatory compliance.
                   </p>
                 </div>
               </div>
@@ -307,10 +312,10 @@ const QualCon = () => {
                 </div>
                 <div className="w-2/3">
                   <h3 className="font-semibold outfit text-[#34495E] text-[16px]">
-                  Expert Team:
+                    Expert Team:
                   </h3>
                   <p className="text-[12px] montserrat font-medium">
-                  Seasoned professionals with deep expertise and a hands-on approach to every project.
+                    Seasoned professionals with deep expertise and a hands-on approach to every project.
                   </p>
                 </div>
               </div>
@@ -328,11 +333,11 @@ const QualCon = () => {
                 </div>
                 <div className="w-2/3">
                   <h3 className="font-semibold outfit text-[#34495E] text-[16px]">
-                  Tailored Solutions:
+                    Tailored Solutions:
                   </h3>
                   <p className="text-[12px] montserrat font-medium">
-                  Optimizing manufacturing processes and ensuring data integrity.
-                  Upholding global standards.
+                    Optimizing manufacturing processes and ensuring data integrity.
+                    Upholding global standards.
                   </p>
                 </div>
               </div>
@@ -347,11 +352,11 @@ const QualCon = () => {
                 </div>
                 <div className="w-2/3">
                   <h3 className="font-semibold outfit text-[#34495E] text-[16px]">
-                  Lasting Value:
+                    Lasting Value:
                   </h3>
                   <p className="text-[12px] montserrat font-medium">
-                  Identifying compliance gaps and implementing practical corrective actions.
-                  Fostering a culture of excellence within clients' organizations.
+                    Identifying compliance gaps and implementing practical corrective actions.
+                    Fostering a culture of excellence within clients&apos; organizations.
                   </p>
                 </div>
               </div>
@@ -369,11 +374,11 @@ const QualCon = () => {
                 </div>
                 <div className="w-2/3">
                   <h3 className="font-semibold outfit text-[#34495E] text-[16px]">
-                  Commitment to Excellence:
+                    Commitment to Excellence:
                   </h3>
                   <p className="text-[12px] montserrat font-medium">
-                  Focused on precision, integrity, and client satisfaction.
-                  Ensuring partners are fully prepared for regulatory audits and long-term success.
+                    Focused on precision, integrity, and client satisfaction.
+                    Ensuring partners are fully prepared for regulatory audits and long-term success.
                   </p>
                 </div>
               </div>
@@ -388,22 +393,24 @@ const QualCon = () => {
                 </div>
                 <div className="w-2/3">
                   <h3 className="font-semibold outfit text-[#34495E] text-[14px]">
-                  Operational Efficiency and Product Safety:
+                    Operational Efficiency and Product Safety:
                   </h3>
                   <p className="text-[12px] montserrat font-medium">
-                  Helping maintain operational efficiency and enhance product safety.
-                  Achieving sustainable growth through uncompromising quality.
+                    Helping maintain operational efficiency and enhance product safety.
+                    Achieving sustainable growth through uncompromising quality.
                   </p>
                 </div>
               </div>
             </div>
           </div>
 
-          <style jsx>{`
+          <style>
+            {`
             .fade-in-div.fade-in {
               opacity: 1;
             }
-          `}</style>
+          `}
+          </style>
         </section>
       </main>
       {/*------------------------------------------------- Footer -------------------------------------------------------------*/}
