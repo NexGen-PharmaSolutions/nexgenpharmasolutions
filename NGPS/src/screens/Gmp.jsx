@@ -1,5 +1,4 @@
-import React, { useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
 import Navbar from "../components/navbar";
 import Footer from "../components/Footer";
 
