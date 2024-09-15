@@ -151,7 +151,7 @@ const Comsysval = () => {
               <h4 className="text-lg font-bold outfit text-[#34495E] text-center mb-2">
                 Efficiency and Cost Reduction
               </h4>
-              <p className="text-[12px] md:text-[14px] text-center font-medium montserrat text-justify">
+              <p className="text-[12px] md:text-[14px] font-medium montserrat text-justify">
                 By adopting effective CSV and CSA practices, we ensure timely
                 compliance and significant reductions in operational costs.
               </p>
@@ -166,7 +166,7 @@ const Comsysval = () => {
               <h4 className="text-lg font-bold outfit text-[#34495E] text-center mb-2">
                 Dedicated to Compliance
               </h4>
-              <p className="text-[12px] md:text-[14px] text-center font-medium montserrat text-justify">
+              <p className="text-[12px] md:text-[14px] font-medium montserrat text-justify">
                 We rigorously adhere to 21 CFR Part 11 and Annex 11 standards,
                 providing clear evidence and comprehensive audit trails.
               </p>
@@ -181,7 +181,7 @@ const Comsysval = () => {
               <h4 className="text-lg font-bold outfit text-[#34495E] text-center mb-2">
                 Assurance
               </h4>
-              <p className="text-[12px] md:text-[14px] text-center font-medium montserrat text-justify">
+              <p className="text-[12px] md:text-[14px] font-medium montserrat text-justify">
                 Our meticulous processes guarantee accuracy, reliability, and
                 consistency, preserving data integrity and delivering dependable
                 results for our clients.
@@ -197,7 +197,7 @@ const Comsysval = () => {
               <h4 className="text-lg font-bold outfit text-[#34495E] text-center mb-2">
                 Flexible Execution Models
               </h4>
-              <p className="text-[12px] md:text-[14px] text-center font-medium montserrat text-justify">
+              <p className="text-[12px] md:text-[14px] font-medium montserrat text-justify">
                 We offer adaptable delivery models utilizing Onsite, Remote, and
                 Offshore resources to meet your specific needs.
               </p>

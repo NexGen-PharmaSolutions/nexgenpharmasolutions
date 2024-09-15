@@ -64,7 +64,7 @@ const Training = () => {
         </section>
         {/*------------------------------------------ RA Info ------------------------------------------*/}
         <section id="RAIN" className="md:py-16 py-8 px-4 md:px-8">
-          <h3 className="text-[12px] md:text-lg inter font-semibold text-left mb-4 text-justify">
+          <h3 className="text-[12px] md:text-lg inter font-semibold mb-4 text-justify">
             Information is Strength, and Technology is Rapidly Advancing. To
             Stay Ahead in the Competitive Landscape, particularly as a
             Pharmaceutical Professional, it&rsquo;s Essential to Stay Up-to-Date on
