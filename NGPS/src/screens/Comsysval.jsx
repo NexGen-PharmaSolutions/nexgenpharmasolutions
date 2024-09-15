@@ -48,11 +48,11 @@ const Comsysval = () => {
         {/*------------------------------------------ Hero Section ------------------------------------------------------------*/}
         <section
           className="relative flex flex-col justify-center items-center h-[300px] md:h-[600px] bg-cover bg-center p-8"
-          style={{ backgroundImage: "url('/computersysval.png')" }}
+          style={{ backgroundImage: "url('/csv3.jpg')" }}
           id="hero"
         >
-          <div className="max-w-4xl">
-            <h1 className="text-4xl md:text-6xl font-bold outfit text-[#34495E] animate-[pop-out_1s_ease-out_forwards]">
+          <div className="max-w-4xl backdrop-blur-md">
+            <h1 className="text-4xl md:text-6xl font-bold outfit text-[#c7753f] animate-[pop-out_1s_ease-out_forwards]">
               Computer System Validations
             </h1>
             <p className="mt-4 text-[10px] md:text-[16px] text-black inter font-medium animate-[pop-out_1s_ease-out_forwards] md:w-[500px] ">

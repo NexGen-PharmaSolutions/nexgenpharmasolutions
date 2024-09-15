@@ -40,8 +40,8 @@ const Training = () => {
           style={{ backgroundImage: "url('/training.png')" }}
           id="hero"
         >
-          <div className="max-w-4xl">
-            <h1 className="text-4xl md:text-6xl font-bold outfit text-[#34495E] animate-[pop-out_1s_ease-out_forwards]">
+          <div className="max-w-4xl backdrop-blur-md">
+            <h1 className="text-4xl md:text-6xl font-bold outfit text-[#c7753f] animate-[pop-out_1s_ease-out_forwards]">
               Training
             </h1>
             <p className="mt-4 text-[10px] md:text-xl text-black inter font-medium animate-[pop-out_1s_ease-out_forwards] md:w-[500px] ">

@@ -1,4 +1,5 @@
 import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
 
 const Gmp = () => {
   return (
@@ -14,8 +15,8 @@ const Gmp = () => {
           style={{ backgroundImage: "url('/gmpaudits.png')" }}
           id="hero"
         >
-          <div className="max-w-4xl">
-            <h1 className="text-4xl md:text-6xl font-bold outfit text-[#34495E] animate-[pop-out_1s_ease-out_forwards]">
+          <div className="max-w-4xl backdrop-blur-md">
+            <h1 className="text-4xl md:text-6xl font-bold outfit text-[#c7753f] animate-[pop-out_1s_ease-out_forwards]">
               GMP Audits
             </h1>
             <p className=" mt-4 text-[10px] md:text-[16px] inter font-medium animate-[pop-out_1s_ease-out_forwards] md:w-[500px]">
@@ -86,12 +87,13 @@ const Gmp = () => {
               {/* Right Side (40%) */}
               <div className="md:col-span-2 lg:pr-8">
                 <img
-                  src="/1.png"
+                  src="/gmpinfo.jpg"
                   alt="Photo"
                   className="w-full md:h-[390px] h-[200px] object-cover rounded-2xl"
                 />
               </div>
             </div>
+            <img className="object-cover lg:pt-10 lg:px-10 md:pt-8 pt-8" src="gmpauditsdia.png" alt="gmpauditsdiagram" />
           </div>
           <style >{`
             @keyframes fadeIn {
@@ -109,7 +111,7 @@ const Gmp = () => {
         </section>
       </main>
       {/*------------------------------------------------- Footer -------------------------------------------------------------*/}
-      <footer className="p-4 lg:mt-[250px] mt-[50px]">
+      <footer className="p-4 lg:mt-[20px] mt-[20px]">
         <Footer />
       </footer>
     </div>

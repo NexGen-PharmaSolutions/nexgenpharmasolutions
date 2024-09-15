@@ -48,8 +48,8 @@ const Regaff = () => {
           style={{ backgroundImage: "url('/regbg.png')" }}
           id="hero"
         >
-          <div className="max-w-4xl">
-            <h1 className="text-4xl md:text-6xl font-bold outfit text-[#34495E] animate-[pop-out_1s_ease-out_forwards]">
+          <div className="max-w-4xl backdrop-blur-md">
+            <h1 className="text-4xl md:text-6xl font-bold outfit text-[#c7753f] animate-[pop-out_1s_ease-out_forwards]">
               Regulatory Affairs
             </h1>
             <p className="mt-4 text-[10px] md:text-xl text-black inter font-medium animate-[pop-out_1s_ease-out_forwards] md:w-[500px] ">
@@ -90,7 +90,7 @@ const Regaff = () => {
               {/*------------------------------------------ Expert Regulatory Guidance ------------------------------------------*/}
               <div className="p-4 rounded-2xl shadow-2xl flex-1">
                 <img
-                  src="/c&tsave.png"
+                  src="/expertguidance.png"
                   alt="c&tsve"
                   className="h-20 w-20 mx-auto mb-4"
                 />
@@ -105,7 +105,7 @@ const Regaff = () => {
               {/*------------------------------------------ Strategic Risk Management ------------------------------------------*/}
               <div className="p-4 rounded-2xl shadow-2xl flex-1">
                 <img
-                  src="/comtcom.png"
+                  src="/riskmanagement.png"
                   alt="comtcom"
                   className="h-20 w-20 mx-auto mb-4"
                 />
@@ -120,7 +120,7 @@ const Regaff = () => {
               {/*------------------------------------------ Comprehensive Lifecycle Support ------------------------------------------*/}
               <div className="p-4 rounded-2xl shadow-2xl flex-1">
                 <img
-                  src="/confidence.png"
+                  src="/lifecycle.png"
                   alt="confidence"
                   className="h-20 w-20 mx-auto mb-4"
                 />
