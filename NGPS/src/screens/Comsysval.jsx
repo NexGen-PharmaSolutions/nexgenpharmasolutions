@@ -51,11 +51,11 @@ const Comsysval = () => {
           style={{ backgroundImage: "url('/csv3.jpg')" }}
           id="hero"
         >
-          <div className="max-w-4xl backdrop-blur-md">
+          <div className="max-w-4xl backdrop-blur-2xl">
             <h1 className="text-4xl md:text-6xl font-bold outfit text-[#c7753f] animate-[pop-out_1s_ease-out_forwards]">
               Computer System Validations
             </h1>
-            <p className="mt-4 text-[10px] md:text-[16px] text-black inter font-medium animate-[pop-out_1s_ease-out_forwards] md:w-[500px] ">
+            <p className="mt-4 text-[10px] md:text-[16px] text-black text-justify inter font-medium animate-[pop-out_1s_ease-out_forwards] md:w-[800px]">
               At NexGen Pharma Solutions, we ensure that your computerized
               systems used in GxP processes, from production to quality control,
               meet necessary qualifications and are fully validated. By
@@ -96,7 +96,7 @@ const Comsysval = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8  lg:text-[16px] md:text-[14px] text-[12px]">
               {/*------------------------------------------ Left div ------------------------------------------*/}
               <div className="p-4 rounded-2xl">
-                <ul className="list-disc list-inside space-y-4 montserrat font-medium">
+                <ul className="list-disc list-inside space-y-4 montserrat font-medium ">
                   <li>Local Control System (SCADA, PLC)</li>
                   <li>Plant Control System (SCADA, PLC)</li>
                   <li>Data Integrity Risk Assessment</li>
@@ -151,7 +151,7 @@ const Comsysval = () => {
               <h4 className="text-lg font-bold outfit text-[#34495E] text-center mb-2">
                 Efficiency and Cost Reduction
               </h4>
-              <p className="text-[12px] md:text-[14px] text-center font-medium montserrat">
+              <p className="text-[12px] md:text-[14px] text-center font-medium montserrat text-justify">
                 By adopting effective CSV and CSA practices, we ensure timely
                 compliance and significant reductions in operational costs.
               </p>
@@ -166,7 +166,7 @@ const Comsysval = () => {
               <h4 className="text-lg font-bold outfit text-[#34495E] text-center mb-2">
                 Dedicated to Compliance
               </h4>
-              <p className="text-[12px] md:text-[14px] text-center font-medium montserrat">
+              <p className="text-[12px] md:text-[14px] text-center font-medium montserrat text-justify">
                 We rigorously adhere to 21 CFR Part 11 and Annex 11 standards,
                 providing clear evidence and comprehensive audit trails.
               </p>
@@ -181,7 +181,7 @@ const Comsysval = () => {
               <h4 className="text-lg font-bold outfit text-[#34495E] text-center mb-2">
                 Assurance
               </h4>
-              <p className="text-[12px] md:text-[14px] text-center font-medium montserrat">
+              <p className="text-[12px] md:text-[14px] text-center font-medium montserrat text-justify">
                 Our meticulous processes guarantee accuracy, reliability, and
                 consistency, preserving data integrity and delivering dependable
                 results for our clients.
@@ -197,7 +197,7 @@ const Comsysval = () => {
               <h4 className="text-lg font-bold outfit text-[#34495E] text-center mb-2">
                 Flexible Execution Models
               </h4>
-              <p className="text-[12px] md:text-[14px] text-center font-medium montserrat">
+              <p className="text-[12px] md:text-[14px] text-center font-medium montserrat text-justify">
                 We offer adaptable delivery models utilizing Onsite, Remote, and
                 Offshore resources to meet your specific needs.
               </p>
