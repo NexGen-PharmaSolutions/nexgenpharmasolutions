@@ -36,15 +36,15 @@ const Training = () => {
       <main className="relative z-10">
         {/*------------------------------------------ Hero Section ------------------------------------------------------------*/}
         <section
-          className="relative flex flex-col justify-center items-center h-[300px] md:h-[600px] bg-cover bg-center p-8"
-          style={{ backgroundImage: "url('/training.png')" }}
+          className="relative flex flex-col justify-evenly items-center h-[300px] md:h-[600px] bg-cover bg-center p-8"
+          style={{ backgroundImage: "url('/training 2.jpg')" }}
           id="hero"
         >
-          <div className="max-w-4xl backdrop-blur-md">
-            <h1 className="text-4xl md:text-6xl font-bold outfit text-[#c7753f] animate-[pop-out_1s_ease-out_forwards]">
+          <div className="max-w-4xl backdrop-blur-3xl">
+            <h1 className="text-4xl md:text-6xl font-bold outfit text-[#c7753f] animate-[pop-out_1s_ease-out_forwards] text-center">
               Training
             </h1>
-            <p className="mt-4 text-[10px] md:text-xl text-black inter font-medium animate-[pop-out_1s_ease-out_forwards] md:w-[500px] ">
+            <p className="mt-4 text-[10px] md:text-sm text-[#000000] inter font-medium animate-[pop-out_1s_ease-out_forwards] md:w-[800px] text-justify ">
             Our tailored training programs provide your staff with essential knowledge and best practices for GMP compliance, ensuring they are well-prepared to maintain high-quality standards. We cover all aspects of GMP requirements, from regulatory guidelines to practical applications, fostering a culture of excellence within your organization.
 
             </p>
@@ -64,7 +64,7 @@ const Training = () => {
         </section>
         {/*------------------------------------------ RA Info ------------------------------------------*/}
         <section id="RAIN" className="md:py-16 py-8 px-4 md:px-8">
-          <h3 className="text-[12px] md:text-lg inter font-semibold text-left mb-4">
+          <h3 className="text-[12px] md:text-lg inter font-semibold text-left mb-4 text-justify">
             Information is Strength, and Technology is Rapidly Advancing. To
             Stay Ahead in the Competitive Landscape, particularly as a
             Pharmaceutical Professional, it&rsquo;s Essential to Stay Up-to-Date on
