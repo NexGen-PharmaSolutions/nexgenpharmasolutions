@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import  { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 
@@ -84,14 +84,17 @@ const Contactus = () => {
         <section
           className="relative flex flex-col justify-center items-start h-[100px] md:h-[200px] bg-cover bg-center lg:p-8"
           id="hero"
-          style={{ backgroundImage: "url('/ct2.png')", backgroundPosition: "center 80%" }}
+          style={{
+            backgroundImage: "url('/ct2.png')",
+            backgroundPosition: "center 80%",
+          }}
         >
           <div className="max-w-4xl text-left lg:pl-[340px] md:pl-10 pl-[2px] md:pt-20 pt-9">
             <h1 className="text-4xl md:text-6xl font-bold outfit text-[#34495E] animate-[pop-out_1s_ease-out_forwards]">
               Contact Us
             </h1>
           </div>
-          <style >{`
+          <style>{`
             @keyframes pop-out {
               0% {
                 transform: scale(0);
@@ -134,7 +137,7 @@ const Contactus = () => {
                   className="md:w-16 md:h-16 w-8 h-8 mb-4"
                 />
                 <p className="md:text-[16px] text-[12px] font-medium montserrat">
-                  +91 75748 85488
+                  +91 70691 79666
                 </p>
               </div>
               {/*------------------------------------------ Mail ------------------------------------------*/}
@@ -154,7 +157,10 @@ const Contactus = () => {
                 </p>
               </div>
             </div>
-            <div className="flex flex-wrap justify-center mt-8" ref={newsectionRef}>
+            <div
+              className="flex flex-wrap justify-center mt-8"
+              ref={newsectionRef}
+            >
               <div className="w-full lg:w-1/2 p-2 md:p-4">
                 {/*------------------------------------------ Google Map ------------------------------------------*/}
                 <div className="bg-[#c5d2e7] shadow-xl md:p-4 p-2 rounded-2xl">
@@ -237,7 +243,9 @@ const Contactus = () => {
                         <option value="consultation">
                           Request for quality consultation
                         </option>
-                        <option value="DMF filing">Request for DMF filing</option>
+                        <option value="DMF filing">
+                          Request for DMF filing
+                        </option>
                         <option value="training">
                           Request for industrial training
                         </option>
@@ -305,7 +313,7 @@ const Contactus = () => {
               </div>
             </div>
           </div>
-          <style >{`
+          <style>{`
             @keyframes popUp {
               0% {
                 transform: translateY(100px);
