@@ -69,7 +69,7 @@ const QualCon = () => {
             <h1 className="text-4xl md:text-6xl font-bold outfit text-[#c7753f] animate-[pop-out_1s_ease-out_forwards]">
               Quality Consulting
             </h1>
-            <p className="mt-4 text-[10px] md:text-[16px] text-black inter font-medium animate-[pop-out_1s_ease-out_forwards] md:w-[500px] ">
+            <p className="mt-4 text-[10px] md:text-[16px] text-black inter font-medium animate-[pop-out_1s_ease-out_forwards] md:w-[500px] text-justify">
               We craft sustainable solutions to manage compliance, offering proactive measures before audits and responsive actions afterward, leveraging extensive GxP expertise from product development to patient delivery.
             </p>
           </div>
@@ -128,7 +128,7 @@ const QualCon = () => {
               <h3 className="text-xl font-semibold outfit text-[#34495E] mb-2">
                 We Inspect
               </h3>
-              <p className="montserrat font-medium text-[12px]">
+              <p className="montserrat font-medium text-[12px] text-justify">
                 At NexGen Pharma Solutions, we conduct rigorous inspections to
                 evaluate your processes, systems, and facilities. Our thorough
                 assessments ensure that every aspect of your operations meets
@@ -147,7 +147,7 @@ const QualCon = () => {
               <h3 className="text-xl font-semibold outfit text-[#34495E] mb-2">
                 We Collaborate
               </h3>
-              <p className="montserrat font-medium text-[12px]">
+              <p className="montserrat font-medium text-[12px] text-justify">
                 We work closely with your team, providing expert guidance and
                 support to address compliance issues and implement effective
                 solutions. Our collaborative approach ensures seamless
@@ -166,7 +166,7 @@ const QualCon = () => {
               <h3 className="text-xl font-semibold outfit text-[#34495E] mb-2">
                 We Ensure Readiness
               </h3>
-              <p className="montserrat font-medium text-[12px]">
+              <p className="montserrat font-medium text-[12px] text-justify">
                 We prepare your organization for successful regulatory audits
                 and ongoing compliance. By identifying gaps and implementing
                 corrective actions, we ensure your readiness for any regulatory
@@ -189,7 +189,7 @@ const QualCon = () => {
               <div className="md:w-[120px] w-[100px] h-1 mx-auto my-4 bg-[#34495E]"></div>
             </h1>
           </div>
-          <p className="font-normal inter text-[16px] lg:px-20 md:px-[25px] pb-8">
+          <p className="font-normal inter text-[16px] lg:px-20 md:px-[25px] pb-8 text-justify">
             Our audit reports are detailed and of top quality, gaining global
             acceptance from regulators, Qualified Persons (QPs), and subject
             matter experts. We audit a wide range of suppliers, including
@@ -203,7 +203,7 @@ const QualCon = () => {
             <div className="grid grid-cols-1 md:grid-cols-5 gap-8 lg:px-0 md:px-[25px]">
               {/* Left Side (60%) */}
               <div className="md:col-span-3 lg:pl-20">
-                <ul className="list-disc list-inside space-y-4 montserrat font-medium text-[12px]">
+                <ul className="list-disc list-inside space-y-4 montserrat font-medium text-[12px] text-justify">
                   <li>
                     GMP Audits We conduct thorough and detailed GMP audits to
                     ensure your operations are compliant with international
@@ -296,7 +296,7 @@ const QualCon = () => {
                   <h3 className="font-semibold outfit text-[#34495E] text-[16px]">
                     Industry-Leading GMP Consulting Services:
                   </h3>
-                  <p className="text-[12px] montserrat font-medium">
+                  <p className="text-[12px] montserrat font-medium text-justify">
                     Dedicated to empowering pharmaceutical companies to meet the highest levels of quality and regulatory compliance.
                   </p>
                 </div>
@@ -311,10 +311,10 @@ const QualCon = () => {
                   />
                 </div>
                 <div className="w-2/3">
-                  <h3 className="font-semibold outfit text-[#34495E] text-[16px]">
+                  <h3 className="font-semibold outfit text-[#34495E] text-[16px] ">
                     Expert Team:
                   </h3>
-                  <p className="text-[12px] montserrat font-medium">
+                  <p className="text-[12px] montserrat font-medium text-justify">
                     Seasoned professionals with deep expertise and a hands-on approach to every project.
                   </p>
                 </div>
@@ -335,7 +335,7 @@ const QualCon = () => {
                   <h3 className="font-semibold outfit text-[#34495E] text-[16px]">
                     Tailored Solutions:
                   </h3>
-                  <p className="text-[12px] montserrat font-medium">
+                  <p className="text-[12px] montserrat font-medium text-justify">
                     Optimizing manufacturing processes and ensuring data integrity.
                     Upholding global standards.
                   </p>
@@ -354,7 +354,7 @@ const QualCon = () => {
                   <h3 className="font-semibold outfit text-[#34495E] text-[16px]">
                     Lasting Value:
                   </h3>
-                  <p className="text-[12px] montserrat font-medium">
+                  <p className="text-[12px] montserrat font-medium text-justify">
                     Identifying compliance gaps and implementing practical corrective actions.
                     Fostering a culture of excellence within clients&apos; organizations.
                   </p>
@@ -376,7 +376,7 @@ const QualCon = () => {
                   <h3 className="font-semibold outfit text-[#34495E] text-[16px]">
                     Commitment to Excellence:
                   </h3>
-                  <p className="text-[12px] montserrat font-medium">
+                  <p className="text-[12px] montserrat font-medium text-justify">
                     Focused on precision, integrity, and client satisfaction.
                     Ensuring partners are fully prepared for regulatory audits and long-term success.
                   </p>
@@ -395,7 +395,7 @@ const QualCon = () => {
                   <h3 className="font-semibold outfit text-[#34495E] text-[14px]">
                     Operational Efficiency and Product Safety:
                   </h3>
-                  <p className="text-[12px] montserrat font-medium">
+                  <p className="text-[12px] montserrat font-medium text-justify">
                     Helping maintain operational efficiency and enhance product safety.
                     Achieving sustainable growth through uncompromising quality.
                   </p>

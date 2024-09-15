@@ -89,8 +89,8 @@ const Contactus = () => {
             backgroundPosition: "center 80%",
           }}
         >
-          <div className="max-w-4xl text-left lg:pl-[340px] md:pl-10 pl-[2px] md:pt-20 pt-9">
-            <h1 className="text-4xl md:text-6xl font-bold outfit text-[#34495E] animate-[pop-out_1s_ease-out_forwards]">
+          <div className="max-w-4xl text-left lg:pl-[100px] md:pl-10 pl-[2px] md:pt-20 pt-9">
+            <h1 className="text-4xl md:text-6xl font-bold outfit text-[#c7753f] animate-[pop-out_1s_ease-out_forwards]">
               Contact Us
             </h1>
           </div>
