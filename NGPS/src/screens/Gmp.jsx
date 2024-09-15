@@ -19,7 +19,7 @@ const Gmp = () => {
             <h1 className="text-4xl md:text-6xl font-bold outfit text-[#c7753f] animate-[pop-out_1s_ease-out_forwards]">
               GMP Audits
             </h1>
-            <p className=" mt-4 text-[10px] md:text-[16px] inter font-medium animate-[pop-out_1s_ease-out_forwards] md:w-[500px]">
+            <p className=" mt-4 text-[10px] md:text-[16px] inter font-medium animate-[pop-out_1s_ease-out_forwards] md:w-[500px] text-justify">
               NexGen Pharma Solutions conducts thorough GMP audits globally,
               ensuring compliance and quality. Our detailed reports are widely
               recognized and accepted.
@@ -42,7 +42,7 @@ const Gmp = () => {
         <section id="GMPD" className="animate-fade-in">
           <div className="max-w-auto mx-auto lg:px-14 md:px-8 px-6 pt-4">
             <div className="mb-8">
-              <p className="font-normal inter md:text-[16px] text-[12px]"><b>
+              <p className="font-normal inter md:text-[16px] text-[12px] text-justify"><b>
                 We conduct high-standard GMP audits for various suppliers
                 worldwide, adhering to regulatory standards such as EU GMP, ICH
                 Q7, 21 CFR 210/211, and ISO, as requested by our clients. We
@@ -52,7 +52,7 @@ const Gmp = () => {
               </p>
             </div>
             <div className="mb-8">
-              <p className="font-normal inter md:text-[16px] text-[12px]">
+              <p className="font-normal inter md:text-[16px] text-[12px] text-justify">
                 Our audit reports are detailed and of top quality, gaining
                 global acceptance from regulators, Qualified Persons (QPs), and
                 subject matter experts. We audit a wide range of suppliers,
@@ -62,7 +62,7 @@ const Gmp = () => {
             <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
               {/* Left Side (60%) */}
               <div className="md:col-span-3 lg:pl-20">
-                <ul className="list-disc list-inside space-y-4 montserrat font-medium text-[10px] md:text-[14px] lg:text-[16px]">
+                <ul className="list-disc list-inside space-y-4 montserrat font-medium text-[10px] md:text-[14px] lg:text-[16px] ">
                   <li>API / API intermediates; sterile/non-sterile</li>
                   <li>Formulated medicinal products; sterile/non-sterile</li>
                   <li>
