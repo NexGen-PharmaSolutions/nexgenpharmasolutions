@@ -551,7 +551,7 @@ const Aboutus = () => {
                 {/* Black Rectangle with Rounded Left Side (on top) */}
                 <div className="bg-[#1F3A4D] w-[290px] h-[400px] md:w-[710px] rounded-l-[150px] mt-[-400px]"></div>
                 <img
-                  src="1.png"
+                  src="hwad.png"
                   alt="Image 4"
                   className="w-[270px] h-[400px] rounded-l-[180px] md:w-[680px] mt-[-400px]"
                 />
@@ -614,7 +614,7 @@ const Aboutus = () => {
 
             {/*----------------------------------------- Right Side -----------------------------------------*/}
             <div className="md:w-[30%] w-full p-4">
-              <img src="1.png" alt="Image" className="w-full h-[200px]" />
+              <img src="om.jpg" alt="Image" className="w-full h-[200px]" />
             </div>
           </div>
 
@@ -687,7 +687,7 @@ const Aboutus = () => {
 
             {/*----------------------------------------- Right Side -----------------------------------------*/}
             <div className="md:w-[30%] w-full p-4">
-              <img src="1.png" alt="Image" className="w-full h-auto" />
+              <img src="ov.jpg" alt="Image" className="w-full lg:h-[350px] h-auto" />
             </div>
           </div>
 

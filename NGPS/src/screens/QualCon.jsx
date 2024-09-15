@@ -65,8 +65,8 @@ const QualCon = () => {
           style={{ backgroundImage: "url('/qualityconsult.png')" }}
           id="hero"
         >
-          <div className="backdrop-blur-lg max-w-4xl md:mt-[-80px]">
-            <h1 className="text-4xl md:text-6xl font-bold outfit text-[#34495E] animate-[pop-out_1s_ease-out_forwards]">
+          <div className="backdrop-blur-md max-w-4xl md:mt-[-80px]">
+            <h1 className="text-4xl md:text-6xl font-bold outfit text-[#c7753f] animate-[pop-out_1s_ease-out_forwards]">
               Quality Consulting
             </h1>
             <p className="mt-4 text-[10px] md:text-[16px] text-black inter font-medium animate-[pop-out_1s_ease-out_forwards] md:w-[500px] ">
@@ -203,7 +203,7 @@ const QualCon = () => {
             <div className="grid grid-cols-1 md:grid-cols-5 gap-8 lg:px-0 md:px-[25px]">
               {/* Left Side (60%) */}
               <div className="md:col-span-3 lg:pl-20">
-                <ul className="list-disc list-inside space-y-4 montserrat font-medium text-[10px]">
+                <ul className="list-disc list-inside space-y-4 montserrat font-medium text-[12px]">
                   <li>
                     GMP Audits We conduct thorough and detailed GMP audits to
                     ensure your operations are compliant with international
@@ -254,9 +254,9 @@ const QualCon = () => {
               {/* Right Side (40%) */}
               <div className="md:col-span-2 lg:pr-12">
                 <img
-                  src="/1.png"
+                  src="/gmpser.jpg"
                   alt="Photo"
-                  className="w-full h-[300px] object-cover rounded-2xl"
+                  className="w-full lg:h-[400px] md:h-[600px] object-cover rounded-2xl"
                 />
               </div>
             </div>
