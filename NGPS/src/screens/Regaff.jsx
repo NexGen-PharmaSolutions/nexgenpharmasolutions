@@ -97,7 +97,7 @@ const Regaff = () => {
                 <h4 className="text-lg font-bold outfit text-[#34495E] text-center mb-2">
                   Expert Regulatory Guidance
                 </h4>
-                <p className="text-[12px] md:text-[14px] text-center font-medium montserrat text-justify">
+                <p className="text-[12px] md:text-[14px] font-medium montserrat text-justify">
                   We navigate complex global regulations to ensure your
                   submissions are precise, compliant, and timely.
                 </p>
@@ -112,7 +112,7 @@ const Regaff = () => {
                 <h4 className="text-lg font-bold outfit text-[#34495E] text-center mb-2">
                   Strategic Risk Management
                 </h4>
-                <p className="text-[12px] md:text-[14px] text-center font-medium montserrat text-justify">
+                <p className="text-[12px] md:text-[14px] font-medium montserrat text-justify">
                   From product development to post-market monitoring, we provide
                   seamless support at every stage of the regulatory journey.
                 </p>
@@ -127,7 +127,7 @@ const Regaff = () => {
                 <h4 className="text-lg font-bold outfit text-[#34495E] text-center mb-2">
                   Comprehensive Lifecycle Support
                 </h4>
-                <p className="text-[12px] md:text-[14px] text-center font-medium montserrat text-justify">
+                <p className="text-[12px] md:text-[14px] font-medium montserrat text-justify">
                   Our meticulous processes guarantee accuracy, reliability, and
                   consistency, preserving data integrity and delivering
                   dependable results for our clients.
@@ -145,12 +145,12 @@ const Regaff = () => {
         </section>
         {/*------------------------------------------ PRS Info ------------------------------------------*/}
         <section id="PRSIN" className="md:py-16 py-8 px-4 md:px-8">
-          <h3 className="text-[14px] md:text-lg inter font-semibold text-left mb-4 text-justify">
+          <h3 className="text-[14px] md:text-lg inter font-semibold mb-4 text-justify">
             We provide complete support for Pharma Regulatory services with our
             expert Pharma Regulatory Affairs consulting services for global
             markets, particularly in the EU and US.
           </h3>
-          <p className="text-[12px] md:text-[14px] montserrat font-medium text-left mb-6 text-justify">
+          <p className="text-[12px] md:text-[14px] montserrat font-medium mb-6 text-justify">
             NexGen Pharma Solutions has a highly experienced team of experts who
             have a complete understanding of the complete requirements of Pharma
             Regulatory affairs throughout the drug life cycle. Our experts have
