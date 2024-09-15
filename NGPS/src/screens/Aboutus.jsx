@@ -169,7 +169,7 @@ const Aboutus = () => {
             <h1 className="text-4xl md:text-6xl font-bold outfit text-[#c7753f] animate-[pop-out_1s_ease-out_forwards]">
               About Us
             </h1>
-            <p className="mt-4 text-[10px] md:text-[16px] text-black inter font-normal animate-[pop-out_1s_ease-out_forwards] md:w-[500px] ">
+            <p className="mt-4 text-[10px] md:text-[16px] text-black inter font-normal animate-[pop-out_1s_ease-out_forwards] md:w-[500px] text-justify">
               NexGen Pharma Solutions is a leading provider of GMP consulting
               and regulatory affairs services. With a team of seasoned experts,
               we offer innovative solutions for pharmaceutical compliance,
@@ -290,7 +290,7 @@ const Aboutus = () => {
                   <h3 className="text-xl font-semibold text-[#34495E] outfit mt-4">
                     GMP Audits
                   </h3>
-                  <p className="font-medium md:text-[16px] text-[14px] mt-2 montserrat">
+                  <p className="font-medium md:text-[16px] text-[14px] mt-2 montserrat text-justify">
                   We conduct comprehensive GMP audits to ensure your operations meet regulatory standards.
 
                   </p>
@@ -312,7 +312,7 @@ const Aboutus = () => {
                   <h3 className="text-xl font-semibold text-[#34495E] outfit mt-4">
                     Consulting Services
                   </h3>
-                  <p className="mt-2 montserrat font-medium md:text-[16px] text-[14px]">
+                  <p className="mt-2 montserrat font-medium md:text-[16px] text-[14px] text-justify">
                   Our expert consulting services optimize your manufacturing processes and ensure compliance.
 
                   </p>
@@ -334,7 +334,7 @@ const Aboutus = () => {
                   <h3 className="text-xl font-semibold text-[#34495E] outfit mt-4">
                     Computer System Validations
                   </h3>
-                  <p className="montserrat font-medium mt-2 md:text-[16px] text-[14px]">
+                  <p className="montserrat font-medium mt-2 md:text-[16px] text-[14px] text-justify">
                   We validate your computer systems to guarantee data integrity and regulatory adherence.
                   </p>
                   <Link to="/computersystemvalidations">
@@ -360,7 +360,7 @@ const Aboutus = () => {
                   <h3 className="text-xl font-semibold text-[#34495E] outfit mt-4">
                     Training
                   </h3>
-                  <p className="montserrat font-medium mt-2 md:text-[16px] text-[14px]">
+                  <p className="montserrat font-medium mt-2 md:text-[16px] text-[14px] text-justify">
                   Our tailored training programs equip your staff with essential GMP knowledge and best practices.
                   </p>
                   <Link to="/training">
@@ -381,7 +381,7 @@ const Aboutus = () => {
                   <h3 className="text-xl font-semibold text-[#34495E] outfit mt-4">
                     Regulatory Affairs
                   </h3>
-                  <p className="montserrat font-medium mt-2 md:text-[16px] text-[14px]">
+                  <p className="montserrat font-medium mt-2 md:text-[16px] text-[14px] text-justify">
                   We manage the preparation and submission of regulatory documents, ensuring smooth approval processes.
                   </p>
                   <Link to="/regulatoryaffairs">
@@ -436,7 +436,7 @@ const Aboutus = () => {
                   <h3 className="text-xl font-semibold outfit text-[#34495E]">
                     Comprehensive Process Management
                   </h3>
-                  <p className="montserrat font-medium">
+                  <p className="montserrat font-medium text-justify">
                     We enhance manufacturing efficiency and quality while
                     maintaining GMP compliance through process optimization and
                     thorough risk assessments. Our team ensures accurate
@@ -465,7 +465,7 @@ const Aboutus = () => {
                   <h3 className="text-xl font-semibold outfit text-[#34495E]">
                     Specialized Industrial Expertise
                   </h3>
-                  <p className="montserrat font-medium">
+                  <p className="montserrat font-medium text-justify">
                     NexGen Pharma Solutions provides specialized GMP knowledge
                     and training programs to ensure regulatory compliance. We
                     keep clients informed of regulatory changes to maintain
@@ -493,7 +493,7 @@ const Aboutus = () => {
                   <h3 className="text-xl font-semibold outfit text-[#34495E]">
                     International Reach
                   </h3>
-                  <p className="montserrat font-medium">
+                  <p className="montserrat font-medium text-justify">
                     We support internal and external audits globally, helping
                     clients prepare and respond effectively. Our team keeps
                     clients current with global regulations and ensures supplier
@@ -521,7 +521,7 @@ const Aboutus = () => {
                   <h3 className="text-xl font-semibold outfit text-[#34495E]">
                     Tailored Solutions
                   </h3>
-                  <p className="montserrat font-medium">
+                  <p className="montserrat font-medium text-justify">
                     Our tailored solutions optimize processes and ensure data
                     integrity. We troubleshoot GMP-related issues, design custom
                     quality systems, and manage supplier compliance with GMP
@@ -598,7 +598,7 @@ const Aboutus = () => {
           >
             {/*----------------------------------------- Left Side -----------------------------------------*/}
             <div className="md:w-[70%] w-full p-4">
-              <p className="montserrat font-medium">
+              <p className="montserrat font-medium text-justify">
                 Our mission at NexGen Pharma Solutions is to deliver exceptional
                 GMP consulting services that ensure the highest standards of
                 quality, compliance, and safety in pharmaceutical manufacturing.
@@ -651,7 +651,7 @@ const Aboutus = () => {
           >
             {/*----------------------------------------- Left Side -----------------------------------------*/}
             <div className="md:w-[70%] w-full p-4">
-              <p className="montserrat font-medium">
+              <p className="montserrat font-medium text-justify">
                 Our vision at NexGen Pharma Solutions is to be the global leader
                 in GMP consulting, driving excellence and innovation in
                 pharmaceutical manufacturing. We aim to empower companies with
@@ -748,7 +748,7 @@ const Aboutus = () => {
               <h3 className="text-xl font-semibold outfit text-[#34495E] mb-2">
                 Innovative Solutions
               </h3>
-              <p className="montserrat font-medium">
+              <p className="montserrat font-medium text-justify">
                 At NexGen Pharma Solutions, we offer cutting-edge GMP
                 consultation services, leveraging the latest technologies and
                 creative problem-solving to ensure compliance and optimize
@@ -767,7 +767,7 @@ const Aboutus = () => {
               <h3 className="text-xl font-semibold outfit text-[#34495E] mb-2">
                 Distinguished Expertise
               </h3>
-              <p className="montserrat font-medium">
+              <p className="montserrat font-medium text-justify">
                 Our team at NexGen Pharma Solutions brings unparalleled
                 expertise and a distinguished track record in GMP regulations,
                 providing top-tier consultation services for enhanced
@@ -786,7 +786,7 @@ const Aboutus = () => {
               <h3 className="text-xl font-semibold outfit text-[#34495E] mb-2">
                 Pristine Quality
               </h3>
-              <p className="montserrat font-medium">
+              <p className="montserrat font-medium text-justify">
                 NexGen Pharma Solutions maintains the highest standards of
                 quality in GMP processes, ensuring meticulous compliance and
                 audit-readiness for all your operations.
