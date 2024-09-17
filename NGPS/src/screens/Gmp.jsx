@@ -1,7 +1,32 @@
+import { useEffect, useRef } from "react";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 
 const Gmp = () => {
+
+  const imgsectionRef = useRef(null);
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+          }
+        });
+      },
+      { threshold: 0.1 } // Trigger when 10% of the section is visible
+    );
+    const imgsectionElement = imgsectionRef.current;
+    if (imgsectionElement) {
+      observer.observe(imgsectionElement);
+    }
+    return () => {
+      if (imgsectionElement) {
+        observer.unobserve(imgsectionElement);
+      }
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-[#E1EAF2]">
       {/*----------------------------------------- Header -------------------------------------------------------------------*/}
@@ -93,7 +118,24 @@ const Gmp = () => {
                 />
               </div>
             </div>
-            <img className="object-cover lg:pt-10 lg:px-10 md:pt-8 pt-8" src="gmpauditsdia.png" alt="gmpauditsdiagram" />
+            <img ref={imgsectionRef} className="fade-in-up object-cover lg:pt-10 lg:px-10 md:pt-8 pt-8" src="gmpauditsdia.png" alt="gmpauditsdiagram" />
+            <style>
+            {`
+              /* Initial state for the section */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(90px); /* Start below its final position */
+  transition: opacity 1s ease-out, transform 1s ease-out; /* Animation duration */
+}
+
+/* Fade in and slide up when in view */
+.fade-in-up.show {
+  opacity: 1;
+  transform: translateY(0); /* Move to its final position */
+}
+
+            `}
+          </style>
           </div>
           <style >{`
             @keyframes fadeIn {
