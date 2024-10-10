@@ -149,10 +149,10 @@ const Contactus = () => {
                 />
                 <p className="md:text-[16px] text-[12px] font-medium montserrat">
                   <a
-                    href="mailto:nexgenpharmasolution@gmail.com"
+                    href="mailto:inquiry@nexgenpharmasolutions.com"
                     className="font-medium montserrat"
                   >
-                    nexgenpharmasolution@gmail.com
+                    inquiry@nexgenpharmasolutions.com
                   </a>
                 </p>
               </div>
@@ -182,7 +182,7 @@ const Contactus = () => {
                     <input
                       type="hidden"
                       name="access_key"
-                      value="8f056dc4-21a2-4dcd-a428-10cda721b2a9"
+                      value="f89819cf-5bfa-417c-8a1e-98978e239cfb"
                     />
 
                     {/*------------------------------------------ Name Input ------------------------------------------*/}
