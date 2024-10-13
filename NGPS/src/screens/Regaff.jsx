@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+import { Helmet } from "react-helmet";
 
 const Regaff = () => {
   const PRSfadeInRef = useRef(null);
@@ -38,6 +39,11 @@ const Regaff = () => {
 
   return (
     <div className="min-h-screen bg-[#E1EAF2]">
+      <Helmet>
+        <title>Regulatory Affairs - NexGen Pharma Solutions</title>
+        <meta name="description" content="NexGen Pharma Solutions offers regulatory affairs consulting to help pharmaceutical companies navigate complex regulations." />
+        <meta name="keywords" content="Regulatory Affairs, Pharma Regulations, Regulatory Consulting, Pharmaceutical Consulting" />
+      </Helmet>
       <header className="p-2 sticky top-0 z-50">
         <Navbar />
       </header>

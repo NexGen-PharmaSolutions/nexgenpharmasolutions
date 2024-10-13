@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+import { Helmet } from "react-helmet";
 
 const QualCon = () => {
   const sectionRef = useRef(null);
@@ -54,6 +55,11 @@ const QualCon = () => {
 
   return (
     <div className="min-h-screen bg-[#E1EAF2]">
+      <Helmet>
+        <title>Quality Consulting - NexGen Pharma Solutions</title>
+        <meta name="description" content="NexGen Pharma Solutions provides expert quality consulting services to ensure your pharmaceutical processes meet the highest standards." />
+        <meta name="keywords" content="Quality Consulting, Pharma Consulting, Quality Assurance, Pharma Processes" />
+      </Helmet>
       {/*----------------------------------------- Header -------------------------------------------------------------------*/}
       <header className="p-2 sticky top-0 z-50">
         <Navbar />

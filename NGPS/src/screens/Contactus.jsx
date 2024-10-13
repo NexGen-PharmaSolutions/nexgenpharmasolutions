@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+import { Helmet } from "react-helmet";
 
 const Contactus = () => {
   const sectionRef = useRef(null);
@@ -76,6 +77,11 @@ const Contactus = () => {
 
   return (
     <div className="min-h-screen bg-[#E1EAF2]">
+      <Helmet>
+        <title>Contact Us - NexGen Pharma Solutions</title>
+        <meta name="description" content="Get in touch with NexGen Pharma Solutions for expert consulting services in GMP audits, quality assurance, regulatory affairs, and more." />
+        <meta name="keywords" content="Contact Pharma Consulting, GMP Audits, Regulatory Affairs, Quality Assurance" />
+      </Helmet>
       <header className="p-2 sticky top-0 z-50">
         <Navbar />
       </header>
@@ -149,10 +155,10 @@ const Contactus = () => {
                 />
                 <p className="md:text-[16px] text-[12px] font-medium montserrat">
                   <a
-                    href="mailto:nexgenpharmasolution@gmail.com"
+                    href="mailto:inquiry@nexgenpharmasolutions.com"
                     className="font-medium montserrat"
                   >
-                    nexgenpharmasolution@gmail.com
+                    inquiry@nexgenpharmasolutions.com
                   </a>
                 </p>
               </div>
@@ -182,7 +188,7 @@ const Contactus = () => {
                     <input
                       type="hidden"
                       name="access_key"
-                      value="8f056dc4-21a2-4dcd-a428-10cda721b2a9"
+                      value="f89819cf-5bfa-417c-8a1e-98978e239cfb"
                     />
 
                     {/*------------------------------------------ Name Input ------------------------------------------*/}

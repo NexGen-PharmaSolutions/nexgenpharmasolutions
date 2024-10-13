@@ -1,16 +1,42 @@
-import  { useState } from "react";
+import  { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const [servicesOpen, setServicesOpen] = useState(false);
+
+    const headerRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("slide-in-top");
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const headerElement = headerRef.current;
+    if (headerElement) {
+      observer.observe(headerElement);
+    }
+
+    return () => {
+      if (headerElement) {
+        observer.unobserve(headerElement);
+      }
+    };
+  }, []);
   
     return (
-      <nav className="bg-[#F7F9FB] p-4 rounded-[30px] shadow-lg flex justify-between items-center">
+      <nav ref={headerRef} className="header-section bg-[#F7F9FB] p-4 rounded-[30px] shadow-lg flex justify-between items-center">
         <Link to="/">
           <div className="flex items-center space-x-2 md:pl-3">
             <img src="/logo.png" alt="Logo" className="h-10 w-10" />
-            <img src="/compname.png" alt="Company Name" className="h-8" />
+            <img src="/compname.png" alt="Company Name" className="h-8 relative inline-block transition-transform duration-300 ease-in-out hover:scale-110" />
           </div>
         </Link>
         {/*----------------------------------------- Hamburger Menu for Mobile -----------------------------------------*/}
@@ -157,19 +183,19 @@ const Navbar = () => {
         {/*--------------------------------------------------------------- Full Menu for Larger Screens -------------------------------------------------------------------------*/}
         <ul className="hidden md:flex space-x-6 items-center md:pr-3 font-bold text-[#2C3E50] outfit">
           <li>
-            <Link to="/" className="hover:text-gray-700">
+            <Link to="/" className="hover:text-gray-700 relative inline-block transition-transform duration-300 ease-in-out hover:scale-110">
               Home
             </Link>
           </li>
           <li>
-            <Link to="/aboutus" className="hover:text-gray-700">
+            <Link to="/aboutus" className="hover:text-gray-700 relative inline-block transition-transform duration-300 ease-in-out hover:scale-110">
               About Us
             </Link>
           </li>
           <li className="relative">
             <button
               onClick={() => setDropdownOpen(!dropdownOpen)}
-              className="hover:text-gray-700 focus:outline-none"
+              className="hover:text-gray-700 focus:outline-none relative inline-block transition-transform duration-300 ease-in-out hover:scale-110"
             >
               Services
               <svg
@@ -235,7 +261,7 @@ const Navbar = () => {
             )}
           </li>
           <li>
-            <Link to="/contactus" className="hover:text-gray-700">
+            <Link to="/contactus" className="hover:text-gray-700 relative inline-block transition-transform duration-300 ease-in-out hover:scale-110">
               Contact Us
             </Link>
           </li>
@@ -270,6 +296,17 @@ const Navbar = () => {
           .animate-slide-in-right {
             animation: slideInRight 0.1s ease-out;
           }
+            .header-section {
+  opacity: 0;
+  transform: translateY(-50px); /* Slide in from the top */
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Slide in and fade in */
+.header-section.slide-in-top {
+  opacity: 1;
+  transform: translateY(0); /* Move to its original position */
+}
         `}</style>
       </nav>
     );
