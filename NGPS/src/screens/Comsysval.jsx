@@ -1,6 +1,7 @@
 import  { useEffect, useRef } from "react";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+import { Helmet } from "react-helmet";
 
 const Comsysval = () => {
   const fadeInRef = useRef(null);
@@ -41,6 +42,11 @@ const Comsysval = () => {
 
   return (
     <div className="min-h-screen bg-[#E1EAF2]">
+      <Helmet>
+        <title>Computer System Validation - NexGen Pharma Solutions</title>
+        <meta name="description" content="Our experts at NexGen Pharma Solutions offer reliable computer system validation services to meet industry regulations." />
+        <meta name="keywords" content="Computer System Validation, CSV, Pharma Compliance, Validation Services" />
+      </Helmet>
       <header className="p-2 sticky top-0 z-50">
         <Navbar />
       </header>

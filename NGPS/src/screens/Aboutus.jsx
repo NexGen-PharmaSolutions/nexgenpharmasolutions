@@ -2,6 +2,7 @@ import  { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+import { Helmet } from "react-helmet";
 
 const Aboutus = () => {
   const ownerSectionRef = useRef(null);
@@ -153,6 +154,10 @@ const Aboutus = () => {
 
   return (
     <div className="min-h-screen bg-[#E1EAF2]">
+      <Helmet>
+        <title>About Us - NexGen Pharma Solutions</title>
+        <meta name="description" content="Learn more about NexGen Pharma Solutions, our mission, and the professional team behind our pharmaceutical consulting services." />
+      </Helmet>
       {/*----------------------------------------- Header -------------------------------------------------------------------*/}
       <header className="p-2 sticky top-0 z-50">
         <Navbar />

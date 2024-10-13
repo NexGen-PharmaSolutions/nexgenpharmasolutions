@@ -1,6 +1,7 @@
 import  { useEffect, useRef } from "react";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+import { Helmet } from "react-helmet";
 
 const Training = () => {
 
@@ -30,6 +31,11 @@ const Training = () => {
 
   return (
     <div className="min-h-screen bg-[#E1EAF2]">
+      <Helmet>
+        <title>Pharmaceutical Training - NexGen Pharma Solutions</title>
+        <meta name="description" content="NexGen Pharma Solutions provides expert-led training sessions to help your pharmaceutical staff stay compliant with industry regulations." />
+        <meta name="keywords" content="Pharmaceutical Training, Pharma Compliance Training, GMP Training, Pharma Industry Training" />
+      </Helmet>
       <header className="p-2 sticky top-0 z-50">
         <Navbar />
       </header>

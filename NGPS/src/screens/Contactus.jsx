@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+import { Helmet } from "react-helmet";
 
 const Contactus = () => {
   const sectionRef = useRef(null);
@@ -76,6 +77,11 @@ const Contactus = () => {
 
   return (
     <div className="min-h-screen bg-[#E1EAF2]">
+      <Helmet>
+        <title>Contact Us - NexGen Pharma Solutions</title>
+        <meta name="description" content="Get in touch with NexGen Pharma Solutions for expert consulting services in GMP audits, quality assurance, regulatory affairs, and more." />
+        <meta name="keywords" content="Contact Pharma Consulting, GMP Audits, Regulatory Affairs, Quality Assurance" />
+      </Helmet>
       <header className="p-2 sticky top-0 z-50">
         <Navbar />
       </header>
