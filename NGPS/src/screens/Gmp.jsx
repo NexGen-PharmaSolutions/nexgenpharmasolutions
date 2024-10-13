@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+import { Helmet } from "react-helmet";
 
 const Gmp = () => {
 
@@ -29,6 +30,11 @@ const Gmp = () => {
 
   return (
     <div className="min-h-screen bg-[#E1EAF2]">
+      <Helmet>
+        <title>GMP Audits - NexGen Pharma Solutions</title>
+        <meta name="description" content="NexGen Pharma Solutions provides comprehensive GMP audits to ensure regulatory compliance in the pharmaceutical industry." />
+        <meta name="keywords" content="GMP Audits, Pharma Compliance, Regulatory Compliance, Pharmaceutical Audits" />
+      </Helmet>
       {/*----------------------------------------- Header -------------------------------------------------------------------*/}
       <header className="p-2 sticky top-0 z-50">
         <Navbar />

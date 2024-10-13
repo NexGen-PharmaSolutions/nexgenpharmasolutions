@@ -1,7 +1,8 @@
-import  { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+import { Helmet } from "react-helmet";
 
 const Home = () => {
   const servicesRef = useRef(null);
@@ -25,6 +26,17 @@ const Home = () => {
 
   return (
     <div className="min-h-screen bg-[#E1EAF2]">
+      <Helmet>
+        <title>NexGen Pharma Solutions - Leading Pharma Company</title>
+        <meta
+          name="description"
+          content="NexGen Pharma Solutions offers expert GMP audits, quality consulting, computer system validation, and regulatory affairs services for the pharmaceutical industry."
+        />
+        <meta
+          name="keywords"
+          content="Pharma Consulting, GMP Audits, Quality Consulting, Computer System Validation, Regulatory Affairs"
+        />
+      </Helmet>
       {/*----------------------------------------- Header -------------------------------------------------------------------*/}
       <header className="p-2 sticky top-0 z-50">
         <Navbar />
@@ -36,7 +48,7 @@ const Home = () => {
           className="relative h-[300px] md:h-[600px] bg-cover bg-center flex items-center justify-center"
           style={{ backgroundImage: `url('/herobg.png')` }} // Background image
         >
-          <style >{`
+          <style>{`
             @keyframes fadeIn {
               0% {
                 opacity: 0;
@@ -202,9 +214,9 @@ const Home = () => {
                     </h3>
                     <p className="text-gray-700 mb-4 montserrat text-sm text-justify">
                       NexGen Pharma Solutions offers comprehensive GMP training
-                      tailored to your team&rsquo;s needs. Our expert-led sessions
-                      cover key areas of Good Manufacturing Practices, ensuring
-                      staff understand regulatory requirements, quality
+                      tailored to your team&rsquo;s needs. Our expert-led
+                      sessions cover key areas of Good Manufacturing Practices,
+                      ensuring staff understand regulatory requirements, quality
                       standards, and best practices. We help enhance operational
                       efficiency, maintain compliance, and prepare for
                       successful audits, fostering a culture of quality in your
