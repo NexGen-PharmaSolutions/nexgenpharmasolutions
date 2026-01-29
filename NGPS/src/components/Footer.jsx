@@ -27,78 +27,117 @@ const Footer = () => {
   }, []);
 
   return (
-    <div ref={FOOsectionRef} className="fade-in-up p-4 rounded-2xl bg-[#F7F9FB] text-black">
-      <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
-        {/*----------------------------------------- Left side: Logo and Company Name -----------------------------------------*/}
-        <div className="flex items-center justify-center w-full md:w-1/2 space-x-4">
-          <img
-            src="/logo.png"
-            alt="Logo"
-            className="lg:w-[120px] lg:h-[120px] w-20 h-20"
-          />
-          <img
-            src="/compname.png"
-            alt="Company Name"
-            className="w-auto lg:h-[110px] h-[60px]"
-          />
+    <div ref={FOOsectionRef} className="fade-in-up p-6 md:p-8 rounded-2xl bg-[#475569] text-gray-300">
+      <div className="container mx-auto px-4">
+        {/*----------------------------------------- Top Section: Logo, Company Name & Contact Info -----------------------------------------*/}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+          {/* Left: Logo & Company Name */}
+          <div className="flex flex-col items-center md:items-start space-y-4">
+            <div className="flex items-center space-x-3">
+              <img
+                src="/logo.png"
+                alt="NexGen Pharma Solutions Logo"
+                className="w-20 h-20 md:w-24 md:h-24"
+              />
+              <img
+                src="/compname.png"
+                alt="NexGen Pharma Solutions"
+                className="h-20 md:h-24 w-auto"
+              />
+            </div>
+            <p className="text-sm text-gray-400 text-center md:text-left outfit">
+              Premier pharmaceutical consulting & compliance solutions
+            </p>
+          </div>
+
+          {/* Center: Quick Links */}
+          <div className="flex flex-col items-center md:items-start">
+            <h3 className="font-semibold text-lg mb-4 outfit text-white">Quick Links</h3>
+            <div className="grid grid-cols-2 gap-x-8 gap-y-3 text-sm outfit">
+              <Link to="/" className="hover:text-[#93C5FD] transition-colors duration-200">
+                Home
+              </Link>
+              <Link to="/aboutus" className="hover:text-[#93C5FD] transition-colors duration-200">
+                About Us
+              </Link>
+              <Link to="/gmpaudits" className="hover:text-[#93C5FD] transition-colors duration-200">
+                GMP Audits
+              </Link>
+              <Link to="/qualityconsulting" className="hover:text-[#93C5FD] transition-colors duration-200">
+                Quality Consulting
+              </Link>
+              <Link to="/computersystemvalidations" className="hover:text-[#93C5FD] transition-colors duration-200">
+                System Validations
+              </Link>
+              <Link to="/training" className="hover:text-[#93C5FD] transition-colors duration-200">
+                Training
+              </Link>
+              <Link to="/regulatoryaffairs" className="hover:text-[#93C5FD] transition-colors duration-200">
+                Regulatory Affairs
+              </Link>
+              <Link to="/contactus" className="hover:text-[#93C5FD] transition-colors duration-200">
+                Contact Us
+              </Link>
+            </div>
+          </div>
+
+          {/* Right: Contact Information */}
+          <div className="flex flex-col items-center md:items-start">
+            <h3 className="font-semibold text-lg mb-4 outfit text-white">Contact Information</h3>
+            <div className="space-y-3 text-sm outfit">
+              <div className="flex items-start space-x-2">
+                <svg className="w-5 h-5 mt-0.5 flex-shrink-0 text-[#3B82F6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                <div>
+                  <p className="font-medium text-white">Registered Office:</p>
+                  <p className="text-gray-400">412 & 420 PRINCE CUBE, Beside Gangotri Exotica</p>
+                  <p className="text-gray-400">Laxmipura Char Rasta, Nayaran Garden, 30 Mtr Road</p>
+                  <p className="text-gray-400">Gotri, Vadodara, Gujarat 390023, India</p>
+                  <p className="text-gray-400 text-xs mt-1">CIN: [To be provided]</p>
+                </div>
+              </div>
+              <div className="flex items-center space-x-2">
+                <svg className="w-5 h-5 flex-shrink-0 text-[#3B82F6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                <a href="mailto:inquiry@nexgenpharmasolutions.com" className="hover:text-[#93C5FD] transition-colors duration-200">
+                  inquiry@nexgenpharmasolutions.com
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
 
-        {/*----------------------------------------- Right side: Links -----------------------------------------*/}
-        <div className="flex justify-center w-full md:w-1/2 mt-4 md:mt-0 space-x-5 lg:space-x-[150px] md:pl-0 pl-5 font-semibold text-[#2C3E50] outfit">
-          <div className="flex flex-col space-y-4 text-left">
-            <Link to="/" className="hover:underline relative inline-block transition-transform duration-300 ease-in-out hover:scale-110">
-              Home
+        {/*----------------------------------------- Divider -----------------------------------------*/}
+        <div className="border-t border-gray-700 my-6"></div>
+
+        {/*----------------------------------------- Policy Links & Copyright -----------------------------------------*/}
+        <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+          <div className="flex flex-wrap justify-center md:justify-start gap-4 text-sm outfit">
+            <Link to="/privacy-policy" className="hover:text-[#93C5FD] transition-colors duration-200">
+              Privacy Policy
             </Link>
-            <Link to="/aboutus" className="hover:underline relative inline-block transition-transform duration-300 ease-in-out hover:scale-110">
-              About Us
+            <span className="text-gray-600">|</span>
+            <Link to="/terms-conditions" className="hover:text-[#93C5FD] transition-colors duration-200">
+              Terms & Conditions
             </Link>
-            <Link to="/gmpaudits" className="hover:underline relative inline-block transition-transform duration-300 ease-in-out hover:scale-110">
-              GMP Audits
+            <span className="text-gray-600">|</span>
+            <Link to="/disclaimer" className="hover:text-[#93C5FD] transition-colors duration-200">
+              Disclaimer
             </Link>
-            <Link to="/qualityconsulting" className="hover:underline relative inline-block transition-transform duration-300 ease-in-out hover:scale-110">
-              Quality Consulting
+            <span className="text-gray-600">|</span>
+            <Link to="/cookie-notice" className="hover:text-[#93C5FD] transition-colors duration-200">
+              Cookie Notice
             </Link>
           </div>
-          <div className="flex flex-col space-y-4 text-left">
-            <Link to="/computersystemvalidations" className="hover:underline relative inline-block transition-transform duration-300 ease-in-out hover:scale-110">
-              Computer System Validations
-            </Link>
-            <Link to="/training" className="hover:underline relative inline-block transition-transform duration-300 ease-in-out hover:scale-110">
-              Training
-            </Link>
-            <Link to="/regulatoryaffairs" className="hover:underline relative inline-block transition-transform duration-300 ease-in-out hover:scale-110">
-            Regulatory Affairs
-            </Link>
-            <Link to="/contactus" className="hover:underline relative inline-block transition-transform duration-300 ease-in-out hover:scale-110">
-              Contact Us
-            </Link>
+          <div className="text-sm outfit text-gray-400">
+            © 2026 NexGen Pharma Solutions Pvt. Ltd. All rights reserved.
           </div>
         </div>
       </div>
-      {/*----------------------------------------- Copyright and Credits -------------------------------------------------------*/}
-      <div className="text-center mt-10 space-y-2">
-        <p>© 2024 NexGen Pharma Solutions, India. All rights reserved.</p>
-        {/* <p>
-          Designed & Developed by{" "}
-          <a
-            href="https://www.linkedin.com/in/jeet-mistry-67a613233/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:underline text-blue-500"
-          >
-            Jeet Mistry
-          </a>{" "}
-          &{" "}
-          <a
-            href="https://www.linkedin.com/in/pratham-shrivastav-b81180251/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:underline text-blue-500"
-          >
-            Pratham Shrivastav
-          </a>
-        </p> */}
-      </div>
+
       <style>
             {`
               /* Initial state for the section */

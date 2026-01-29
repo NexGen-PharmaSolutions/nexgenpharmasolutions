@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const [servicesOpen, setServicesOpen] = useState(false);
+    const [productsOpen, setProductsOpen] = useState(false);
 
     const headerRef = useRef(null);
 
@@ -32,21 +33,21 @@ const Navbar = () => {
   }, []);
   
     return (
-      <nav ref={headerRef} className="header-section bg-[#F7F9FB] p-4 rounded-[30px] shadow-lg flex justify-between items-center">
+      <nav ref={headerRef} className="header-section bg-[#475569] p-4 rounded-[30px] shadow-lg flex justify-between items-center h-[72px]">
         <Link to="/">
           <div className="flex items-center space-x-2 md:pl-3">
             <img src="/logo.png" alt="Logo" className="h-10 w-10" />
-            <img src="/compname.png" alt="Company Name" className="h-8 relative inline-block transition-transform duration-300 ease-in-out hover:scale-110" />
+            <img src="/compname.png" alt="Company Name" className="h-16 relative inline-block transition-transform duration-300 ease-in-out hover:scale-110" />
           </div>
         </Link>
         {/*----------------------------------------- Hamburger Menu for Mobile -----------------------------------------*/}
-        <div className="md:hidden font-bold text-[#2C3E50] outfit">
+        <div className="md:hidden font-bold text-white outfit">
           <button
             onClick={() => setDropdownOpen(!dropdownOpen)}
             className="focus:outline-none"
           >
             <svg
-              className="w-8 h-8 text-gray-700"
+              className="w-8 h-8 text-white"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -82,7 +83,10 @@ const Navbar = () => {
               </li>
               <li className="relative">
                 <button
-                  onClick={() => setServicesOpen(!servicesOpen)}
+                  onClick={() => {
+                    setServicesOpen(!servicesOpen);
+                    setProductsOpen(false);
+                  }}
                   className="block w-full text-left px-4 py-2 hover:bg-gray-100 focus:outline-none"
                 >
                   Services
@@ -104,65 +108,151 @@ const Navbar = () => {
                   </svg>
                 </button>
                 {servicesOpen && (
-                  <ul className="absolute left-[-197px] top-0 w-29 text-sm bg-white rounded-lg shadow-lg py-2 animate-slide-in-right">
+                  <ul className="absolute left-[-240px] top-0 w-64 text-sm bg-gradient-to-br from-white to-blue-50 rounded-xl shadow-2xl py-3 border border-blue-100 animate-slide-in-right">
+                    <li className="px-3 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider border-b border-blue-100 mb-1">
+                      Our Services
+                    </li>
                     <li>
                       <Link
                         to="/gmpaudits"
-                        className="block px-2 py-2 hover:bg-gray-100"
+                        className="flex items-center px-3 py-2.5 hover:bg-blue-100 rounded-lg mx-2 transition-all duration-200 group"
                         onClick={() => {
                           setDropdownOpen(false);
                           setServicesOpen(false);
                         }}
                       >
-                        GMP Audits
+                        <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center mr-3 group-hover:scale-110 transition-transform duration-200">
+                          <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+                          </svg>
+                        </div>
+                        <span className="font-medium text-gray-800 group-hover:text-blue-600">GMP Audits</span>
                       </Link>
                     </li>
                     <li>
                       <Link
                         to="/qualityconsulting"
-                        className="block px-2 py-2 hover:bg-gray-100"
+                        className="flex items-center px-3 py-2.5 hover:bg-blue-100 rounded-lg mx-2 transition-all duration-200 group"
                         onClick={() => {
                           setDropdownOpen(false);
                           setServicesOpen(false);
                         }}
                       >
-                        Quality Consulting
+                        <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center mr-3 group-hover:scale-110 transition-transform duration-200">
+                          <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                        </div>
+                        <span className="font-medium text-gray-800 group-hover:text-blue-600">Quality Consulting</span>
                       </Link>
                     </li>
                     <li>
                       <Link
                         to="/computersystemvalidations"
-                        className="block px-2 py-2 hover:bg-gray-100"
+                        className="flex items-center px-3 py-2.5 hover:bg-blue-100 rounded-lg mx-2 transition-all duration-200 group"
                         onClick={() => {
                           setDropdownOpen(false);
                           setServicesOpen(false);
                         }}
                       >
-                        Computer System Validations
+                        <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg flex items-center justify-center mr-3 group-hover:scale-110 transition-transform duration-200">
+                          <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                          </svg>
+                        </div>
+                        <span className="font-medium text-gray-800 group-hover:text-blue-600">Computer System Validations</span>
                       </Link>
                     </li>
                     <li>
                       <Link
                         to="/training"
-                        className="block px-2 py-2 hover:bg-gray-100"
+                        className="flex items-center px-3 py-2.5 hover:bg-blue-100 rounded-lg mx-2 transition-all duration-200 group"
                         onClick={() => {
                           setDropdownOpen(false);
                           setServicesOpen(false);
                         }}
                       >
-                        Training
+                        <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center mr-3 group-hover:scale-110 transition-transform duration-200">
+                          <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                          </svg>
+                        </div>
+                        <span className="font-medium text-gray-800 group-hover:text-blue-600">Training</span>
                       </Link>
                     </li>
                     <li>
                       <Link
                         to="/regulatoryaffairs"
-                        className="block px-2 py-2 hover:bg-gray-100"
+                        className="flex items-center px-3 py-2.5 hover:bg-blue-100 rounded-lg mx-2 transition-all duration-200 group"
                         onClick={() => {
                           setDropdownOpen(false);
                           setServicesOpen(false);
                         }}
                       >
-                        Regulatory Affairs
+                        <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-red-500 to-red-600 rounded-lg flex items-center justify-center mr-3 group-hover:scale-110 transition-transform duration-200">
+                          <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
+                          </svg>
+                        </div>
+                        <span className="font-medium text-gray-800 group-hover:text-blue-600">Regulatory Affairs</span>
+                      </Link>
+                    </li>
+                  </ul>
+                )}
+              </li>
+              <li className="relative">
+                <button
+                  onClick={() => {
+                    setProductsOpen(!productsOpen);
+                    setServicesOpen(false);
+                  }}
+                  className="block w-full text-left px-4 py-2 hover:bg-gray-100 focus:outline-none"
+                >
+                  Products
+                  <svg
+                    className={`w-4 h-4 inline ml-2 transform ${
+                      productsOpen ? "rotate-180" : ""
+                    }`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M19 9l-7 7-7-7"
+                    ></path>
+                  </svg>
+                </button>
+                {productsOpen && (
+                  <ul className="absolute left-[-210px] top-0 w-64 text-sm bg-gradient-to-br from-white to-blue-50 rounded-xl shadow-2xl py-3 border border-blue-100 animate-slide-in-right">
+                    <li className="px-3 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider border-b border-blue-100 mb-1">
+                      Our Products
+                    </li>
+                    <li>
+                      <Link
+                        to="/products/nexgen-management-system"
+                        className="flex items-start px-3 py-3 hover:bg-blue-100 rounded-lg mx-2 transition-all duration-200 group"
+                        onClick={() => {
+                          setDropdownOpen(false);
+                          setProductsOpen(false);
+                        }}
+                      >
+                        <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center mr-3 group-hover:scale-110 transition-transform duration-200">
+                          <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                          </svg>
+                        </div>
+                        <div className="flex-1">
+                          <div className="flex items-center justify-between">
+                            <span className="font-semibold text-gray-800 text-sm group-hover:text-blue-600">NexGen Management System</span>
+                          </div>
+                          <div className="flex items-center mt-1">
+                            <span className="bg-gradient-to-r from-blue-500 to-blue-600 text-white text-xs px-2 py-0.5 rounded-full font-medium shadow-sm">Coming Soon</span>
+                          </div>
+                        </div>
                       </Link>
                     </li>
                   </ul>
@@ -181,21 +271,24 @@ const Navbar = () => {
           )}
         </div>
         {/*--------------------------------------------------------------- Full Menu for Larger Screens -------------------------------------------------------------------------*/}
-        <ul className="hidden md:flex space-x-6 items-center md:pr-3 font-bold text-[#2C3E50] outfit">
+        <ul className="hidden md:flex space-x-6 items-center md:pr-3 font-bold text-white outfit">
           <li>
-            <Link to="/" className="hover:text-gray-700 relative inline-block transition-transform duration-300 ease-in-out hover:scale-110">
+            <Link to="/" className="hover:text-gray-300 relative inline-block transition-transform duration-300 ease-in-out hover:scale-110">
               Home
             </Link>
           </li>
           <li>
-            <Link to="/aboutus" className="hover:text-gray-700 relative inline-block transition-transform duration-300 ease-in-out hover:scale-110">
+            <Link to="/aboutus" className="hover:text-gray-300 relative inline-block transition-transform duration-300 ease-in-out hover:scale-110">
               About Us
             </Link>
           </li>
           <li className="relative">
             <button
-              onClick={() => setDropdownOpen(!dropdownOpen)}
-              className="hover:text-gray-700 focus:outline-none relative inline-block transition-transform duration-300 ease-in-out hover:scale-110"
+              onClick={() => {
+                setDropdownOpen(!dropdownOpen);
+                setProductsOpen(false);
+              }}
+              className="hover:text-gray-300 focus:outline-none relative inline-block transition-transform duration-300 ease-in-out hover:scale-110"
             >
               Services
               <svg
@@ -216,52 +309,144 @@ const Navbar = () => {
               </svg>
             </button>
             {dropdownOpen && (
-              <ul className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 animate-slide-in-top">
+              <ul className="absolute right-0 mt-2 w-56 bg-gradient-to-br from-white to-blue-50 rounded-xl shadow-2xl py-2 border border-blue-100 animate-slide-in-top z-50">
+                <li className="px-3 py-1.5 text-xs font-semibold text-gray-500 uppercase tracking-wider border-b border-blue-100 mb-1">
+                  Our Services
+                </li>
                 <li>
                   <Link
                     to="/gmpaudits"
-                    className="block px-4 py-2 hover:bg-gray-100"
+                    className="flex items-center px-3 py-2 hover:bg-blue-100 rounded-lg mx-2 transition-all duration-200 group"
+                    onClick={() => setDropdownOpen(false)}
                   >
-                    GMP Audits
+                    <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center mr-2.5 group-hover:scale-110 transition-transform duration-200 shadow-lg">
+                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+                      </svg>
+                    </div>
+                    <span className="font-medium text-sm text-gray-800 group-hover:text-blue-600 transition-colors duration-200">GMP Audits</span>
                   </Link>
                 </li>
                 <li>
                   <Link
                     to="/qualityconsulting"
-                    className="block px-4 py-2 hover:bg-gray-100"
+                    className="flex items-center px-3 py-2 hover:bg-blue-100 rounded-lg mx-2 transition-all duration-200 group"
+                    onClick={() => setDropdownOpen(false)}
                   >
-                    Quality Consulting
+                    <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center mr-2.5 group-hover:scale-110 transition-transform duration-200 shadow-lg">
+                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    </div>
+                    <span className="font-medium text-sm text-gray-800 group-hover:text-blue-600 transition-colors duration-200">Quality Consulting</span>
                   </Link>
                 </li>
                 <li>
                   <Link
                     to="/computersystemvalidations"
-                    className="block px-4 py-2 hover:bg-gray-100"
+                    className="flex items-center px-3 py-2 hover:bg-blue-100 rounded-lg mx-2 transition-all duration-200 group"
+                    onClick={() => setDropdownOpen(false)}
                   >
-                    Computer System Validations
+                    <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg flex items-center justify-center mr-2.5 group-hover:scale-110 transition-transform duration-200 shadow-lg">
+                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                      </svg>
+                    </div>
+                    <span className="font-medium text-sm text-gray-800 group-hover:text-blue-600 transition-colors duration-200">Computer System Validations</span>
                   </Link>
                 </li>
                 <li>
                   <Link
                     to="/training"
-                    className="block px-4 py-2 hover:bg-gray-100"
+                    className="flex items-center px-3 py-2 hover:bg-blue-100 rounded-lg mx-2 transition-all duration-200 group"
+                    onClick={() => setDropdownOpen(false)}
                   >
-                    Training
+                    <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center mr-2.5 group-hover:scale-110 transition-transform duration-200 shadow-lg">
+                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                      </svg>
+                    </div>
+                    <span className="font-medium text-sm text-gray-800 group-hover:text-blue-600 transition-colors duration-200">Training</span>
                   </Link>
                 </li>
                 <li>
                   <Link
                     to="/regulatoryaffairs"
-                    className="block px-4 py-2 hover:bg-gray-100"
+                    className="flex items-center px-3 py-2 hover:bg-blue-100 rounded-lg mx-2 transition-all duration-200 group"
+                    onClick={() => setDropdownOpen(false)}
                   >
-                    Regulatory Affairs
+                    <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-red-500 to-red-600 rounded-lg flex items-center justify-center mr-2.5 group-hover:scale-110 transition-transform duration-200 shadow-lg">
+                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
+                      </svg>
+                    </div>
+                    <span className="font-medium text-sm text-gray-800 group-hover:text-blue-600 transition-colors duration-200">Regulatory Affairs</span>
+                  </Link>
+                </li>
+              </ul>
+            )}
+          </li>
+          <li className="relative">
+            <button
+              onClick={() => {
+                setProductsOpen(!productsOpen);
+                setDropdownOpen(false);
+              }}
+              className="hover:text-gray-300 focus:outline-none relative inline-block transition-transform duration-300 ease-in-out hover:scale-110"
+            >
+              Products
+              <svg
+                className={`w-4 h-4 inline ml-2 transform ${
+                  productsOpen ? "rotate-180" : ""
+                }`}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </button>
+            {productsOpen && (
+              <ul className="absolute right-0 mt-2 w-64 bg-gradient-to-br from-white to-blue-50 rounded-xl shadow-2xl py-2 border border-blue-100 animate-slide-in-top z-50">
+                <li className="px-3 py-1.5 text-xs font-semibold text-gray-500 uppercase tracking-wider border-b border-blue-100 mb-1">
+                  Our Products
+                </li>
+                <li>
+                  <Link
+                    to="/products/nexgen-management-system"
+                    className="flex items-start px-3 py-3 hover:bg-blue-100 rounded-lg mx-2 transition-all duration-200 group"
+                    onClick={() => setProductsOpen(false)}
+                  >
+                    <div className="flex-shrink-0 w-9 h-9 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center mr-3 group-hover:scale-110 transition-transform duration-200 shadow-lg">
+                      <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                      </svg>
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-center justify-between mb-0.5">
+                        <span className="font-medium text-sm text-gray-800 group-hover:text-blue-600 transition-colors duration-200">NexGen Management System</span>
+                      </div>
+                      <p className="text-xs text-gray-600 mb-1.5">Complete pharma quality management</p>
+                      <span className="inline-flex items-center bg-gradient-to-r from-blue-500 to-blue-600 text-white text-xs px-2 py-0.5 rounded-full font-medium shadow-sm">
+                        <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        Coming Soon
+                      </span>
+                    </div>
                   </Link>
                 </li>
               </ul>
             )}
           </li>
           <li>
-            <Link to="/contactus" className="hover:text-gray-700 relative inline-block transition-transform duration-300 ease-in-out hover:scale-110">
+            <Link to="/contactus" className="hover:text-gray-300 relative inline-block transition-transform duration-300 ease-in-out hover:scale-110">
               Contact Us
             </Link>
           </li>
