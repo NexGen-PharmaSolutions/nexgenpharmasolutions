@@ -191,7 +191,7 @@ const TermsConditions = () => {
               <div className="bg-gray-50 p-4 rounded-lg">
                 <p className="font-semibold">NexGen Pharma Solutions Private Limited</p>
                 <p>Email: <a href="mailto:inquiry@nexgenpharmasolutions.com" className="text-[#3B82F6] hover:underline">inquiry@nexgenpharmasolutions.com</a></p>
-                <p className="mt-2 text-sm text-gray-600">Registered Office: 412 & 420 PRINCE CUBE, Beside Gangotri Exotica, Laxmipura Char Rasta, Nayaran Garden, 30 Mtr Road, Gotri, Vadodara, Gujarat 390023, India</p>
+                <p className="mt-2 text-sm text-gray-600">Registered Office: 413 & 420 PRINCE CUBE, Beside Gangotri Exotica, Laxmipura Char Rasta, Nayaran Garden, 30 Mtr Road, Gotri, Vadodara, Gujarat 390023, India</p>
               </div>
             </section>
           </div>

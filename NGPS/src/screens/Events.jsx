@@ -12,7 +12,7 @@ const Events = () => {
   const events = [
     {
       year: "2025",
-      name: "CPhI Worldwide 2025",
+      name: "CPHI Worldwide 2025",
       location: "Frankfurt, Germany",
       description: "Active participation in the world's largest pharmaceutical networking event, engaging with global manufacturers, regulatory bodies, and technology providers.",
       color: "blue",
@@ -20,7 +20,7 @@ const Events = () => {
     },
     {
       year: "2024",
-      name: "CPhI India 2024",
+      name: "CPHI India 2024",
       location: "Delhi, India",
       description: "Showcased regulatory and quality consulting expertise to Indian and international pharmaceutical manufacturers at Asia's premier pharma event.",
       color: "green",
@@ -61,7 +61,7 @@ const Events = () => {
         <title>Events & Industry Engagement | NexGen Pharma Solutions Pvt. Ltd.</title>
         <meta
           name="description"
-          content="NexGen Pharma Solutions' participation in CPhI, regulatory forums, and global pharmaceutical events. Active engagement with industry leaders and regulatory authorities."
+          content="NexGen Pharma Solutions' participation in CPHI, regulatory forums, and global pharmaceutical events. Active engagement with industry leaders and regulatory authorities."
         />
       </Helmet>
 
@@ -89,7 +89,7 @@ const Events = () => {
               Meet Us at Upcoming Events
             </h2>
             <p className="text-lg mb-6 opacity-90">
-              Schedule a meeting with our team at CPhI or other industry events to discuss your compliance challenges.
+              Schedule a meeting with our team at CPHI or other industry events to discuss your compliance challenges.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link

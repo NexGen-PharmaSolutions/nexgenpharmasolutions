@@ -106,7 +106,7 @@ const Contactus = () => {
                 </div>
                 <h3 className="text-xl font-semibold outfit text-[#111827] mb-3">Our Location</h3>
                 <p className="text-gray-600 montserrat">
-                  412 & 420 PRINCE CUBE<br />
+                  413 & 420 PRINCE CUBE<br />
                   Beside Gangotri Exotica<br />
                   Laxmipura Char Rasta, Nayaran Garden<br />
                   30 Mtr Road, Gotri<br />

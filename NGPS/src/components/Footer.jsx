@@ -33,7 +33,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Left: Logo & Company Name */}
           <div className="flex flex-col items-center md:items-start space-y-4">
-            <div className="flex items-center space-x-3">
+            <div className="flex items-center justify-center md:justify-start space-x-3">
               <img
                 src="/logo.png"
                 alt="NexGen Pharma Solutions Logo"
@@ -42,7 +42,7 @@ const Footer = () => {
               <img
                 src="/compname.png"
                 alt="NexGen Pharma Solutions"
-                className="h-20 md:h-24 w-auto"
+                className="h-36 md:h-40 w-auto"
               />
             </div>
             <p className="text-sm text-gray-400 text-center md:text-left outfit">
@@ -92,7 +92,7 @@ const Footer = () => {
                 </svg>
                 <div>
                   <p className="font-medium text-white">Registered Office:</p>
-                  <p className="text-gray-400">412 & 420 PRINCE CUBE, Beside Gangotri Exotica</p>
+                  <p className="text-gray-400">413 & 420 PRINCE CUBE, Beside Gangotri Exotica</p>
                   <p className="text-gray-400">Laxmipura Char Rasta, Nayaran Garden, 30 Mtr Road</p>
                   <p className="text-gray-400">Gotri, Vadodara, Gujarat 390023, India</p>
                   <p className="text-gray-400 text-xs mt-1">CIN: [To be provided]</p>
@@ -133,7 +133,7 @@ const Footer = () => {
             </Link>
           </div>
           <div className="text-sm outfit text-gray-400">
-            © 2026 NexGen Pharma Solutions Pvt. Ltd. All rights reserved.
+            © 2024 NexGen Pharma Solutions Pvt. Ltd. All rights reserved.
           </div>
         </div>
       </div>

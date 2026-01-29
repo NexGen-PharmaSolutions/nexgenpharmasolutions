@@ -449,7 +449,7 @@ const Home = () => {
                 ].map((item, index) => (
                   <div key={index} className="relative">
                     <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-shadow duration-300 h-full">
-                      <div className="text-5xl font-bold text-blue-50 mb-3 outfit">{item.step}</div>
+                      <div className="text-5xl font-bold text-[#3B82F6] mb-3 outfit">{item.step}</div>
                       <h3 className="text-xl font-semibold text-[#111827] mb-3 outfit">{item.title}</h3>
                       <p className="text-gray-600 text-sm">{item.desc}</p>
                     </div>
@@ -960,7 +960,7 @@ const Home = () => {
                 </h3>
                 <p className="text-gray-700 leading-relaxed">
                   NexGen Pharma Solutions maintains active engagement with the global pharmaceutical ecosystem through 
-                  participation in industry-leading events like CPhI Worldwide, CPhI India, and regional regulatory forums. 
+                  participation in industry-leading events like CPHI Worldwide, CPHI India, and regional regulatory forums. 
                   This continuous engagement ensures we stay ahead of regulatory trends, compliance requirements, and 
                   technology innovations.
                 </p>
@@ -1002,14 +1002,14 @@ const Home = () => {
                         </svg>
                       </div>
                       <div>
-                        <h4 className="font-semibold text-[#111827] outfit">CPhI Worldwide 2025</h4>
+                        <h4 className="font-semibold text-[#111827] outfit">CPHI Worldwide 2025</h4>
                         <p className="text-sm text-gray-600">Frankfurt, Germany</p>
                       </div>
                     </div>
                     <div className="h-48 rounded-lg overflow-hidden">
                       <img 
                         src="/CPhI germany.jpg" 
-                        alt="CPhI Worldwide 2025 - Frankfurt, Germany"
+                        alt="CPHI Worldwide 2025 - Frankfurt, Germany"
                         className="w-full h-full object-cover"
                       />
                     </div>
@@ -1023,14 +1023,14 @@ const Home = () => {
                         </svg>
                       </div>
                       <div>
-                        <h4 className="font-semibold text-[#111827] outfit">CPhI India 2024</h4>
+                        <h4 className="font-semibold text-[#111827] outfit">CPHI India 2024</h4>
                         <p className="text-sm text-gray-600">Delhi, India</p>
                       </div>
                     </div>
                     <div className="h-48 rounded-lg overflow-hidden">
                       <img 
                         src="/CPhI india .jpg" 
-                        alt="CPhI India 2024 - Delhi, India"
+                        alt="CPHI India 2024 - Delhi, India"
                         className="w-full h-full object-cover"
                       />
                     </div>
@@ -1049,7 +1049,7 @@ const Home = () => {
             {/* CPHI Integrations / Value Pillars */}
             <div className="mt-16">
               <h3 className="text-2xl font-semibold text-center text-[#111827] mb-8 outfit">
-                CPhI Integration Value Pillars
+                CPHI Integration Value Pillars
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">
                 <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl text-center shadow-md hover:shadow-lg transition-shadow duration-300">
