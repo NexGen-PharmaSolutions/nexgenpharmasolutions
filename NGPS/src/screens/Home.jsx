@@ -916,7 +916,7 @@ const Home = () => {
                 {/* Mini Stats */}
                 <div className="grid grid-cols-2 gap-4 pt-4">
                   <div className="bg-blue-50 p-4 rounded-lg text-center">
-                    <div className="text-3xl font-bold text-[#3B82F6] outfit">10+</div>
+                    <div className="text-3xl font-bold text-[#3B82F6] outfit">25+</div>
                     <div className="text-sm text-gray-600 mt-1">Years in Industry</div>
                   </div>
                   <div className="bg-blue-50 p-4 rounded-lg text-center">

@@ -45,9 +45,10 @@ const Footer = () => {
                 className="h-36 md:h-40 w-auto"
               />
             </div>
-            <p className="text-sm text-gray-400 text-center md:text-left outfit">
-              Premier pharmaceutical consulting & compliance solutions
-            </p>
+            <div className="text-sm text-gray-400 text-center md:text-left outfit space-y-1">
+              <p>Premier pharmaceutical consulting & compliance solutions</p>
+              <p>Redefining Pharmaceutical Excellence</p>
+            </div>
           </div>
 
           {/* Center: Quick Links */}
