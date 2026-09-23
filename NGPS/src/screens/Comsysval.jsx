@@ -237,7 +237,7 @@ const Comsysval = () => {
           </div>
         </section>
 
-        {/* GxP Readiness Map: the failure points AI and digital systems hit */}
+        {/* GxP Readiness Map: the failure points pharma's digital systems hit */}
         <section className="py-16 md:py-24 px-4 bg-[#2E2B25] text-white">
           <div className="container mx-auto max-w-6xl">
             <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-[#F6A06B] mb-5">
@@ -245,10 +245,10 @@ const Comsysval = () => {
               GxP readiness map
             </p>
             <h2 className="text-3xl md:text-[2.75rem] leading-[1.06] font-bold outfit tracking-tight max-w-[20ch] mb-5">
-              Where AI and digital systems stall in GxP
+              Where pharma&rsquo;s digital systems stall in GxP
             </h2>
             <p className="text-gray-300 font-light leading-relaxed max-w-[68ch] mb-12">
-              MES, ERP, digital twins, predictive maintenance and AI-assisted analytics all work
+              MES, ERP, digital twins, predictive maintenance and analytics platforms all work
               before they reach a regulated plant. What stops them is a quality unit that cannot
               accept what it cannot audit. These are six failure points we see repeatedly, the clause
               each one maps to, and the deliverable that closes it.
