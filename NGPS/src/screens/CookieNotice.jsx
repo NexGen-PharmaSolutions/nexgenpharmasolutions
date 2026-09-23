@@ -9,7 +9,7 @@ const CookieNotice = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#FFFEF7]">
+    <div className="min-h-screen bg-[#F5EAD8]">
       <Helmet>
         <title>Cookie Notice | NexGen Pharma Solutions Pvt. Ltd.</title>
         <meta
@@ -25,14 +25,14 @@ const CookieNotice = () => {
 
       <main className="container mx-auto px-4 py-12">
         <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-lg p-8 md:p-12">
-          <h1 className="text-4xl font-bold text-[#111827] mb-4 outfit">
+          <h1 className="text-4xl font-bold text-[#201E1D] mb-4 outfit">
             Cookie Notice
           </h1>
           <p className="text-sm text-gray-600 mb-8">
             Last Updated: January 21, 2026
           </p>
 
-          <div className="space-y-8 text-[#111827] outfit leading-relaxed">
+          <div className="space-y-8 text-[#201E1D] outfit leading-relaxed">
             <section>
               <h2 className="text-2xl font-semibold mb-4">What Are Cookies?</h2>
               <p>
@@ -133,7 +133,7 @@ const CookieNotice = () => {
                     href="https://policies.google.com/privacy" 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="text-[#3B82F6] hover:underline"
+                    className="text-[#8C491A] hover:underline"
                   >
                     Google Privacy Policy
                   </a>
@@ -162,7 +162,7 @@ const CookieNotice = () => {
                     href="https://support.google.com/chrome/answer/95647" 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="text-[#3B82F6] hover:underline"
+                    className="text-[#8C491A] hover:underline"
                   >
                     Google Chrome
                   </a>
@@ -172,7 +172,7 @@ const CookieNotice = () => {
                     href="https://support.mozilla.org/en-US/kb/clear-cookies-and-site-data-firefox" 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="text-[#3B82F6] hover:underline"
+                    className="text-[#8C491A] hover:underline"
                   >
                     Mozilla Firefox
                   </a>
@@ -182,7 +182,7 @@ const CookieNotice = () => {
                     href="https://support.apple.com/en-us/HT201265" 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="text-[#3B82F6] hover:underline"
+                    className="text-[#8C491A] hover:underline"
                   >
                     Safari (macOS and iOS)
                   </a>
@@ -192,7 +192,7 @@ const CookieNotice = () => {
                     href="https://support.microsoft.com/en-us/microsoft-edge/delete-cookies-in-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09" 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="text-[#3B82F6] hover:underline"
+                    className="text-[#8C491A] hover:underline"
                   >
                     Microsoft Edge
                   </a>
@@ -206,7 +206,7 @@ const CookieNotice = () => {
                   href="https://tools.google.com/dlpage/gaoptout" 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="text-[#3B82F6] hover:underline"
+                  className="text-[#8C491A] hover:underline"
                 >
                   Google Analytics Opt-out Browser Add-on
                 </a>
@@ -241,7 +241,7 @@ const CookieNotice = () => {
               <h2 className="text-2xl font-semibold mb-4">More Information</h2>
               <p className="mb-3">
                 For more information about how we handle your personal data, please see our{" "}
-                <a href="/privacy-policy" className="text-[#3B82F6] hover:underline">Privacy Policy</a>.
+                <a href="/privacy-policy" className="text-[#8C491A] hover:underline">Privacy Policy</a>.
               </p>
               <p>
                 To learn more about cookies in general, visit{" "}
@@ -249,7 +249,7 @@ const CookieNotice = () => {
                   href="https://www.allaboutcookies.org" 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="text-[#3B82F6] hover:underline"
+                  className="text-[#8C491A] hover:underline"
                 >
                   www.allaboutcookies.org
                 </a>
@@ -264,7 +264,7 @@ const CookieNotice = () => {
               </p>
               <div className="bg-gray-50 p-4 rounded-lg">
                 <p className="font-semibold">NexGen Pharma Solutions Private Limited</p>
-                <p>Email: <a href="mailto:inquiry@nexgenpharmasolutions.com" className="text-[#3B82F6] hover:underline">inquiry@nexgenpharmasolutions.com</a></p>
+                <p>Email: <a href="mailto:inquiry@nexgenpharmasolutions.com" className="text-[#8C491A] hover:underline">inquiry@nexgenpharmasolutions.com</a></p>
                 <p className="mt-2 text-sm text-gray-600">Registered Office: 413 & 420 PRINCE CUBE, Beside Gangotri Exotica, Laxmipura Char Rasta, Nayaran Garden, 30 Mtr Road, Gotri, Vadodara, Gujarat 390023, India</p>
               </div>
             </section>

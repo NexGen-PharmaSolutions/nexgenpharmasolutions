@@ -4,6 +4,42 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { Helmet } from "react-helmet";
 
+const readinessMap = [
+  {
+    fail: "The model is retrained, or the vendor ships a release, after go-live.",
+    clause: "EU GMP Annex 11 §10 · GAMP 5 continuous validation",
+    deliver:
+      "Change control protocol with defined revalidation triggers and a regression test set held by the quality unit.",
+  },
+  {
+    fail: "A decision is made by the system and nobody can produce a human-readable trail of why.",
+    clause: "21 CFR Part 11.10(e)",
+    deliver: "Audit trail design review plus a Part 11 gap assessment against the as-built system.",
+  },
+  {
+    fail: "Training or configuration data lineage cannot be evidenced back to source.",
+    clause: "ALCOA+ (attributable, original, enduring)",
+    deliver: "Data integrity mapping across the full data lifecycle, from instrument to archive.",
+  },
+  {
+    fail: "A SaaS vendor states the platform is “already validated”.",
+    clause: "GAMP 5 Category 4 / 5 · supplier assessment",
+    deliver:
+      "Supplier audit and software categorisation report your quality unit can accept as evidence.",
+  },
+  {
+    fail: "A digital twin or predictive maintenance model drifts away from the qualified state.",
+    clause: "EU GMP Annex 15",
+    deliver: "Requalification strategy with periodic review intervals tied to model performance.",
+  },
+  {
+    fail: "Electronic signature workflows are introduced in a new module.",
+    clause: "21 CFR Part 11 Subpart C · Annex 11 §14",
+    deliver:
+      "E-signature qualification covering identity, meaning and non-repudiation of the signed record.",
+  },
+];
+
 const Comsysval = () => {
   const [openFaq, setOpenFaq] = useState(null);
 
@@ -35,7 +71,7 @@ const Comsysval = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-[#FFFEF7]">
+    <div className="min-h-screen bg-[#F5EAD8]">
       <Helmet>
         <title>Computer System Validation (CSV) | NexGen Pharma Solutions</title>
         <meta name="description" content="Expert CSV services for pharmaceutical manufacturing, LIMS, ERP, and GxP systems. GAMP 5 compliant validation, 21 CFR Part 11, EU Annex 11, and data integrity compliance." />
@@ -46,7 +82,7 @@ const Comsysval = () => {
       </header>
       <main className="relative z-10">
         {/* Hero Section */}
-        <section className="relative bg-gradient-to-r from-[#475569] via-[#64748b] to-[#475569] text-white py-20 px-4">
+        <section className="relative bg-gradient-to-r from-[#2E2B25] via-[#3D372E] to-[#2E2B25] text-white py-20 px-4">
           <div className="container mx-auto max-w-6xl">
             <div className="text-center mb-8">
               <h1 className="text-4xl md:text-5xl font-bold outfit mb-4">
@@ -60,7 +96,7 @@ const Comsysval = () => {
             <div className="flex flex-col md:flex-row gap-4 justify-center items-center mt-8">
               <a
                 href="mailto:inquiry@nexgenpharmasolutions.com"
-                className="px-8 py-3 bg-white text-[#111827] hover:bg-gray-100 font-semibold rounded-lg transition-all duration-200 shadow-lg flex items-center gap-2"
+                className="px-8 py-3 bg-white text-[#201E1D] hover:bg-gray-100 font-semibold rounded-lg transition-all duration-200 shadow-lg flex items-center gap-2"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -74,19 +110,19 @@ const Comsysval = () => {
         {/* Value Proposition Section */}
         <section className="py-16 px-4 bg-white">
           <div className="container mx-auto max-w-6xl">
-            <h2 className="text-3xl md:text-4xl font-bold outfit text-[#111827] text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold outfit text-[#201E1D] text-center mb-12">
               Comprehensive CSV Solutions
             </h2>
 
             <div className="grid md:grid-cols-2 gap-12">
               {/* Left: System Categories */}
               <div>
-                <h3 className="text-2xl font-semibold outfit text-[#111827] mb-6">
+                <h3 className="text-2xl font-semibold outfit text-[#201E1D] mb-6">
                   Systems We Validate
                 </h3>
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
-                    <svg className="w-6 h-6 text-[#3B82F6] flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-6 h-6 text-[#C67139] flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     <div>
@@ -96,7 +132,7 @@ const Comsysval = () => {
                   </div>
 
                   <div className="flex items-start gap-3">
-                    <svg className="w-6 h-6 text-[#3B82F6] flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-6 h-6 text-[#C67139] flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     <div>
@@ -106,7 +142,7 @@ const Comsysval = () => {
                   </div>
 
                   <div className="flex items-start gap-3">
-                    <svg className="w-6 h-6 text-[#3B82F6] flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-6 h-6 text-[#C67139] flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     <div>
@@ -116,7 +152,7 @@ const Comsysval = () => {
                   </div>
 
                   <div className="flex items-start gap-3">
-                    <svg className="w-6 h-6 text-[#3B82F6] flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-6 h-6 text-[#C67139] flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     <div>
@@ -126,7 +162,7 @@ const Comsysval = () => {
                   </div>
 
                   <div className="flex items-start gap-3">
-                    <svg className="w-6 h-6 text-[#3B82F6] flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-6 h-6 text-[#C67139] flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     <div>
@@ -139,34 +175,34 @@ const Comsysval = () => {
 
               {/* Right: Validation Approach & Standards */}
               <div>
-                <h3 className="text-2xl font-semibold outfit text-[#111827] mb-6">
+                <h3 className="text-2xl font-semibold outfit text-[#201E1D] mb-6">
                   Our Validation Approach
                 </h3>
                 <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100">
                   <h4 className="font-semibold mb-4">Regulatory Standards</h4>
                   <div className="grid grid-cols-2 gap-4 text-sm mb-8">
                     <div className="flex items-center gap-2">
-                      <span className="text-[#3B82F6]">✓</span>
+                      <span className="text-[#8C491A]">✓</span>
                       <span>FDA 21 CFR Part 11</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <span className="text-[#3B82F6]">✓</span>
+                      <span className="text-[#8C491A]">✓</span>
                       <span>EU Annex 11</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <span className="text-[#3B82F6]">✓</span>
+                      <span className="text-[#8C491A]">✓</span>
                       <span>GAMP 5 V-Model</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <span className="text-[#3B82F6]">✓</span>
+                      <span className="text-[#8C491A]">✓</span>
                       <span>PIC/S PI 011-3</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <span className="text-[#3B82F6]">✓</span>
+                      <span className="text-[#8C491A]">✓</span>
                       <span>WHO TRS 996</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <span className="text-[#3B82F6]">✓</span>
+                      <span className="text-[#8C491A]">✓</span>
                       <span>ISO/IEC 62304</span>
                     </div>
                   </div>
@@ -175,15 +211,15 @@ const Comsysval = () => {
                     <h4 className="font-semibold mb-4">GAMP 5 Categories</h4>
                     <ul className="space-y-3 text-sm">
                       <li className="flex items-start gap-2">
-                        <span className="text-[#3B82F6] font-semibold mt-1">Cat 3:</span>
+                        <span className="text-[#8C491A] font-semibold mt-1">Cat 3:</span>
                         <span>Non-configured products (instruments, firmware)</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <span className="text-[#3B82F6] font-semibold mt-1">Cat 4:</span>
+                        <span className="text-[#8C491A] font-semibold mt-1">Cat 4:</span>
                         <span>Configured products (LIMS, ERP, COTS software)</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <span className="text-[#3B82F6] font-semibold mt-1">Cat 5:</span>
+                        <span className="text-[#8C491A] font-semibold mt-1">Cat 5:</span>
                         <span>Custom applications (bespoke software, modifications)</span>
                       </li>
                     </ul>
@@ -201,21 +237,97 @@ const Comsysval = () => {
           </div>
         </section>
 
-        {/* What You Get Section */}
-        <section className="py-16 px-4 bg-[#F7F9FB]">
+        {/* GxP Readiness Map: the failure points AI and digital systems hit */}
+        <section className="py-16 md:py-24 px-4 bg-[#2E2B25] text-white">
           <div className="container mx-auto max-w-6xl">
-            <h2 className="text-3xl md:text-4xl font-bold outfit text-[#111827] text-center mb-12">
+            <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-[#F6A06B] mb-5">
+              <span className="h-[7px] w-[7px] rounded-full bg-[#F6A06B]" aria-hidden="true" />
+              GxP readiness map
+            </p>
+            <h2 className="text-3xl md:text-[2.75rem] leading-[1.06] font-bold outfit tracking-tight max-w-[20ch] mb-5">
+              Where AI and digital systems stall in GxP
+            </h2>
+            <p className="text-gray-300 font-light leading-relaxed max-w-[68ch] mb-12">
+              MES, ERP, digital twins, predictive maintenance and AI-assisted analytics all work
+              before they reach a regulated plant. What stops them is a quality unit that cannot
+              accept what it cannot audit. These are six failure points we see repeatedly, the clause
+              each one maps to, and the deliverable that closes it.
+            </p>
+
+            <table className="w-full border-collapse text-left">
+              <caption className="sr-only">
+                GxP readiness map: failure point, regulatory reference and NexGen deliverable
+              </caption>
+              <thead className="hidden md:table-header-group">
+                <tr>
+                  <th scope="col" className="w-[32%] pr-6 pb-3 text-[0.6875rem] font-bold uppercase tracking-[0.14em] text-gray-400 border-b-2 border-gray-500">
+                    Failure point
+                  </th>
+                  <th scope="col" className="w-[26%] pr-6 pb-3 text-[0.6875rem] font-bold uppercase tracking-[0.14em] text-gray-400 border-b-2 border-gray-500">
+                    Regulatory reference
+                  </th>
+                  <th scope="col" className="pr-0 pb-3 text-[0.6875rem] font-bold uppercase tracking-[0.14em] text-gray-400 border-b-2 border-gray-500">
+                    NexGen deliverable
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {readinessMap.map((row, i) => (
+                  <tr key={i} className="block md:table-row border-b border-gray-700 py-5 md:py-0">
+                    <td className="block md:table-cell align-top pr-0 md:pr-6 pb-3 md:py-5 text-[0.975rem] leading-relaxed font-medium text-white">
+                      <span className="block md:hidden text-[0.625rem] font-bold uppercase tracking-[0.14em] text-gray-400 mb-1">
+                        Failure point
+                      </span>
+                      {row.fail}
+                    </td>
+                    <td className="block md:table-cell align-top pr-0 md:pr-6 pb-3 md:py-5 text-sm leading-relaxed font-semibold text-[#F6A06B]">
+                      <span className="block md:hidden text-[0.625rem] font-bold uppercase tracking-[0.14em] text-gray-400 mb-1">
+                        Regulatory reference
+                      </span>
+                      {row.clause}
+                    </td>
+                    <td className="block md:table-cell align-top md:py-5 text-[0.975rem] leading-relaxed font-light text-gray-300">
+                      <span className="block md:hidden text-[0.625rem] font-bold uppercase tracking-[0.14em] text-gray-400 mb-1">
+                        NexGen deliverable
+                      </span>
+                      {row.deliver}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+
+            <div className="mt-10 flex flex-col sm:flex-row sm:items-center gap-6 sm:gap-8">
+              <p className="max-w-[46ch] text-[0.975rem] font-light leading-relaxed text-gray-400">
+                If your roadmap has an answer to all six, you do not need us. If it has an answer to
+                three, that is the conversation worth having.
+              </p>
+              <Link
+                to="/contactus"
+                className="inline-flex items-center gap-2 self-start whitespace-nowrap bg-[#AA5C29] hover:bg-[#8C491A] text-white font-semibold py-3.5 px-7 rounded-sm transition-colors duration-300 outfit"
+              >
+                Request a gap assessment
+                <span aria-hidden="true">&#8594;</span>
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* What You Get Section */}
+        <section className="py-16 px-4 bg-[#F9F4ED]">
+          <div className="container mx-auto max-w-6xl">
+            <h2 className="text-3xl md:text-4xl font-bold outfit text-[#201E1D] text-center mb-12">
               What You Get
             </h2>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
-                <div className="w-12 h-12 bg-[#DBEAFE] rounded-lg flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-[#3B82F6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-12 h-12 bg-[#FFF2EB] rounded-lg flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-[#C67139]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold outfit text-[#111827] mb-3">
+                <h3 className="text-xl font-semibold outfit text-[#201E1D] mb-3">
                   Validation Master Plan (VMP)
                 </h3>
                 <p className="text-gray-600 text-sm">
@@ -224,12 +336,12 @@ const Comsysval = () => {
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
-                <div className="w-12 h-12 bg-[#DBEAFE] rounded-lg flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-[#3B82F6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-12 h-12 bg-[#FFF2EB] rounded-lg flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-[#C67139]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold outfit text-[#111827] mb-3">
+                <h3 className="text-xl font-semibold outfit text-[#201E1D] mb-3">
                   Requirements & Risk Assessment
                 </h3>
                 <p className="text-gray-600 text-sm">
@@ -238,12 +350,12 @@ const Comsysval = () => {
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
-                <div className="w-12 h-12 bg-[#DBEAFE] rounded-lg flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-[#3B82F6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-12 h-12 bg-[#FFF2EB] rounded-lg flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-[#C67139]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold outfit text-[#111827] mb-3">
+                <h3 className="text-xl font-semibold outfit text-[#201E1D] mb-3">
                   IQ/OQ/PQ Protocols & Reports
                 </h3>
                 <p className="text-gray-600 text-sm">
@@ -252,12 +364,12 @@ const Comsysval = () => {
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
-                <div className="w-12 h-12 bg-[#DBEAFE] rounded-lg flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-[#3B82F6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-12 h-12 bg-[#FFF2EB] rounded-lg flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-[#C67139]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold outfit text-[#111827] mb-3">
+                <h3 className="text-xl font-semibold outfit text-[#201E1D] mb-3">
                   Traceability Matrix
                 </h3>
                 <p className="text-gray-600 text-sm">
@@ -266,12 +378,12 @@ const Comsysval = () => {
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
-                <div className="w-12 h-12 bg-[#DBEAFE] rounded-lg flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-[#3B82F6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-12 h-12 bg-[#FFF2EB] rounded-lg flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-[#C67139]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold outfit text-[#111827] mb-3">
+                <h3 className="text-xl font-semibold outfit text-[#201E1D] mb-3">
                   SOPs & Training Materials
                 </h3>
                 <p className="text-gray-600 text-sm">
@@ -280,12 +392,12 @@ const Comsysval = () => {
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
-                <div className="w-12 h-12 bg-[#DBEAFE] rounded-lg flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-[#3B82F6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-12 h-12 bg-[#FFF2EB] rounded-lg flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-[#C67139]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold outfit text-[#111827] mb-3">
+                <h3 className="text-xl font-semibold outfit text-[#201E1D] mb-3">
                   Validation Summary Report
                 </h3>
                 <p className="text-gray-600 text-sm">
@@ -299,35 +411,35 @@ const Comsysval = () => {
         {/* Timelines & Engagement Models Section */}
         <section className="py-16 px-4 bg-white">
           <div className="container mx-auto max-w-6xl">
-            <h2 className="text-3xl md:text-4xl font-bold outfit text-[#111827] text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold outfit text-[#201E1D] text-center mb-12">
               Timelines & Engagement Models
             </h2>
 
             <div className="grid md:grid-cols-2 gap-12">
               <div>
-                <h3 className="text-2xl font-semibold outfit text-[#111827] mb-6">
+                <h3 className="text-2xl font-semibold outfit text-[#201E1D] mb-6">
                   Typical Project Timelines
                 </h3>
                 <div className="space-y-4">
-                  <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border-l-4 border-[#3B82F6]">
+                  <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border-l-4 border-[#C67139]">
                     <h4 className="font-semibold text-lg mb-2">Simple Systems (Cat 3)</h4>
                     <p className="text-gray-600 text-sm mb-2">4-6 weeks</p>
                     <p className="text-gray-500 text-xs">Standalone instruments, basic equipment with firmware</p>
                   </div>
 
-                  <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border-l-4 border-[#3B82F6]">
+                  <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border-l-4 border-[#C67139]">
                     <h4 className="font-semibold text-lg mb-2">Configured Systems (Cat 4)</h4>
                     <p className="text-gray-600 text-sm mb-2">12-16 weeks</p>
                     <p className="text-gray-500 text-xs">LIMS, ERP modules, configurable COTS applications</p>
                   </div>
 
-                  <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border-l-4 border-[#3B82F6]">
+                  <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border-l-4 border-[#C67139]">
                     <h4 className="font-semibold text-lg mb-2">Custom Systems (Cat 5)</h4>
                     <p className="text-gray-600 text-sm mb-2">20-28 weeks</p>
                     <p className="text-gray-500 text-xs">Bespoke applications, heavily customized systems, integrations</p>
                   </div>
 
-                  <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border-l-4 border-[#3B82F6]">
+                  <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border-l-4 border-[#C67139]">
                     <h4 className="font-semibold text-lg mb-2">Legacy System Remediation</h4>
                     <p className="text-gray-600 text-sm mb-2">8-16 weeks</p>
                     <p className="text-gray-500 text-xs">Retrospective validation, gap assessment, documentation reconstruction</p>
@@ -336,68 +448,68 @@ const Comsysval = () => {
               </div>
 
               <div>
-                <h3 className="text-2xl font-semibold outfit text-[#111827] mb-6">
+                <h3 className="text-2xl font-semibold outfit text-[#201E1D] mb-6">
                   Flexible Engagement Models
                 </h3>
                 <div className="space-y-6">
-                  <div className="bg-white p-6 rounded-lg shadow-md border-t-4 border-[#3B82F6]">
+                  <div className="bg-white p-6 rounded-lg shadow-md border-t-4 border-[#C67139]">
                     <h4 className="font-semibold text-xl mb-3">Project-Based Validation</h4>
                     <p className="text-gray-600 text-sm mb-4">
                       Complete validation lifecycle for specific systems with defined deliverables and fixed timelines.
                     </p>
                     <ul className="text-sm text-gray-500 space-y-2">
                       <li className="flex items-start gap-2">
-                        <span className="text-[#3B82F6] mt-1">→</span>
+                        <span className="text-[#8C491A] mt-1">→</span>
                         <span>Clear scope and deliverables</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <span className="text-[#3B82F6] mt-1">→</span>
+                        <span className="text-[#8C491A] mt-1">→</span>
                         <span>Fixed timeline and budget</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <span className="text-[#3B82F6] mt-1">→</span>
+                        <span className="text-[#8C491A] mt-1">→</span>
                         <span>Milestone-based payments</span>
                       </li>
                     </ul>
                   </div>
 
-                  <div className="bg-white p-6 rounded-lg shadow-md border-t-4 border-[#3B82F6]">
+                  <div className="bg-white p-6 rounded-lg shadow-md border-t-4 border-[#C67139]">
                     <h4 className="font-semibold text-xl mb-3">Dedicated Validation Team</h4>
                     <p className="text-gray-600 text-sm mb-4">
                       Dedicated validation resources for ongoing projects, system upgrades, and lifecycle management support.
                     </p>
                     <ul className="text-sm text-gray-500 space-y-2">
                       <li className="flex items-start gap-2">
-                        <span className="text-[#3B82F6] mt-1">→</span>
+                        <span className="text-[#8C491A] mt-1">→</span>
                         <span>Full-time validation specialists</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <span className="text-[#3B82F6] mt-1">→</span>
+                        <span className="text-[#8C491A] mt-1">→</span>
                         <span>Flexible scope adjustments</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <span className="text-[#3B82F6] mt-1">→</span>
+                        <span className="text-[#8C491A] mt-1">→</span>
                         <span>Priority support access</span>
                       </li>
                     </ul>
                   </div>
 
-                  <div className="bg-white p-6 rounded-lg shadow-md border-t-4 border-[#3B82F6]">
+                  <div className="bg-white p-6 rounded-lg shadow-md border-t-4 border-[#C67139]">
                     <h4 className="font-semibold text-xl mb-3">Hybrid Delivery Model</h4>
                     <p className="text-gray-600 text-sm mb-4">
                       Flexible combination of onsite, remote, and offshore resources optimized for efficiency and cost-effectiveness.
                     </p>
                     <ul className="text-sm text-gray-500 space-y-2">
                       <li className="flex items-start gap-2">
-                        <span className="text-[#3B82F6] mt-1">→</span>
+                        <span className="text-[#8C491A] mt-1">→</span>
                         <span>Onsite presence for critical activities</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <span className="text-[#3B82F6] mt-1">→</span>
+                        <span className="text-[#8C491A] mt-1">→</span>
                         <span>Remote execution and testing</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <span className="text-[#3B82F6] mt-1">→</span>
+                        <span className="text-[#8C491A] mt-1">→</span>
                         <span>Offshore documentation support</span>
                       </li>
                     </ul>
@@ -409,9 +521,9 @@ const Comsysval = () => {
         </section>
 
         {/* FAQs Section */}
-        <section className="py-16 px-4 bg-[#F7F9FB]">
+        <section className="py-16 px-4 bg-[#F9F4ED]">
           <div className="container mx-auto max-w-4xl">
-            <h2 className="text-3xl md:text-4xl font-bold outfit text-[#111827] text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold outfit text-[#201E1D] text-center mb-12">
               Frequently Asked Questions
             </h2>
 
@@ -422,9 +534,9 @@ const Comsysval = () => {
                     onClick={() => toggleFaq(index)}
                     className="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors"
                   >
-                    <span className="font-semibold text-[#111827] pr-4">{faq.q}</span>
+                    <span className="font-semibold text-[#201E1D] pr-4">{faq.q}</span>
                     <svg
-                      className={`w-5 h-5 text-[#3B82F6] flex-shrink-0 transition-transform ${
+                      className={`w-5 h-5 text-[#8C491A] flex-shrink-0 transition-transform ${
                         openFaq === index ? "transform rotate-180" : ""
                       }`}
                       fill="none"
@@ -446,7 +558,7 @@ const Comsysval = () => {
         </section>
 
         {/* Final CTA Section */}
-        <section className="py-16 px-4 bg-gradient-to-r from-[#475569] to-[#64748b] text-white">
+        <section className="py-16 px-4 bg-gradient-to-r from-[#2E2B25] to-[#3D372E] text-white">
           <div className="container mx-auto max-w-4xl text-center">
             <h2 className="text-3xl md:text-4xl font-bold outfit mb-6">
               Ready to Validate Your Critical Systems?
@@ -457,7 +569,7 @@ const Comsysval = () => {
             <div className="flex flex-col md:flex-row gap-4 justify-center">
               <a
                 href="mailto:inquiry@nexgenpharmasolutions.com"
-                className="px-8 py-3 bg-white text-[#111827] hover:bg-gray-100 font-semibold rounded-lg transition-all duration-200 shadow-lg"
+                className="px-8 py-3 bg-white text-[#201E1D] hover:bg-gray-100 font-semibold rounded-lg transition-all duration-200 shadow-lg"
               >
                 Email Us
               </a>

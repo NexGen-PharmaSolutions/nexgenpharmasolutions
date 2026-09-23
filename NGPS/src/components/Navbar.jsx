@@ -33,7 +33,7 @@ const Navbar = () => {
   }, []);
   
     return (
-      <nav ref={headerRef} className="header-section bg-[#475569] p-4 rounded-[30px] shadow-lg flex justify-between items-center h-[72px]">
+      <nav ref={headerRef} className="header-section bg-[#F9F4ED] border border-[#EBDDC5] p-4 rounded-[30px] shadow-[0_2px_16px_rgba(32,30,29,0.07)] flex justify-between items-center h-[72px]">
         <Link to="/">
           <div className="flex items-center space-x-2 md:pl-3">
             <img src="/logo.png" alt="Logo" className="h-10 w-10" />
@@ -41,13 +41,13 @@ const Navbar = () => {
           </div>
         </Link>
         {/*----------------------------------------- Hamburger Menu for Mobile -----------------------------------------*/}
-        <div className="md:hidden font-bold text-white outfit">
+        <div className="md:hidden font-semibold text-[#201E1D] outfit">
           <button
             onClick={() => setDropdownOpen(!dropdownOpen)}
             className="focus:outline-none"
           >
             <svg
-              className="w-8 h-8 text-white"
+              className="w-8 h-8 text-[#201E1D]"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -66,7 +66,7 @@ const Navbar = () => {
               <li>
                 <Link
                   to="/"
-                  className="block px-4 py-2 text-gray-800 hover:bg-blue-50 hover:text-[#3B82F6] transition-colors font-medium"
+                  className="block px-4 py-2 text-gray-800 hover:bg-blue-50 hover:text-[#8C491A] transition-colors font-medium"
                   onClick={() => setDropdownOpen(false)}
                 >
                   Home
@@ -75,7 +75,7 @@ const Navbar = () => {
               <li>
                 <Link
                   to="/aboutus"
-                  className="block px-4 py-2 text-gray-800 hover:bg-blue-50 hover:text-[#3B82F6] transition-colors font-medium"
+                  className="block px-4 py-2 text-gray-800 hover:bg-blue-50 hover:text-[#8C491A] transition-colors font-medium"
                   onClick={() => setDropdownOpen(false)}
                 >
                   About Us
@@ -87,7 +87,7 @@ const Navbar = () => {
                     setServicesOpen(!servicesOpen);
                     setProductsOpen(false);
                   }}
-                  className="flex items-center justify-between w-full px-4 py-2 text-gray-800 hover:bg-blue-50 hover:text-[#3B82F6] transition-colors font-medium"
+                  className="flex items-center justify-between w-full px-4 py-2 text-gray-800 hover:bg-blue-50 hover:text-[#8C491A] transition-colors font-medium"
                 >
                   <span>Services</span>
                   <svg
@@ -111,7 +111,7 @@ const Navbar = () => {
                     <li>
                       <Link
                         to="/gmpaudits"
-                        className="flex items-center px-4 py-2 pl-6 text-gray-700 hover:bg-blue-50 hover:text-[#3B82F6] transition-colors text-sm"
+                        className="flex items-center px-4 py-2 pl-6 text-gray-700 hover:bg-blue-50 hover:text-[#8C491A] transition-colors text-sm"
                         onClick={() => {
                           setDropdownOpen(false);
                           setServicesOpen(false);
@@ -124,7 +124,7 @@ const Navbar = () => {
                     <li>
                       <Link
                         to="/qualityconsulting"
-                        className="flex items-center px-4 py-2 pl-6 text-gray-700 hover:bg-blue-50 hover:text-[#3B82F6] transition-colors text-sm"
+                        className="flex items-center px-4 py-2 pl-6 text-gray-700 hover:bg-blue-50 hover:text-[#8C491A] transition-colors text-sm"
                         onClick={() => {
                           setDropdownOpen(false);
                           setServicesOpen(false);
@@ -137,7 +137,7 @@ const Navbar = () => {
                     <li>
                       <Link
                         to="/computersystemvalidations"
-                        className="flex items-center px-4 py-2 pl-6 text-gray-700 hover:bg-blue-50 hover:text-[#3B82F6] transition-colors text-sm"
+                        className="flex items-center px-4 py-2 pl-6 text-gray-700 hover:bg-blue-50 hover:text-[#8C491A] transition-colors text-sm"
                         onClick={() => {
                           setDropdownOpen(false);
                           setServicesOpen(false);
@@ -150,7 +150,7 @@ const Navbar = () => {
                     <li>
                       <Link
                         to="/training"
-                        className="flex items-center px-4 py-2 pl-6 text-gray-700 hover:bg-blue-50 hover:text-[#3B82F6] transition-colors text-sm"
+                        className="flex items-center px-4 py-2 pl-6 text-gray-700 hover:bg-blue-50 hover:text-[#8C491A] transition-colors text-sm"
                         onClick={() => {
                           setDropdownOpen(false);
                           setServicesOpen(false);
@@ -163,7 +163,7 @@ const Navbar = () => {
                     <li>
                       <Link
                         to="/regulatoryaffairs"
-                        className="flex items-center px-4 py-2 pl-6 text-gray-700 hover:bg-blue-50 hover:text-[#3B82F6] transition-colors text-sm"
+                        className="flex items-center px-4 py-2 pl-6 text-gray-700 hover:bg-blue-50 hover:text-[#8C491A] transition-colors text-sm"
                         onClick={() => {
                           setDropdownOpen(false);
                           setServicesOpen(false);
@@ -182,7 +182,7 @@ const Navbar = () => {
                     setProductsOpen(!productsOpen);
                     setServicesOpen(false);
                   }}
-                  className="flex items-center justify-between w-full px-4 py-2 text-gray-800 hover:bg-blue-50 hover:text-[#3B82F6] transition-colors font-medium"
+                  className="flex items-center justify-between w-full px-4 py-2 text-gray-800 hover:bg-blue-50 hover:text-[#8C491A] transition-colors font-medium"
                 >
                   <span>Products</span>
                   <svg
@@ -206,7 +206,7 @@ const Navbar = () => {
                     <li>
                       <Link
                         to="/products/nexgen-management-system"
-                        className="flex items-center px-4 py-2 pl-6 text-gray-700 hover:bg-blue-50 hover:text-[#3B82F6] transition-colors text-sm"
+                        className="flex items-center px-4 py-2 pl-6 text-gray-700 hover:bg-blue-50 hover:text-[#8C491A] transition-colors text-sm"
                         onClick={() => {
                           setDropdownOpen(false);
                           setProductsOpen(false);
@@ -225,7 +225,7 @@ const Navbar = () => {
               <li className="border-t border-gray-100 mt-1 pt-1">
                 <Link
                   to="/events"
-                  className="block px-4 py-2 text-gray-800 hover:bg-blue-50 hover:text-[#3B82F6] transition-colors font-medium"
+                  className="block px-4 py-2 text-gray-800 hover:bg-blue-50 hover:text-[#8C491A] transition-colors font-medium"
                   onClick={() => setDropdownOpen(false)}
                 >
                   Events
@@ -234,7 +234,7 @@ const Navbar = () => {
               <li>
                 <Link
                   to="/contactus"
-                  className="block px-4 py-2 text-gray-800 hover:bg-blue-50 hover:text-[#3B82F6] transition-colors font-medium"
+                  className="block px-4 py-2 text-gray-800 hover:bg-blue-50 hover:text-[#8C491A] transition-colors font-medium"
                   onClick={() => setDropdownOpen(false)}
                 >
                   Contact Us
@@ -244,14 +244,14 @@ const Navbar = () => {
           )}
         </div>
         {/*--------------------------------------------------------------- Full Menu for Larger Screens -------------------------------------------------------------------------*/}
-        <ul className="hidden md:flex space-x-6 items-center md:pr-3 font-bold text-white outfit">
+        <ul className="hidden md:flex space-x-6 items-center md:pr-3 font-semibold text-[#201E1D] outfit">
           <li>
-            <Link to="/" className="hover:text-gray-300 relative inline-block transition-transform duration-300 ease-in-out hover:scale-110">
+            <Link to="/" className="relative inline-block transition-colors duration-300 hover:text-[#8C491A]">
               Home
             </Link>
           </li>
           <li>
-            <Link to="/aboutus" className="hover:text-gray-300 relative inline-block transition-transform duration-300 ease-in-out hover:scale-110">
+            <Link to="/aboutus" className="relative inline-block transition-colors duration-300 hover:text-[#8C491A]">
               About Us
             </Link>
           </li>
@@ -261,7 +261,7 @@ const Navbar = () => {
                 setDropdownOpen(!dropdownOpen);
                 setProductsOpen(false);
               }}
-              className="hover:text-gray-300 focus:outline-none relative inline-block transition-transform duration-300 ease-in-out hover:scale-110"
+              className="focus:outline-none relative inline-block transition-colors duration-300 hover:text-[#8C491A]"
             >
               Services
               <svg
@@ -365,7 +365,7 @@ const Navbar = () => {
                 setProductsOpen(!productsOpen);
                 setDropdownOpen(false);
               }}
-              className="hover:text-gray-300 focus:outline-none relative inline-block transition-transform duration-300 ease-in-out hover:scale-110"
+              className="focus:outline-none relative inline-block transition-colors duration-300 hover:text-[#8C491A]"
             >
               Products
               <svg
@@ -419,7 +419,15 @@ const Navbar = () => {
             )}
           </li>
           <li>
-            <Link to="/contactus" className="hover:text-gray-300 relative inline-block transition-transform duration-300 ease-in-out hover:scale-110">
+            <Link to="/events" className="relative inline-block transition-colors duration-300 hover:text-[#8C491A]">
+              Events
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/contactus"
+              className="inline-flex items-center rounded-full bg-[#AA5C29] px-5 py-2.5 text-white transition-colors duration-300 hover:bg-[#8C491A]"
+            >
               Contact Us
             </Link>
           </li>

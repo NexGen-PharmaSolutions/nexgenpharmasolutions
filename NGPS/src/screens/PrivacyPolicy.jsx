@@ -9,7 +9,7 @@ const PrivacyPolicy = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#FFFEF7]">
+    <div className="min-h-screen bg-[#F5EAD8]">
       <Helmet>
         <title>Privacy Policy | NexGen Pharma Solutions Pvt. Ltd.</title>
         <meta
@@ -25,14 +25,14 @@ const PrivacyPolicy = () => {
 
       <main className="container mx-auto px-4 py-12">
         <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-lg p-8 md:p-12">
-          <h1 className="text-4xl font-bold text-[#111827] mb-4 outfit">
+          <h1 className="text-4xl font-bold text-[#201E1D] mb-4 outfit">
             Privacy Policy
           </h1>
           <p className="text-sm text-gray-600 mb-8">
             Last Updated: January 21, 2026
           </p>
 
-          <div className="space-y-8 text-[#111827] outfit leading-relaxed">
+          <div className="space-y-8 text-[#201E1D] outfit leading-relaxed">
             <section>
               <h2 className="text-2xl font-semibold mb-4">1. Introduction</h2>
               <p>
@@ -117,7 +117,7 @@ const PrivacyPolicy = () => {
               </ul>
               <p className="mt-3">
                 To exercise these rights, please contact us at{" "}
-                <a href="mailto:inquiry@nexgenpharmasolutions.com" className="text-[#3B82F6] hover:underline">
+                <a href="mailto:inquiry@nexgenpharmasolutions.com" className="text-[#8C491A] hover:underline">
                   inquiry@nexgenpharmasolutions.com
                 </a>
               </p>
@@ -128,7 +128,7 @@ const PrivacyPolicy = () => {
               <p>
                 We use cookies and similar tracking technologies to enhance your browsing experience and analyze website traffic. 
                 You can control cookie preferences through your browser settings. Please see our{" "}
-                <a href="/cookie-notice" className="text-[#3B82F6] hover:underline">Cookie Notice</a> for more details.
+                <a href="/cookie-notice" className="text-[#8C491A] hover:underline">Cookie Notice</a> for more details.
               </p>
             </section>
 
@@ -163,7 +163,7 @@ const PrivacyPolicy = () => {
               </p>
               <div className="bg-gray-50 p-4 rounded-lg">
                 <p className="font-semibold">NexGen Pharma Solutions Private Limited</p>
-                <p>Email: <a href="mailto:inquiry@nexgenpharmasolutions.com" className="text-[#3B82F6] hover:underline">inquiry@nexgenpharmasolutions.com</a></p>
+                <p>Email: <a href="mailto:inquiry@nexgenpharmasolutions.com" className="text-[#8C491A] hover:underline">inquiry@nexgenpharmasolutions.com</a></p>
                 <p className="mt-2 text-sm text-gray-600">Registered Office: 413 & 420 PRINCE CUBE, Beside Gangotri Exotica, Laxmipura Char Rasta, Nayaran Garden, 30 Mtr Road, Gotri, Vadodara, Gujarat 390023, India</p>
               </div>
             </section>

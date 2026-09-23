@@ -27,7 +27,7 @@ const Footer = () => {
   }, []);
 
   return (
-    <div ref={FOOsectionRef} className="fade-in-up p-6 md:p-8 rounded-2xl bg-[#475569] text-gray-300">
+    <div ref={FOOsectionRef} className="fade-in-up p-6 md:p-8 rounded-2xl bg-[#2E2B25] text-gray-300">
       <div className="container mx-auto px-4">
         {/*----------------------------------------- Top Section: Logo, Company Name & Contact Info -----------------------------------------*/}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
@@ -55,28 +55,28 @@ const Footer = () => {
           <div className="flex flex-col items-center md:items-start">
             <h3 className="font-semibold text-lg mb-4 outfit text-white">Quick Links</h3>
             <div className="grid grid-cols-2 gap-x-8 gap-y-3 text-sm outfit">
-              <Link to="/" className="hover:text-[#93C5FD] transition-colors duration-200">
+              <Link to="/" className="hover:text-[#F6A06B] transition-colors duration-200">
                 Home
               </Link>
-              <Link to="/aboutus" className="hover:text-[#93C5FD] transition-colors duration-200">
+              <Link to="/aboutus" className="hover:text-[#F6A06B] transition-colors duration-200">
                 About Us
               </Link>
-              <Link to="/gmpaudits" className="hover:text-[#93C5FD] transition-colors duration-200">
+              <Link to="/gmpaudits" className="hover:text-[#F6A06B] transition-colors duration-200">
                 GMP Audits
               </Link>
-              <Link to="/qualityconsulting" className="hover:text-[#93C5FD] transition-colors duration-200">
+              <Link to="/qualityconsulting" className="hover:text-[#F6A06B] transition-colors duration-200">
                 Quality Consulting
               </Link>
-              <Link to="/computersystemvalidations" className="hover:text-[#93C5FD] transition-colors duration-200">
+              <Link to="/computersystemvalidations" className="hover:text-[#F6A06B] transition-colors duration-200">
                 System Validations
               </Link>
-              <Link to="/training" className="hover:text-[#93C5FD] transition-colors duration-200">
+              <Link to="/training" className="hover:text-[#F6A06B] transition-colors duration-200">
                 Training
               </Link>
-              <Link to="/regulatoryaffairs" className="hover:text-[#93C5FD] transition-colors duration-200">
+              <Link to="/regulatoryaffairs" className="hover:text-[#F6A06B] transition-colors duration-200">
                 Regulatory Affairs
               </Link>
-              <Link to="/contactus" className="hover:text-[#93C5FD] transition-colors duration-200">
+              <Link to="/contactus" className="hover:text-[#F6A06B] transition-colors duration-200">
                 Contact Us
               </Link>
             </div>
@@ -87,7 +87,7 @@ const Footer = () => {
             <h3 className="font-semibold text-lg mb-4 outfit text-white">Contact Information</h3>
             <div className="space-y-3 text-sm outfit">
               <div className="flex items-start space-x-2">
-                <svg className="w-5 h-5 mt-0.5 flex-shrink-0 text-[#3B82F6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 mt-0.5 flex-shrink-0 text-[#C67139]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
@@ -100,10 +100,10 @@ const Footer = () => {
                 </div>
               </div>
               <div className="flex items-center space-x-2">
-                <svg className="w-5 h-5 flex-shrink-0 text-[#3B82F6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 flex-shrink-0 text-[#C67139]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-                <a href="mailto:inquiry@nexgenpharmasolutions.com" className="hover:text-[#93C5FD] transition-colors duration-200">
+                <a href="mailto:inquiry@nexgenpharmasolutions.com" className="hover:text-[#F6A06B] transition-colors duration-200">
                   inquiry@nexgenpharmasolutions.com
                 </a>
               </div>
@@ -117,19 +117,19 @@ const Footer = () => {
         {/*----------------------------------------- Policy Links & Copyright -----------------------------------------*/}
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <div className="flex flex-wrap justify-center md:justify-start gap-4 text-sm outfit">
-            <Link to="/privacy-policy" className="hover:text-[#93C5FD] transition-colors duration-200">
+            <Link to="/privacy-policy" className="hover:text-[#F6A06B] transition-colors duration-200">
               Privacy Policy
             </Link>
             <span className="text-gray-600">|</span>
-            <Link to="/terms-conditions" className="hover:text-[#93C5FD] transition-colors duration-200">
+            <Link to="/terms-conditions" className="hover:text-[#F6A06B] transition-colors duration-200">
               Terms & Conditions
             </Link>
             <span className="text-gray-600">|</span>
-            <Link to="/disclaimer" className="hover:text-[#93C5FD] transition-colors duration-200">
+            <Link to="/disclaimer" className="hover:text-[#F6A06B] transition-colors duration-200">
               Disclaimer
             </Link>
             <span className="text-gray-600">|</span>
-            <Link to="/cookie-notice" className="hover:text-[#93C5FD] transition-colors duration-200">
+            <Link to="/cookie-notice" className="hover:text-[#F6A06B] transition-colors duration-200">
               Cookie Notice
             </Link>
           </div>

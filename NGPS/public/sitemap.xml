@@ -42,7 +42,12 @@
   </url>
   <url>
     <loc>https://nexgenpharmasolutions.com/events</loc>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://nexgenpharmasolutions.com/products/nexgen-management-system</loc>
+    <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>

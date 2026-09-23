@@ -9,7 +9,7 @@ const Disclaimer = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#FFFEF7]">
+    <div className="min-h-screen bg-[#F5EAD8]">
       <Helmet>
         <title>Disclaimer | NexGen Pharma Solutions Pvt. Ltd.</title>
         <meta
@@ -25,14 +25,14 @@ const Disclaimer = () => {
 
       <main className="container mx-auto px-4 py-12">
         <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-lg p-8 md:p-12">
-          <h1 className="text-4xl font-bold text-[#111827] mb-4 outfit">
+          <h1 className="text-4xl font-bold text-[#201E1D] mb-4 outfit">
             Disclaimer
           </h1>
           <p className="text-sm text-gray-600 mb-8">
             Last Updated: January 21, 2026
           </p>
 
-          <div className="space-y-8 text-[#111827] outfit leading-relaxed">
+          <div className="space-y-8 text-[#201E1D] outfit leading-relaxed">
             <section>
               <h2 className="text-2xl font-semibold mb-4">General Information</h2>
               <p>
@@ -169,7 +169,7 @@ const Disclaimer = () => {
               </p>
               <div className="bg-gray-50 p-4 rounded-lg">
                 <p className="font-semibold">NexGen Pharma Solutions Private Limited</p>
-                <p>Email: <a href="mailto:inquiry@nexgenpharmasolutions.com" className="text-[#3B82F6] hover:underline">inquiry@nexgenpharmasolutions.com</a></p>
+                <p>Email: <a href="mailto:inquiry@nexgenpharmasolutions.com" className="text-[#8C491A] hover:underline">inquiry@nexgenpharmasolutions.com</a></p>
                 <p className="mt-2 text-sm text-gray-600">Registered Office: 413 & 420 PRINCE CUBE, Beside Gangotri Exotica, Laxmipura Char Rasta, Nayaran Garden, 30 Mtr Road, Gotri, Vadodara, Gujarat 390023, India</p>
               </div>
             </section>

@@ -35,7 +35,7 @@ const Training = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-[#FFFEF7]">
+    <div className="min-h-screen bg-[#F5EAD8]">
       <Helmet>
         <title>GMP & Pharma Training Programs | NexGen Pharma Solutions</title>
         <meta name="description" content="Expert GMP, data integrity, CAPA, audit, and CSV training for pharmaceutical professionals. Customizable programs with classroom, virtual, and e-learning formats." />
@@ -46,7 +46,7 @@ const Training = () => {
       </header>
       <main className="relative z-10">
         {/* Hero Section */}
-        <section className="relative bg-gradient-to-r from-[#475569] via-[#64748b] to-[#475569] text-white py-20 px-4">
+        <section className="relative bg-gradient-to-r from-[#2E2B25] via-[#3D372E] to-[#2E2B25] text-white py-20 px-4">
           <div className="container mx-auto max-w-6xl">
             <div className="text-center mb-8">
               <h1 className="text-4xl md:text-5xl font-bold outfit mb-4">
@@ -60,7 +60,7 @@ const Training = () => {
             <div className="flex flex-col md:flex-row gap-4 justify-center items-center mt-8">
               <a
                 href="mailto:inquiry@nexgenpharmasolutions.com"
-                className="px-8 py-3 bg-white text-[#111827] hover:bg-gray-100 font-semibold rounded-lg transition-all duration-200 shadow-lg flex items-center gap-2"
+                className="px-8 py-3 bg-white text-[#201E1D] hover:bg-gray-100 font-semibold rounded-lg transition-all duration-200 shadow-lg flex items-center gap-2"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -74,19 +74,19 @@ const Training = () => {
         {/* Value Proposition Section */}
         <section className="py-16 px-4 bg-white">
           <div className="container mx-auto max-w-6xl">
-            <h2 className="text-3xl md:text-4xl font-bold outfit text-[#111827] text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold outfit text-[#201E1D] text-center mb-12">
               Comprehensive Training Portfolio
             </h2>
 
             <div className="grid md:grid-cols-2 gap-12">
               {/* Left: Training Topics */}
               <div>
-                <h3 className="text-2xl font-semibold outfit text-[#111827] mb-6">
+                <h3 className="text-2xl font-semibold outfit text-[#201E1D] mb-6">
                   Core Training Programs
                 </h3>
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
-                    <svg className="w-6 h-6 text-[#3B82F6] flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-6 h-6 text-[#C67139] flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     <div>
@@ -96,7 +96,7 @@ const Training = () => {
                   </div>
 
                   <div className="flex items-start gap-3">
-                    <svg className="w-6 h-6 text-[#3B82F6] flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-6 h-6 text-[#C67139] flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     <div>
@@ -106,7 +106,7 @@ const Training = () => {
                   </div>
 
                   <div className="flex items-start gap-3">
-                    <svg className="w-6 h-6 text-[#3B82F6] flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-6 h-6 text-[#C67139] flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     <div>
@@ -116,7 +116,7 @@ const Training = () => {
                   </div>
 
                   <div className="flex items-start gap-3">
-                    <svg className="w-6 h-6 text-[#3B82F6] flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-6 h-6 text-[#C67139] flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     <div>
@@ -126,7 +126,7 @@ const Training = () => {
                   </div>
 
                   <div className="flex items-start gap-3">
-                    <svg className="w-6 h-6 text-[#3B82F6] flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-6 h-6 text-[#C67139] flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     <div>
@@ -139,30 +139,30 @@ const Training = () => {
 
               {/* Right: Delivery Methods & Specialized Training */}
               <div>
-                <h3 className="text-2xl font-semibold outfit text-[#111827] mb-6">
+                <h3 className="text-2xl font-semibold outfit text-[#201E1D] mb-6">
                   Specialized & Technical Training
                 </h3>
                 <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 mb-6">
                   <h4 className="font-semibold mb-4">Advanced Topics</h4>
                   <ul className="space-y-3 text-sm">
                     <li className="flex items-start gap-2">
-                      <span className="text-[#3B82F6] mt-1">→</span>
+                      <span className="text-[#8C491A] mt-1">→</span>
                       <span><strong>Computer System Validation:</strong> GAMP 5, CSV lifecycle, 21 CFR Part 11 compliance</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="text-[#3B82F6] mt-1">→</span>
+                      <span className="text-[#8C491A] mt-1">→</span>
                       <span><strong>Technical Writing:</strong> SOP development, protocol writing, report preparation</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="text-[#3B82F6] mt-1">→</span>
+                      <span className="text-[#8C491A] mt-1">→</span>
                       <span><strong>Quality Metrics & KPIs:</strong> Performance measurement, trending analysis, data-driven decisions</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="text-[#3B82F6] mt-1">→</span>
+                      <span className="text-[#8C491A] mt-1">→</span>
                       <span><strong>Change Control Management:</strong> Risk-based change assessment, validation triggers, documentation</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="text-[#3B82F6] mt-1">→</span>
+                      <span className="text-[#8C491A] mt-1">→</span>
                       <span><strong>Investigative Report Writing:</strong> Deviation investigations, OOS/OOT, complaint handling</span>
                     </li>
                   </ul>
@@ -172,27 +172,27 @@ const Training = () => {
                   <h4 className="font-semibold mb-4">Delivery Formats</h4>
                   <div className="grid grid-cols-2 gap-4 text-sm mb-6">
                     <div className="flex items-center gap-2">
-                      <span className="text-[#3B82F6]">✓</span>
+                      <span className="text-[#8C491A]">✓</span>
                       <span>On-site Classroom</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <span className="text-[#3B82F6]">✓</span>
+                      <span className="text-[#8C491A]">✓</span>
                       <span>Virtual Live Webinars</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <span className="text-[#3B82F6]">✓</span>
+                      <span className="text-[#8C491A]">✓</span>
                       <span>Self-Paced E-Learning</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <span className="text-[#3B82F6]">✓</span>
+                      <span className="text-[#8C491A]">✓</span>
                       <span>Hybrid Programs</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <span className="text-[#3B82F6]">✓</span>
+                      <span className="text-[#8C491A]">✓</span>
                       <span>Custom Workshops</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <span className="text-[#3B82F6]">✓</span>
+                      <span className="text-[#8C491A]">✓</span>
                       <span>Train-the-Trainer</span>
                     </div>
                   </div>
@@ -214,20 +214,20 @@ const Training = () => {
         </section>
 
         {/* What You Get Section */}
-        <section className="py-16 px-4 bg-[#F7F9FB]">
+        <section className="py-16 px-4 bg-[#F9F4ED]">
           <div className="container mx-auto max-w-6xl">
-            <h2 className="text-3xl md:text-4xl font-bold outfit text-[#111827] text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold outfit text-[#201E1D] text-center mb-12">
               What You Get
             </h2>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
-                <div className="w-12 h-12 bg-[#DBEAFE] rounded-lg flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-[#3B82F6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-12 h-12 bg-[#FFF2EB] rounded-lg flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-[#C67139]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold outfit text-[#111827] mb-3">
+                <h3 className="text-xl font-semibold outfit text-[#201E1D] mb-3">
                   Comprehensive Training Materials
                 </h3>
                 <p className="text-gray-600 text-sm">
@@ -236,12 +236,12 @@ const Training = () => {
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
-                <div className="w-12 h-12 bg-[#DBEAFE] rounded-lg flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-[#3B82F6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-12 h-12 bg-[#FFF2EB] rounded-lg flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-[#C67139]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold outfit text-[#111827] mb-3">
+                <h3 className="text-xl font-semibold outfit text-[#201E1D] mb-3">
                   Certificates & Training Records
                 </h3>
                 <p className="text-gray-600 text-sm">
@@ -250,12 +250,12 @@ const Training = () => {
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
-                <div className="w-12 h-12 bg-[#DBEAFE] rounded-lg flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-[#3B82F6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-12 h-12 bg-[#FFF2EB] rounded-lg flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-[#C67139]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold outfit text-[#111827] mb-3">
+                <h3 className="text-xl font-semibold outfit text-[#201E1D] mb-3">
                   Competency Assessments
                 </h3>
                 <p className="text-gray-600 text-sm">
@@ -264,12 +264,12 @@ const Training = () => {
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
-                <div className="w-12 h-12 bg-[#DBEAFE] rounded-lg flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-[#3B82F6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-12 h-12 bg-[#FFF2EB] rounded-lg flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-[#C67139]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold outfit text-[#111827] mb-3">
+                <h3 className="text-xl font-semibold outfit text-[#201E1D] mb-3">
                   Expert Instructors
                 </h3>
                 <p className="text-gray-600 text-sm">
@@ -278,12 +278,12 @@ const Training = () => {
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
-                <div className="w-12 h-12 bg-[#DBEAFE] rounded-lg flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-[#3B82F6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-12 h-12 bg-[#FFF2EB] rounded-lg flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-[#C67139]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold outfit text-[#111827] mb-3">
+                <h3 className="text-xl font-semibold outfit text-[#201E1D] mb-3">
                   Customized Content
                 </h3>
                 <p className="text-gray-600 text-sm">
@@ -292,12 +292,12 @@ const Training = () => {
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
-                <div className="w-12 h-12 bg-[#DBEAFE] rounded-lg flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-[#3B82F6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-12 h-12 bg-[#FFF2EB] rounded-lg flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-[#C67139]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold outfit text-[#111827] mb-3">
+                <h3 className="text-xl font-semibold outfit text-[#201E1D] mb-3">
                   Post-Training Support
                 </h3>
                 <p className="text-gray-600 text-sm">
@@ -311,35 +311,35 @@ const Training = () => {
         {/* Timelines & Engagement Section */}
         <section className="py-16 px-4 bg-white">
           <div className="container mx-auto max-w-6xl">
-            <h2 className="text-3xl md:text-4xl font-bold outfit text-[#111827] text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold outfit text-[#201E1D] text-center mb-12">
               Training Durations & Formats
             </h2>
 
             <div className="grid md:grid-cols-2 gap-12">
               <div>
-                <h3 className="text-2xl font-semibold outfit text-[#111827] mb-6">
+                <h3 className="text-2xl font-semibold outfit text-[#201E1D] mb-6">
                   Typical Training Durations
                 </h3>
                 <div className="space-y-4">
-                  <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border-l-4 border-[#3B82F6]">
+                  <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border-l-4 border-[#C67139]">
                     <h4 className="font-semibold text-lg mb-2">Fundamentals & Awareness</h4>
                     <p className="text-gray-600 text-sm mb-2">4-8 hours (half-day to full-day)</p>
                     <p className="text-gray-500 text-xs">GMP basics, awareness training, introductory topics</p>
                   </div>
 
-                  <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border-l-4 border-[#3B82F6]">
+                  <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border-l-4 border-[#C67139]">
                     <h4 className="font-semibold text-lg mb-2">Intermediate Technical Training</h4>
                     <p className="text-gray-600 text-sm mb-2">2-3 days</p>
                     <p className="text-gray-500 text-xs">CAPA, data integrity, auditing, technical writing</p>
                   </div>
 
-                  <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border-l-4 border-[#3B82F6]">
+                  <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border-l-4 border-[#C67139]">
                     <h4 className="font-semibold text-lg mb-2">Advanced Certification Programs</h4>
                     <p className="text-gray-600 text-sm mb-2">5-10 days (can be split)</p>
                     <p className="text-gray-500 text-xs">CSV, audit certification, train-the-trainer, quality metrics</p>
                   </div>
 
-                  <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border-l-4 border-[#3B82F6]">
+                  <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border-l-4 border-[#C67139]">
                     <h4 className="font-semibold text-lg mb-2">Custom Workshop Series</h4>
                     <p className="text-gray-600 text-sm mb-2">Flexible scheduling</p>
                     <p className="text-gray-500 text-xs">Multiple sessions scheduled around operational needs</p>
@@ -348,68 +348,68 @@ const Training = () => {
               </div>
 
               <div>
-                <h3 className="text-2xl font-semibold outfit text-[#111827] mb-6">
+                <h3 className="text-2xl font-semibold outfit text-[#201E1D] mb-6">
                   Training Engagement Models
                 </h3>
                 <div className="space-y-6">
-                  <div className="bg-white p-6 rounded-lg shadow-md border-t-4 border-[#3B82F6]">
+                  <div className="bg-white p-6 rounded-lg shadow-md border-t-4 border-[#C67139]">
                     <h4 className="font-semibold text-xl mb-3">Public Scheduled Sessions</h4>
                     <p className="text-gray-600 text-sm mb-4">
                       Regularly scheduled open-enrollment training sessions. Cost-effective for individuals or small groups.
                     </p>
                     <ul className="text-sm text-gray-500 space-y-2">
                       <li className="flex items-start gap-2">
-                        <span className="text-[#3B82F6] mt-1">→</span>
+                        <span className="text-[#8C491A] mt-1">→</span>
                         <span>Pre-scheduled dates</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <span className="text-[#3B82F6] mt-1">→</span>
+                        <span className="text-[#8C491A] mt-1">→</span>
                         <span>Per-participant pricing</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <span className="text-[#3B82F6] mt-1">→</span>
+                        <span className="text-[#8C491A] mt-1">→</span>
                         <span>Virtual or selected venues</span>
                       </li>
                     </ul>
                   </div>
 
-                  <div className="bg-white p-6 rounded-lg shadow-md border-t-4 border-[#3B82F6]">
+                  <div className="bg-white p-6 rounded-lg shadow-md border-t-4 border-[#C67139]">
                     <h4 className="font-semibold text-xl mb-3">Private On-Site Training</h4>
                     <p className="text-gray-600 text-sm mb-4">
                       Customized training delivered at your facility for your entire team with company-specific content.
                     </p>
                     <ul className="text-sm text-gray-500 space-y-2">
                       <li className="flex items-start gap-2">
-                        <span className="text-[#3B82F6] mt-1">→</span>
+                        <span className="text-[#8C491A] mt-1">→</span>
                         <span>Customized to your needs</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <span className="text-[#3B82F6] mt-1">→</span>
+                        <span className="text-[#8C491A] mt-1">→</span>
                         <span>Flexible scheduling</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <span className="text-[#3B82F6] mt-1">→</span>
+                        <span className="text-[#8C491A] mt-1">→</span>
                         <span>Unlimited participants</span>
                       </li>
                     </ul>
                   </div>
 
-                  <div className="bg-white p-6 rounded-lg shadow-md border-t-4 border-[#3B82F6]">
+                  <div className="bg-white p-6 rounded-lg shadow-md border-t-4 border-[#C67139]">
                     <h4 className="font-semibold text-xl mb-3">Train-the-Trainer Programs</h4>
                     <p className="text-gray-600 text-sm mb-4">
                       Build internal training capability with complete training packages, materials, and ongoing support.
                     </p>
                     <ul className="text-sm text-gray-500 space-y-2">
                       <li className="flex items-start gap-2">
-                        <span className="text-[#3B82F6] mt-1">→</span>
+                        <span className="text-[#8C491A] mt-1">→</span>
                         <span>Internal capability building</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <span className="text-[#3B82F6] mt-1">→</span>
+                        <span className="text-[#8C491A] mt-1">→</span>
                         <span>Complete training kits</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <span className="text-[#3B82F6] mt-1">→</span>
+                        <span className="text-[#8C491A] mt-1">→</span>
                         <span>Long-term cost savings</span>
                       </li>
                     </ul>
@@ -421,9 +421,9 @@ const Training = () => {
         </section>
 
         {/* FAQs Section */}
-        <section className="py-16 px-4 bg-[#F7F9FB]">
+        <section className="py-16 px-4 bg-[#F9F4ED]">
           <div className="container mx-auto max-w-4xl">
-            <h2 className="text-3xl md:text-4xl font-bold outfit text-[#111827] text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold outfit text-[#201E1D] text-center mb-12">
               Frequently Asked Questions
             </h2>
 
@@ -434,9 +434,9 @@ const Training = () => {
                     onClick={() => toggleFaq(index)}
                     className="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors"
                   >
-                    <span className="font-semibold text-[#111827] pr-4">{faq.q}</span>
+                    <span className="font-semibold text-[#201E1D] pr-4">{faq.q}</span>
                     <svg
-                      className={`w-5 h-5 text-[#3B82F6] flex-shrink-0 transition-transform ${
+                      className={`w-5 h-5 text-[#8C491A] flex-shrink-0 transition-transform ${
                         openFaq === index ? "transform rotate-180" : ""
                       }`}
                       fill="none"
@@ -458,7 +458,7 @@ const Training = () => {
         </section>
 
         {/* Final CTA Section */}
-        <section className="py-16 px-4 bg-gradient-to-r from-[#475569] to-[#64748b] text-white">
+        <section className="py-16 px-4 bg-gradient-to-r from-[#2E2B25] to-[#3D372E] text-white">
           <div className="container mx-auto max-w-4xl text-center">
             <h2 className="text-3xl md:text-4xl font-bold outfit mb-6">
               Ready to Build Your Team's Competency?
@@ -469,7 +469,7 @@ const Training = () => {
             <div className="flex flex-col md:flex-row gap-4 justify-center">
               <a
                 href="mailto:inquiry@nexgenpharmasolutions.com"
-                className="px-8 py-3 bg-white text-[#111827] hover:bg-gray-100 font-semibold rounded-lg transition-all duration-200 shadow-lg"
+                className="px-8 py-3 bg-white text-[#201E1D] hover:bg-gray-100 font-semibold rounded-lg transition-all duration-200 shadow-lg"
               >
                 Email Us
               </a>

@@ -1,6 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:ital,wght@0,300..900;1,300..900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -10,19 +8,62 @@
   padding: 0;
 }
 
-.outfit {
-  font-family: "Outfit", sans-serif;
-  font-optical-sizing: auto;
-  /* font-weight: <weight>; */
-  font-style: normal;
+:root {
+  /* Warm brand palette */
+  --cream: #f5ead8;
+  --cream-light: #f9f4ed;
+  --sand: #ebddc5;
+  --peach-card: #fff2eb;
+  --mint-card: #f0fae1;
+  --terracotta: #c67139;
+  --terracotta-dark: #b2622d;
+  --terracotta-deep: #8c491a;
+  --peach: #f6a06b;
+  --sage: #728157;
+  --sage-dark: #56633f;
+  --ink: #201e1d;
+  --ink-soft: #2e2b25;
+  --ink-mid: #3d372e;
 }
 
-.montserrat {
-  font-family: "Montserrat", sans-serif;
-  font-style: normal;
+body {
+  font-family: "Figtree", system-ui, sans-serif;
+  color: var(--ink);
+  background: var(--cream);
+  -webkit-font-smoothing: antialiased;
 }
 
+/* Caprasimo is a single-weight display face. Headings take it at 400 so the
+   browser never synthesises a bolder cut, which smears its heavy strokes. */
+h1,
+h2,
+h3,
+h4,
+.display {
+  font-family: "Caprasimo", Georgia, serif;
+  font-weight: 400 !important;
+  letter-spacing: -0.005em;
+  line-height: 1.12;
+}
+
+h3,
+h4 {
+  line-height: 1.22;
+}
+
+/* Legacy font utility classes across the screens now resolve to the body face.
+   Headings pick up Caprasimo from the element rules above, so these stay safe
+   on the paragraphs and spans that also carry them. */
+.outfit,
+.montserrat,
 .inter {
-  font-family: "Inter", sans-serif;
+  font-family: "Figtree", system-ui, sans-serif;
   font-style: normal;
+}
+
+h1.outfit,
+h2.outfit,
+h3.outfit,
+h4.outfit {
+  font-family: "Caprasimo", Georgia, serif;
 }
