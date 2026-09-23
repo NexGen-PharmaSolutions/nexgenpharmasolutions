@@ -35,7 +35,7 @@ const Regaff = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-[#FFFEF7]">
+    <div className="min-h-screen bg-[#F5EAD8]">
       <Helmet>
         <title>Regulatory Affairs & DMF Services | NexGen Pharma Solutions</title>
         <meta name="description" content="Expert regulatory affairs consulting for IND, NDA, ANDA, DMF, MAA submissions to FDA, EMA and global agencies. Strategic regulatory guidance for pharmaceutical product approvals." />
@@ -46,7 +46,7 @@ const Regaff = () => {
       </header>
       <main className="relative z-10">
         {/* Hero Section */}
-        <section className="relative bg-gradient-to-r from-[#475569] via-[#64748b] to-[#475569] text-white py-20 px-4">
+        <section className="relative bg-gradient-to-r from-[#2E2B25] via-[#3D372E] to-[#2E2B25] text-white py-20 px-4">
           <div className="container mx-auto max-w-6xl">
             <div className="text-center mb-8">
               <h1 className="text-4xl md:text-5xl font-bold outfit mb-4">
@@ -60,7 +60,7 @@ const Regaff = () => {
             <div className="flex flex-col md:flex-row gap-4 justify-center items-center mt-8">
               <a
                 href="mailto:inquiry@nexgenpharmasolutions.com"
-                className="px-8 py-3 bg-white text-[#111827] hover:bg-gray-100 font-semibold rounded-lg transition-all duration-200 shadow-lg flex items-center gap-2"
+                className="px-8 py-3 bg-white text-[#201E1D] hover:bg-gray-100 font-semibold rounded-lg transition-all duration-200 shadow-lg flex items-center gap-2"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -74,19 +74,19 @@ const Regaff = () => {
         {/* Value Proposition Section */}
         <section className="py-16 px-4 bg-white">
           <div className="container mx-auto max-w-6xl">
-            <h2 className="text-3xl md:text-4xl font-bold outfit text-[#111827] text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold outfit text-[#201E1D] text-center mb-12">
               Comprehensive Regulatory Solutions
             </h2>
 
             <div className="grid md:grid-cols-2 gap-12">
               {/* Left: Core Service Areas */}
               <div>
-                <h3 className="text-2xl font-semibold outfit text-[#111827] mb-6">
+                <h3 className="text-2xl font-semibold outfit text-[#201E1D] mb-6">
                   Regulatory Submission Services
                 </h3>
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
-                    <svg className="w-6 h-6 text-[#3B82F6] flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-6 h-6 text-[#C67139] flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     <div>
@@ -96,7 +96,7 @@ const Regaff = () => {
                   </div>
 
                   <div className="flex items-start gap-3">
-                    <svg className="w-6 h-6 text-[#3B82F6] flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-6 h-6 text-[#C67139] flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     <div>
@@ -106,7 +106,7 @@ const Regaff = () => {
                   </div>
 
                   <div className="flex items-start gap-3">
-                    <svg className="w-6 h-6 text-[#3B82F6] flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-6 h-6 text-[#C67139] flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     <div>
@@ -116,7 +116,7 @@ const Regaff = () => {
                   </div>
 
                   <div className="flex items-start gap-3">
-                    <svg className="w-6 h-6 text-[#3B82F6] flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-6 h-6 text-[#C67139] flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     <div>
@@ -126,7 +126,7 @@ const Regaff = () => {
                   </div>
 
                   <div className="flex items-start gap-3">
-                    <svg className="w-6 h-6 text-[#3B82F6] flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-6 h-6 text-[#C67139] flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     <div>
@@ -139,42 +139,42 @@ const Regaff = () => {
 
               {/* Right: Geographic Coverage & Strategic Services */}
               <div>
-                <h3 className="text-2xl font-semibold outfit text-[#111827] mb-6">
+                <h3 className="text-2xl font-semibold outfit text-[#201E1D] mb-6">
                   Global Regulatory Expertise
                 </h3>
                 <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100">
                   <h4 className="font-semibold mb-4">Regulatory Agencies</h4>
                   <div className="grid grid-cols-2 gap-4 text-sm mb-8">
                     <div className="flex items-center gap-2">
-                      <span className="text-[#3B82F6]">✓</span>
+                      <span className="text-[#8C491A]">✓</span>
                       <span>FDA (United States)</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <span className="text-[#3B82F6]">✓</span>
+                      <span className="text-[#8C491A]">✓</span>
                       <span>EMA (European Union)</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <span className="text-[#3B82F6]">✓</span>
+                      <span className="text-[#8C491A]">✓</span>
                       <span>PMDA (Japan)</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <span className="text-[#3B82F6]">✓</span>
+                      <span className="text-[#8C491A]">✓</span>
                       <span>Health Canada</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <span className="text-[#3B82F6]">✓</span>
+                      <span className="text-[#8C491A]">✓</span>
                       <span>TGA (Australia)</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <span className="text-[#3B82F6]">✓</span>
+                      <span className="text-[#8C491A]">✓</span>
                       <span>MHRA (UK)</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <span className="text-[#3B82F6]">✓</span>
+                      <span className="text-[#8C491A]">✓</span>
                       <span>Swissmedic</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <span className="text-[#3B82F6]">✓</span>
+                      <span className="text-[#8C491A]">✓</span>
                       <span>Emerging Markets</span>
                     </div>
                   </div>
@@ -183,23 +183,23 @@ const Regaff = () => {
                     <h4 className="font-semibold mb-4">Strategic Services</h4>
                     <ul className="space-y-3 text-sm">
                       <li className="flex items-start gap-2">
-                        <span className="text-[#3B82F6] mt-1">→</span>
+                        <span className="text-[#8C491A] mt-1">→</span>
                         <span>Regulatory strategy development and pathway selection</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <span className="text-[#3B82F6] mt-1">→</span>
+                        <span className="text-[#8C491A] mt-1">→</span>
                         <span>Agency meeting preparation and participation (Pre-IND, Pre-NDA, Type C)</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <span className="text-[#3B82F6] mt-1">→</span>
+                        <span className="text-[#8C491A] mt-1">→</span>
                         <span>Deficiency letter and Complete Response Letter (CRL) responses</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <span className="text-[#3B82F6] mt-1">→</span>
+                        <span className="text-[#8C491A] mt-1">→</span>
                         <span>Scientific and regulatory due diligence for M&A transactions</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <span className="text-[#3B82F6] mt-1">→</span>
+                        <span className="text-[#8C491A] mt-1">→</span>
                         <span>Orphan drug designations and pediatric investigation plans</span>
                       </li>
                     </ul>
@@ -211,20 +211,20 @@ const Regaff = () => {
         </section>
 
         {/* What You Get Section */}
-        <section className="py-16 px-4 bg-[#F7F9FB]">
+        <section className="py-16 px-4 bg-[#F9F4ED]">
           <div className="container mx-auto max-w-6xl">
-            <h2 className="text-3xl md:text-4xl font-bold outfit text-[#111827] text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold outfit text-[#201E1D] text-center mb-12">
               What You Get
             </h2>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
-                <div className="w-12 h-12 bg-[#DBEAFE] rounded-lg flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-[#3B82F6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-12 h-12 bg-[#FFF2EB] rounded-lg flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-[#C67139]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold outfit text-[#111827] mb-3">
+                <h3 className="text-xl font-semibold outfit text-[#201E1D] mb-3">
                   CTD/eCTD Dossiers
                 </h3>
                 <p className="text-gray-600 text-sm">
@@ -233,12 +233,12 @@ const Regaff = () => {
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
-                <div className="w-12 h-12 bg-[#DBEAFE] rounded-lg flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-[#3B82F6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-12 h-12 bg-[#FFF2EB] rounded-lg flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-[#C67139]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold outfit text-[#111827] mb-3">
+                <h3 className="text-xl font-semibold outfit text-[#201E1D] mb-3">
                   Regulatory Intelligence Reports
                 </h3>
                 <p className="text-gray-600 text-sm">
@@ -247,12 +247,12 @@ const Regaff = () => {
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
-                <div className="w-12 h-12 bg-[#DBEAFE] rounded-lg flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-[#3B82F6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-12 h-12 bg-[#FFF2EB] rounded-lg flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-[#C67139]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold outfit text-[#111827] mb-3">
+                <h3 className="text-xl font-semibold outfit text-[#201E1D] mb-3">
                   Submission Management
                 </h3>
                 <p className="text-gray-600 text-sm">
@@ -261,12 +261,12 @@ const Regaff = () => {
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
-                <div className="w-12 h-12 bg-[#DBEAFE] rounded-lg flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-[#3B82F6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-12 h-12 bg-[#FFF2EB] rounded-lg flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-[#C67139]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold outfit text-[#111827] mb-3">
+                <h3 className="text-xl font-semibold outfit text-[#201E1D] mb-3">
                   Agency Interaction Support
                 </h3>
                 <p className="text-gray-600 text-sm">
@@ -275,12 +275,12 @@ const Regaff = () => {
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
-                <div className="w-12 h-12 bg-[#DBEAFE] rounded-lg flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-[#3B82F6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-12 h-12 bg-[#FFF2EB] rounded-lg flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-[#C67139]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold outfit text-[#111827] mb-3">
+                <h3 className="text-xl font-semibold outfit text-[#201E1D] mb-3">
                   Deficiency Resolution
                 </h3>
                 <p className="text-gray-600 text-sm">
@@ -289,12 +289,12 @@ const Regaff = () => {
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
-                <div className="w-12 h-12 bg-[#DBEAFE] rounded-lg flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-[#3B82F6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-12 h-12 bg-[#FFF2EB] rounded-lg flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-[#C67139]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold outfit text-[#111827] mb-3">
+                <h3 className="text-xl font-semibold outfit text-[#201E1D] mb-3">
                   Global Lifecycle Management
                 </h3>
                 <p className="text-gray-600 text-sm">
@@ -308,35 +308,35 @@ const Regaff = () => {
         {/* Timelines & Engagement Models Section */}
         <section className="py-16 px-4 bg-white">
           <div className="container mx-auto max-w-6xl">
-            <h2 className="text-3xl md:text-4xl font-bold outfit text-[#111827] text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold outfit text-[#201E1D] text-center mb-12">
               Timelines & Engagement Models
             </h2>
 
             <div className="grid md:grid-cols-2 gap-12">
               <div>
-                <h3 className="text-2xl font-semibold outfit text-[#111827] mb-6">
+                <h3 className="text-2xl font-semibold outfit text-[#201E1D] mb-6">
                   Typical Project Timelines
                 </h3>
                 <div className="space-y-4">
-                  <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border-l-4 border-[#3B82F6]">
+                  <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border-l-4 border-[#C67139]">
                     <h4 className="font-semibold text-lg mb-2">DMF Preparation & Submission</h4>
                     <p className="text-gray-600 text-sm mb-2">8-12 weeks</p>
                     <p className="text-gray-500 text-xs">Comprehensive DMF development, quality documentation, and agency submission</p>
                   </div>
 
-                  <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border-l-4 border-[#3B82F6]">
+                  <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border-l-4 border-[#C67139]">
                     <h4 className="font-semibold text-lg mb-2">ANDA/505(b)(2) Dossier</h4>
                     <p className="text-gray-600 text-sm mb-2">12-20 weeks</p>
                     <p className="text-gray-500 text-xs">Full CTD compilation, bioequivalence data integration, and submission package</p>
                   </div>
 
-                  <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border-l-4 border-[#3B82F6]">
+                  <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border-l-4 border-[#C67139]">
                     <h4 className="font-semibold text-lg mb-2">NDA/MAA Full Submission</h4>
                     <p className="text-gray-600 text-sm mb-2">6-12 months</p>
                     <p className="text-gray-500 text-xs">Complete regulatory package with all modules, agency meetings, and submission</p>
                   </div>
 
-                  <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border-l-4 border-[#3B82F6]">
+                  <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border-l-4 border-[#C67139]">
                     <h4 className="font-semibold text-lg mb-2">Deficiency Response</h4>
                     <p className="text-gray-600 text-sm mb-2">4-8 weeks</p>
                     <p className="text-gray-500 text-xs">Analysis, data compilation, response preparation, and resubmission</p>
@@ -345,68 +345,68 @@ const Regaff = () => {
               </div>
 
               <div>
-                <h3 className="text-2xl font-semibold outfit text-[#111827] mb-6">
+                <h3 className="text-2xl font-semibold outfit text-[#201E1D] mb-6">
                   Flexible Engagement Models
                 </h3>
                 <div className="space-y-6">
-                  <div className="bg-white p-6 rounded-lg shadow-md border-t-4 border-[#3B82F6]">
+                  <div className="bg-white p-6 rounded-lg shadow-md border-t-4 border-[#C67139]">
                     <h4 className="font-semibold text-xl mb-3">Project-Based Submissions</h4>
                     <p className="text-gray-600 text-sm mb-4">
                       Fixed-scope regulatory projects with defined deliverables, timelines, and submission targets.
                     </p>
                     <ul className="text-sm text-gray-500 space-y-2">
                       <li className="flex items-start gap-2">
-                        <span className="text-[#3B82F6] mt-1">→</span>
+                        <span className="text-[#8C491A] mt-1">→</span>
                         <span>Clear regulatory milestones</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <span className="text-[#3B82F6] mt-1">→</span>
+                        <span className="text-[#8C491A] mt-1">→</span>
                         <span>Fixed budget and timeline</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <span className="text-[#3B82F6] mt-1">→</span>
+                        <span className="text-[#8C491A] mt-1">→</span>
                         <span>Milestone-based payments</span>
                       </li>
                     </ul>
                   </div>
 
-                  <div className="bg-white p-6 rounded-lg shadow-md border-t-4 border-[#3B82F6]">
+                  <div className="bg-white p-6 rounded-lg shadow-md border-t-4 border-[#C67139]">
                     <h4 className="font-semibold text-xl mb-3">Dedicated Regulatory Support</h4>
                     <p className="text-gray-600 text-sm mb-4">
                       Ongoing regulatory affairs support with dedicated resources for multiple projects and lifecycle management.
                     </p>
                     <ul className="text-sm text-gray-500 space-y-2">
                       <li className="flex items-start gap-2">
-                        <span className="text-[#3B82F6] mt-1">→</span>
+                        <span className="text-[#8C491A] mt-1">→</span>
                         <span>Dedicated regulatory team</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <span className="text-[#3B82F6] mt-1">→</span>
+                        <span className="text-[#8C491A] mt-1">→</span>
                         <span>Flexible scope adjustments</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <span className="text-[#3B82F6] mt-1">→</span>
+                        <span className="text-[#8C491A] mt-1">→</span>
                         <span>Priority support access</span>
                       </li>
                     </ul>
                   </div>
 
-                  <div className="bg-white p-6 rounded-lg shadow-md border-t-4 border-[#3B82F6]">
+                  <div className="bg-white p-6 rounded-lg shadow-md border-t-4 border-[#C67139]">
                     <h4 className="font-semibold text-xl mb-3">Strategic Consulting</h4>
                     <p className="text-gray-600 text-sm mb-4">
                       High-level regulatory strategy consulting for pathway selection, due diligence, and regulatory intelligence.
                     </p>
                     <ul className="text-sm text-gray-500 space-y-2">
                       <li className="flex items-start gap-2">
-                        <span className="text-[#3B82F6] mt-1">→</span>
+                        <span className="text-[#8C491A] mt-1">→</span>
                         <span>Executive-level insights</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <span className="text-[#3B82F6] mt-1">→</span>
+                        <span className="text-[#8C491A] mt-1">→</span>
                         <span>Portfolio strategy development</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <span className="text-[#3B82F6] mt-1">→</span>
+                        <span className="text-[#8C491A] mt-1">→</span>
                         <span>M&A regulatory due diligence</span>
                       </li>
                     </ul>
@@ -418,9 +418,9 @@ const Regaff = () => {
         </section>
 
         {/* FAQs Section */}
-        <section className="py-16 px-4 bg-[#F7F9FB]">
+        <section className="py-16 px-4 bg-[#F9F4ED]">
           <div className="container mx-auto max-w-4xl">
-            <h2 className="text-3xl md:text-4xl font-bold outfit text-[#111827] text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold outfit text-[#201E1D] text-center mb-12">
               Frequently Asked Questions
             </h2>
 
@@ -431,9 +431,9 @@ const Regaff = () => {
                     onClick={() => toggleFaq(index)}
                     className="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors"
                   >
-                    <span className="font-semibold text-[#111827] pr-4">{faq.q}</span>
+                    <span className="font-semibold text-[#201E1D] pr-4">{faq.q}</span>
                     <svg
-                      className={`w-5 h-5 text-[#3B82F6] flex-shrink-0 transition-transform ${
+                      className={`w-5 h-5 text-[#8C491A] flex-shrink-0 transition-transform ${
                         openFaq === index ? "transform rotate-180" : ""
                       }`}
                       fill="none"
@@ -455,7 +455,7 @@ const Regaff = () => {
         </section>
 
         {/* Final CTA Section */}
-        <section className="py-16 px-4 bg-gradient-to-r from-[#475569] to-[#64748b] text-white">
+        <section className="py-16 px-4 bg-gradient-to-r from-[#2E2B25] to-[#3D372E] text-white">
           <div className="container mx-auto max-w-4xl text-center">
             <h2 className="text-3xl md:text-4xl font-bold outfit mb-6">
               Ready to Navigate Global Regulatory Pathways?
@@ -466,7 +466,7 @@ const Regaff = () => {
             <div className="flex flex-col md:flex-row gap-4 justify-center">
               <a
                 href="mailto:inquiry@nexgenpharmasolutions.com"
-                className="px-8 py-3 bg-white text-[#111827] hover:bg-gray-100 font-semibold rounded-lg transition-all duration-200 shadow-lg"
+                className="px-8 py-3 bg-white text-[#201E1D] hover:bg-gray-100 font-semibold rounded-lg transition-all duration-200 shadow-lg"
               >
                 Email Us
               </a>
