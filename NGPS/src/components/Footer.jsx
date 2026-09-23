@@ -27,7 +27,7 @@ const Footer = () => {
   }, []);
 
   return (
-    <div ref={FOOsectionRef} className="fade-in-up p-6 md:p-8 rounded-2xl bg-[#2E2B25] text-gray-300">
+    <div ref={FOOsectionRef} className="fade-in-up p-6 md:p-8 rounded-2xl bg-[#EBDDC5] text-[#453E35]">
       <div className="container mx-auto px-4">
         {/*----------------------------------------- Top Section: Logo, Company Name & Contact Info -----------------------------------------*/}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
@@ -45,7 +45,7 @@ const Footer = () => {
                 className="h-36 md:h-40 w-auto"
               />
             </div>
-            <div className="text-sm text-gray-400 text-center md:text-left outfit space-y-1">
+            <div className="text-sm text-[#5A5146] text-center md:text-left outfit space-y-1">
               <p>Premier pharmaceutical consulting & compliance solutions</p>
               <p>Redefining Pharmaceutical Excellence</p>
             </div>
@@ -53,30 +53,30 @@ const Footer = () => {
 
           {/* Center: Quick Links */}
           <div className="flex flex-col items-center md:items-start">
-            <h3 className="font-semibold text-lg mb-4 outfit text-white">Quick Links</h3>
+            <h3 className="font-semibold text-lg mb-4 outfit text-[#201E1D]">Quick Links</h3>
             <div className="grid grid-cols-2 gap-x-8 gap-y-3 text-sm outfit">
-              <Link to="/" className="hover:text-[#F6A06B] transition-colors duration-200">
+              <Link to="/" className="hover:text-[#8C491A] transition-colors duration-200">
                 Home
               </Link>
-              <Link to="/aboutus" className="hover:text-[#F6A06B] transition-colors duration-200">
+              <Link to="/aboutus" className="hover:text-[#8C491A] transition-colors duration-200">
                 About Us
               </Link>
-              <Link to="/gmpaudits" className="hover:text-[#F6A06B] transition-colors duration-200">
+              <Link to="/gmpaudits" className="hover:text-[#8C491A] transition-colors duration-200">
                 GMP Audits
               </Link>
-              <Link to="/qualityconsulting" className="hover:text-[#F6A06B] transition-colors duration-200">
+              <Link to="/qualityconsulting" className="hover:text-[#8C491A] transition-colors duration-200">
                 Quality Consulting
               </Link>
-              <Link to="/computersystemvalidations" className="hover:text-[#F6A06B] transition-colors duration-200">
+              <Link to="/computersystemvalidations" className="hover:text-[#8C491A] transition-colors duration-200">
                 System Validations
               </Link>
-              <Link to="/training" className="hover:text-[#F6A06B] transition-colors duration-200">
+              <Link to="/training" className="hover:text-[#8C491A] transition-colors duration-200">
                 Training
               </Link>
-              <Link to="/regulatoryaffairs" className="hover:text-[#F6A06B] transition-colors duration-200">
+              <Link to="/regulatoryaffairs" className="hover:text-[#8C491A] transition-colors duration-200">
                 Regulatory Affairs
               </Link>
-              <Link to="/contactus" className="hover:text-[#F6A06B] transition-colors duration-200">
+              <Link to="/contactus" className="hover:text-[#8C491A] transition-colors duration-200">
                 Contact Us
               </Link>
             </div>
@@ -84,26 +84,26 @@ const Footer = () => {
 
           {/* Right: Contact Information */}
           <div className="flex flex-col items-center md:items-start">
-            <h3 className="font-semibold text-lg mb-4 outfit text-white">Contact Information</h3>
+            <h3 className="font-semibold text-lg mb-4 outfit text-[#201E1D]">Contact Information</h3>
             <div className="space-y-3 text-sm outfit">
               <div className="flex items-start space-x-2">
-                <svg className="w-5 h-5 mt-0.5 flex-shrink-0 text-[#C67139]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 mt-0.5 flex-shrink-0 text-[#8C491A]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
                 <div>
-                  <p className="font-medium text-white">Registered Office:</p>
-                  <p className="text-gray-400">413 & 420 PRINCE CUBE, Beside Gangotri Exotica</p>
-                  <p className="text-gray-400">Laxmipura Char Rasta, Nayaran Garden, 30 Mtr Road</p>
-                  <p className="text-gray-400">Gotri, Vadodara, Gujarat 390023, India</p>
-                  <p className="text-gray-400 text-xs mt-1">CIN: [To be provided]</p>
+                  <p className="font-medium text-[#201E1D]">Registered Office:</p>
+                  <p className="text-[#5A5146]">413 & 420 PRINCE CUBE, Beside Gangotri Exotica</p>
+                  <p className="text-[#5A5146]">Laxmipura Char Rasta, Nayaran Garden, 30 Mtr Road</p>
+                  <p className="text-[#5A5146]">Gotri, Vadodara, Gujarat 390023, India</p>
+                  <p className="text-[#5A5146] text-xs mt-1">CIN: [To be provided]</p>
                 </div>
               </div>
               <div className="flex items-center space-x-2">
-                <svg className="w-5 h-5 flex-shrink-0 text-[#C67139]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 flex-shrink-0 text-[#8C491A]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-                <a href="mailto:inquiry@nexgenpharmasolutions.com" className="hover:text-[#F6A06B] transition-colors duration-200">
+                <a href="mailto:inquiry@nexgenpharmasolutions.com" className="hover:text-[#8C491A] transition-colors duration-200">
                   inquiry@nexgenpharmasolutions.com
                 </a>
               </div>
@@ -112,28 +112,28 @@ const Footer = () => {
         </div>
 
         {/*----------------------------------------- Divider -----------------------------------------*/}
-        <div className="border-t border-gray-700 my-6"></div>
+        <div className="border-t border-[#C4B6A1] my-6"></div>
 
         {/*----------------------------------------- Policy Links & Copyright -----------------------------------------*/}
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <div className="flex flex-wrap justify-center md:justify-start gap-4 text-sm outfit">
-            <Link to="/privacy-policy" className="hover:text-[#F6A06B] transition-colors duration-200">
+            <Link to="/privacy-policy" className="hover:text-[#8C491A] transition-colors duration-200">
               Privacy Policy
             </Link>
-            <span className="text-gray-600">|</span>
-            <Link to="/terms-conditions" className="hover:text-[#F6A06B] transition-colors duration-200">
+            <span className="text-[#8C8172]">|</span>
+            <Link to="/terms-conditions" className="hover:text-[#8C491A] transition-colors duration-200">
               Terms & Conditions
             </Link>
-            <span className="text-gray-600">|</span>
-            <Link to="/disclaimer" className="hover:text-[#F6A06B] transition-colors duration-200">
+            <span className="text-[#8C8172]">|</span>
+            <Link to="/disclaimer" className="hover:text-[#8C491A] transition-colors duration-200">
               Disclaimer
             </Link>
-            <span className="text-gray-600">|</span>
-            <Link to="/cookie-notice" className="hover:text-[#F6A06B] transition-colors duration-200">
+            <span className="text-[#8C8172]">|</span>
+            <Link to="/cookie-notice" className="hover:text-[#8C491A] transition-colors duration-200">
               Cookie Notice
             </Link>
           </div>
-          <div className="text-sm outfit text-gray-400">
+          <div className="text-sm outfit text-[#5A5146]">
             © 2024 NexGen Pharma Solutions Pvt. Ltd. All rights reserved.
           </div>
         </div>
