@@ -61,7 +61,7 @@ const Events = () => {
         <title>Events & Industry Engagement | NexGen Pharma Solutions Pvt. Ltd.</title>
         <meta
           name="description"
-          content="NexGen Pharma Solutions at CPHI Milan 2026 (AI &amp; Tech zone), CPHI Worldwide Frankfurt and CPHI India. GxP validation, data integrity and regulatory expertise brought to the global pharma show floor."
+          content="NexGen Pharma Solutions at CPHI Milan 2026 (Pharma &amp; Tech zone), CPHI Worldwide Frankfurt and CPHI India. GxP validation, data integrity and regulatory expertise brought to the global pharma show floor."
         />
       </Helmet>
 
@@ -78,7 +78,7 @@ const Events = () => {
           <div className="w-24 h-1 mx-auto my-4 bg-[#AA5C29]"></div>
           <p className="text-lg text-gray-700 outfit">
             We exhibit where pharmaceutical manufacturing is actually bought, sold and regulated.
-            Frankfurt, Delhi, and next, the AI &amp; Tech zone at CPHI Milan.
+            Frankfurt, Delhi, and next, the Pharma &amp; Tech zone at CPHI Milan.
           </p>
         </div>
 
@@ -93,13 +93,13 @@ const Events = () => {
                 </p>
                 <h2 className="text-3xl md:text-[2.75rem] leading-[1.05] font-bold tracking-tight outfit mb-5">
                   CPHI Milan 2026
-                  <span className="block font-extralight text-[#F6A06B]">AI &amp; Tech Zone</span>
+                  <span className="block font-extralight text-[#F6A06B]">Pharma &amp; Tech Zone</span>
                 </h2>
                 <p className="text-gray-300 font-light leading-relaxed max-w-[58ch] mb-8">
-                  CPHI&rsquo;s newest zone gathers the MES, ERP, digital twin and AI vendors reshaping
-                  pharmaceutical manufacturing. We are going for a specific reason: every one of those
-                  systems has to survive Annex 11, 21 CFR Part 11 and a quality unit before it ships
-                  value. That is the work we do.
+                  CPHI&rsquo;s newest zone puts pharmaceutical manufacturers alongside the MES, ERP and
+                  digital systems that run their plants. We are going for a specific reason: every one
+                  of those systems has to survive Annex 11, 21 CFR Part 11 and a quality unit before
+                  it ships value. That is the work we do.
                 </p>
                 <Link
                   to="/computersystemvalidations"
@@ -115,7 +115,7 @@ const Events = () => {
                   <dt className="text-[0.6875rem] font-semibold uppercase tracking-[0.14em] text-gray-400 mb-1.5">
                     Zone
                   </dt>
-                  <dd className="text-base font-medium">AI &amp; Tech</dd>
+                  <dd className="text-base font-medium">Pharma &amp; Tech</dd>
                 </div>
                 <div>
                   <dt className="text-[0.6875rem] font-semibold uppercase tracking-[0.14em] text-gray-400 mb-1.5">

@@ -2,20 +2,21 @@
 
 **Prepared for:** NexGen Pharma Solutions Pvt. Ltd.
 **Date:** 22 September 2026
-**Reference:** [CPHI Milan, AI & Tech Zone](https://www.cphi.com/europe/exhibit/new-zones/ai-and-tech/)
+**Reference:** [CPHI Milan, Pharma & Tech Zone](https://www.cphi.com/europe/exhibit/new-zones/ai-and-tech/)
+**Note:** CPHI's own page currently titles this zone "AI & Tech". The site uses **Pharma & Tech** at NexGen's direction, leading with pharma and treating technology as the secondary lens.
 **Approach:** No new pages. The CPHI-relevant material was built into the pages we already have, so it works on the show floor and keeps earning after the show ends.
 
 ---
 
 ## 1. The strategic idea behind every change
 
-CPHI has launched a dedicated **AI & Tech zone**. It is filled with MES, ERP, digital twin, predictive maintenance and AI vendors selling into pharmaceutical manufacturing.
+CPHI has launched a dedicated **Pharma & Tech zone**. It puts pharmaceutical manufacturers alongside the MES, ERP, digital twin and predictive maintenance systems that run their plants.
 
 Those exhibitors share one problem, and it is exactly our business:
 
 > Their technology works. It still cannot be deployed until it survives **EU GMP Annex 11**, **21 CFR Part 11**, **GAMP 5** and a quality unit that cannot accept what it cannot audit.
 
-So the site now says something sharper than "we are a pharma consultancy". It says: **we are the partner that gets technology through the regulatory gate.** That turns every AI & Tech exhibitor from a competitor for attention into a potential channel partner, and their pharma buyers into direct clients.
+So the site now says something sharper than "we are a pharma consultancy". It says: **we are the partner that gets technology through the regulatory gate.** That turns every Pharma & Tech exhibitor from a competitor for attention into a potential channel partner, and their pharma buyers into direct clients.
 
 The line used across all three surfaces:
 
@@ -29,9 +30,9 @@ The line used across all three surfaces:
 
 `/computersystemvalidations`
 
-This is the headline addition and the most persuasive thing on the site for an AI & Tech audience. A full-width warm-dark section, deliberately darker than the rest of the page so it reads as the anchor:
+This is the headline addition and the most persuasive thing on the site for a Pharma & Tech audience. A full-width warm-dark section, deliberately darker than the rest of the page so it reads as the anchor:
 
-**"Where AI and digital systems stall in GxP"**
+**"Where pharma's digital systems stall in GxP"**
 
 A six-row table: **failure point → regulatory reference → NexGen deliverable.**
 
@@ -59,10 +60,10 @@ Closing line plus a **Request a gap assessment** button: *"If your roadmap has a
 **Replaced with** a warm-dark CPHI Milan 2026 band carrying:
 
 - The campaign line and the positioning paragraph
-- **CPHI's own published figures**, attributed to them: AI adoption on a **43% CAGR through 2030**, inside a pharmaceutical market worth **$1.67tn**, followed by the turn: *the constraint on that number is not model quality, it is qualification*
+- **CPHI's own published figures**, attributed to them: a pharmaceutical market worth **$1.67tn**, with technology adoption inside it on a **43% CAGR through 2030**, followed by the turn: *the constraint on that number is not the technology, it is qualification*
 - **The four zone pillars mapped to our services**, each one a link:
 
-| CPHI AI & Tech pillar | Our answer | Links to |
+| CPHI Pharma & Tech pillar | Our answer | Links to |
 |---|---|---|
 | Manufacturing Optimisation | MES, ERP, SCADA and batch record validation | `/computersystemvalidations` |
 | Quality & Compliance | CAPA, deviations, ALCOA+ data integrity | `/qualityconsulting` |
@@ -79,8 +80,8 @@ Using CPHI's own four pillars and their own vocabulary is what signals to an exh
 
 `/events`
 
-- **Up next: CPHI Milan 2026 / AI & Tech Zone** panel now leads the page, above the timeline. It states the zone, what we bring, the stand, a direct meeting-request mail link and a route to the readiness map. Frankfurt 2025 and Delhi 2024 sit below it as proof of track record.
-- **Rewrote the intro:** "We exhibit where pharmaceutical manufacturing is actually bought, sold and regulated. Frankfurt, Delhi, and next, the AI & Tech zone at CPHI Milan."
+- **Up next: CPHI Milan 2026 / Pharma & Tech Zone** panel now leads the page, above the timeline. It states the zone, what we bring, the stand, a direct meeting-request mail link and a route to the readiness map. Frankfurt 2025 and Delhi 2024 sit below it as proof of track record.
+- **Rewrote the intro:** "We exhibit where pharmaceutical manufacturing is actually bought, sold and regulated. Frankfurt, Delhi, and next, the Pharma & Tech zone at CPHI Milan."
 - **Replaced the generic closing CTA** with **three concrete meeting formats**, mirroring CPHI's own "3 ways to get involved" structure:
   1. **Twenty minutes at the stand** — bring your architecture diagram, leave with the clauses that apply and an honest read on which gaps will hold up a sale
   2. **Joint readiness workshop** — half a day on site after the show, engineering and the quality unit in the same room
@@ -137,6 +138,6 @@ No new routes. Production build passes. Lint is clean on all new code; three pre
 
 1. **Confirm the stand number and dates**, then fill the placeholder.
 2. **Print the GxP Readiness Map** as a one-page A4 leave-behind. It is already laid out as a handout and is the strongest thing to put in a visitor's hand.
-3. **Use the campaign line in pre-show outreach.** "Your model works. Now prove it to an inspector." plus a link to the readiness map is a complete cold email to an AI & Tech exhibitor.
+3. **Use the campaign line in pre-show outreach.** "Your model works. Now prove it to an inspector." plus a link to the readiness map is a complete cold email to a Pharma & Tech exhibitor.
 4. **Add a photo from Milan** to the Events timeline after the show, alongside Frankfurt 2025 and Delhi 2024.
 5. **Consider a short gated asset** (a GxP readiness checklist) to capture leads from traffic that does not convert to a meeting.

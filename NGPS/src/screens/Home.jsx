@@ -996,7 +996,7 @@ const Home = () => {
                 <div className="p-8 md:p-12 lg:p-14">
                   <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-[#F6A06B] mb-6">
                     <span className="h-[7px] w-[7px] rounded-full bg-[#F6A06B]" aria-hidden="true" />
-                    CPHI Milan 2026 &middot; AI &amp; Tech Zone
+                    CPHI Milan 2026 &middot; Pharma &amp; Tech Zone
                   </p>
                   <h3 className="text-3xl md:text-[2.6rem] leading-[1.03] font-bold tracking-tight outfit mb-6">
                     Your model works.
@@ -1005,17 +1005,18 @@ const Home = () => {
                     </span>
                   </h3>
                   <p className="text-gray-300 font-light leading-relaxed max-w-[56ch] mb-8">
-                    CPHI&rsquo;s new AI &amp; Tech zone is where pharma&rsquo;s digital future is sold.
-                    Everything in it still has to clear EU GMP Annex 11, 21 CFR Part 11 and a quality
-                    unit that cannot accept what it cannot audit. We are the consultancy that takes
-                    technology through that gate.
+                    CPHI&rsquo;s new Pharma &amp; Tech zone is where pharmaceutical manufacturing meets
+                    the systems that run it. Everything on show still has to clear EU GMP Annex 11,
+                    21 CFR Part 11 and a quality unit that cannot accept what it cannot audit. We are
+                    the consultancy that takes it through that gate.
                   </p>
                   <p className="text-gray-300 font-light leading-relaxed max-w-[56ch] mb-8">
-                    CPHI puts AI adoption in pharma on a{" "}
+                    CPHI values the pharmaceutical market at{" "}
+                    <span className="font-bold text-[#F6A06B]">$1.67tn</span>, with technology
+                    adoption inside it on a{" "}
                     <span className="font-bold text-[#F6A06B]">43%</span> compound annual growth
-                    curve through 2030, inside a pharmaceutical market worth{" "}
-                    <span className="font-bold text-[#F6A06B]">$1.67tn</span>. The constraint on that
-                    number is not model quality. It is qualification.
+                    curve through 2030. The constraint on that number is not the technology. It is
+                    qualification.
                   </p>
                   <div className="flex flex-wrap gap-3">
                     <Link
@@ -1033,7 +1034,7 @@ const Home = () => {
                     </Link>
                   </div>
                   <p className="mt-6 text-xs font-light text-gray-400">
-                    Figures published by CPHI, AI &amp; Tech zone, cphi.com.
+                    Figures published by CPHI, Pharma &amp; Tech zone, cphi.com.
                   </p>
                 </div>
 
