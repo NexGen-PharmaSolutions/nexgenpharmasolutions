@@ -13,15 +13,8 @@ export function TrackRecord({
   as = "h2",
 }) {
   return (
-    <section className="relative isolate overflow-hidden py-24 md:py-32" aria-label="Regulatory inspection track record">
-      <img
-        src="/images/tablet-macro.webp"
-        alt=""
-        aria-hidden="true"
-        loading="lazy"
-        className="absolute inset-0 -z-20 h-full w-full object-cover opacity-25"
-      />
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-obsidian-950/80 via-obsidian-900/60 to-obsidian-950/90" />
+    <section className="relative isolate overflow-hidden py-16 md:py-32" aria-label="Regulatory inspection track record">
+      <div className="absolute inset-0 -z-10 bg-obsidian-900/50" />
       <div className="hairline absolute inset-x-0 top-0" />
       <div className="container">
         <div className="grid gap-10 lg:grid-cols-[1fr_auto] lg:items-end">
@@ -73,7 +66,7 @@ export function OtherInspections({
   intro = "Mock inspections and readiness programmes structured around each authority's own inspection approach, plus customer and partner audits.",
 }) {
   return (
-    <section className="container py-24 md:py-32" aria-labelledby="other-inspections">
+    <section className="container py-16 md:py-32" aria-labelledby="other-inspections">
       <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
         <div className="lg:sticky lg:top-32 lg:self-start">
           <SectionHeading id="other-inspections" eyebrow="Also prepared for" title={title} highlight={[3, 4]} intro={intro} />

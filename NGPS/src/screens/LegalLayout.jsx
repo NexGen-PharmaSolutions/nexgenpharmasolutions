@@ -158,7 +158,7 @@ export function LegalContact() {
       <p className="mt-4 flex items-start gap-3">
         <Mail className="mt-[0.45em] h-4 w-4 shrink-0 text-copper-300" aria-hidden="true" />
         <span>
-          Email: <a href="mailto:inquiry@nexgenpharmasolutions.com">inquiry@nexgenpharmasolutions.com</a>
+          Email: <a href="mailto:inquiry@nexgenpharmasolutions.com">inquiry<wbr />@nexgenpharmasolutions.com</a>
         </span>
       </p>
       <p className="!mb-0 mt-3 flex items-start gap-3 text-[0.95rem] text-champagne-muted">

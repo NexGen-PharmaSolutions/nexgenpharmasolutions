@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
@@ -22,6 +22,7 @@ import {
   GraduationCap,
 } from "lucide-react";
 import Lazy3D from "../components/ui/Lazy3D";
+import { LeadershipTeaser } from "../components/Leadership";
 import Countdown from "../components/ui/Countdown";
 import {
   Reveal,
@@ -64,7 +65,7 @@ const STRENGTHS = [
   { icon: Zap, title: "Rapid remediation", text: "Close critical deviations, CAPAs and data integrity gaps fast. No generic templates, only practical solutions." },
   { icon: FileText, title: "DMF & CEP support", text: "Technical documentation, authority responses, lifecycle management. Confidential and submission-ready." },
   { icon: Database, title: "CSV & data integrity", text: "GAMP 5, 21 CFR Part 11 and Annex 11. LIMS, ERP and MES validated to regulatory standards.", span: "md:col-span-2" },
-  { icon: Users, title: "Seasoned auditor network", text: "Former regulators, industry QA heads and validation specialists. Real-world expertise, not theory.", span: "md:col-span-2" },
+  { icon: Users, title: "Seasoned auditor network", text: "Former regulators, industry QA heads and validation specialists. Real-world expertise, not theory." },
   { icon: Briefcase, title: "Flexible engagement", text: "Project-based, retainer or embedded support. Scale up or down as you need." },
 ];
 
@@ -116,7 +117,7 @@ function Hero() {
         <Lazy3D variant="hero" className="absolute inset-0" cameraZ={11} />
       </motion.div>
       {/* Scrim keeps the headline legible over the 3D scene */}
-      <div className="pointer-events-none absolute inset-y-0 left-0 -z-10 w-full bg-gradient-to-r from-obsidian-950 via-obsidian-950/80 to-transparent md:w-[62%]" />
+      <div className="pointer-events-none absolute inset-y-0 left-0 -z-10 w-full bg-obsidian-950/70 md:w-[62%] md:bg-transparent md:bg-gradient-to-r md:from-obsidian-950 md:via-obsidian-950/80 md:to-transparent" />
 
       <motion.div style={{ y, opacity }} className="container relative">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: EASE, delay: 0.2 }}>
@@ -220,7 +221,7 @@ function Stats() {
     ["15+", "Countries served"],
   ];
   return (
-    <section className="container py-24 md:py-32">
+    <section className="container py-16 md:py-32">
       <div className="grid gap-12 lg:grid-cols-[1fr_1.4fr] lg:items-end">
         <SectionHeading
           eyebrow="By the numbers"
@@ -243,8 +244,30 @@ function Stats() {
 /** Pinned horizontal gallery on desktop, vertical stack on mobile. */
 function Services() {
   const ref = useRef(null);
+  const trackRef = useRef(null);
+  const [distance, setDistance] = useState(0);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end end"] });
-  const x = useSpring(useTransform(scrollYProgress, [0, 1], ["0%", "-62%"]), { stiffness: 90, damping: 25, mass: 0.4 });
+  const x = useSpring(useTransform(scrollYProgress, [0, 1], [0, -distance]), { stiffness: 90, damping: 25, mass: 0.4 });
+
+  // Slide exactly far enough for the last panel to end at the container's right edge.
+  useEffect(() => {
+    const measure = () => {
+      const track = trackRef.current;
+      if (!track) return;
+      const box = track.parentElement;
+      const cs = getComputedStyle(box);
+      const inner = box.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
+      setDistance(Math.max(0, track.scrollWidth - inner));
+    };
+    measure();
+    const ro = new ResizeObserver(measure);
+    if (trackRef.current) ro.observe(trackRef.current);
+    window.addEventListener("resize", measure);
+    return () => {
+      ro.disconnect();
+      window.removeEventListener("resize", measure);
+    };
+  }, []);
 
   const card = (s, i) => (
     <TiltCard key={s.to} className="group flex h-full flex-col" max={5}>
@@ -265,11 +288,11 @@ function Services() {
         <div className="flex flex-1 flex-col p-5">
           <div className="flex items-center gap-3">
             <IconTile icon={s.icon} className="h-10 w-10" />
-            <h3 className="font-display text-2xl text-champagne">{s.label}</h3>
+            <h3 className="font-display text-[1.4rem] leading-tight text-champagne">{s.label}</h3>
           </div>
           <p className="mt-4 text-sm leading-relaxed text-champagne-muted">{SERVICE_COPY[s.to]}</p>
           <span className="mt-auto pt-6 text-sm font-semibold text-copper-300">
-            Explore {s.label.toLowerCase()} <span aria-hidden="true">→</span>
+            Explore {s.label} <span aria-hidden="true">→</span>
           </span>
         </div>
       </Link>
@@ -292,7 +315,8 @@ function Services() {
               Everything a regulator can ask about, from the shop floor to the server room to the dossier.
             </p>
           </div>
-          <motion.div style={{ x }} className="flex gap-6 pl-[max(2.5rem,calc((100vw-80rem)/2+2.5rem))]">
+          <div className="container">
+          <motion.div ref={trackRef} style={{ x }} className="flex w-max gap-6">
             {SERVICES.map((s, i) => (
               <div key={s.to} className="w-[420px] shrink-0">
                 {card(s, i)}
@@ -308,6 +332,7 @@ function Services() {
               </div>
             </div>
           </motion.div>
+          </div>
         </div>
       </div>
 
@@ -326,7 +351,7 @@ function Services() {
 
 function Strengths() {
   return (
-    <section className="container py-24 md:py-32">
+    <section className="container py-16 md:py-32">
       <SectionHeading
         eyebrow="Proven strengths"
         title="Why global pharma manufacturers trust NexGen."
@@ -359,7 +384,7 @@ function Process() {
   const scale = useSpring(scrollYProgress, { stiffness: 100, damping: 30 });
 
   return (
-    <section ref={ref} className="relative overflow-hidden bg-obsidian-900/50 py-24 md:py-32">
+    <section ref={ref} className="relative overflow-hidden bg-obsidian-900/50 py-16 md:py-32">
       <div className="absolute inset-0 bg-grid opacity-30" />
       <div className="container relative">
         <SectionHeading
@@ -392,7 +417,7 @@ function Process() {
 
 function Cphi() {
   return (
-    <section id="cphi" aria-labelledby="cphi-title" className="container py-24 md:py-32">
+    <section id="cphi" aria-labelledby="cphi-title" className="container py-16 md:py-32">
       <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
         <div className="max-w-3xl">
           <Reveal>
@@ -497,7 +522,7 @@ function Product() {
     [LineChart, "Analytics & reporting", "Predictive insights and executive dashboards for smarter decisions"],
   ];
   return (
-    <section className="relative overflow-hidden py-24 md:py-32">
+    <section className="relative overflow-hidden py-16 md:py-32">
       <div className="absolute right-0 top-1/2 h-[700px] w-[700px] -translate-y-1/2 rounded-full bg-copper-600/10 blur-[140px]" />
       <div className="container relative grid items-center gap-16 lg:grid-cols-2">
         <div>
@@ -601,7 +626,7 @@ function Product() {
 
 function CaseStudies() {
   return (
-    <section className="container py-24 md:py-32">
+    <section className="container py-16 md:py-32">
       <SectionHeading
         eyebrow="Case studies"
         title="Real challenges. Real results."
@@ -637,7 +662,7 @@ function Faq() {
     mainEntity: FAQ.map(([q, a]) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } })),
   };
   return (
-    <section className="container py-24 md:py-32" aria-labelledby="faq-title">
+    <section className="container py-16 md:py-32" aria-labelledby="faq-title">
       <Helmet>
         <script type="application/ld+json">{JSON.stringify(schema)}</script>
       </Helmet>
@@ -724,7 +749,7 @@ function ContactForm() {
   };
 
   return (
-    <section id="contact-form" className="relative overflow-hidden py-24 md:py-32">
+    <section id="contact-form" className="relative overflow-hidden py-16 md:py-32">
       <div className="absolute left-1/2 top-1/2 h-[800px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-copper-700/15 blur-[160px]" />
       <div className="container relative grid gap-16 lg:grid-cols-[0.9fr_1.1fr]">
         <div>
@@ -818,6 +843,7 @@ export default function Home() {
       <Stats />
       <TrackRecord />
       <Services />
+      <LeadershipTeaser />
       <Strengths />
       <Process />
       <Cphi />

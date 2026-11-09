@@ -26,13 +26,14 @@ const CRITERIA = [
   },
   {
     icon: Database,
-    title: "CSV and data integrity in-house",
+    title: "CSV and data integrity in‑house",
     text: "GAMP 5, 21 CFR Part 11 and Annex 11 specialists audit your computerised systems alongside the plant, so data integrity is never a blind spot.",
     span: "md:col-span-2",
   },
   {
     icon: FileStack,
     title: "Dossier-to-shop-floor view",
+    span: "md:col-span-2",
     text: "Our regulatory affairs team writes DMFs and CEPs, so audits check what you filed against what you do.",
   },
   {
@@ -69,7 +70,7 @@ export default function GmpAuditIndia() {
       />
 
       {/* What makes a GMP audit company the best */}
-      <section className="container py-24 md:py-32" aria-labelledby="india-criteria">
+      <section className="container py-16 md:py-32" aria-labelledby="india-criteria">
         <SectionHeading
           id="india-criteria"
           eyebrow="Choosing a GMP auditor"
@@ -91,7 +92,7 @@ export default function GmpAuditIndia() {
       </section>
 
       {/* Services, internal links */}
-      <section className="relative py-24 md:py-32" aria-labelledby="india-services">
+      <section className="relative py-16 md:py-32" aria-labelledby="india-services">
         <div className="absolute inset-0 -z-10 bg-obsidian-900/50" />
         <div className="hairline absolute inset-x-0 top-0" />
         <div className="container">
@@ -121,7 +122,7 @@ export default function GmpAuditIndia() {
       </section>
 
       {/* India hubs */}
-      <section className="container py-24 md:py-32" aria-labelledby="india-hubs">
+      <section className="container py-16 md:py-32" aria-labelledby="india-hubs">
         <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
           <div>
             <SectionHeading
@@ -143,10 +144,10 @@ export default function GmpAuditIndia() {
               <div className="absolute inset-0 bg-gradient-to-t from-obsidian-950/70 via-transparent to-transparent" aria-hidden="true" />
             </Reveal>
           </div>
-          <Stagger className="grid gap-3 sm:grid-cols-2">
+          <Stagger className="grid content-start gap-3 sm:grid-cols-2">
             {INDIA_HUBS.map(([state, cities]) => (
               <StaggerItem key={state}>
-                <GlowCard className="flex items-start gap-4 rounded-2xl p-5">
+                <GlowCard className="flex h-full items-start gap-4 rounded-2xl p-5">
                   <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-copper-400" />
                   <span>
                     <span className="block font-medium text-champagne">{state}</span>
@@ -167,7 +168,7 @@ export default function GmpAuditIndia() {
       <OtherInspections />
 
       {/* FAQ */}
-      <section className="container py-24 md:py-32" aria-labelledby="india-faq">
+      <section className="container py-16 md:py-32" aria-labelledby="india-faq">
         <div className="grid gap-12 lg:grid-cols-[1fr_1.5fr]">
           <div className="lg:sticky lg:top-32 lg:self-start">
             <SectionHeading id="india-faq" eyebrow="FAQ" title="Choosing a GMP audit company in India." highlight={[4, 5]} />

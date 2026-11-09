@@ -123,7 +123,7 @@ const Contactus = () => {
         secondary={{ href: `mailto:${CONTACT_EMAIL}`, label: "Email Us" }}
       />
 
-      <section className="relative py-24 md:py-32" aria-labelledby="contact-heading">
+      <section className="relative py-16 md:py-32" aria-labelledby="contact-heading">
         <div className="hairline absolute inset-x-0 top-0" />
         <div className="container grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
           {/* Contact information */}
@@ -177,9 +177,10 @@ const Contactus = () => {
                   <h3 className="mt-5 text-xl text-champagne">Email Us</h3>
                   <a
                     href={`mailto:${CONTACT_EMAIL}`}
-                    className="mt-2 block break-all text-sm text-champagne-muted transition-colors hover:text-copper-300"
+                    className="mt-2 block text-sm text-champagne-muted transition-colors hover:text-copper-300"
                   >
-                    {CONTACT_EMAIL}
+                    {CONTACT_EMAIL.split("@")[0]}
+                    <wbr />@{CONTACT_EMAIL.split("@")[1]}
                   </a>
                 </GlowCard>
               </StaggerItem>
@@ -363,7 +364,7 @@ const Contactus = () => {
 
                 <div className="flex flex-col gap-4 sm:col-span-2 sm:flex-row sm:items-center">
                   <Magnetic strength={0.15}>
-                    <button type="submit" disabled={status === "sending"} className="btn-primary group w-full sm:w-auto disabled:opacity-60">
+                    <button type="submit" disabled={status === "sending"} className="btn-primary group w-full whitespace-nowrap sm:w-auto disabled:opacity-60">
                       <span className="relative z-10">{status === "sending" ? "Sending…" : booking ? "Request meeting" : "Send Message"}</span>
                       <Send className="relative z-10 h-4 w-4 transition-transform duration-500 ease-expo group-hover:translate-x-1" />
                     </button>

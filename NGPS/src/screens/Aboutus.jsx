@@ -18,6 +18,7 @@ import {
 import { PageHero, SectionHeading, CtaBand, IconTile } from "../components/ui/blocks";
 import { Reveal, Stagger, StaggerItem, TiltCard, GlowCard } from "../components/ui/motion";
 import { CONTACT_EMAIL } from "../lib/seo";
+import { Leadership } from "../components/Leadership";
 
 const SERVICES = [
   {
@@ -25,7 +26,7 @@ const SERVICES = [
     icon: ClipboardCheck,
     title: "GMP Audits",
     body: "Comprehensive GMP audits to ensure your operations meet regulatory standards and international compliance requirements.",
-    span: "md:col-span-2 lg:col-span-2",
+    span: "",
   },
   {
     to: "/qualityconsulting",
@@ -104,8 +105,10 @@ const Aboutus = () => {
         secondary={{ href: `mailto:${CONTACT_EMAIL}`, label: "Email Us" }}
       />
 
+      <Leadership />
+
       {/* Mission & Vision */}
-      <section className="relative py-24 md:py-32">
+      <section className="relative py-16 md:py-32">
         <div className="hairline absolute inset-x-0 top-0" />
         <div className="container">
           <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
@@ -134,7 +137,7 @@ const Aboutus = () => {
                   </p>
                 </TiltCard>
               </StaggerItem>
-              <StaggerItem className="lg:ml-16">
+              <StaggerItem>
                 <TiltCard max={4} className="p-8 md:p-12">
                   <div className="absolute -right-24 -top-24 -z-10 h-64 w-64 rounded-full bg-copper-500/10 blur-3xl" />
                   <div className="flex items-center gap-4">
@@ -156,7 +159,7 @@ const Aboutus = () => {
       </section>
 
       {/* Services bento */}
-      <section className="relative py-24 md:py-32">
+      <section className="relative py-16 md:py-32">
         <div className="absolute inset-0 -z-10 bg-grid opacity-20 mask-fade-b" />
         <div className="container">
           <SectionHeading
@@ -207,7 +210,7 @@ const Aboutus = () => {
       </section>
 
       {/* Why choose us */}
-      <section className="relative py-24 md:py-32">
+      <section className="relative py-16 md:py-32">
         <div className="hairline absolute inset-x-0 top-0" />
         <div className="container">
           <div className="grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-end">

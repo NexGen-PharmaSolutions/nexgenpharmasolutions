@@ -42,6 +42,7 @@ const CORE_SERVICES = [
   {
     icon: GitPullRequestArrow,
     title: "Change Control Management",
+    span: "md:col-span-2",
     text: "Risk-based change control processes, impact assessments, and validation requirements determination",
   },
   {
@@ -218,7 +219,7 @@ const QualCon = () => {
       </PageHero>
 
       {/* Core service areas */}
-      <section className="container py-24 md:py-32" aria-labelledby="qc-core">
+      <section className="container py-16 md:py-32" aria-labelledby="qc-core">
         <div className="grid items-end gap-10 lg:grid-cols-[1.1fr_0.9fr]">
           <div id="qc-core">
             <SectionHeading
@@ -255,7 +256,7 @@ const QualCon = () => {
       </section>
 
       {/* Facilities & systems covered */}
-      <section className="relative py-24 md:py-32" aria-labelledby="qc-facilities">
+      <section className="relative py-16 md:py-32" aria-labelledby="qc-facilities">
         <div className="absolute inset-0 -z-10 bg-obsidian-900/60" />
         <div className="hairline absolute inset-x-0 top-0" />
         <div className="container grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
@@ -296,7 +297,7 @@ const QualCon = () => {
       </section>
 
       {/* What you get */}
-      <section className="container py-24 md:py-32" aria-labelledby="qc-deliverables">
+      <section className="container py-16 md:py-32" aria-labelledby="qc-deliverables">
         <div id="qc-deliverables">
           <SectionHeading
             eyebrow="Deliverables"
@@ -319,7 +320,7 @@ const QualCon = () => {
       </section>
 
       {/* Timelines */}
-      <section className="relative py-24 md:py-32" aria-labelledby="qc-timelines">
+      <section className="relative py-16 md:py-32" aria-labelledby="qc-timelines">
         <div className="absolute inset-0 -z-10 bg-grid opacity-25 mask-fade-b" />
         <div className="container">
           <div id="qc-timelines">
@@ -350,7 +351,7 @@ const QualCon = () => {
       </section>
 
       {/* Engagement models */}
-      <section className="container py-24 md:py-32" aria-labelledby="qc-models">
+      <section className="container py-16 md:py-32" aria-labelledby="qc-models">
         <div id="qc-models">
           <SectionHeading
             eyebrow="How we work"
@@ -383,7 +384,7 @@ const QualCon = () => {
       </section>
 
       {/* FAQ */}
-      <section className="container py-24 md:py-32" aria-labelledby="qc-faq">
+      <section className="container py-16 md:py-32" aria-labelledby="qc-faq">
         <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
           <div className="lg:sticky lg:top-32 lg:self-start">
             <div id="qc-faq">

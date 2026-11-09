@@ -369,7 +369,7 @@ function DashboardMockup() {
 
         {/* Floating panel: e-signature */}
         <motion.div
-          className="glass absolute -right-4 top-[6%] hidden w-60 rounded-2xl p-4 shadow-glow md:block xl:-right-16"
+          className="glass absolute -right-2 -top-10 hidden w-56 rounded-2xl p-4 shadow-glow md:block xl:-right-8"
           style={{ y: s(yB), z: 140 }}
         >
           <div className="flex items-center justify-between">
@@ -663,7 +663,7 @@ export default function NexGenManagementSystem() {
       </section>
 
       {/* ---------------- Challenges ---------------- */}
-      <section className="container py-24 md:py-32">
+      <section className="container py-16 md:py-32">
         <SectionHeading
           eyebrow="Why it exists"
           title="Built to Solve Real Pharma Challenges"
@@ -700,7 +700,7 @@ export default function NexGenManagementSystem() {
       </section>
 
       {/* ---------------- Core modules (bento) ---------------- */}
-      <section className="relative py-24 md:py-32">
+      <section className="relative py-16 md:py-32">
         <div className="absolute inset-0 -z-10 bg-grid opacity-20 mask-fade-b" />
         <div className="container">
           <SectionHeading
@@ -738,7 +738,7 @@ export default function NexGenManagementSystem() {
       </section>
 
       {/* ---------------- How it works ---------------- */}
-      <section className="container py-24 md:py-32">
+      <section className="container py-16 md:py-32">
         <SectionHeading
           eyebrow="Implementation"
           title="How It Works"
@@ -776,7 +776,7 @@ export default function NexGenManagementSystem() {
       </section>
 
       {/* ---------------- Security & compliance ---------------- */}
-      <section className="relative py-24 md:py-32">
+      <section className="relative py-16 md:py-32">
         <div className="hairline absolute inset-x-0 top-0" />
         <div className="container grid gap-14 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
           <div className="lg:sticky lg:top-32 lg:self-start">
@@ -807,7 +807,7 @@ export default function NexGenManagementSystem() {
       </section>
 
       {/* ---------------- Waitlist ---------------- */}
-      <section id="waitlist" className="relative isolate scroll-mt-28 overflow-hidden py-24 md:py-32">
+      <section id="waitlist" className="relative isolate scroll-mt-28 overflow-hidden py-16 md:py-32">
         <div className="absolute inset-0 -z-10 bg-gradient-to-b from-transparent via-obsidian-900/70 to-transparent" />
         <div className="absolute -left-40 top-1/4 -z-10 h-[520px] w-[520px] rounded-full bg-copper-600/15 blur-[130px]" />
         <div className="container grid items-start gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">

@@ -12,6 +12,8 @@ export const OG_IMAGE = `${SITE_URL}/og-image.png`;
 export const CONTACT_EMAIL = "inquiry@nexgenpharmasolutions.com";
 export const CONTACT_PHONE = "+91 70691 79666";
 
+import { LEADER } from "./leadership.js";
+
 export const ORGANIZATION = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
@@ -43,6 +45,12 @@ export const ORGANIZATION = {
   slogan: "100% inspection success: USFDA, EDQM, KFDA, MHRA, WHO-GMP, EU GMP, PMDA, ANVISA",
   foundingLocation: "Vadodara, Gujarat, India",
   areaServed: [{ "@type": "Country", name: "India" }, "Worldwide"],
+  employee: {
+    "@type": "Person",
+    name: LEADER.name,
+    jobTitle: `${LEADER.role}, ${LEADER.company}`,
+    email: `mailto:${LEADER.email}`,
+  },
   knowsAbout: [
     "USFDA inspections with zero Form 483 observations",
     "KFDA (MFDS) GMP inspections",

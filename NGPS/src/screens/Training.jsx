@@ -331,7 +331,7 @@ const Training = () => {
       />
 
       {/* 1. Core programs */}
-      <section aria-labelledby="programs-heading" className="py-24 md:py-32">
+      <section aria-labelledby="programs-heading" className="py-16 md:py-32">
         <div className="container grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
           <div className="lg:sticky lg:top-32 lg:self-start">
             <Reveal>
@@ -369,7 +369,7 @@ const Training = () => {
       </section>
 
       {/* 2. Specialized & technical */}
-      <section aria-labelledby="specialized-heading" className="relative py-24 md:py-32">
+      <section aria-labelledby="specialized-heading" className="relative py-16 md:py-32">
         <div className="hairline absolute inset-x-0 top-0" aria-hidden="true" />
         <div className="container">
           <div className="max-w-3xl">
@@ -435,7 +435,7 @@ const Training = () => {
       </section>
 
       {/* 3. What you get */}
-      <section aria-labelledby="deliverables-heading" className="relative py-24 md:py-32">
+      <section aria-labelledby="deliverables-heading" className="relative py-16 md:py-32">
         <div className="hairline absolute inset-x-0 top-0" aria-hidden="true" />
         <div className="container">
           <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
@@ -477,7 +477,7 @@ const Training = () => {
       </section>
 
       {/* 4. Durations & engagement models */}
-      <section aria-label="Training durations and formats" className="relative py-24 md:py-32">
+      <section aria-label="Training durations and formats" className="relative py-16 md:py-32">
         <div className="hairline absolute inset-x-0 top-0" aria-hidden="true" />
         <div className="container">
           <SectionHeading eyebrow="Planning" title="Training Durations & Formats" highlight={[1]} />
@@ -535,7 +535,7 @@ const Training = () => {
       </section>
 
       {/* 5. FAQ */}
-      <section aria-labelledby="faq-heading" className="relative py-24 md:py-32">
+      <section aria-labelledby="faq-heading" className="relative py-16 md:py-32">
         <div className="hairline absolute inset-x-0 top-0" aria-hidden="true" />
         <div className="container grid gap-12 lg:grid-cols-[0.7fr_1.3fr] lg:gap-20">
           <div className="lg:sticky lg:top-32 lg:self-start">

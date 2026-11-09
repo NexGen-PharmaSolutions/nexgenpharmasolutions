@@ -298,7 +298,7 @@ function ReadinessMap() {
     <section
       id="gxp-readiness-map"
       aria-label="GxP readiness map"
-      className="relative isolate scroll-mt-28 overflow-hidden border-y border-copper-400/15 bg-obsidian-900 py-24 md:py-32"
+      className="relative isolate scroll-mt-28 overflow-hidden border-y border-copper-400/15 bg-obsidian-900 py-16 md:py-32"
     >
       <div className="absolute inset-0 -z-20 bg-grid opacity-50" aria-hidden="true" />
       <div
@@ -495,7 +495,7 @@ const Comsysval = () => {
       <ReadinessMap />
 
       {/* 2. Systems we validate */}
-      <section aria-labelledby="systems-heading" className="py-24 md:py-32">
+      <section aria-labelledby="systems-heading" className="py-16 md:py-32">
         <div className="container grid gap-14 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
           <div className="lg:sticky lg:top-32 lg:self-start">
             <Reveal>
@@ -532,7 +532,7 @@ const Comsysval = () => {
       </section>
 
       {/* 3. Validation approach */}
-      <section aria-labelledby="approach-heading" className="relative py-24 md:py-32">
+      <section aria-labelledby="approach-heading" className="relative py-16 md:py-32">
         <div className="hairline absolute inset-x-0 top-0" aria-hidden="true" />
         <div className="container">
           <div className="max-w-3xl">
@@ -540,7 +540,7 @@ const Comsysval = () => {
               <span className="eyebrow">Our validation approach</span>
             </Reveal>
             <h2 id="approach-heading" className="mt-5 text-display-md text-champagne">
-              Standards-led, <span className="text-gradient italic">risk-based</span>
+              Standards&#8209;led, <span className="text-gradient italic">risk&#8209;based</span>
             </h2>
           </div>
 
@@ -596,7 +596,7 @@ const Comsysval = () => {
       </section>
 
       {/* 4. What you get */}
-      <section aria-labelledby="deliverables-heading" className="relative py-24 md:py-32">
+      <section aria-labelledby="deliverables-heading" className="relative py-16 md:py-32">
         <div className="hairline absolute inset-x-0 top-0" aria-hidden="true" />
         <div className="container">
           <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
@@ -635,7 +635,7 @@ const Comsysval = () => {
       </section>
 
       {/* 5. Timelines & engagement models */}
-      <section aria-label="Timelines and engagement models" className="relative py-24 md:py-32">
+      <section aria-label="Timelines and engagement models" className="relative py-16 md:py-32">
         <div className="hairline absolute inset-x-0 top-0" aria-hidden="true" />
         <div className="container">
           <SectionHeading eyebrow="Planning" title="Timelines & Engagement Models" highlight={[2]} />
@@ -695,7 +695,7 @@ const Comsysval = () => {
       </section>
 
       {/* 6. FAQ */}
-      <section aria-labelledby="faq-heading" className="relative py-24 md:py-32">
+      <section aria-labelledby="faq-heading" className="relative py-16 md:py-32">
         <div className="hairline absolute inset-x-0 top-0" aria-hidden="true" />
         <div className="container grid gap-12 lg:grid-cols-[0.7fr_1.3fr] lg:gap-20">
           <div className="lg:sticky lg:top-32 lg:self-start">

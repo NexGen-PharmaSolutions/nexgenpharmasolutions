@@ -72,7 +72,7 @@ export function PageHero({
     <section className="relative isolate overflow-hidden pb-20 pt-36 md:pb-28 md:pt-44">
       <div className="absolute inset-0 -z-20 bg-grid opacity-40 mask-fade-b" />
       <div className="absolute -right-40 top-0 -z-10 h-[700px] w-[700px] rounded-full bg-copper-600/10 blur-[140px]" />
-      <div className="container grid items-center gap-12 lg:grid-cols-[1.15fr_0.85fr]">
+      <div className="container grid grid-cols-[minmax(0,1fr)] items-center gap-12 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)]">
         <div>
           {crumb && (
             <Reveal>
@@ -109,11 +109,11 @@ export function PageHero({
             </Reveal>
           )}
           {stats && (
-            <Reveal delay={0.6} className="mt-14 grid max-w-xl grid-cols-3 gap-6 border-t border-white/10 pt-8">
+            <Reveal delay={0.6} className="mt-14 grid max-w-xl grid-cols-3 gap-4 border-t border-white/10 pt-8 sm:gap-6">
               {stats.map(([v, l]) => (
                 <div key={l}>
-                  <div className="font-display text-3xl text-champagne md:text-4xl">{v}</div>
-                  <div className="mt-1 text-xs uppercase tracking-[0.14em] text-champagne-faint">{l}</div>
+                  <div className="whitespace-nowrap font-display text-2xl text-champagne sm:text-3xl md:text-4xl">{v}</div>
+                  <div className="mt-1 text-[0.68rem] uppercase leading-snug tracking-[0.12em] text-champagne-faint sm:text-xs">{l}</div>
                 </div>
               ))}
             </Reveal>
@@ -141,7 +141,7 @@ export function CtaBand({
   secondary = { href: "mailto:inquiry@nexgenpharmasolutions.com", label: "Email us" },
 }) {
   return (
-    <section className="container py-24 md:py-32">
+    <section className="container py-16 md:py-32">
       <div className="relative isolate overflow-hidden rounded-[2.5rem] border border-copper-400/20 bg-obsidian-900 px-6 py-20 text-center md:px-16 md:py-28">
         <div className="absolute inset-0 -z-10 bg-grid opacity-30" />
         <div className="absolute left-1/2 top-full -z-10 h-[600px] w-[900px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-copper-500/30 blur-[120px]" />
