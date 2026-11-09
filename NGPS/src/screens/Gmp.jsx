@@ -146,8 +146,8 @@ const Gmp = () => {
             </div>
             <Reveal delay={0.2} className="relative mt-10 overflow-hidden rounded-3xl border border-white/[0.07]">
               <img
-                src="/gmpaudits.png"
-                alt="Auditor reviewing a GMP batch record checklist beside tablet samples"
+                src="/images/gmp-batch-record.webp"
+                alt="Gloved auditor checking a GMP batch record with a loupe beside blister packs and a vial"
                 loading="lazy"
                 className="aspect-[16/9] w-full object-cover"
               />

@@ -230,8 +230,8 @@ const QualCon = () => {
           </div>
           <Reveal delay={0.15} className="relative overflow-hidden rounded-3xl border border-white/[0.07]">
             <img
-              src="/qualityconsult.png"
-              alt="Quality consultants reviewing quality metrics with a client team around a meeting table"
+              src="/images/quality-consulting.webp"
+              alt="Quality consultants mapping a deviation, investigation and CAPA flow on a glass wall"
               loading="lazy"
               className="aspect-[16/9] w-full object-cover"
             />

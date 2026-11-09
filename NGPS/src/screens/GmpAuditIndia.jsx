@@ -123,13 +123,26 @@ export default function GmpAuditIndia() {
       {/* India hubs */}
       <section className="container py-24 md:py-32" aria-labelledby="india-hubs">
         <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
-          <SectionHeading
-            id="india-hubs"
-            eyebrow="On site across India"
-            title="From Vadodara to every pharma cluster in the country."
-            highlight={[4, 5]}
-            intro="Headquartered in Vadodara, Gujarat, our auditors travel to plants across India and to clients in 15+ countries."
-          />
+          <div>
+            <SectionHeading
+              id="india-hubs"
+              eyebrow="On site across India"
+              title="From Vadodara to every pharma cluster in the country."
+              highlight={[4, 5]}
+              intro="Headquartered in Vadodara, Gujarat, our auditors travel to plants across India and to clients in 15+ countries."
+            />
+            <Reveal delay={0.15} className="relative mt-10 overflow-hidden rounded-3xl border border-white/[0.07]">
+              <img
+                src="/images/india-pharma-campus.webp"
+                alt="Pharmaceutical manufacturing campus in India at dusk"
+                loading="lazy"
+                width="1672"
+                height="941"
+                className="aspect-[16/9] w-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-obsidian-950/70 via-transparent to-transparent" aria-hidden="true" />
+            </Reveal>
+          </div>
           <Stagger className="grid gap-3 sm:grid-cols-2">
             {INDIA_HUBS.map(([state, cities]) => (
               <StaggerItem key={state}>

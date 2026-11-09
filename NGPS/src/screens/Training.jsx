@@ -344,8 +344,8 @@ const Training = () => {
               <div className="relative mt-10 overflow-hidden rounded-3xl border border-white/[0.07]">
                 <Parallax offset={30}>
                   <img
-                    src="/training%202.jpg"
-                    alt="Instructor leading a small-group training session at a flip chart in a meeting room"
+                    src="/images/gmp-training.webp"
+                    alt="Trainer explaining cleanroom gowning steps to QA and production staff"
                     loading="lazy"
                     className="h-[260px] w-full scale-110 object-cover sm:h-[340px]"
                   />

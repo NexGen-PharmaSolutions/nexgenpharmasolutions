@@ -235,8 +235,8 @@ const Regaff = () => {
           </div>
           <Reveal delay={0.15} className="relative overflow-hidden rounded-3xl border border-white/[0.07]">
             <img
-              src="/regbg.png"
-              alt="Wooden letter tiles spelling the word regulation"
+              src="/images/regulatory-affairs.webp"
+              alt="Drug Master File binder beside a laptop open on an eCTD folder"
               loading="lazy"
               className="aspect-[16/9] w-full object-cover"
             />
