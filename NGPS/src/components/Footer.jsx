@@ -49,7 +49,7 @@ export default function Footer() {
             <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-champagne-faint">Company</h2>
             <ul className="mt-5 space-y-3">
               <li><FooterLink to="/aboutus">About us</FooterLink></li>
-              <li><FooterLink to="/gmp-audit-company-india">Why NexGen · 100% inspection success</FooterLink></li>
+              <li><FooterLink to="/gmp-audit-company-india">Why NexGen (100% success)</FooterLink></li>
               <li><FooterLink to="/events">Events</FooterLink></li>
               {PRODUCTS.map((p) => (
                 <li key={p.to}><FooterLink to={p.to}>{p.label}</FooterLink></li>

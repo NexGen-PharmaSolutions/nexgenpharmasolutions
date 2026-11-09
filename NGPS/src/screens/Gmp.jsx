@@ -133,7 +133,7 @@ const Gmp = () => {
       <TrackRecord />
 
       {/* Why our audits stand out: audit types */}
-      <section className="container py-24 md:py-32" aria-labelledby="gmp-why">
+      <section className="container py-16 md:py-32" aria-labelledby="gmp-why">
         <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
           <div>
             <div id="gmp-why">
@@ -177,7 +177,7 @@ const Gmp = () => {
       </section>
 
       {/* Facilities + standards */}
-      <section className="relative py-24 md:py-32" aria-labelledby="gmp-facilities">
+      <section className="relative py-16 md:py-32" aria-labelledby="gmp-facilities">
         <div className="absolute inset-0 -z-10 bg-obsidian-900/60" />
         <div className="hairline absolute inset-x-0 top-0" />
         <div className="container grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
@@ -215,7 +215,7 @@ const Gmp = () => {
       </section>
 
       {/* What you get */}
-      <section className="container py-24 md:py-32" aria-labelledby="gmp-deliverables">
+      <section className="container py-16 md:py-32" aria-labelledby="gmp-deliverables">
         <div id="gmp-deliverables">
           <SectionHeading
             eyebrow="Deliverables"
@@ -250,7 +250,7 @@ const Gmp = () => {
       </section>
 
       {/* Timelines */}
-      <section className="relative py-24 md:py-32" aria-labelledby="gmp-timelines">
+      <section className="relative py-16 md:py-32" aria-labelledby="gmp-timelines">
         <div className="absolute inset-0 -z-10 bg-grid opacity-25 mask-fade-b" />
         <div className="container">
           <div id="gmp-timelines">
@@ -288,7 +288,7 @@ const Gmp = () => {
       </section>
 
       {/* Engagement models */}
-      <section className="container py-24 md:py-32" aria-labelledby="gmp-models">
+      <section className="container py-16 md:py-32" aria-labelledby="gmp-models">
         <div id="gmp-models">
           <SectionHeading
             eyebrow="How we work"
@@ -323,7 +323,7 @@ const Gmp = () => {
       <OtherInspections />
 
       {/* FAQ */}
-      <section className="container py-24 md:py-32" aria-labelledby="gmp-faq">
+      <section className="container py-16 md:py-32" aria-labelledby="gmp-faq">
         <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
           <div className="lg:sticky lg:top-32 lg:self-start">
             <div id="gmp-faq">

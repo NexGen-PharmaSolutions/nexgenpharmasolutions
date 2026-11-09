@@ -130,7 +130,7 @@ function IndiaFeature() {
   ];
 
   return (
-    <section id={INDIA_ID} className="relative scroll-mt-28 py-24 md:py-32">
+    <section id={INDIA_ID} className="relative scroll-mt-28 py-16 md:py-32">
       <div className="absolute left-1/2 top-1/2 -z-10 h-[700px] w-[min(1100px,100vw)] -translate-x-1/2 -translate-y-1/2 rounded-full bg-copper-600/10 blur-[140px]" />
       <div className="container">
         <Reveal>
@@ -194,7 +194,7 @@ function MilanRecap() {
   ];
 
   return (
-    <section id={MILAN_ID} className="relative scroll-mt-28 py-24 md:py-32">
+    <section id={MILAN_ID} className="relative scroll-mt-28 py-16 md:py-32">
       <div className="hairline absolute inset-x-0 top-0" />
       <div className="container grid gap-14 lg:grid-cols-[1.1fr_0.9fr] lg:gap-20">
         <div>
@@ -264,7 +264,7 @@ function MeetingFormats() {
     ],
   ];
   return (
-    <section className="relative py-24 md:py-32">
+    <section className="relative py-16 md:py-32">
       <div className="absolute inset-0 -z-10 bg-grid opacity-20 mask-fade-b" />
       <div className="container">
         <SectionHeading
@@ -303,7 +303,7 @@ function Timeline() {
   const sorted = [...EVENTS].sort((a, b) => b.start.localeCompare(a.start));
 
   return (
-    <section className="relative py-24 md:py-32">
+    <section className="relative py-16 md:py-32">
       <div className="hairline absolute inset-x-0 top-0" />
       <div className="container">
         <SectionHeading
@@ -371,7 +371,7 @@ function Timeline() {
                           src={encodeURI(photo)}
                           alt={`NexGen Pharma Solutions at ${ev.name}, ${ev.city}`}
                           loading="lazy"
-                          className="absolute inset-0 h-full w-full object-cover"
+                          className="absolute inset-0 h-full w-full object-cover object-[50%_40%]"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-obsidian-950/70 via-obsidian-950/20 to-transparent md:bg-gradient-to-r md:from-obsidian-900/80 md:via-obsidian-900/10" />
                       </div>
@@ -396,7 +396,7 @@ function WhyEngagement() {
     [CheckCircle2, "Continuous Learning", "Staying updated on data integrity, CSV, and validation methodologies"],
   ];
   return (
-    <section className="relative py-24 md:py-32">
+    <section className="relative py-16 md:py-32">
       <div className="container grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
         <SectionHeading
           eyebrow="Why we show up"

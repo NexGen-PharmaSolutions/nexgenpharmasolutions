@@ -223,7 +223,7 @@ const Regaff = () => {
       </PageHero>
 
       {/* Submission services */}
-      <section className="container py-24 md:py-32" aria-labelledby="ra-submissions">
+      <section className="container py-16 md:py-32" aria-labelledby="ra-submissions">
         <div className="grid items-end gap-10 lg:grid-cols-[1.1fr_0.9fr]">
           <div id="ra-submissions">
             <SectionHeading
@@ -265,7 +265,7 @@ const Regaff = () => {
       </section>
 
       {/* Global expertise */}
-      <section className="relative py-24 md:py-32" aria-labelledby="ra-global">
+      <section className="relative py-16 md:py-32" aria-labelledby="ra-global">
         <div className="absolute inset-0 -z-10 bg-obsidian-900/60" />
         <div className="hairline absolute inset-x-0 top-0" />
         <div className="container grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
@@ -316,7 +316,7 @@ const Regaff = () => {
       </section>
 
       {/* What you get */}
-      <section className="container py-24 md:py-32" aria-labelledby="ra-deliverables">
+      <section className="container py-16 md:py-32" aria-labelledby="ra-deliverables">
         <div id="ra-deliverables">
           <SectionHeading
             eyebrow="Deliverables"
@@ -339,7 +339,7 @@ const Regaff = () => {
       </section>
 
       {/* Timelines */}
-      <section className="relative py-24 md:py-32" aria-labelledby="ra-timelines">
+      <section className="relative py-16 md:py-32" aria-labelledby="ra-timelines">
         <div className="absolute inset-0 -z-10 bg-grid opacity-25 mask-fade-b" />
         <div className="container">
           <div id="ra-timelines">
@@ -370,7 +370,7 @@ const Regaff = () => {
       </section>
 
       {/* Engagement models */}
-      <section className="container py-24 md:py-32" aria-labelledby="ra-models">
+      <section className="container py-16 md:py-32" aria-labelledby="ra-models">
         <div id="ra-models">
           <SectionHeading
             eyebrow="How we work"
@@ -403,7 +403,7 @@ const Regaff = () => {
       </section>
 
       {/* FAQ */}
-      <section className="container py-24 md:py-32" aria-labelledby="ra-faq">
+      <section className="container py-16 md:py-32" aria-labelledby="ra-faq">
         <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
           <div className="lg:sticky lg:top-32 lg:self-start">
             <div id="ra-faq">
