@@ -6,7 +6,7 @@ import { Reveal, Stagger, StaggerItem, TiltCard } from "./ui/motion";
 import { LEADER } from "../lib/leadership";
 
 /** Portrait with an initials fallback while no photo has been added. */
-function Portrait({ className = "" }) {
+function Portrait({ className = "", caption = true }) {
   const [failed, setFailed] = useState(false);
   const initials = LEADER.name
     .split(" ")
@@ -21,17 +21,19 @@ function Portrait({ className = "" }) {
       ) : (
         <img
           src={LEADER.photo}
-          alt={`${LEADER.name}, ${LEADER.role}, NexGen Pharma Solutions`}
+          alt={`${LEADER.name} of NexGen Pharma Solutions at Castello Sforzesco, Milan, during CPHI Milan`}
           loading="lazy"
           onError={() => setFailed(true)}
-          className="h-full w-full object-cover object-[50%_35%]"
+          className="h-full w-full object-cover"
         />
       )}
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-obsidian-950/80 via-transparent to-transparent" />
-      <div className="absolute inset-x-0 bottom-0 p-6">
-        <p className="font-display text-2xl text-champagne">{LEADER.name}</p>
-        <p className="mt-1 text-xs uppercase tracking-[0.14em] text-copper-200">{LEADER.role}</p>
-      </div>
+      {caption && (
+        <div className="absolute inset-x-0 bottom-0 p-6">
+          <p className="font-display text-2xl text-champagne">{LEADER.name}</p>
+          <p className="mt-1 text-xs uppercase tracking-[0.14em] text-copper-200">{LEADER.role}</p>
+        </div>
+      )}
     </div>
   );
 }
@@ -109,12 +111,13 @@ export function LeadershipTeaser() {
     <section className="container py-16 md:py-24" aria-labelledby="leader-teaser">
       <Reveal>
         <TiltCard max={3} className="grid grid-cols-[minmax(0,1fr)] items-center gap-8 p-6 md:grid-cols-[220px_minmax(0,1fr)] md:gap-12 md:p-10">
-          <Portrait className="aspect-[4/5] w-full max-w-[220px]" />
+          <Portrait caption={false} className="aspect-[4/5] w-full max-w-[220px]" />
           <div>
             <span className="eyebrow">Who leads your audit</span>
             <h2 id="leader-teaser" className="mt-4 text-display-sm text-champagne">
               {LEADER.name}
             </h2>
+            <p className="mt-2 text-xs uppercase tracking-[0.14em] text-copper-200">{LEADER.role}</p>
             <p className="mt-4 max-w-2xl leading-relaxed text-champagne-muted">{LEADER.short}</p>
             <Link
               to="/aboutus#leadership"
