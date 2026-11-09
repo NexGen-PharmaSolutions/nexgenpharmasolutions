@@ -1,487 +1,561 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
-import { Helmet } from "react-helmet";
+import { AnimatePresence, motion } from "framer-motion";
+import {
+  Award,
+  BookOpen,
+  ClipboardCheck,
+  GraduationCap,
+  LifeBuoy,
+  PenLine,
+  Plus,
+  ShieldCheck,
+  Database,
+  Search,
+  Scale,
+  ScanSearch,
+  Users,
+  Check,
+} from "lucide-react";
+import { PageHero, SectionHeading, CtaBand, Tag, IconTile } from "../components/ui/blocks";
+import { Reveal, Stagger, StaggerItem, GlowCard, TiltCard, Parallax, EASE } from "../components/ui/motion";
+
+/* ------------------------------------------------------------------ */
+/* Content                                                              */
+/* ------------------------------------------------------------------ */
+
+const corePrograms = [
+  {
+    icon: ShieldCheck,
+    title: "GMP & Regulatory Fundamentals",
+    text: "Introduction to GMP, FDA 21 CFR Parts 210/211, EU GMP Annexes, behavioral GMP, and quality culture development",
+    tags: ["21 CFR 210/211", "EU GMP Annexes"],
+  },
+  {
+    icon: Database,
+    title: "Data Integrity Compliance",
+    text: "ALCOA+ principles, electronic records (21 CFR Part 11), audit trail review, data governance, and integrity remediation",
+    tags: ["ALCOA+", "21 CFR Part 11"],
+  },
+  {
+    icon: Search,
+    title: "CAPA & Root Cause Analysis",
+    text: "Systematic investigation techniques, RCA methodologies (5-Why, Fishbone, Fault Tree), CAPA development, and effectiveness verification",
+    tags: ["5-Why", "Fishbone", "Fault Tree"],
+  },
+  {
+    icon: Scale,
+    title: "Quality Risk Management",
+    text: "ICH Q9 principles, FMEA, HAZOP, risk-based decision making, and practical application across quality systems",
+    tags: ["ICH Q9", "FMEA", "HAZOP"],
+  },
+  {
+    icon: ScanSearch,
+    title: "Audit Skills & Inspection Readiness",
+    text: "Internal auditing techniques, supplier qualification, inspection preparation, observation handling, and mock audit exercises",
+    tags: ["Mock audits"],
+  },
+];
+
+const advancedTopics = [
+  { title: "Computer System Validation", text: "GAMP 5, CSV lifecycle, 21 CFR Part 11 compliance" },
+  { title: "Technical Writing", text: "SOP development, protocol writing, report preparation" },
+  { title: "Quality Metrics & KPIs", text: "Performance measurement, trending analysis, data-driven decisions" },
+  { title: "Change Control Management", text: "Risk-based change assessment, validation triggers, documentation" },
+  { title: "Investigative Report Writing", text: "Deviation investigations, OOS/OOT, complaint handling" },
+];
+
+const deliveryFormats = [
+  "On-site Classroom",
+  "Virtual Live Webinars",
+  "Self-Paced E-Learning",
+  "Hybrid Programs",
+  "Custom Workshops",
+  "Train-the-Trainer",
+];
+
+const trainingFeatures = [
+  "Interactive case studies and real-world scenarios",
+  "Knowledge assessments and competency verification",
+  "Certificates of completion for regulatory files",
+  "Customizable to your SOPs and systems",
+  "Expert instructors with industry experience",
+];
+
+const deliverables = [
+  {
+    icon: BookOpen,
+    title: "Comprehensive Training Materials",
+    text: "Participant guides, slide decks, reference materials, job aids, and access to online resource libraries for ongoing reference.",
+    span: "md:col-span-2",
+  },
+  {
+    icon: Award,
+    title: "Certificates & Training Records",
+    text: "Individual certificates of completion, attendance records, assessment scores, and documentation suitable for regulatory inspections.",
+    span: "",
+  },
+  {
+    icon: ClipboardCheck,
+    title: "Competency Assessments",
+    text: "Pre- and post-training knowledge assessments, practical exercises, and verification of understanding with minimum passing criteria.",
+    span: "",
+  },
+  {
+    icon: Users,
+    title: "Expert Instructors",
+    text: "Seasoned pharmaceutical professionals with regulatory inspection experience, industry expertise, and adult learning certifications.",
+    span: "",
+  },
+  {
+    icon: PenLine,
+    title: "Customized Content",
+    text: "Training tailored to your SOPs, systems, products, and specific regulatory requirements with industry-relevant examples.",
+    span: "",
+  },
+  {
+    icon: LifeBuoy,
+    title: "Post-Training Support",
+    text: "30-day post-training support for questions, follow-up assessments, coaching for internal trainers, and effectiveness monitoring.",
+    span: "lg:col-span-3",
+  },
+];
+
+const durations = [
+  {
+    title: "Fundamentals & Awareness",
+    time: "4-8 hours (half-day to full-day)",
+    text: "GMP basics, awareness training, introductory topics",
+  },
+  { title: "Intermediate Technical Training", time: "2-3 days", text: "CAPA, data integrity, auditing, technical writing" },
+  {
+    title: "Advanced Certification Programs",
+    time: "5-10 days (can be split)",
+    text: "CSV, audit certification, train-the-trainer, quality metrics",
+  },
+  { title: "Custom Workshop Series", time: "Flexible scheduling", text: "Multiple sessions scheduled around operational needs" },
+];
+
+const engagementModels = [
+  {
+    title: "Public Scheduled Sessions",
+    text: "Regularly scheduled open-enrollment training sessions. Cost-effective for individuals or small groups.",
+    points: ["Pre-scheduled dates", "Per-participant pricing", "Virtual or selected venues"],
+  },
+  {
+    title: "Private On-Site Training",
+    text: "Customized training delivered at your facility for your entire team with company-specific content.",
+    points: ["Customized to your needs", "Flexible scheduling", "Unlimited participants"],
+  },
+  {
+    title: "Train-the-Trainer Programs",
+    text: "Build internal training capability with complete training packages, materials, and ongoing support.",
+    points: ["Internal capability building", "Complete training kits", "Long-term cost savings"],
+  },
+];
+
+const faqs = [
+  {
+    q: "What training formats do you offer?",
+    a: "We offer flexible training delivery options to suit your organizational needs: classroom-style on-site training at your facility, virtual instructor-led webinars via Zoom/Teams, self-paced e-learning modules accessible 24/7, hybrid programs combining live and recorded sessions, and customized workshops tailored to specific topics. All formats include interactive exercises, real-world case studies, knowledge assessments, and certificates of completion. We can accommodate groups from 5 to 500+ participants.",
+  },
+  {
+    q: "Are your training programs customizable to our specific needs?",
+    a: "Absolutely. All our training programs can be fully customized to address your organization's specific challenges, SOPs, systems, and regulatory requirements. We conduct pre-training assessments to identify knowledge gaps, develop custom content using your actual procedures and scenarios, incorporate your company's quality systems and documentation, and provide industry-specific examples relevant to your operations (API, sterile, biologics, devices, etc.). This ensures maximum relevance and practical applicability for your team.",
+  },
+  {
+    q: "Do you provide training records and certificates for regulatory compliance?",
+    a: "Yes, we provide comprehensive training documentation to support regulatory compliance. This includes individual certificates of completion with training dates and topics, detailed training records with attendee signatures and assessment scores, training curricula and materials for your training files, instructor qualifications and CVs, and post-training competency assessment results. All documentation is provided in formats suitable for regulatory inspections and meets FDA, EMA, and other global agency expectations for training documentation.",
+  },
+  {
+    q: "How do you assess training effectiveness and competency?",
+    a: "We use a multi-tiered approach to ensure training effectiveness: pre-training knowledge assessments to establish baselines, interactive exercises during training to reinforce concepts, post-training examinations with minimum passing scores (typically 80%), practical exercises or role-plays for hands-on skills, 30/60/90 day follow-up assessments to measure retention, and on-the-job observation and competency verification. We provide detailed reports showing individual and group performance, knowledge gaps, and recommendations for additional training needs.",
+  },
+  {
+    q: "Can you provide Train-the-Trainer programs to build internal capability?",
+    a: "Yes, our Train-the-Trainer programs are designed to develop internal subject matter experts who can deliver ongoing training within your organization. Participants learn adult learning principles, effective presentation techniques, how to develop engaging training materials, assessment and competency evaluation methods, and how to maintain training effectiveness. We provide complete training packages including slide decks, participant guides, trainer notes, and assessment tools. This approach builds sustainable internal capability while reducing long-term training costs.",
+  },
+];
+
+const pad = (n) => String(n).padStart(2, "0");
+
+/* ------------------------------------------------------------------ */
+/* Pieces                                                               */
+/* ------------------------------------------------------------------ */
+
+function ProgramRow({ p, index, open, onToggle }) {
+  const isOpen = open === index;
+  const Icon = p.icon;
+  return (
+    <StaggerItem as="li" className="border-b border-white/[0.07] last:border-b-0">
+      <h3 className="font-sans">
+        <button
+          type="button"
+          id={`program-q-${index}`}
+          aria-expanded={isOpen}
+          aria-controls={`program-a-${index}`}
+          onClick={() => onToggle(isOpen ? null : index)}
+          className="group flex w-full items-center gap-5 py-6 text-left md:gap-8"
+        >
+          <span
+            className={`font-display text-2xl transition-colors duration-500 md:text-3xl ${
+              isOpen ? "text-gradient" : "text-champagne-faint/60"
+            }`}
+            aria-hidden="true"
+          >
+            {pad(index + 1)}
+          </span>
+          <span
+            className={`flex-1 font-display text-xl leading-snug transition-colors duration-500 md:text-2xl ${
+              isOpen ? "text-champagne" : "text-champagne-soft group-hover:text-champagne"
+            }`}
+          >
+            {p.title}
+          </span>
+          <span
+            className={`grid h-10 w-10 flex-none place-items-center rounded-full border transition-all duration-500 ease-expo ${
+              isOpen ? "border-copper-400 bg-copper-400/15 text-copper-200" : "border-white/15 text-champagne-muted"
+            }`}
+            aria-hidden="true"
+          >
+            <Icon className="h-4 w-4" strokeWidth={1.6} />
+          </span>
+        </button>
+      </h3>
+      <AnimatePresence initial={false}>
+        {isOpen && (
+          <motion.div
+            id={`program-a-${index}`}
+            role="region"
+            aria-labelledby={`program-q-${index}`}
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.55, ease: EASE }}
+            className="overflow-hidden"
+          >
+            <div className="pb-7 pl-0 md:pl-[4.25rem]">
+              <p className="max-w-xl leading-relaxed text-champagne-muted">{p.text}</p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {p.tags.map((t) => (
+                  <Tag key={t}>{t}</Tag>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </StaggerItem>
+  );
+}
+
+function Faq({ items }) {
+  const [open, setOpen] = useState(0);
+  return (
+    <Stagger className="divide-y divide-white/[0.07] border-y border-white/[0.07]">
+      {items.map((f, i) => {
+        const isOpen = open === i;
+        return (
+          <StaggerItem key={f.q}>
+            <h3 className="font-sans">
+              <button
+                type="button"
+                id={`training-faq-q-${i}`}
+                aria-expanded={isOpen}
+                aria-controls={`training-faq-a-${i}`}
+                onClick={() => setOpen(isOpen ? null : i)}
+                className="group flex w-full items-start justify-between gap-6 py-7 text-left"
+              >
+                <span
+                  className={`text-lg font-medium leading-snug transition-colors duration-300 md:text-xl ${
+                    isOpen ? "text-copper-200" : "text-champagne group-hover:text-copper-200"
+                  }`}
+                >
+                  {f.q}
+                </span>
+                <span
+                  className={`grid h-9 w-9 flex-none place-items-center rounded-full border transition-all duration-500 ease-expo ${
+                    isOpen ? "rotate-45 border-copper-400 bg-copper-400/15 text-copper-200" : "border-white/15 text-champagne-muted"
+                  }`}
+                  aria-hidden="true"
+                >
+                  <Plus className="h-4 w-4" />
+                </span>
+              </button>
+            </h3>
+            <AnimatePresence initial={false}>
+              {isOpen && (
+                <motion.div
+                  id={`training-faq-a-${i}`}
+                  role="region"
+                  aria-labelledby={`training-faq-q-${i}`}
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: "auto", opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  transition={{ duration: 0.5, ease: EASE }}
+                  className="overflow-hidden"
+                >
+                  <p className="max-w-3xl pb-8 pr-12 leading-relaxed text-champagne-muted">{f.a}</p>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </StaggerItem>
+        );
+      })}
+    </Stagger>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* Page                                                                 */
+/* ------------------------------------------------------------------ */
 
 const Training = () => {
-  const [openFaq, setOpenFaq] = useState(null);
-
-  const toggleFaq = (index) => {
-    setOpenFaq(openFaq === index ? null : index);
-  };
-
-  const faqs = [
-    {
-      q: "What training formats do you offer?",
-      a: "We offer flexible training delivery options to suit your organizational needs: classroom-style on-site training at your facility, virtual instructor-led webinars via Zoom/Teams, self-paced e-learning modules accessible 24/7, hybrid programs combining live and recorded sessions, and customized workshops tailored to specific topics. All formats include interactive exercises, real-world case studies, knowledge assessments, and certificates of completion. We can accommodate groups from 5 to 500+ participants."
-    },
-    {
-      q: "Are your training programs customizable to our specific needs?",
-      a: "Absolutely. All our training programs can be fully customized to address your organization's specific challenges, SOPs, systems, and regulatory requirements. We conduct pre-training assessments to identify knowledge gaps, develop custom content using your actual procedures and scenarios, incorporate your company's quality systems and documentation, and provide industry-specific examples relevant to your operations (API, sterile, biologics, devices, etc.). This ensures maximum relevance and practical applicability for your team."
-    },
-    {
-      q: "Do you provide training records and certificates for regulatory compliance?",
-      a: "Yes, we provide comprehensive training documentation to support regulatory compliance. This includes individual certificates of completion with training dates and topics, detailed training records with attendee signatures and assessment scores, training curricula and materials for your training files, instructor qualifications and CVs, and post-training competency assessment results. All documentation is provided in formats suitable for regulatory inspections and meets FDA, EMA, and other global agency expectations for training documentation."
-    },
-    {
-      q: "How do you assess training effectiveness and competency?",
-      a: "We use a multi-tiered approach to ensure training effectiveness: pre-training knowledge assessments to establish baselines, interactive exercises during training to reinforce concepts, post-training examinations with minimum passing scores (typically 80%), practical exercises or role-plays for hands-on skills, 30/60/90 day follow-up assessments to measure retention, and on-the-job observation and competency verification. We provide detailed reports showing individual and group performance, knowledge gaps, and recommendations for additional training needs."
-    },
-    {
-      q: "Can you provide Train-the-Trainer programs to build internal capability?",
-      a: "Yes, our Train-the-Trainer programs are designed to develop internal subject matter experts who can deliver ongoing training within your organization. Participants learn adult learning principles, effective presentation techniques, how to develop engaging training materials, assessment and competency evaluation methods, and how to maintain training effectiveness. We provide complete training packages including slide decks, participant guides, trainer notes, and assessment tools. This approach builds sustainable internal capability while reducing long-term training costs."
-    }
-  ];
+  const [openProgram, setOpenProgram] = useState(0);
 
   return (
-    <div className="min-h-screen bg-[#F5EAD8]">
-      <Helmet>
-        <title>GMP & Pharma Training Programs | NexGen Pharma Solutions</title>
-        <meta name="description" content="Expert GMP, data integrity, CAPA, audit, and CSV training for pharmaceutical professionals. Customizable programs with classroom, virtual, and e-learning formats." />
-        <meta name="keywords" content="GMP Training, Pharmaceutical Training, Data Integrity Training, CAPA Training, Quality Risk Management, Audit Training, CSV Training, Regulatory Compliance Training, Train the Trainer, Behavioral GMP" />
-      </Helmet>
-      <header className="p-2 sticky top-0 z-50">
-        <Navbar />
-      </header>
-      <main className="relative z-10">
-        {/* Hero Section */}
-        <section className="relative bg-gradient-to-r from-[#2E2B25] via-[#3D372E] to-[#2E2B25] text-white py-20 px-4">
-          <div className="container mx-auto max-w-6xl">
-            <div className="text-center mb-8">
-              <h1 className="text-4xl md:text-5xl font-bold outfit mb-4">
-                GMP & Pharmaceutical Training Programs
-              </h1>
-              <p className="text-lg md:text-xl text-gray-200 max-w-4xl mx-auto">
-                Expert-led training programs covering GMP, data integrity, CAPA, quality risk management, auditing, and regulatory compliance. Build competency and ensure sustained compliance across your organization.
-              </p>
-            </div>
+    <>
+      <PageHero
+        crumb="Training"
+        eyebrow="GMP · Data integrity · CAPA · Auditing"
+        title="GMP & Pharmaceutical Training Programs"
+        highlight={[2]}
+        intro="Expert-led training programs covering GMP, data integrity, CAPA, quality risk management, auditing, and regulatory compliance. Build competency and ensure sustained compliance across your organization."
+        scene="capsules"
+        primary={{ to: "/contactus", label: "Plan your training" }}
+        secondary={{ href: "mailto:inquiry@nexgenpharmasolutions.com", label: "Email us" }}
+        stats={[
+          ["5", "Core programs"],
+          ["6", "Delivery formats"],
+          ["30-day", "Post-training support"],
+        ]}
+      />
 
-            <div className="flex flex-col md:flex-row gap-4 justify-center items-center mt-8">
-              <a
-                href="mailto:inquiry@nexgenpharmasolutions.com"
-                className="px-8 py-3 bg-white text-[#201E1D] hover:bg-gray-100 font-semibold rounded-lg transition-all duration-200 shadow-lg flex items-center gap-2"
-              >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-                Email Us
-              </a>
-            </div>
-          </div>
-        </section>
-
-        {/* Value Proposition Section */}
-        <section className="py-16 px-4 bg-white">
-          <div className="container mx-auto max-w-6xl">
-            <h2 className="text-3xl md:text-4xl font-bold outfit text-[#201E1D] text-center mb-12">
-              Comprehensive Training Portfolio
+      {/* 1. Core programs */}
+      <section aria-labelledby="programs-heading" className="py-24 md:py-32">
+        <div className="container grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
+          <div className="lg:sticky lg:top-32 lg:self-start">
+            <Reveal>
+              <span className="eyebrow">Comprehensive training portfolio</span>
+            </Reveal>
+            <h2 id="programs-heading" className="mt-5 text-display-md text-champagne">
+              Core Training <span className="text-gradient italic">Programs</span>
             </h2>
-
-            <div className="grid md:grid-cols-2 gap-12">
-              {/* Left: Training Topics */}
-              <div>
-                <h3 className="text-2xl font-semibold outfit text-[#201E1D] mb-6">
-                  Core Training Programs
-                </h3>
-                <div className="space-y-4">
-                  <div className="flex items-start gap-3">
-                    <svg className="w-6 h-6 text-[#C67139] flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    <div>
-                      <h4 className="font-semibold text-lg">GMP & Regulatory Fundamentals</h4>
-                      <p className="text-gray-600 text-sm">Introduction to GMP, FDA 21 CFR Parts 210/211, EU GMP Annexes, behavioral GMP, and quality culture development</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3">
-                    <svg className="w-6 h-6 text-[#C67139] flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    <div>
-                      <h4 className="font-semibold text-lg">Data Integrity Compliance</h4>
-                      <p className="text-gray-600 text-sm">ALCOA+ principles, electronic records (21 CFR Part 11), audit trail review, data governance, and integrity remediation</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3">
-                    <svg className="w-6 h-6 text-[#C67139] flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    <div>
-                      <h4 className="font-semibold text-lg">CAPA & Root Cause Analysis</h4>
-                      <p className="text-gray-600 text-sm">Systematic investigation techniques, RCA methodologies (5-Why, Fishbone, Fault Tree), CAPA development, and effectiveness verification</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3">
-                    <svg className="w-6 h-6 text-[#C67139] flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    <div>
-                      <h4 className="font-semibold text-lg">Quality Risk Management</h4>
-                      <p className="text-gray-600 text-sm">ICH Q9 principles, FMEA, HAZOP, risk-based decision making, and practical application across quality systems</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3">
-                    <svg className="w-6 h-6 text-[#C67139] flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    <div>
-                      <h4 className="font-semibold text-lg">Audit Skills & Inspection Readiness</h4>
-                      <p className="text-gray-600 text-sm">Internal auditing techniques, supplier qualification, inspection preparation, observation handling, and mock audit exercises</p>
-                    </div>
-                  </div>
+            <Reveal delay={0.15}>
+              <div className="relative mt-10 overflow-hidden rounded-3xl border border-white/[0.07]">
+                <Parallax offset={30}>
+                  <img
+                    src="/images/gmp-training.webp"
+                    alt="Trainer explaining cleanroom gowning steps to QA and production staff"
+                    loading="lazy"
+                    className="h-[260px] w-full scale-110 object-cover sm:h-[340px]"
+                  />
+                </Parallax>
+                <div className="absolute inset-0 bg-gradient-to-t from-obsidian-950/90 via-obsidian-950/30 to-obsidian-950/10" aria-hidden="true" />
+                <div className="absolute inset-x-0 bottom-0 p-6">
+                  <p className="font-mono text-xs uppercase tracking-[0.18em] text-copper-200">
+                    Interactive · Case-study led · Assessed
+                  </p>
                 </div>
               </div>
+            </Reveal>
+          </div>
 
-              {/* Right: Delivery Methods & Specialized Training */}
-              <div>
-                <h3 className="text-2xl font-semibold outfit text-[#201E1D] mb-6">
-                  Specialized & Technical Training
-                </h3>
-                <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 mb-6">
-                  <h4 className="font-semibold mb-4">Advanced Topics</h4>
-                  <ul className="space-y-3 text-sm">
-                    <li className="flex items-start gap-2">
-                      <span className="text-[#8C491A] mt-1">→</span>
-                      <span><strong>Computer System Validation:</strong> GAMP 5, CSV lifecycle, 21 CFR Part 11 compliance</span>
+          <Stagger as="ol" className="border-t border-white/[0.07]">
+            {corePrograms.map((p, i) => (
+              <ProgramRow key={p.title} p={p} index={i} open={openProgram} onToggle={setOpenProgram} />
+            ))}
+          </Stagger>
+        </div>
+      </section>
+
+      {/* 2. Specialized & technical */}
+      <section aria-labelledby="specialized-heading" className="relative py-24 md:py-32">
+        <div className="hairline absolute inset-x-0 top-0" aria-hidden="true" />
+        <div className="container">
+          <div className="max-w-3xl">
+            <Reveal>
+              <span className="eyebrow">Beyond the fundamentals</span>
+            </Reveal>
+            <h2 id="specialized-heading" className="mt-5 text-display-md text-champagne">
+              Specialized &amp; Technical <span className="text-gradient italic">Training</span>
+            </h2>
+          </div>
+
+          <div className="mt-14 grid gap-5 lg:grid-cols-12">
+            <Reveal className="lg:col-span-7">
+              <GlowCard className="h-full p-8 md:p-10">
+                <div className="flex items-center gap-4">
+                  <IconTile icon={GraduationCap} />
+                  <h3 className="text-display-sm text-champagne">Advanced Topics</h3>
+                </div>
+                <ul className="mt-8 divide-y divide-white/[0.07]">
+                  {advancedTopics.map((t, i) => (
+                    <li key={t.title} className="grid gap-1 py-4 sm:grid-cols-[2.5rem_1fr] sm:gap-4">
+                      <span className="font-mono text-xs text-copper-400" aria-hidden="true">
+                        {pad(i + 1)}
+                      </span>
+                      <p className="text-champagne-muted">
+                        <strong className="font-semibold text-champagne">{t.title}:</strong> {t.text}
+                      </p>
                     </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-[#8C491A] mt-1">→</span>
-                      <span><strong>Technical Writing:</strong> SOP development, protocol writing, report preparation</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-[#8C491A] mt-1">→</span>
-                      <span><strong>Quality Metrics & KPIs:</strong> Performance measurement, trending analysis, data-driven decisions</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-[#8C491A] mt-1">→</span>
-                      <span><strong>Change Control Management:</strong> Risk-based change assessment, validation triggers, documentation</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-[#8C491A] mt-1">→</span>
-                      <span><strong>Investigative Report Writing:</strong> Deviation investigations, OOS/OOT, complaint handling</span>
-                    </li>
+                  ))}
+                </ul>
+              </GlowCard>
+            </Reveal>
+
+            <div className="grid gap-5 lg:col-span-5">
+              <Reveal delay={0.1}>
+                <TiltCard max={5} className="p-8">
+                  <h3 className="font-mono text-xs uppercase tracking-[0.2em] text-copper-400">Delivery Formats</h3>
+                  <ul className="mt-5 flex flex-wrap gap-2">
+                    {deliveryFormats.map((f) => (
+                      <li key={f}>
+                        <Tag className="px-3.5 py-1.5 text-[0.74rem]">{f}</Tag>
+                      </li>
+                    ))}
                   </ul>
-                </div>
-
-                <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100">
-                  <h4 className="font-semibold mb-4">Delivery Formats</h4>
-                  <div className="grid grid-cols-2 gap-4 text-sm mb-6">
-                    <div className="flex items-center gap-2">
-                      <span className="text-[#8C491A]">✓</span>
-                      <span>On-site Classroom</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <span className="text-[#8C491A]">✓</span>
-                      <span>Virtual Live Webinars</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <span className="text-[#8C491A]">✓</span>
-                      <span>Self-Paced E-Learning</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <span className="text-[#8C491A]">✓</span>
-                      <span>Hybrid Programs</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <span className="text-[#8C491A]">✓</span>
-                      <span>Custom Workshops</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <span className="text-[#8C491A]">✓</span>
-                      <span>Train-the-Trainer</span>
-                    </div>
-                  </div>
-
-                  <div className="mt-6 pt-6 border-t border-gray-300">
-                    <h4 className="font-semibold mb-3">Training Features</h4>
-                    <ul className="space-y-2 text-sm text-gray-600">
-                      <li>• Interactive case studies and real-world scenarios</li>
-                      <li>• Knowledge assessments and competency verification</li>
-                      <li>• Certificates of completion for regulatory files</li>
-                      <li>• Customizable to your SOPs and systems</li>
-                      <li>• Expert instructors with industry experience</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+                </TiltCard>
+              </Reveal>
+              <Reveal delay={0.2}>
+                <TiltCard max={5} className="p-8">
+                  <h3 className="font-mono text-xs uppercase tracking-[0.2em] text-copper-400">Training Features</h3>
+                  <ul className="mt-5 space-y-3">
+                    {trainingFeatures.map((f) => (
+                      <li key={f} className="flex items-start gap-3 text-sm text-champagne-soft">
+                        <Check className="mt-0.5 h-4 w-4 flex-none text-copper-400" aria-hidden="true" />
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+                </TiltCard>
+              </Reveal>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* What You Get Section */}
-        <section className="py-16 px-4 bg-[#F9F4ED]">
-          <div className="container mx-auto max-w-6xl">
-            <h2 className="text-3xl md:text-4xl font-bold outfit text-[#201E1D] text-center mb-12">
-              What You Get
-            </h2>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
-                <div className="w-12 h-12 bg-[#FFF2EB] rounded-lg flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-[#C67139]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-semibold outfit text-[#201E1D] mb-3">
-                  Comprehensive Training Materials
-                </h3>
-                <p className="text-gray-600 text-sm">
-                  Participant guides, slide decks, reference materials, job aids, and access to online resource libraries for ongoing reference.
-                </p>
-              </div>
-
-              <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
-                <div className="w-12 h-12 bg-[#FFF2EB] rounded-lg flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-[#C67139]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-semibold outfit text-[#201E1D] mb-3">
-                  Certificates & Training Records
-                </h3>
-                <p className="text-gray-600 text-sm">
-                  Individual certificates of completion, attendance records, assessment scores, and documentation suitable for regulatory inspections.
-                </p>
-              </div>
-
-              <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
-                <div className="w-12 h-12 bg-[#FFF2EB] rounded-lg flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-[#C67139]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-semibold outfit text-[#201E1D] mb-3">
-                  Competency Assessments
-                </h3>
-                <p className="text-gray-600 text-sm">
-                  Pre- and post-training knowledge assessments, practical exercises, and verification of understanding with minimum passing criteria.
-                </p>
-              </div>
-
-              <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
-                <div className="w-12 h-12 bg-[#FFF2EB] rounded-lg flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-[#C67139]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-semibold outfit text-[#201E1D] mb-3">
-                  Expert Instructors
-                </h3>
-                <p className="text-gray-600 text-sm">
-                  Seasoned pharmaceutical professionals with regulatory inspection experience, industry expertise, and adult learning certifications.
-                </p>
-              </div>
-
-              <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
-                <div className="w-12 h-12 bg-[#FFF2EB] rounded-lg flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-[#C67139]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-semibold outfit text-[#201E1D] mb-3">
-                  Customized Content
-                </h3>
-                <p className="text-gray-600 text-sm">
-                  Training tailored to your SOPs, systems, products, and specific regulatory requirements with industry-relevant examples.
-                </p>
-              </div>
-
-              <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
-                <div className="w-12 h-12 bg-[#FFF2EB] rounded-lg flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-[#C67139]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-semibold outfit text-[#201E1D] mb-3">
-                  Post-Training Support
-                </h3>
-                <p className="text-gray-600 text-sm">
-                  30-day post-training support for questions, follow-up assessments, coaching for internal trainers, and effectiveness monitoring.
-                </p>
-              </div>
+      {/* 3. What you get */}
+      <section aria-labelledby="deliverables-heading" className="relative py-24 md:py-32">
+        <div className="hairline absolute inset-x-0 top-0" aria-hidden="true" />
+        <div className="container">
+          <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+            <div className="max-w-2xl">
+              <Reveal>
+                <span className="eyebrow">Deliverables</span>
+              </Reveal>
+              <h2 id="deliverables-heading" className="mt-5 text-display-md text-champagne">
+                What you <span className="text-gradient italic">get</span>
+              </h2>
             </div>
+            <Reveal delay={0.1}>
+              <p className="max-w-sm text-champagne-muted">
+                Everything your team needs to learn, prove competency and keep the evidence on file.
+              </p>
+            </Reveal>
           </div>
-        </section>
 
-        {/* Timelines & Engagement Section */}
-        <section className="py-16 px-4 bg-white">
-          <div className="container mx-auto max-w-6xl">
-            <h2 className="text-3xl md:text-4xl font-bold outfit text-[#201E1D] text-center mb-12">
-              Training Durations & Formats
-            </h2>
-
-            <div className="grid md:grid-cols-2 gap-12">
-              <div>
-                <h3 className="text-2xl font-semibold outfit text-[#201E1D] mb-6">
-                  Typical Training Durations
-                </h3>
-                <div className="space-y-4">
-                  <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border-l-4 border-[#C67139]">
-                    <h4 className="font-semibold text-lg mb-2">Fundamentals & Awareness</h4>
-                    <p className="text-gray-600 text-sm mb-2">4-8 hours (half-day to full-day)</p>
-                    <p className="text-gray-500 text-xs">GMP basics, awareness training, introductory topics</p>
-                  </div>
-
-                  <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border-l-4 border-[#C67139]">
-                    <h4 className="font-semibold text-lg mb-2">Intermediate Technical Training</h4>
-                    <p className="text-gray-600 text-sm mb-2">2-3 days</p>
-                    <p className="text-gray-500 text-xs">CAPA, data integrity, auditing, technical writing</p>
-                  </div>
-
-                  <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border-l-4 border-[#C67139]">
-                    <h4 className="font-semibold text-lg mb-2">Advanced Certification Programs</h4>
-                    <p className="text-gray-600 text-sm mb-2">5-10 days (can be split)</p>
-                    <p className="text-gray-500 text-xs">CSV, audit certification, train-the-trainer, quality metrics</p>
-                  </div>
-
-                  <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border-l-4 border-[#C67139]">
-                    <h4 className="font-semibold text-lg mb-2">Custom Workshop Series</h4>
-                    <p className="text-gray-600 text-sm mb-2">Flexible scheduling</p>
-                    <p className="text-gray-500 text-xs">Multiple sessions scheduled around operational needs</p>
-                  </div>
-                </div>
-              </div>
-
-              <div>
-                <h3 className="text-2xl font-semibold outfit text-[#201E1D] mb-6">
-                  Training Engagement Models
-                </h3>
-                <div className="space-y-6">
-                  <div className="bg-white p-6 rounded-lg shadow-md border-t-4 border-[#C67139]">
-                    <h4 className="font-semibold text-xl mb-3">Public Scheduled Sessions</h4>
-                    <p className="text-gray-600 text-sm mb-4">
-                      Regularly scheduled open-enrollment training sessions. Cost-effective for individuals or small groups.
-                    </p>
-                    <ul className="text-sm text-gray-500 space-y-2">
-                      <li className="flex items-start gap-2">
-                        <span className="text-[#8C491A] mt-1">→</span>
-                        <span>Pre-scheduled dates</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <span className="text-[#8C491A] mt-1">→</span>
-                        <span>Per-participant pricing</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <span className="text-[#8C491A] mt-1">→</span>
-                        <span>Virtual or selected venues</span>
-                      </li>
-                    </ul>
-                  </div>
-
-                  <div className="bg-white p-6 rounded-lg shadow-md border-t-4 border-[#C67139]">
-                    <h4 className="font-semibold text-xl mb-3">Private On-Site Training</h4>
-                    <p className="text-gray-600 text-sm mb-4">
-                      Customized training delivered at your facility for your entire team with company-specific content.
-                    </p>
-                    <ul className="text-sm text-gray-500 space-y-2">
-                      <li className="flex items-start gap-2">
-                        <span className="text-[#8C491A] mt-1">→</span>
-                        <span>Customized to your needs</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <span className="text-[#8C491A] mt-1">→</span>
-                        <span>Flexible scheduling</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <span className="text-[#8C491A] mt-1">→</span>
-                        <span>Unlimited participants</span>
-                      </li>
-                    </ul>
-                  </div>
-
-                  <div className="bg-white p-6 rounded-lg shadow-md border-t-4 border-[#C67139]">
-                    <h4 className="font-semibold text-xl mb-3">Train-the-Trainer Programs</h4>
-                    <p className="text-gray-600 text-sm mb-4">
-                      Build internal training capability with complete training packages, materials, and ongoing support.
-                    </p>
-                    <ul className="text-sm text-gray-500 space-y-2">
-                      <li className="flex items-start gap-2">
-                        <span className="text-[#8C491A] mt-1">→</span>
-                        <span>Internal capability building</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <span className="text-[#8C491A] mt-1">→</span>
-                        <span>Complete training kits</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <span className="text-[#8C491A] mt-1">→</span>
-                        <span>Long-term cost savings</span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* FAQs Section */}
-        <section className="py-16 px-4 bg-[#F9F4ED]">
-          <div className="container mx-auto max-w-4xl">
-            <h2 className="text-3xl md:text-4xl font-bold outfit text-[#201E1D] text-center mb-12">
-              Frequently Asked Questions
-            </h2>
-
-            <div className="space-y-4">
-              {faqs.map((faq, index) => (
-                <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden">
-                  <button
-                    onClick={() => toggleFaq(index)}
-                    className="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors"
-                  >
-                    <span className="font-semibold text-[#201E1D] pr-4">{faq.q}</span>
-                    <svg
-                      className={`w-5 h-5 text-[#8C491A] flex-shrink-0 transition-transform ${
-                        openFaq === index ? "transform rotate-180" : ""
-                      }`}
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
+          <Stagger className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {deliverables.map((d, i) => (
+              <StaggerItem key={d.title} className={`${d.span} ${i === deliverables.length - 1 ? "md:col-span-2" : ""}`}>
+                <GlowCard className="group flex h-full flex-col p-8">
+                  <div className="flex items-center justify-between">
+                    <IconTile icon={d.icon} />
+                    <span
+                      className="font-display text-5xl text-white/[0.06] transition-colors duration-500 group-hover:text-copper-400/20"
+                      aria-hidden="true"
                     >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </button>
-                  {openFaq === index && (
-                    <div className="px-6 pb-6">
-                      <p className="text-gray-600">{faq.a}</p>
-                    </div>
-                  )}
-                </div>
-              ))}
+                      {pad(i + 1)}
+                    </span>
+                  </div>
+                  <h3 className="mt-8 text-xl text-champagne">{d.title}</h3>
+                  <p className="mt-3 max-w-xl text-sm leading-relaxed text-champagne-muted">{d.text}</p>
+                </GlowCard>
+              </StaggerItem>
+            ))}
+          </Stagger>
+        </div>
+      </section>
+
+      {/* 4. Durations & engagement models */}
+      <section aria-label="Training durations and formats" className="relative py-24 md:py-32">
+        <div className="hairline absolute inset-x-0 top-0" aria-hidden="true" />
+        <div className="container">
+          <SectionHeading eyebrow="Planning" title="Training Durations & Formats" highlight={[1]} />
+
+          <div className="mt-16 grid gap-16 lg:grid-cols-2 lg:gap-20">
+            <div>
+              <Reveal>
+                <h3 className="text-display-sm text-champagne">Typical Training Durations</h3>
+              </Reveal>
+              <Stagger as="ol" className="relative mt-10 space-y-8 border-l border-copper-400/20 pl-8">
+                {durations.map((t, i) => (
+                  <StaggerItem as="li" key={t.title} className="relative">
+                    <span
+                      className="absolute -left-[2.85rem] top-0 grid h-7 w-7 place-items-center rounded-full border border-copper-400/40 bg-obsidian-900 font-mono text-[0.62rem] text-copper-300"
+                      aria-hidden="true"
+                    >
+                      {pad(i + 1)}
+                    </span>
+                    <h4 className="text-lg text-champagne">{t.title}</h4>
+                    <p className="mt-1 font-mono text-sm text-copper-300">{t.time}</p>
+                    <p className="mt-2 text-sm text-champagne-muted">{t.text}</p>
+                  </StaggerItem>
+                ))}
+              </Stagger>
+            </div>
+
+            <div>
+              <Reveal>
+                <h3 className="text-display-sm text-champagne">Training Engagement Models</h3>
+              </Reveal>
+              <Stagger className="mt-10 grid gap-4">
+                {engagementModels.map((m) => (
+                  <StaggerItem key={m.title}>
+                    <GlowCard className="p-7">
+                      <h4 className="text-xl text-champagne">{m.title}</h4>
+                      <p className="mt-3 text-sm leading-relaxed text-champagne-muted">{m.text}</p>
+                      <ul className="mt-5 flex flex-wrap gap-2">
+                        {m.points.map((p) => (
+                          <li
+                            key={p}
+                            className="inline-flex items-center gap-2 rounded-full border border-white/10 px-3 py-1 text-xs text-champagne-soft"
+                          >
+                            <span className="h-1 w-1 rounded-full bg-copper-400" aria-hidden="true" />
+                            {p}
+                          </li>
+                        ))}
+                      </ul>
+                    </GlowCard>
+                  </StaggerItem>
+                ))}
+              </Stagger>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Final CTA Section */}
-        <section className="py-16 px-4 bg-gradient-to-r from-[#2E2B25] to-[#3D372E] text-white">
-          <div className="container mx-auto max-w-4xl text-center">
-            <h2 className="text-3xl md:text-4xl font-bold outfit mb-6">
-              Ready to Build Your Team's Competency?
+      {/* 5. FAQ */}
+      <section aria-labelledby="faq-heading" className="relative py-24 md:py-32">
+        <div className="hairline absolute inset-x-0 top-0" aria-hidden="true" />
+        <div className="container grid gap-12 lg:grid-cols-[0.7fr_1.3fr] lg:gap-20">
+          <div className="lg:sticky lg:top-32 lg:self-start">
+            <Reveal>
+              <span className="eyebrow">FAQ</span>
+            </Reveal>
+            <h2 id="faq-heading" className="mt-5 text-display-md text-champagne">
+              Frequently Asked <span className="text-gradient italic">Questions</span>
             </h2>
-            <p className="text-lg text-gray-200 mb-8 max-w-2xl mx-auto">
-              Get expert GMP, data integrity, CAPA, and compliance training customized to your organization's needs.
-            </p>
-            <div className="flex flex-col md:flex-row gap-4 justify-center">
-              <a
-                href="mailto:inquiry@nexgenpharmasolutions.com"
-                className="px-8 py-3 bg-white text-[#201E1D] hover:bg-gray-100 font-semibold rounded-lg transition-all duration-200 shadow-lg"
-              >
-                Email Us
-              </a>
-            </div>
           </div>
-        </section>
-      </main>
+          <Faq items={faqs} />
+        </div>
+      </section>
 
-      <footer className="p-4">
-        <Footer />
-      </footer>
-    </div>
+      <CtaBand
+        title="Ready to Build Your Team's Competency?"
+        intro="Get expert GMP, data integrity, CAPA, and compliance training customized to your organization's needs."
+        primary={{ to: "/contactus", label: "Plan your training" }}
+      />
+    </>
   );
 };
 

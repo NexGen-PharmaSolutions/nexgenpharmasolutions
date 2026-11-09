@@ -1,163 +1,113 @@
-import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+import { Mail, MapPin, Phone, ArrowUpRight } from "lucide-react";
+import { SERVICES, PRODUCTS, LEGAL } from "../lib/nav";
+import { CONTACT_EMAIL, CONTACT_PHONE } from "../lib/seo";
+import { Reveal } from "./ui/motion";
 
-const Footer = () => {
-
-  const FOOsectionRef = useRef(null);
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("show");
-          }
-        });
-      },
-      { threshold: 0.1 } // Trigger when 10% of the section is visible
-    );
-    const FOOsectionElement = FOOsectionRef.current;
-    if (FOOsectionElement) {
-      observer.observe(FOOsectionElement);
-    }
-    return () => {
-      if (FOOsectionElement) {
-        observer.unobserve(FOOsectionElement);
-      }
-    };
-  }, []);
-
+export default function Footer() {
   return (
-    <div ref={FOOsectionRef} className="fade-in-up p-6 md:p-8 rounded-2xl bg-[#EBDDC5] text-[#453E35]">
-      <div className="container mx-auto px-4">
-        {/*----------------------------------------- Top Section: Logo, Company Name & Contact Info -----------------------------------------*/}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-          {/* Left: Logo & Company Name */}
-          <div className="flex flex-col items-center md:items-start space-y-4">
-            <div className="flex items-center justify-center md:justify-start space-x-3">
+    <footer className="relative isolate overflow-hidden border-t border-white/[0.06] bg-obsidian-950 pt-24">
+      <div className="absolute left-1/2 top-0 -z-10 h-[420px] w-[1100px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-copper-600/15 blur-[140px]" />
+      <div className="container">
+        <div className="grid gap-14 lg:grid-cols-[1.3fr_1fr_1fr_1.2fr]">
+          <Reveal>
+            <Link to="/" className="inline-block" aria-label="NexGen Pharma Solutions Pvt. Ltd. home">
               <img
-                src="/logo.png"
-                alt="NexGen Pharma Solutions Logo"
-                className="w-20 h-20 md:w-24 md:h-24"
+                src="/brand/nexgen-logo-light.webp"
+                alt="NexGen Pharma Solutions Pvt. Ltd. logo"
+                width="350"
+                height="249"
+                className="h-auto w-56"
+                loading="lazy"
               />
-              <img
-                src="/compname.png"
-                alt="NexGen Pharma Solutions"
-                className="h-36 md:h-40 w-auto"
-              />
+            </Link>
+            <p className="mt-6 max-w-sm text-sm leading-relaxed text-champagne-muted">
+              Pharmaceutical consulting and compliance for API, sterile and finished-dose manufacturers. Former
+              regulators and QA leaders, getting plants and systems through inspection.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-2">
+              {["21 CFR Part 11", "EU GMP Annex 11", "GAMP 5", "ICH Q10"].map((t) => (
+                <span key={t} className="rounded-full border border-white/10 px-3 py-1 font-mono text-[0.65rem] text-champagne-faint">
+                  {t}
+                </span>
+              ))}
             </div>
-            <div className="text-sm text-[#5A5146] text-center md:text-left outfit space-y-1">
-              <p>Premier pharmaceutical consulting & compliance solutions</p>
-              <p>Redefining Pharmaceutical Excellence</p>
-            </div>
-          </div>
+          </Reveal>
 
-          {/* Center: Quick Links */}
-          <div className="flex flex-col items-center md:items-start">
-            <h3 className="font-semibold text-lg mb-4 outfit text-[#201E1D]">Quick Links</h3>
-            <div className="grid grid-cols-2 gap-x-8 gap-y-3 text-sm outfit">
-              <Link to="/" className="hover:text-[#8C491A] transition-colors duration-200">
-                Home
-              </Link>
-              <Link to="/aboutus" className="hover:text-[#8C491A] transition-colors duration-200">
-                About Us
-              </Link>
-              <Link to="/gmpaudits" className="hover:text-[#8C491A] transition-colors duration-200">
-                GMP Audits
-              </Link>
-              <Link to="/qualityconsulting" className="hover:text-[#8C491A] transition-colors duration-200">
-                Quality Consulting
-              </Link>
-              <Link to="/computersystemvalidations" className="hover:text-[#8C491A] transition-colors duration-200">
-                System Validations
-              </Link>
-              <Link to="/training" className="hover:text-[#8C491A] transition-colors duration-200">
-                Training
-              </Link>
-              <Link to="/regulatoryaffairs" className="hover:text-[#8C491A] transition-colors duration-200">
-                Regulatory Affairs
-              </Link>
-              <Link to="/contactus" className="hover:text-[#8C491A] transition-colors duration-200">
-                Contact Us
-              </Link>
-            </div>
-          </div>
+          <Reveal delay={0.08}>
+            <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-champagne-faint">Services</h2>
+            <ul className="mt-5 space-y-3">
+              {SERVICES.map((s) => (
+                <li key={s.to}>
+                  <FooterLink to={s.to}>{s.label}</FooterLink>
+                </li>
+              ))}
+            </ul>
+          </Reveal>
 
-          {/* Right: Contact Information */}
-          <div className="flex flex-col items-center md:items-start">
-            <h3 className="font-semibold text-lg mb-4 outfit text-[#201E1D]">Contact Information</h3>
-            <div className="space-y-3 text-sm outfit">
-              <div className="flex items-start space-x-2">
-                <svg className="w-5 h-5 mt-0.5 flex-shrink-0 text-[#8C491A]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
-                <div>
-                  <p className="font-medium text-[#201E1D]">Registered Office:</p>
-                  <p className="text-[#5A5146]">413 & 420 PRINCE CUBE, Beside Gangotri Exotica</p>
-                  <p className="text-[#5A5146]">Laxmipura Char Rasta, Nayaran Garden, 30 Mtr Road</p>
-                  <p className="text-[#5A5146]">Gotri, Vadodara, Gujarat 390023, India</p>
-                  <p className="text-[#5A5146] text-xs mt-1">CIN: [To be provided]</p>
-                </div>
-              </div>
-              <div className="flex items-center space-x-2">
-                <svg className="w-5 h-5 flex-shrink-0 text-[#8C491A]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-                <a href="mailto:inquiry@nexgenpharmasolutions.com" className="hover:text-[#8C491A] transition-colors duration-200">
-                  inquiry@nexgenpharmasolutions.com
-                </a>
-              </div>
-            </div>
+          <Reveal delay={0.16}>
+            <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-champagne-faint">Company</h2>
+            <ul className="mt-5 space-y-3">
+              <li><FooterLink to="/aboutus">About us</FooterLink></li>
+              <li><FooterLink to="/gmp-audit-company-india">Why NexGen · 100% inspection success</FooterLink></li>
+              <li><FooterLink to="/events">Events</FooterLink></li>
+              {PRODUCTS.map((p) => (
+                <li key={p.to}><FooterLink to={p.to}>{p.label}</FooterLink></li>
+              ))}
+              <li><FooterLink to="/contactus">Contact</FooterLink></li>
+            </ul>
+          </Reveal>
+
+          <Reveal delay={0.24}>
+            <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-champagne-faint">Get in touch</h2>
+            <address className="mt-5 space-y-4 not-italic text-sm text-champagne-muted">
+              <a href={`mailto:${CONTACT_EMAIL}`} className="group flex items-start gap-3 transition-colors hover:text-copper-300">
+                <Mail className="mt-0.5 h-4 w-4 shrink-0 text-copper-400" />
+                {CONTACT_EMAIL}
+              </a>
+              <a href={`tel:${CONTACT_PHONE.replace(/\s/g, "")}`} className="flex items-start gap-3 transition-colors hover:text-copper-300">
+                <Phone className="mt-0.5 h-4 w-4 shrink-0 text-copper-400" />
+                {CONTACT_PHONE}
+              </a>
+              <p className="flex items-start gap-3">
+                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-copper-400" />
+                <span>
+                  413 &amp; 420 Prince Cube, Beside Gangotri Exotica, Laxmipura Char Rasta, Gotri, Vadodara, Gujarat
+                  390023, India
+                </span>
+              </p>
+            </address>
+          </Reveal>
+        </div>
+
+        <div aria-hidden="true" className="pointer-events-none mt-24 select-none overflow-hidden">
+          <div className="text-gradient whitespace-nowrap text-center font-display text-[17vw] leading-[0.8] tracking-[-0.05em] opacity-90">
+            NexGen
           </div>
         </div>
 
-        {/*----------------------------------------- Divider -----------------------------------------*/}
-        <div className="border-t border-[#C4B6A1] my-6"></div>
-
-        {/*----------------------------------------- Policy Links & Copyright -----------------------------------------*/}
-        <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-          <div className="flex flex-wrap justify-center md:justify-start gap-4 text-sm outfit">
-            <Link to="/privacy-policy" className="hover:text-[#8C491A] transition-colors duration-200">
-              Privacy Policy
-            </Link>
-            <span className="text-[#8C8172]">|</span>
-            <Link to="/terms-conditions" className="hover:text-[#8C491A] transition-colors duration-200">
-              Terms & Conditions
-            </Link>
-            <span className="text-[#8C8172]">|</span>
-            <Link to="/disclaimer" className="hover:text-[#8C491A] transition-colors duration-200">
-              Disclaimer
-            </Link>
-            <span className="text-[#8C8172]">|</span>
-            <Link to="/cookie-notice" className="hover:text-[#8C491A] transition-colors duration-200">
-              Cookie Notice
-            </Link>
-          </div>
-          <div className="text-sm outfit text-[#5A5146]">
-            © 2024 NexGen Pharma Solutions Pvt. Ltd. All rights reserved.
-          </div>
+        <div className="flex flex-col items-center justify-between gap-4 border-t border-white/[0.06] py-8 text-xs text-champagne-faint md:flex-row">
+          <p>© {new Date().getFullYear()} NexGen Pharma Solutions Pvt. Ltd. All rights reserved.</p>
+          <ul className="flex flex-wrap justify-center gap-x-6 gap-y-2">
+            {LEGAL.map((l) => (
+              <li key={l.to}>
+                <Link to={l.to} className="transition-colors hover:text-copper-300">
+                  {l.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
-
-      <style>
-            {`
-              /* Initial state for the section */
-.fade-in-up {
-  opacity: 0;
-  transform: translateY(90px); /* Start below its final position */
-  transition: opacity 1s ease-out, transform 1s ease-out; /* Animation duration */
-}
-
-/* Fade in and slide up when in view */
-.fade-in-up.show {
-  opacity: 1;
-  transform: translateY(0); /* Move to its final position */
-}
-
-            `}
-          </style>
-    </div>
+    </footer>
   );
-};
+}
 
-export default Footer;
+function FooterLink({ to, children }) {
+  return (
+    <Link to={to} className="group inline-flex items-center gap-1 text-sm text-champagne-soft transition-colors hover:text-copper-300">
+      {children}
+      <ArrowUpRight className="h-3 w-3 -translate-x-1 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
+    </Link>
+  );
+}

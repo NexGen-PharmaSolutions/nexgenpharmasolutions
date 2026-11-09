@@ -2,98 +2,74 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
+    container: { center: true, padding: { DEFAULT: "1.25rem", md: "2rem", lg: "2.5rem" } },
     extend: {
       colors: {
-        // Warm off-white: the screens use bg-white for cards and panels, and a
-        // cold pure white reads wrong against the cream page.
-        white: "#FFF7EF",
-
-        cream: { DEFAULT: "#F5EAD8", light: "#F9F4ED", dark: "#EBDDC5" },
-        sand: "#EBDDC5",
-        peach: { DEFAULT: "#F6A06B", card: "#FFF2EB" },
-        terracotta: {
-          DEFAULT: "#C67139",
-          dark: "#B2622D",
-          deep: "#8C491A",
-          light: "#F6A06B",
+        // Obsidian: warm near-black surfaces, lightest last.
+        obsidian: {
+          950: "#0B0907",
+          900: "#110E0B",
+          800: "#18140F",
+          700: "#221C16",
+          600: "#2E261E",
+          500: "#3B3127",
         },
-        sage: {
-          DEFAULT: "#728157",
-          dark: "#56633F",
-          light: "#AEBF92",
-          pale: "#F0FAE1",
+        // Copper: the brand accent, drawn from the logo's orange gradient.
+        copper: {
+          100: "#FBE6D4",
+          200: "#F8D2B2",
+          300: "#F6BC8F",
+          400: "#F6A06B",
+          500: "#E3864D",
+          600: "#C67139",
+          700: "#9E5527",
+          800: "#6E3A1A",
         },
-        ink: { DEFAULT: "#201E1D", soft: "#2E2B25", mid: "#3D372E" },
-
-        // The screens lean on Tailwind's blue and gray scales throughout.
-        // Re-pointing them here re-themes every usage without touching markup.
-        blue: {
-          50: "#FFF2EB",
-          100: "#FBE3D3",
-          200: "#F4CDB2",
-          300: "#F6A06B",
-          400: "#DF8A4F",
-          500: "#C67139",
-          600: "#B2622D",
-          700: "#8C491A",
-          800: "#703A14",
-          900: "#402310",
+        // Champagne: text on dark.
+        champagne: {
+          DEFAULT: "#F4EADB",
+          soft: "#D9CCB8",
+          muted: "#B3A691",
+          faint: "#7D7263",
         },
-        gray: {
-          50: "#F9F4ED",
-          100: "#F2EADF",
-          200: "#E6DACA",
-          300: "#D3C4AE",
-          400: "#C4B6A1",
-          500: "#6B6153",
-          600: "#5A5146",
-          700: "#453E35",
-          800: "#332F28",
-          900: "#201E1D",
-        },
-        slate: {
-          50: "#F9F4ED",
-          100: "#F2EADF",
-          200: "#E6DACA",
-          300: "#D3C4AE",
-          400: "#C4B6A1",
-          500: "#6B6153",
-          600: "#5A5146",
-          700: "#453E35",
-          800: "#332F28",
-          900: "#201E1D",
-        },
-        // Decorative icon badges reach for these; point them at the warm palette
-        // so nothing cold survives. Red is left alone: it carries form errors.
-        purple: { 100: "#E1EECC", 200: "#CFE0B4", 500: "#728157", 600: "#5F6D48" },
-        indigo: { 100: "#FBE3D3", 200: "#F4CDB2", 500: "#C67139", 600: "#B2622D" },
-        orange: { 100: "#FFF2EB", 200: "#F4CDB2", 500: "#F6A06B", 600: "#DF8A4F" },
-
-        green: {
-          50: "#F0FAE1",
-          100: "#E1EECC",
-          200: "#CFE0B4",
-          300: "#AEBF92",
-          400: "#8D9D70",
-          500: "#728157",
-          600: "#5F6D48",
-          700: "#56633F",
-          800: "#3D472B",
-          900: "#272E1B",
-        },
-
-        // Kept so any existing reference keeps resolving.
-        graphite: { DEFAULT: "#201E1D", light: "#2E2B25" },
-        "electric-blue": {
-          DEFAULT: "#C67139",
-          dark: "#B2622D",
-          light: "#F6A06B",
-        },
+        sage: { DEFAULT: "#9DB07A", deep: "#5F6D48", glow: "#C9DBA6" },
       },
       fontFamily: {
-        display: ['"Caprasimo"', "Georgia", "serif"],
-        sans: ['"Figtree"', "system-ui", "sans-serif"],
+        display: ['"Fraunces"', "Georgia", "serif"],
+        sans: ['"Manrope"', "system-ui", "sans-serif"],
+        mono: ['"JetBrains Mono"', "ui-monospace", "monospace"],
       },
+      fontSize: {
+        "display-xl": ["clamp(3rem, 7.2vw, 7rem)", { lineHeight: "0.96", letterSpacing: "-0.035em" }],
+        "display-lg": ["clamp(2.5rem, 5.2vw, 4.75rem)", { lineHeight: "1", letterSpacing: "-0.03em" }],
+        "display-md": ["clamp(2rem, 3.6vw, 3.25rem)", { lineHeight: "1.05", letterSpacing: "-0.025em" }],
+        "display-sm": ["clamp(1.5rem, 2.4vw, 2.1rem)", { lineHeight: "1.15", letterSpacing: "-0.015em" }],
+      },
+      boxShadow: {
+        glow: "0 0 0 1px rgba(246,160,107,.18), 0 20px 60px -20px rgba(227,134,77,.45)",
+        "glow-lg": "0 0 0 1px rgba(246,160,107,.25), 0 40px 120px -30px rgba(227,134,77,.55)",
+        deep: "0 30px 80px -30px rgba(0,0,0,.8)",
+      },
+      backgroundImage: {
+        "copper-sheen": "linear-gradient(135deg,#F8D2B2 0%,#F6A06B 35%,#C67139 70%,#9E5527 100%)",
+        "radial-fade": "radial-gradient(ellipse at center, rgba(227,134,77,.18), transparent 60%)",
+      },
+      keyframes: {
+        marquee: { from: { transform: "translateX(0)" }, to: { transform: "translateX(-50%)" } },
+        shimmer: { from: { backgroundPosition: "200% 0" }, to: { backgroundPosition: "-200% 0" } },
+        pulseRing: {
+          "0%": { transform: "scale(.9)", opacity: ".7" },
+          "100%": { transform: "scale(1.8)", opacity: "0" },
+        },
+        floaty: { "0%,100%": { transform: "translateY(0)" }, "50%": { transform: "translateY(-10px)" } },
+      },
+      animation: {
+        marquee: "marquee 40s linear infinite",
+        shimmer: "shimmer 6s linear infinite",
+        "pulse-ring": "pulseRing 2.4s cubic-bezier(.2,.6,.3,1) infinite",
+        floaty: "floaty 6s ease-in-out infinite",
+      },
+      transitionTimingFunction: { expo: "cubic-bezier(.16,1,.3,1)" },
     },
   },
   plugins: [],

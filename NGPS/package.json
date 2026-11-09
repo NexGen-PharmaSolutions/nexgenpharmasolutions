@@ -3,18 +3,28 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "engines": {
+    "node": "24.x"
+  },
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && node scripts/prerender-head.mjs",
     "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
+    "@react-three/drei": "^9.99.7",
+    "@react-three/fiber": "^8.15.19",
+    "framer-motion": "^11.0.8",
+    "lenis": "^1.1.13",
+    "lucide-react": "^0.344.0",
+    "nodemailer": "^6.9.16",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-helmet": "^6.1.0",
-    "react-router-dom": "^6.26.1"
+    "react-helmet-async": "^2.0.5",
+    "react-router-dom": "^6.26.1",
+    "three": "^0.160.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",

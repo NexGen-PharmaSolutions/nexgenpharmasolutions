@@ -1,53 +1,47 @@
-import "./App.css";
-import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Suspense, lazy } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Layout from "./components/Layout";
 import Home from "./screens/Home";
-import Aboutus from "./screens/Aboutus";
-import Gmp from "./screens/Gmp";
-import QualCon from "./screens/QualCon";
-import ScrollToTop from "./components/ScrollToTop";
-import Comsysval from "./screens/Comsysval";
-import Training from "./screens/Training";
-import Contactus from "./screens/Contactus";
-import Regaff from "./screens/Regaff";
-import PrivacyPolicy from "./screens/PrivacyPolicy";
-import TermsConditions from "./screens/TermsConditions";
-import Disclaimer from "./screens/Disclaimer";
-import CookieNotice from "./screens/CookieNotice";
-import Events from "./screens/Events";
-import NexGenManagementSystem from "./screens/NexGenManagementSystem";
-import { Helmet } from "react-helmet"; // Helmet helps manage the document head
 
-function App() {
+// Home ships in the main bundle for the fastest LCP; every other route is
+// split into its own chunk.
+const Aboutus = lazy(() => import("./screens/Aboutus"));
+const Gmp = lazy(() => import("./screens/Gmp"));
+const GmpAuditIndia = lazy(() => import("./screens/GmpAuditIndia"));
+const QualCon = lazy(() => import("./screens/QualCon"));
+const Comsysval = lazy(() => import("./screens/Comsysval"));
+const Training = lazy(() => import("./screens/Training"));
+const Contactus = lazy(() => import("./screens/Contactus"));
+const Regaff = lazy(() => import("./screens/Regaff"));
+const Events = lazy(() => import("./screens/Events"));
+const NexGenManagementSystem = lazy(() => import("./screens/NexGenManagementSystem"));
+const PrivacyPolicy = lazy(() => import("./screens/PrivacyPolicy"));
+const TermsConditions = lazy(() => import("./screens/TermsConditions"));
+const Disclaimer = lazy(() => import("./screens/Disclaimer"));
+const CookieNotice = lazy(() => import("./screens/CookieNotice"));
+const NotFound = lazy(() => import("./screens/NotFound"));
+
+function PageLoader() {
   return (
-    <>
-      <Helmet>
-        <script type="application/ld+json">
-          {`
-            {
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              "name": "NexGen Pharma Solutions Private Limited",
-              "alternateName": "NexGen Pharma Solutions Pvt. Ltd.",
-              "url": "https://nexgenpharmasolutions.com",
-              "logo": "https://nexgenpharmasolutions.com/logo.png",
-              "description": "Premier pharmaceutical consulting firm specializing in GMP audits, quality systems, regulatory affairs, validation, and corporate training.",
-              "contactPoint": {
-                "@type": "ContactPoint",
-                "email": "inquiry@nexgenpharmasolutions.com",
-                "contactType": "Customer Service"
-              }
-            }
-          `}
-        </script>
-      </Helmet>
-      <Router>
-        <ScrollToTop />
-        <div>
-          <Routes>
+    <div className="grid min-h-[80vh] place-items-center" role="status" aria-label="Loading">
+      <div className="relative h-14 w-14">
+        <span className="absolute inset-0 rounded-full border border-copper-400/30" />
+        <span className="absolute inset-0 animate-spin rounded-full border-t border-copper-300" />
+      </div>
+    </div>
+  );
+}
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Suspense fallback={<PageLoader />}>
+        <Routes>
+          <Route element={<Layout />}>
             <Route path="/" element={<Home />} />
             <Route path="/aboutus" element={<Aboutus />} />
             <Route path="/gmpaudits" element={<Gmp />} />
+            <Route path="/gmp-audit-company-india" element={<GmpAuditIndia />} />
             <Route path="/qualityconsulting" element={<QualCon />} />
             <Route path="/computersystemvalidations" element={<Comsysval />} />
             <Route path="/training" element={<Training />} />
@@ -59,11 +53,10 @@ function App() {
             <Route path="/terms-conditions" element={<TermsConditions />} />
             <Route path="/disclaimer" element={<Disclaimer />} />
             <Route path="/cookie-notice" element={<CookieNotice />} />
-          </Routes>
-        </div>
-      </Router>
-    </>
+            <Route path="*" element={<NotFound />} />
+          </Route>
+        </Routes>
+      </Suspense>
+    </BrowserRouter>
   );
 }
-
-export default App;

@@ -1,732 +1,864 @@
-import { useState } from "react";
-import { Helmet } from "react-helmet";
+import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+import { motion, useReducedMotion, useScroll, useSpring, useTransform } from "framer-motion";
+import {
+  AlertTriangle,
+  ArrowRight,
+  BarChart3,
+  BookOpen,
+  Check,
+  ClipboardCheck,
+  Cloud,
+  Eye,
+  FileCheck2,
+  FileText,
+  FileWarning,
+  Fingerprint,
+  History,
+  LayoutDashboard,
+  Lock,
+  Mail,
+  ScrollText,
+  SearchCheck,
+  Send,
+  ShieldCheck,
+  Users,
+  Workflow,
+  X,
+} from "lucide-react";
+import { CtaBand, IconTile, PageHero, SectionHeading, Tag } from "../components/ui/blocks";
+import { EASE, GlowCard, Reveal, SplitText, Stagger, StaggerItem } from "../components/ui/motion";
+import { submitEnquiry } from "../lib/mailto";
+import FormStatus, { Honeypot } from "../components/ui/FormStatus";
+import { CONTACT_EMAIL } from "../lib/seo";
 
-const NexGenManagementSystem = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    company: "",
-    email: "",
-    phone: "",
-    interest: "",
-    notes: ""
-  });
-  const [result, setResult] = useState("");
-  const [isSubmitting, setIsSubmitting] = useState(false);
+/* ------------------------------------------------------------------ */
+/* Content (original copy)                                             */
+/* ------------------------------------------------------------------ */
 
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+const CHALLENGES = [
+  {
+    problem: "Manual Chaos",
+    problemText:
+      "Excel-based CAPA logs, missing audit trails, version control nightmares, and hours wasted hunting for approved documents.",
+    solution: "Unified Platform",
+    solutionText:
+      "One system for documents, deviations, CAPAs, training, suppliers, and audits—with complete traceability and compliance built in.",
+  },
+  {
+    problem: "Audit Anxiety",
+    problemText:
+      "Regulators arrive and teams scramble to compile reports, recreate timelines, and prove data integrity from fragmented systems.",
+    solution: "Audit-Ready Always",
+    solutionText:
+      "Instant compliance reports, tamper-proof audit trails, and real-time dashboards. Export everything regulators need in minutes, not days.",
+  },
+];
+
+const MODULES = [
+  {
+    icon: FileText,
+    title: "Document Control",
+    text: "Centralized repository with version control, automated workflows, electronic signatures, and full audit trails for SOPs, batch records, and specifications.",
+    span: "md:col-span-2",
+    visual: "docs",
+  },
+  {
+    icon: ClipboardCheck,
+    title: "CAPA Management",
+    text: "End-to-end corrective and preventive action tracking with root cause analysis, effectiveness verification, and automated escalation.",
+  },
+  {
+    icon: AlertTriangle,
+    title: "Deviation Management",
+    text: "Log, investigate, and resolve deviations with impact assessments, CAPA linkage, and trend analysis to prevent recurrence.",
+  },
+  {
+    icon: BookOpen,
+    title: "Training Matrix",
+    text: "Role-based training plans, automated reminders, quiz assessments, and complete training history for regulatory inspections.",
+  },
+  {
+    icon: SearchCheck,
+    title: "Audit Management",
+    text: "Plan, execute, and track internal/external audits with checklists, finding closure, and comprehensive reporting.",
+  },
+  {
+    icon: Users,
+    title: "Supplier Qualification",
+    text: "Manage supplier lifecycle from qualification to re-qualification with risk assessments, performance tracking, and audit scheduling.",
+  },
+  {
+    icon: Workflow,
+    title: "Change Control",
+    text: "Manage facility, process, and system changes with impact assessments, approvals, validation requirements, and implementation tracking.",
+  },
+  {
+    icon: FileWarning,
+    title: "Non-Conformance",
+    text: "Track product complaints, out-of-specification results, and NCRs with complete investigation workflow and regulatory reporting.",
+  },
+  {
+    icon: BarChart3,
+    title: "Analytics & Reports",
+    text: "Real-time dashboards, executive KPIs, trend analysis, and custom reports for proactive quality management and regulatory readiness.",
+    span: "md:col-span-2 lg:col-span-3",
+    visual: "bars",
+  },
+];
+
+const STEPS = [
+  {
+    title: "Quick Setup",
+    text: "Cloud-based deployment with customizable workflows, user roles, and site configurations. Our team handles the setup and validation.",
+  },
+  {
+    title: "Data Migration",
+    text: "Seamlessly import existing documents, training records, and quality data. Maintain compliance history and audit trails.",
+  },
+  {
+    title: "Team Training",
+    text: "Comprehensive training sessions for all user roles with documentation, video guides, and ongoing support.",
+  },
+  {
+    title: "Go Live",
+    text: "Launch with confidence. Real-time monitoring, automated workflows, and instant compliance visibility from day one.",
+  },
+];
+
+const SECURITY = [
+  {
+    icon: ShieldCheck,
+    title: "21 CFR Part 11 Compliant",
+    text: "Electronic signatures, audit trails, record retention, and system validation documented and maintained per FDA requirements.",
+  },
+  {
+    icon: Lock,
+    title: "Data Security",
+    text: "AES-256 encryption, role-based access control, multi-factor authentication, and SOC 2 Type II certification.",
+  },
+  {
+    icon: FileCheck2,
+    title: "Validated System",
+    text: "Complete validation documentation (IQ/OQ/PQ), change control procedures, and periodic review processes.",
+  },
+  {
+    icon: Cloud,
+    title: "Cloud Infrastructure",
+    text: "AWS-hosted with 99.9% uptime SLA, automated backups, disaster recovery, and geographic redundancy.",
+  },
+  {
+    icon: Eye,
+    title: "Access Control",
+    text: "Granular permissions, user activity monitoring, session management, and automatic lockout after inactivity.",
+  },
+  {
+    icon: ScrollText,
+    title: "Audit Trail",
+    text: "Tamper-proof logs for all system activities, user actions, data changes, and administrative operations.",
+  },
+];
+
+const INTERESTS = [
+  ["Waitlist", "Join Waitlist"],
+  ["Demo", "Request Demo"],
+  ["Early Access", "Early Access Program"],
+  ["Partnership", "Partnership Opportunity"],
+];
+
+/* ------------------------------------------------------------------ */
+/* Dashboard mockup (pure HTML/CSS, layered in 3D, parallax on scroll) */
+/* ------------------------------------------------------------------ */
+
+const SIDEBAR = [
+  [LayoutDashboard, "Dashboard"],
+  [FileText, "Documents"],
+  [ClipboardCheck, "CAPA"],
+  [AlertTriangle, "Deviations"],
+  [BookOpen, "Training"],
+  [SearchCheck, "Audits"],
+  [Users, "Suppliers"],
+  [Workflow, "Change Control"],
+  [BarChart3, "Analytics"],
+];
+
+const TILES = [
+  [FileText, "Documents"],
+  [ClipboardCheck, "CAPA"],
+  [BookOpen, "Training"],
+  [BarChart3, "Analytics"],
+];
+
+function Skel({ w = "100%", className = "" }) {
+  return <span className={`block h-2 rounded-full bg-champagne/10 ${className}`} style={{ width: w }} />;
+}
+
+function StatusChip({ tone = "copper", children }) {
+  const tones = {
+    copper: "border-copper-400/30 bg-copper-400/10 text-copper-200",
+    sage: "border-sage/30 bg-sage/10 text-sage-glow",
+    muted: "border-white/10 bg-champagne/[0.04] text-champagne-muted",
   };
+  return (
+    <span className={`inline-flex items-center rounded-full border px-2 py-0.5 font-mono text-[0.6rem] tracking-wide ${tones[tone]}`}>
+      {children}
+    </span>
+  );
+}
 
-  const onSubmit = async (event) => {
-    event.preventDefault();
-    setIsSubmitting(true);
-    setResult("Sending....");
+function DashboardMockup() {
+  const ref = useRef(null);
+  const reduced = useReducedMotion();
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
+  const p = useSpring(scrollYProgress, { stiffness: 90, damping: 24, mass: 0.4 });
 
-    const formDataToSend = new FormData();
-    formDataToSend.append("access_key", "0badc78d-df2c-4a64-b2b6-70722b4cf30d");
-    formDataToSend.append("subject", "NexGen Management System - " + formData.interest);
-    formDataToSend.append("name", formData.name);
-    formDataToSend.append("company", formData.company);
-    formDataToSend.append("email", formData.email);
-    formDataToSend.append("phone", formData.phone);
-    formDataToSend.append("interest", formData.interest);
-    formDataToSend.append("notes", formData.notes);
+  const rotateX = useTransform(p, [0, 0.45, 1], [26, 0, -6]);
+  const scale = useTransform(p, [0, 0.45], [0.88, 1]);
+  const yA = useTransform(p, [0, 1], [90, -90]);
+  const yB = useTransform(p, [0, 1], [140, -140]);
+  const yC = useTransform(p, [0, 1], [60, -120]);
 
+  const s = (v) => (reduced ? undefined : v);
+
+  return (
+    <figure ref={ref} className="relative mx-auto max-w-5xl" style={{ perspective: 1800 }}>
+      <motion.div
+        aria-hidden="true"
+        className="relative"
+        style={{ rotateX: s(rotateX), scale: s(scale), transformStyle: "preserve-3d", transformOrigin: "50% 0%" }}
+      >
+        {/* Glow under the window */}
+        <div className="absolute inset-x-[10%] -bottom-10 h-40 rounded-full bg-copper-500/25 blur-[90px]" />
+
+        {/* Main window */}
+        <div className="glass relative overflow-hidden rounded-[1.75rem] shadow-deep">
+          <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-copper-300/50 to-transparent" />
+          {/* Chrome */}
+          <div className="flex items-center gap-2 border-b border-white/[0.07] px-4 py-3 sm:px-5">
+            <span className="h-2.5 w-2.5 rounded-full bg-copper-400/70" />
+            <span className="h-2.5 w-2.5 rounded-full bg-champagne/25" />
+            <span className="h-2.5 w-2.5 rounded-full bg-champagne/10" />
+            <span className="ml-3 hidden truncate rounded-full border border-white/[0.07] bg-obsidian-950/60 px-4 py-1 font-mono text-[0.65rem] text-champagne-faint sm:block">
+              NexGen Management System
+            </span>
+            <span className="ml-auto">
+              <StatusChip tone="sage">Coming soon</StatusChip>
+            </span>
+          </div>
+
+          <div className="grid sm:grid-cols-[170px_1fr] md:grid-cols-[200px_1fr]">
+            {/* Sidebar */}
+            <div className="hidden border-r border-white/[0.07] p-3 sm:block">
+              <ul className="space-y-1">
+                {SIDEBAR.map(([Icon, label], i) => (
+                  <li
+                    key={label}
+                    className={`flex items-center gap-2.5 rounded-xl px-3 py-2 text-[0.72rem] ${
+                      i === 0
+                        ? "bg-copper-400/10 text-copper-200 shadow-[inset_0_0_0_1px_rgba(246,160,107,.2)]"
+                        : "text-champagne-faint"
+                    }`}
+                  >
+                    <Icon className="h-3.5 w-3.5 shrink-0" strokeWidth={1.7} />
+                    <span className="truncate">{label}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Content */}
+            <div className="min-w-0 space-y-4 p-4 sm:p-5 md:p-6">
+              <div className="flex items-center justify-between gap-3">
+                <div>
+                  <p className="font-display text-base text-champagne md:text-lg">Quality overview</p>
+                  <Skel w="7rem" className="mt-2" />
+                </div>
+                <span className="hidden h-8 w-24 rounded-full bg-copper-sheen opacity-80 sm:block" />
+              </div>
+
+              <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
+                {TILES.map(([Icon, label]) => (
+                  <div key={label} className="rounded-2xl border border-white/[0.07] bg-obsidian-950/50 p-3">
+                    <div className="flex items-center gap-2 text-copper-300">
+                      <Icon className="h-4 w-4" strokeWidth={1.7} />
+                      <span className="text-[0.68rem] font-semibold text-champagne-soft">{label}</span>
+                    </div>
+                    <Skel w="70%" className="mt-3" />
+                    <Skel w="45%" className="mt-2 bg-copper-400/25" />
+                  </div>
+                ))}
+              </div>
+
+              <div className="grid gap-3 md:grid-cols-[1.4fr_1fr]">
+                {/* Trend chart */}
+                <div className="rounded-2xl border border-white/[0.07] bg-obsidian-950/50 p-4">
+                  <div className="flex items-center justify-between">
+                    <span className="text-[0.68rem] font-semibold text-champagne-soft">Trend analysis</span>
+                    <Skel w="3rem" />
+                  </div>
+                  <svg viewBox="0 0 400 120" className="mt-3 h-24 w-full md:h-28" preserveAspectRatio="none">
+                    <defs>
+                      <linearGradient id="ngms-area" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stopColor="#F6A06B" stopOpacity="0.35" />
+                        <stop offset="100%" stopColor="#F6A06B" stopOpacity="0" />
+                      </linearGradient>
+                    </defs>
+                    {[30, 60, 90].map((y) => (
+                      <line key={y} x1="0" x2="400" y1={y} y2={y} stroke="rgba(244,234,219,.06)" />
+                    ))}
+                    <path
+                      d="M0,92 C40,88 60,70 100,74 S160,52 200,58 S260,30 300,36 S360,18 400,14 L400,120 L0,120 Z"
+                      fill="url(#ngms-area)"
+                    />
+                    <motion.path
+                      d="M0,92 C40,88 60,70 100,74 S160,52 200,58 S260,30 300,36 S360,18 400,14"
+                      fill="none"
+                      stroke="#F6A06B"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                      initial={{ pathLength: reduced ? 1 : 0 }}
+                      whileInView={{ pathLength: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 2.2, ease: EASE, delay: 0.3 }}
+                    />
+                  </svg>
+                </div>
+
+                {/* Document queue */}
+                <div className="rounded-2xl border border-white/[0.07] bg-obsidian-950/50 p-4">
+                  <span className="text-[0.68rem] font-semibold text-champagne-soft">Document workflow</span>
+                  <ul className="mt-3 space-y-3">
+                    {[
+                      ["sage", "Effective"],
+                      ["copper", "In review"],
+                      ["muted", "Draft"],
+                    ].map(([tone, label], i) => (
+                      <li key={label} className="flex items-center gap-3">
+                        <FileText className="h-3.5 w-3.5 shrink-0 text-champagne-faint" strokeWidth={1.7} />
+                        <span className="min-w-0 flex-1">
+                          <Skel w={`${85 - i * 15}%`} />
+                        </span>
+                        <StatusChip tone={tone}>{label}</StatusChip>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Floating panel: audit trail */}
+        <motion.div
+          className="glass absolute -left-6 top-[58%] hidden w-56 rounded-2xl p-4 shadow-glow lg:block xl:-left-16"
+          style={{ y: s(yA), z: 90 }}
+        >
+          <div className="flex items-center gap-2 text-copper-300">
+            <History className="h-4 w-4" strokeWidth={1.7} />
+            <span className="text-xs font-semibold text-champagne">Audit trail</span>
+          </div>
+          <ul className="mt-3 space-y-2.5">
+            {["Record updated", "Signature applied", "Review completed"].map((t) => (
+              <li key={t} className="flex items-center gap-2.5">
+                <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-copper-400" />
+                <span className="text-[0.68rem] text-champagne-muted">{t}</span>
+              </li>
+            ))}
+          </ul>
+        </motion.div>
+
+        {/* Floating panel: e-signature */}
+        <motion.div
+          className="glass absolute -right-4 top-[6%] hidden w-60 rounded-2xl p-4 shadow-glow md:block xl:-right-16"
+          style={{ y: s(yB), z: 140 }}
+        >
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2 text-copper-300">
+              <Fingerprint className="h-4 w-4" strokeWidth={1.7} />
+              <span className="text-xs font-semibold text-champagne">Electronic signature</span>
+            </div>
+          </div>
+          <svg viewBox="0 0 200 40" className="mt-3 h-8 w-full" fill="none">
+            <path
+              d="M4,30 C20,6 30,36 46,18 S70,8 80,26 S104,34 118,14 S150,30 164,20 S186,12 196,16"
+              stroke="#F8D2B2"
+              strokeWidth="1.6"
+              strokeLinecap="round"
+            />
+          </svg>
+          <div className="mt-2 flex items-center justify-between border-t border-white/[0.07] pt-3">
+            <span className="font-mono text-[0.6rem] tracking-wide text-champagne-faint">21 CFR Part 11</span>
+            <StatusChip tone="sage">
+              <Check className="mr-1 h-3 w-3" /> Signed
+            </StatusChip>
+          </div>
+        </motion.div>
+
+        {/* Floating panel: CAPA effectiveness */}
+        <motion.div
+          className="glass absolute -bottom-10 right-[12%] hidden w-56 items-center gap-4 rounded-2xl p-4 shadow-glow md:flex"
+          style={{ y: s(yC), z: 110 }}
+        >
+          <svg viewBox="0 0 44 44" className="h-12 w-12 -rotate-90">
+            <circle cx="22" cy="22" r="18" stroke="rgba(244,234,219,.1)" strokeWidth="4" fill="none" />
+            <motion.circle
+              cx="22"
+              cy="22"
+              r="18"
+              stroke="#F6A06B"
+              strokeWidth="4"
+              strokeLinecap="round"
+              fill="none"
+              initial={{ pathLength: reduced ? 0.75 : 0 }}
+              whileInView={{ pathLength: 0.75 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1.8, ease: EASE, delay: 0.5 }}
+            />
+          </svg>
+          <div>
+            <p className="text-xs font-semibold text-champagne">CAPA</p>
+            <p className="mt-0.5 text-[0.68rem] text-champagne-muted">Effectiveness verification</p>
+          </div>
+        </motion.div>
+      </motion.div>
+
+      <figcaption className="mt-20 text-center font-mono text-[0.7rem] tracking-wide text-champagne-faint md:mt-24">
+        Illustrative interface preview. NexGen Management System is coming soon.
+      </figcaption>
+    </figure>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* Bento visuals                                                       */
+/* ------------------------------------------------------------------ */
+
+function DocsVisual() {
+  return (
+    <div aria-hidden="true" className="relative h-36 w-full max-w-[15rem] shrink-0 sm:h-40">
+      {[
+        ["Draft", "muted", "translate-x-6 translate-y-0 rotate-[5deg] opacity-50"],
+        ["In review", "copper", "translate-x-3 translate-y-3 rotate-[2deg] opacity-75"],
+        ["Effective", "sage", "translate-x-0 translate-y-6"],
+      ].map(([label, tone, pos]) => (
+        <div
+          key={label}
+          className={`absolute inset-x-0 top-0 rounded-2xl border border-white/10 bg-obsidian-800 p-4 shadow-deep ${pos}`}
+        >
+          <div className="flex items-center justify-between">
+            <FileText className="h-4 w-4 text-copper-300" strokeWidth={1.7} />
+            <StatusChip tone={tone}>{label}</StatusChip>
+          </div>
+          <Skel w="80%" className="mt-4" />
+          <Skel w="60%" className="mt-2" />
+          <Skel w="70%" className="mt-2" />
+        </div>
+      ))}
+    </div>
+  );
+}
+
+const BARS = [38, 52, 44, 66, 58, 74, 62, 82, 70, 88, 78, 94];
+
+function BarsVisual() {
+  return (
+    <div aria-hidden="true" className="flex h-32 w-full items-end gap-1.5 sm:gap-2 md:h-36">
+      {BARS.map((h, i) => (
+        <motion.span
+          key={i}
+          className="flex-1 origin-bottom rounded-t-md bg-gradient-to-t from-copper-700/40 via-copper-500/70 to-copper-300"
+          style={{ height: `${h}%` }}
+          initial={{ scaleY: 0 }}
+          whileInView={{ scaleY: 1 }}
+          viewport={{ once: true, margin: "-40px" }}
+          transition={{ duration: 1.1, ease: EASE, delay: i * 0.05 }}
+        />
+      ))}
+    </div>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* Waitlist form                                                       */
+/* ------------------------------------------------------------------ */
+
+const EMPTY = { name: "", company: "", email: "", phone: "", interest: "", notes: "" };
+
+function WaitlistForm() {
+  const [form, setForm] = useState(EMPTY);
+  const [status, setStatus] = useState("idle");
+  const [error, setError] = useState("");
+  const [hp, setHp] = useState("");
+
+  const onChange = (e) => setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    setStatus("sending");
     try {
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        body: formDataToSend,
+      const result = await submitEnquiry({
+        form: "waitlist",
+        subject: `NexGen Management System - ${form.interest}`,
+        replyTo: form.email,
+        website: hp,
+        fields: {
+          Name: form.name,
+          Company: form.company,
+          Email: form.email,
+          Phone: form.phone,
+          "Interested in": form.interest,
+          Notes: form.notes,
+        },
       });
-
-      const data = await response.json();
-
-      if (data.success) {
-        setResult("Thank you! We'll be in touch soon.");
-        setFormData({
-          name: "",
-          company: "",
-          email: "",
-          phone: "",
-          interest: "",
-          notes: ""
-        });
-        
-        // Scroll to thank you message
-        setTimeout(() => {
-          document.getElementById("thank-you-message")?.scrollIntoView({ behavior: "smooth" });
-        }, 100);
-      } else {
-        console.log("Error", data);
-        setResult("Something went wrong. Please try again.");
-      }
-    } catch (error) {
-      console.error("Submission error:", error);
-      setResult("An error occurred. Please try again.");
-    } finally {
-      setIsSubmitting(false);
+      setStatus(result);
+      if (result === "sent") setForm(EMPTY);
+    } catch (err) {
+      setError(err.message);
+      setStatus("error");
     }
   };
 
+  const Req = () => (
+    <span className="text-copper-300" aria-hidden="true">
+      {" "}
+      *
+    </span>
+  );
+
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#F9F4ED' }}>
-      <Helmet>
-        <title>NexGen Management System - All-in-One Pharma Compliance Platform | NexGen Pharma Solutions</title>
-        <meta name="description" content="Streamline GMP operations with NexGen Management System. Document control, CAPA management, audit trails, training matrix, and compliance dashboards in one platform." />
-        <meta name="keywords" content="Pharma QMS, GMP Software, Document Management System, CAPA Software, Compliance Platform, Pharmaceutical Quality Management" />
-      </Helmet>
+    <form onSubmit={onSubmit} className="glass relative rounded-[2rem] p-6 shadow-deep sm:p-8 md:p-10">
+      <div className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-copper-300/50 to-transparent" />
+      <Honeypot value={hp} onChange={(e) => setHp(e.target.value)} />
+      <div className="grid gap-5 md:grid-cols-2">
+        <div>
+          <label htmlFor="wl-name" className="field-label">
+            Full Name
+            <Req />
+          </label>
+          <input id="wl-name" name="name" type="text" autoComplete="name" required value={form.name} onChange={onChange} className="field" placeholder="John Doe" />
+        </div>
+        <div>
+          <label htmlFor="wl-company" className="field-label">
+            Company Name
+            <Req />
+          </label>
+          <input id="wl-company" name="company" type="text" autoComplete="organization" required value={form.company} onChange={onChange} className="field" placeholder="Your Company" />
+        </div>
+        <div>
+          <label htmlFor="wl-email" className="field-label">
+            Email Address
+            <Req />
+          </label>
+          <input id="wl-email" name="email" type="email" autoComplete="email" required value={form.email} onChange={onChange} className="field" placeholder="john@company.com" />
+        </div>
+        <div>
+          <label htmlFor="wl-phone" className="field-label">
+            Phone Number
+            <Req />
+          </label>
+          <input id="wl-phone" name="phone" type="tel" autoComplete="tel" required value={form.phone} onChange={onChange} className="field" placeholder="+91 98765 43210" />
+        </div>
+        <div className="md:col-span-2">
+          <label htmlFor="wl-interest" className="field-label">
+            I'm Interested In
+            <Req />
+          </label>
+          <select id="wl-interest" name="interest" required value={form.interest} onChange={onChange} className="field appearance-none">
+            <option value="">Select an option</option>
+            {INTERESTS.map(([v, l]) => (
+              <option key={v} value={v}>
+                {l}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div className="md:col-span-2">
+          <label htmlFor="wl-notes" className="field-label">
+            Additional Notes (Optional)
+          </label>
+          <textarea
+            id="wl-notes"
+            name="notes"
+            rows={4}
+            value={form.notes}
+            onChange={onChange}
+            className="field resize-y"
+            placeholder="Tell us about your compliance challenges or specific requirements..."
+          />
+        </div>
+      </div>
 
-      <header className="p-2 sticky top-0 z-50">
-        <Navbar />
-      </header>
+      <button type="submit" disabled={status === "sending"} className="btn-primary group mt-8 w-full disabled:opacity-60">
+        <span className="relative z-10">{status === "sending" ? "Sending…" : "Join the waitlist"}</span>
+        <Send className="relative z-10 h-4 w-4 transition-transform duration-500 ease-expo group-hover:translate-x-1" />
+      </button>
+      <FormStatus
+        status={status}
+        error={error}
+        className="mt-6"
+        sentText="You're on the list. We'll be in touch with early access and demo details for NexGen Management System."
+      />
 
-      <main>
-        {/*--------------------------------------- Hero Section ----------------------------------------------------------*/}
-        <section className="relative bg-gradient-to-br from-[#2E2B25] via-[#3D372E] to-[#2E2B25] text-white py-20 px-4 overflow-hidden">
-          {/* Background decoration */}
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full filter blur-3xl" style={{ backgroundColor: '#C67139' }}></div>
-            <div className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full filter blur-3xl" style={{ backgroundColor: '#C67139' }}></div>
+      <p className="mt-6 text-center text-xs text-champagne-muted">
+        By submitting this form, you agree to our{" "}
+        <Link to="/privacy-policy" className="text-copper-300 underline decoration-copper-400/40 underline-offset-4 hover:decoration-copper-300">
+          Privacy Policy
+        </Link>{" "}
+        and{" "}
+        <Link to="/terms-conditions" className="text-copper-300 underline decoration-copper-400/40 underline-offset-4 hover:decoration-copper-300">
+          Terms &amp; Conditions
+        </Link>
+        .
+      </p>
+    </form>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* Page                                                                */
+/* ------------------------------------------------------------------ */
+
+export default function NexGenManagementSystem() {
+  return (
+    <>
+      <PageHero
+        crumb="NexGen Management System"
+        eyebrow="NexGen product"
+        title="NexGen Management System"
+        highlight={[2]}
+        intro="The all-in-one compliance platform that transforms how pharmaceutical companies manage quality, documentation, and regulatory readiness."
+        scene="lattice"
+        primary={{ href: "#waitlist", label: "Join Waitlist" }}
+        secondary={{ href: "#waitlist", label: "Request Demo" }}
+      >
+        <Reveal delay={0.65} className="mt-10 flex flex-wrap items-center gap-3">
+          <span className="inline-flex items-center gap-2.5 rounded-full border border-sage/30 bg-sage/10 px-4 py-1.5 font-mono text-[0.7rem] uppercase tracking-[0.18em] text-sage-glow">
+            <span className="relative flex h-2 w-2" aria-hidden="true">
+              <span className="absolute inset-0 animate-pulse-ring rounded-full bg-sage" />
+              <span className="relative h-2 w-2 rounded-full bg-sage" />
+            </span>
+            Coming soon
+          </span>
+          <Tag>21 CFR Part 11</Tag>
+          <Tag>Cloud-based</Tag>
+        </Reveal>
+      </PageHero>
+
+      {/* ---------------- Product preview ---------------- */}
+      <section className="relative overflow-hidden pb-24 pt-8 md:pb-36">
+        <div className="absolute left-1/2 top-1/3 -z-10 h-[600px] w-[900px] max-w-[160vw] -translate-x-1/2 rounded-full bg-copper-600/10 blur-[140px]" />
+        <div className="container">
+          <div className="mx-auto mb-16 max-w-3xl text-center md:mb-20">
+            <Reveal>
+              <span className="eyebrow">Product preview</span>
+            </Reveal>
+            <SplitText
+              text="Documents, CAPA, training and analytics in one view"
+              highlight={[6, 7]}
+              className="mt-5 text-display-md text-champagne"
+            />
           </div>
+          <DashboardMockup />
+        </div>
+      </section>
 
-          <div className="container mx-auto max-w-6xl relative z-10">
-            <div className="text-center mb-12">
-              <span className="inline-block px-4 py-1 rounded-full text-sm font-semibold mb-4 outfit border" style={{ backgroundColor: 'rgba(59, 130, 246, 0.2)', color: '#F6A06B', borderColor: 'rgba(59, 130, 246, 0.3)' }}>
-                Coming Soon
-              </span>
-              <h1 className="text-5xl md:text-6xl font-bold mb-6 outfit leading-tight">
-                NexGen Management System
-              </h1>
-              <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
-                The all-in-one compliance platform that transforms how pharmaceutical companies manage quality, documentation, and regulatory readiness.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href="#waitlist"
-                  className="inline-flex items-center justify-center px-8 py-4 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-xl outfit"
-                  style={{ backgroundColor: '#C67139' }}
-                  onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#B2622D'}
-                  onMouseOut={(e) => e.currentTarget.style.backgroundColor = '#C67139'}
-                >
-                  Join Waitlist
-                </a>
-                <a
-                  href="#waitlist"
-                  className="inline-flex items-center justify-center px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-lg transition-all duration-300 border-2 border-white/30 outfit backdrop-blur-sm"
-                >
-                  Request Demo
-                </a>
-              </div>
-            </div>
-
-            {/* Hero Visual */}
-            <div className="max-w-4xl mx-auto">
-              <div className="rounded-2xl p-8 backdrop-blur-sm border border-white/10 shadow-2xl" style={{ background: 'linear-gradient(to bottom right, rgba(59, 130, 246, 0.2), rgba(59, 130, 246, 0.2))' }}>
-                <div className="bg-white/95 rounded-lg p-6 shadow-xl">
-                  <div className="flex items-center gap-2 mb-6">
-                    <div className="w-3 h-3 rounded-full bg-red-400"></div>
-                    <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
-                    <div className="w-3 h-3 rounded-full bg-green-400"></div>
-                    <div className="flex-1 bg-gray-200 rounded ml-2 h-8"></div>
-                  </div>
-                  <div className="space-y-4">
-                    <div className="h-10 rounded" style={{ background: 'linear-gradient(to right, #C67139, #F6A06B)' }}></div>
-                    <div className="grid grid-cols-4 gap-4">
-                      <div className="h-24 rounded flex flex-col items-center justify-center p-2" style={{ background: 'linear-gradient(to bottom right, #FFF2EB, #FFF2EB)' }}>
-                        <svg className="w-8 h-8 mb-1" style={{ color: '#C67139' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                        </svg>
-                        <span className="text-xs text-gray-600 font-semibold">Documents</span>
-                      </div>
-                      <div className="h-24 rounded flex flex-col items-center justify-center p-2" style={{ background: 'linear-gradient(to bottom right, #FFF2EB, #FFF2EB)' }}>
-                        <svg className="w-8 h-8 mb-1" style={{ color: '#C67139' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                        <span className="text-xs text-gray-600 font-semibold">CAPA</span>
-                      </div>
-                      <div className="h-24 rounded flex flex-col items-center justify-center p-2" style={{ background: 'linear-gradient(to bottom right, #FFF2EB, #FFF2EB)' }}>
-                        <svg className="w-8 h-8 mb-1" style={{ color: '#C67139' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                        </svg>
-                        <span className="text-xs text-gray-600 font-semibold">Training</span>
-                      </div>
-                      <div className="h-24 rounded flex flex-col items-center justify-center p-2" style={{ background: 'linear-gradient(to bottom right, #FFF2EB, #FFF2EB)' }}>
-                        <svg className="w-8 h-8 mb-1" style={{ color: '#C67139' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                        </svg>
-                        <span className="text-xs text-gray-600 font-semibold">Analytics</span>
-                      </div>
-                    </div>
-                    <div className="h-40 bg-gradient-to-br from-gray-100 to-gray-50 rounded"></div>
-                  </div>
+      {/* ---------------- Challenges ---------------- */}
+      <section className="container py-24 md:py-32">
+        <SectionHeading
+          eyebrow="Why it exists"
+          title="Built to Solve Real Pharma Challenges"
+          highlight={[5]}
+          intro="From scattered spreadsheets to regulatory nightmares—we've seen it all. NexGen Management System eliminates the chaos."
+        />
+        <div className="mt-16 space-y-6 md:mt-20">
+          {CHALLENGES.map((c, i) => (
+            <Reveal key={c.problem} delay={i * 0.1}>
+              <div className="grid items-stretch gap-4 md:grid-cols-[1fr_auto_1fr] md:gap-6">
+                <div className="rounded-3xl border border-white/[0.07] bg-obsidian-900/50 p-7 md:p-9">
+                  <p className="flex items-center gap-2 font-mono text-[0.68rem] uppercase tracking-[0.2em] text-champagne-faint">
+                    <X className="h-3.5 w-3.5" aria-hidden="true" /> The Problem
+                  </p>
+                  <h3 className="mt-4 text-2xl text-champagne-soft">{c.problem}</h3>
+                  <p className="mt-3 leading-relaxed text-champagne-muted">{c.problemText}</p>
                 </div>
+                <div className="flex items-center justify-center" aria-hidden="true">
+                  <span className="grid h-12 w-12 rotate-90 place-items-center rounded-full border border-copper-400/30 bg-obsidian-900 text-copper-300 shadow-glow md:rotate-0">
+                    <ArrowRight className="h-5 w-5" />
+                  </span>
+                </div>
+                <GlowCard className="border-copper-400/25 bg-gradient-to-br from-copper-400/[0.08] to-obsidian-900/80 p-7 md:p-9">
+                  <p className="flex items-center gap-2 font-mono text-[0.68rem] uppercase tracking-[0.2em] text-copper-300">
+                    <Check className="h-3.5 w-3.5" aria-hidden="true" /> The Solution
+                  </p>
+                  <h3 className="mt-4 text-2xl text-champagne">{c.solution}</h3>
+                  <p className="mt-3 leading-relaxed text-champagne-soft">{c.solutionText}</p>
+                </GlowCard>
               </div>
-            </div>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
+      {/* ---------------- Core modules (bento) ---------------- */}
+      <section className="relative py-24 md:py-32">
+        <div className="absolute inset-0 -z-10 bg-grid opacity-20 mask-fade-b" />
+        <div className="container">
+          <SectionHeading
+            eyebrow="Core modules"
+            title="Comprehensive Core Modules"
+            highlight={[2]}
+            intro="Everything you need to run a compliant pharmaceutical operation"
+          />
+          <Stagger className="mt-16 grid gap-5 md:mt-20 md:grid-cols-2 lg:grid-cols-3" gap={0.06}>
+            {MODULES.map((m) => (
+              <StaggerItem key={m.title} className={m.span ?? ""}>
+                <GlowCard className="group flex h-full flex-col gap-8 p-7 md:p-8">
+                  <div
+                    className={
+                      m.visual === "docs"
+                        ? "flex h-full flex-col gap-8 sm:flex-row sm:items-center sm:justify-between"
+                        : m.visual === "bars"
+                          ? "grid h-full items-end gap-8 lg:grid-cols-[1fr_1.3fr]"
+                          : "flex h-full flex-col"
+                    }
+                  >
+                    <div className="max-w-md">
+                      <IconTile icon={m.icon} />
+                      <h3 className="mt-6 text-2xl text-champagne">{m.title}</h3>
+                      <p className="mt-3 text-[0.95rem] leading-relaxed text-champagne-muted">{m.text}</p>
+                    </div>
+                    {m.visual === "docs" && <DocsVisual />}
+                    {m.visual === "bars" && <BarsVisual />}
+                  </div>
+                </GlowCard>
+              </StaggerItem>
+            ))}
+          </Stagger>
+        </div>
+      </section>
+
+      {/* ---------------- How it works ---------------- */}
+      <section className="container py-24 md:py-32">
+        <SectionHeading
+          eyebrow="Implementation"
+          title="How It Works"
+          highlight={[2]}
+          intro="From setup to compliance—streamlined for pharma"
+          align="center"
+        />
+        <div className="relative mt-16 md:mt-24">
+          <motion.div
+            aria-hidden="true"
+            className="absolute left-[12.5%] right-[12.5%] top-7 hidden h-px origin-left bg-gradient-to-r from-copper-700 via-copper-400 to-copper-200 lg:block"
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 1.8, ease: EASE }}
+          />
+          <div
+            aria-hidden="true"
+            className="absolute bottom-7 left-7 top-7 w-px bg-gradient-to-b from-copper-400/60 via-copper-400/20 to-transparent lg:hidden"
+          />
+          <Stagger as="ol" className="grid gap-10 lg:grid-cols-4 lg:gap-8" gap={0.15}>
+            {STEPS.map((st, i) => (
+              <StaggerItem as="li" key={st.title} className="relative flex gap-6 lg:flex-col lg:items-center lg:text-center">
+                <span className="relative z-10 grid h-14 w-14 shrink-0 place-items-center rounded-full border border-copper-400/40 bg-obsidian-900 font-mono text-sm text-copper-200 shadow-glow">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <div className="pt-2 lg:pt-4">
+                  <h3 className="text-2xl text-champagne">{st.title}</h3>
+                  <p className="mt-3 leading-relaxed text-champagne-muted">{st.text}</p>
+                </div>
+              </StaggerItem>
+            ))}
+          </Stagger>
+        </div>
+      </section>
+
+      {/* ---------------- Security & compliance ---------------- */}
+      <section className="relative py-24 md:py-32">
+        <div className="hairline absolute inset-x-0 top-0" />
+        <div className="container grid gap-14 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
+          <div className="lg:sticky lg:top-32 lg:self-start">
+            <SectionHeading
+              eyebrow="Security & compliance"
+              title="Enterprise-Grade Security & Compliance"
+              highlight={[3]}
+              intro="Built with pharma regulations at the core"
+            />
+            <Reveal delay={0.2} className="mt-8 flex flex-wrap gap-2">
+              {["21 CFR Part 11", "IQ/OQ/PQ", "AES-256", "SOC 2 Type II"].map((t) => (
+                <Tag key={t}>{t}</Tag>
+              ))}
+            </Reveal>
           </div>
-        </section>
+          <Stagger className="grid gap-5 sm:grid-cols-2" gap={0.07}>
+            {SECURITY.map((sec) => (
+              <StaggerItem key={sec.title}>
+                <GlowCard className="h-full p-7">
+                  <IconTile icon={sec.icon} />
+                  <h3 className="mt-6 text-xl text-champagne">{sec.title}</h3>
+                  <p className="mt-3 text-[0.95rem] leading-relaxed text-champagne-muted">{sec.text}</p>
+                </GlowCard>
+              </StaggerItem>
+            ))}
+          </Stagger>
+        </div>
+      </section>
 
-        {/*--------------------------------------- What It Solves Section ----------------------------------------------------------*/}
-        <section className="py-16 px-4 bg-white">
-          <div className="container mx-auto max-w-6xl">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold outfit mb-4" style={{ color: '#201E1D' }}>
-                Built to Solve Real Pharma Challenges
-              </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                From scattered spreadsheets to regulatory nightmares—we've seen it all. NexGen Management System eliminates the chaos.
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-8 mb-12">
-              {/* Problem Cards */}
-              <div className="bg-red-50 border-l-4 border-red-500 p-6 rounded-lg">
-                <div className="flex items-start gap-4">
-                  <div className="bg-red-100 p-3 rounded-lg">
-                    <svg className="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-lg text-red-700 mb-2 outfit">The Problem: Manual Chaos</h3>
-                    <p className="text-gray-700">Excel-based CAPA logs, missing audit trails, version control nightmares, and hours wasted hunting for approved documents.</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Solution Cards */}
-              <div className="bg-green-50 border-l-4 border-green-500 p-6 rounded-lg">
-                <div className="flex items-start gap-4">
-                  <div className="bg-green-100 p-3 rounded-lg">
-                    <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-lg text-green-700 mb-2 outfit">The Solution: Unified Platform</h3>
-                    <p className="text-gray-700">One system for documents, deviations, CAPAs, training, suppliers, and audits—with complete traceability and compliance built in.</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-red-50 border-l-4 border-red-500 p-6 rounded-lg">
-                <div className="flex items-start gap-4">
-                  <div className="bg-red-100 p-3 rounded-lg">
-                    <svg className="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-lg text-red-700 mb-2 outfit">The Problem: Audit Anxiety</h3>
-                    <p className="text-gray-700">Regulators arrive and teams scramble to compile reports, recreate timelines, and prove data integrity from fragmented systems.</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-green-50 border-l-4 border-green-500 p-6 rounded-lg">
-                <div className="flex items-start gap-4">
-                  <div className="bg-green-100 p-3 rounded-lg">
-                    <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-lg text-green-700 mb-2 outfit">The Solution: Audit-Ready Always</h3>
-                    <p className="text-gray-700">Instant compliance reports, tamper-proof audit trails, and real-time dashboards. Export everything regulators need in minutes, not days.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/*--------------------------------------- Core Modules Section ----------------------------------------------------------*/}
-        <section className="py-16 px-4 bg-gray-50">
-          <div className="container mx-auto max-w-6xl">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold outfit mb-4" style={{ color: '#201E1D' }}>
-                Comprehensive Core Modules
-              </h2>
-              <p className="text-xl text-gray-600">
-                Everything you need to run a compliant pharmaceutical operation
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {/* Module Cards */}
-              <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow">
-                <div className="w-14 h-14 rounded-lg flex items-center justify-center mb-4" style={{ backgroundColor: '#FFF2EB' }}>
-                  <svg className="w-8 h-8" style={{ color: '#C67139' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold mb-2 outfit" style={{ color: '#201E1D' }}>Document Control</h3>
-                <p className="text-gray-600 text-sm">Centralized repository with version control, automated workflows, electronic signatures, and full audit trails for SOPs, batch records, and specifications.</p>
-              </div>
-
-              <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow">
-                <div className="w-14 h-14 rounded-lg flex items-center justify-center mb-4" style={{ backgroundColor: '#FFF2EB' }}>
-                  <svg className="w-8 h-8" style={{ color: '#C67139' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold mb-2 outfit" style={{ color: '#201E1D' }}>CAPA Management</h3>
-                <p className="text-gray-600 text-sm">End-to-end corrective and preventive action tracking with root cause analysis, effectiveness verification, and automated escalation.</p>
-              </div>
-
-              <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow">
-                <div className="w-14 h-14 rounded-lg flex items-center justify-center mb-4" style={{ backgroundColor: '#FFF2EB' }}>
-                  <svg className="w-8 h-8" style={{ color: '#C67139' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold mb-2 outfit" style={{ color: '#201E1D' }}>Deviation Management</h3>
-                <p className="text-gray-600 text-sm">Log, investigate, and resolve deviations with impact assessments, CAPA linkage, and trend analysis to prevent recurrence.</p>
-              </div>
-
-              <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow">
-                <div className="w-14 h-14 rounded-lg flex items-center justify-center mb-4" style={{ backgroundColor: '#FFF2EB' }}>
-                  <svg className="w-8 h-8" style={{ color: '#C67139' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold mb-2 outfit" style={{ color: '#201E1D' }}>Training Matrix</h3>
-                <p className="text-gray-600 text-sm">Role-based training plans, automated reminders, quiz assessments, and complete training history for regulatory inspections.</p>
-              </div>
-
-              <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow">
-                <div className="w-14 h-14 rounded-lg flex items-center justify-center mb-4" style={{ backgroundColor: '#FFF2EB' }}>
-                  <svg className="w-8 h-8" style={{ color: '#C67139' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold mb-2 outfit" style={{ color: '#201E1D' }}>Audit Management</h3>
-                <p className="text-gray-600 text-sm">Plan, execute, and track internal/external audits with checklists, finding closure, and comprehensive reporting.</p>
-              </div>
-
-              <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow">
-                <div className="w-14 h-14 rounded-lg flex items-center justify-center mb-4" style={{ backgroundColor: '#FFF2EB' }}>
-                  <svg className="w-8 h-8" style={{ color: '#C67139' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold mb-2 outfit" style={{ color: '#201E1D' }}>Supplier Qualification</h3>
-                <p className="text-gray-600 text-sm">Manage supplier lifecycle from qualification to re-qualification with risk assessments, performance tracking, and audit scheduling.</p>
-              </div>
-
-              <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow">
-                <div className="w-14 h-14 rounded-lg flex items-center justify-center mb-4" style={{ backgroundColor: '#FFF2EB' }}>
-                  <svg className="w-8 h-8" style={{ color: '#C67139' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold mb-2 outfit" style={{ color: '#201E1D' }}>Change Control</h3>
-                <p className="text-gray-600 text-sm">Manage facility, process, and system changes with impact assessments, approvals, validation requirements, and implementation tracking.</p>
-              </div>
-
-              <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow">
-                <div className="w-14 h-14 rounded-lg flex items-center justify-center mb-4" style={{ backgroundColor: '#FFF2EB' }}>
-                  <svg className="w-8 h-8" style={{ color: '#C67139' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold mb-2 outfit" style={{ color: '#201E1D' }}>Non-Conformance</h3>
-                <p className="text-gray-600 text-sm">Track product complaints, out-of-specification results, and NCRs with complete investigation workflow and regulatory reporting.</p>
-              </div>
-
-              <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow">
-                <div className="w-14 h-14 rounded-lg flex items-center justify-center mb-4" style={{ backgroundColor: '#FFF2EB' }}>
-                  <svg className="w-8 h-8" style={{ color: '#C67139' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold mb-2 outfit" style={{ color: '#201E1D' }}>Analytics & Reports</h3>
-                <p className="text-gray-600 text-sm">Real-time dashboards, executive KPIs, trend analysis, and custom reports for proactive quality management and regulatory readiness.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/*--------------------------------------- How It Works Section ----------------------------------------------------------*/}
-        <section className="py-16 px-4 bg-white">
-          <div className="container mx-auto max-w-6xl">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold outfit mb-4" style={{ color: '#201E1D' }}>
-                How It Works
-              </h2>
-              <p className="text-xl text-gray-600">
-                From setup to compliance—streamlined for pharma
-              </p>
-            </div>
-
-            <div className="relative">
-              {/* Timeline line */}
-              <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-1" style={{ backgroundColor: '#F4CDB2' }}></div>
-
-              <div className="space-y-12">
-                {/* Step 1 */}
-                <div className="relative flex flex-col md:flex-row items-center gap-8">
-                  <div className="md:w-1/2 md:text-right">
-                    <div className="bg-white p-6 rounded-xl shadow-lg border-l-4" style={{ borderLeftColor: '#C67139' }}>
-                      <h3 className="text-2xl font-bold mb-2 outfit" style={{ color: '#201E1D' }}>1. Quick Setup</h3>
-                      <p className="text-gray-600">
-                        Cloud-based deployment with customizable workflows, user roles, and site configurations. Our team handles the setup and validation.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex-shrink-0">
-                    <div className="w-16 h-16 rounded-full flex items-center justify-center text-white text-2xl font-bold shadow-lg z-10 relative" style={{ backgroundColor: '#C67139' }}>
-                      1
-                    </div>
-                  </div>
-                  <div className="md:w-1/2"></div>
-                </div>
-
-                {/* Step 2 */}
-                <div className="relative flex flex-col md:flex-row items-center gap-8">
-                  <div className="md:w-1/2"></div>
-                  <div className="flex-shrink-0">
-                    <div className="w-16 h-16 rounded-full flex items-center justify-center text-white text-2xl font-bold shadow-lg z-10 relative" style={{ backgroundColor: '#C67139' }}>
-                      2
-                    </div>
-                  </div>
-                  <div className="md:w-1/2">
-                    <div className="bg-white p-6 rounded-xl shadow-lg border-l-4" style={{ borderLeftColor: '#C67139' }}>
-                      <h3 className="text-2xl font-bold mb-2 outfit" style={{ color: '#201E1D' }}>2. Data Migration</h3>
-                      <p className="text-gray-600">
-                        Seamlessly import existing documents, training records, and quality data. Maintain compliance history and audit trails.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Step 3 */}
-                <div className="relative flex flex-col md:flex-row items-center gap-8">
-                  <div className="md:w-1/2 md:text-right">
-                    <div className="bg-white p-6 rounded-xl shadow-lg border-l-4" style={{ borderLeftColor: '#C67139' }}>
-                      <h3 className="text-2xl font-bold mb-2 outfit" style={{ color: '#201E1D' }}>3. Team Training</h3>
-                      <p className="text-gray-600">
-                        Comprehensive training sessions for all user roles with documentation, video guides, and ongoing support.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex-shrink-0">
-                    <div className="w-16 h-16 rounded-full flex items-center justify-center text-white text-2xl font-bold shadow-lg z-10 relative" style={{ backgroundColor: '#C67139' }}>
-                      3
-                    </div>
-                  </div>
-                  <div className="md:w-1/2"></div>
-                </div>
-
-                {/* Step 4 */}
-                <div className="relative flex flex-col md:flex-row items-center gap-8">
-                  <div className="md:w-1/2"></div>
-                  <div className="flex-shrink-0">
-                    <div className="w-16 h-16 rounded-full flex items-center justify-center text-white text-2xl font-bold shadow-lg z-10 relative" style={{ backgroundColor: '#C67139' }}>
-                      4
-                    </div>
-                  </div>
-                  <div className="md:w-1/2">
-                    <div className="bg-white p-6 rounded-xl shadow-lg border-l-4" style={{ borderLeftColor: '#C67139' }}>
-                      <h3 className="text-2xl font-bold mb-2 outfit" style={{ color: '#201E1D' }}>4. Go Live</h3>
-                      <p className="text-gray-600">
-                        Launch with confidence. Real-time monitoring, automated workflows, and instant compliance visibility from day one.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/*--------------------------------------- Security & Compliance Section ----------------------------------------------------------*/}
-        <section className="py-16 px-4 bg-gray-50">
-          <div className="container mx-auto max-w-6xl">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold outfit mb-4" style={{ color: '#201E1D' }}>
-                Enterprise-Grade Security & Compliance
-              </h2>
-              <p className="text-xl text-gray-600">
-                Built with pharma regulations at the core
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-white p-8 rounded-xl shadow-md text-center">
-                <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: '#FFF2EB' }}>
-                  <svg className="w-8 h-8" style={{ color: '#C67139' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold mb-3 outfit" style={{ color: '#201E1D' }}>21 CFR Part 11 Compliant</h3>
-                <p className="text-gray-600 text-sm">
-                  Electronic signatures, audit trails, record retention, and system validation documented and maintained per FDA requirements.
-                </p>
-              </div>
-
-              <div className="bg-white p-8 rounded-xl shadow-md text-center">
-                <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: '#FFF2EB' }}>
-                  <svg className="w-8 h-8" style={{ color: '#C67139' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold mb-3 outfit" style={{ color: '#201E1D' }}>Data Security</h3>
-                <p className="text-gray-600 text-sm">
-                  AES-256 encryption, role-based access control, multi-factor authentication, and SOC 2 Type II certification.
-                </p>
-              </div>
-
-              <div className="bg-white p-8 rounded-xl shadow-md text-center">
-                <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: '#FFF2EB' }}>
-                  <svg className="w-8 h-8" style={{ color: '#C67139' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold mb-3 outfit" style={{ color: '#201E1D' }}>Validated System</h3>
-                <p className="text-gray-600 text-sm">
-                  Complete validation documentation (IQ/OQ/PQ), change control procedures, and periodic review processes.
-                </p>
-              </div>
-
-              <div className="bg-white p-8 rounded-xl shadow-md text-center">
-                <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: '#FFF2EB' }}>
-                  <svg className="w-8 h-8" style={{ color: '#C67139' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold mb-3 outfit" style={{ color: '#201E1D' }}>Cloud Infrastructure</h3>
-                <p className="text-gray-600 text-sm">
-                  AWS-hosted with 99.9% uptime SLA, automated backups, disaster recovery, and geographic redundancy.
-                </p>
-              </div>
-
-              <div className="bg-white p-8 rounded-xl shadow-md text-center">
-                <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: '#FFF2EB' }}>
-                  <svg className="w-8 h-8" style={{ color: '#C67139' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold mb-3 outfit" style={{ color: '#201E1D' }}>Access Control</h3>
-                <p className="text-gray-600 text-sm">
-                  Granular permissions, user activity monitoring, session management, and automatic lockout after inactivity.
-                </p>
-              </div>
-
-              <div className="bg-white p-8 rounded-xl shadow-md text-center">
-                <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: '#FFF2EB' }}>
-                  <svg className="w-8 h-8" style={{ color: '#C67139' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold mb-3 outfit" style={{ color: '#201E1D' }}>Audit Trail</h3>
-                <p className="text-gray-600 text-sm">
-                  Tamper-proof logs for all system activities, user actions, data changes, and administrative operations.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/*--------------------------------------- Waitlist/Demo Form Section ----------------------------------------------------------*/}
-        <section id="waitlist" className="py-16 px-4 text-white" style={{ background: 'linear-gradient(to bottom right, #201E1D, #1F2937)' }}>
-          <div className="container mx-auto max-w-4xl">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold outfit mb-4">
-                Be Among the First
-              </h2>
-              <p className="text-xl text-gray-300">
+      {/* ---------------- Waitlist ---------------- */}
+      <section id="waitlist" className="relative isolate scroll-mt-28 overflow-hidden py-24 md:py-32">
+        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-transparent via-obsidian-900/70 to-transparent" />
+        <div className="absolute -left-40 top-1/4 -z-10 h-[520px] w-[520px] rounded-full bg-copper-600/15 blur-[130px]" />
+        <div className="container grid items-start gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
+          <div className="lg:sticky lg:top-32">
+            <Reveal>
+              <span className="eyebrow">Early access</span>
+            </Reveal>
+            <SplitText
+              text="Be Among the First"
+              highlight={[3]}
+              className="mt-5 text-display-md text-champagne"
+            />
+            <Reveal delay={0.15}>
+              <p className="mt-6 max-w-md text-lg leading-relaxed text-champagne-muted">
                 Join the waitlist or request an early demo of NexGen Management System
               </p>
-            </div>
-
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
-              <form onSubmit={onSubmit} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-white font-semibold mb-2 outfit">
-                      Full Name <span className="text-red-400">*</span>
-                    </label>
-                    <input
-                      type="text"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 rounded-lg bg-white/90 text-gray-900 focus:ring-2 focus:ring-[#C67139] focus:outline-none"
-                      placeholder="John Doe"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-white font-semibold mb-2 outfit">
-                      Company Name <span className="text-red-400">*</span>
-                    </label>
-                    <input
-                      type="text"
-                      name="company"
-                      value={formData.company}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 rounded-lg bg-white/90 text-gray-900 focus:ring-2 focus:ring-[#C67139] focus:outline-none"
-                      placeholder="Your Company"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-white font-semibold mb-2 outfit">
-                      Email Address <span className="text-red-400">*</span>
-                    </label>
-                    <input
-                      type="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 rounded-lg bg-white/90 text-gray-900 focus:ring-2 focus:ring-[#C67139] focus:outline-none"
-                      placeholder="john@company.com"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-white font-semibold mb-2 outfit">
-                      Phone Number <span className="text-red-400">*</span>
-                    </label>
-                    <input
-                      type="tel"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 rounded-lg bg-white/90 text-gray-900 focus:ring-2 focus:ring-[#C67139] focus:outline-none"
-                      placeholder="+91 98765 43210"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-white font-semibold mb-2 outfit">
-                    I'm Interested In <span className="text-red-400">*</span>
-                  </label>
-                  <select
-                    name="interest"
-                    value={formData.interest}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 rounded-lg bg-white/90 text-gray-900 focus:ring-2 focus:ring-[#C67139] focus:outline-none"
-                  >
-                    <option value="">Select an option</option>
-                    <option value="Waitlist">Join Waitlist</option>
-                    <option value="Demo">Request Demo</option>
-                    <option value="Early Access">Early Access Program</option>
-                    <option value="Partnership">Partnership Opportunity</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label className="block text-white font-semibold mb-2 outfit">
-                    Additional Notes (Optional)
-                  </label>
-                  <textarea
-                    name="notes"
-                    value={formData.notes}
-                    onChange={handleChange}
-                    rows="4"
-                    className="w-full px-4 py-3 rounded-lg bg-white/90 text-gray-900 focus:ring-2 focus:ring-[#C67139] focus:outline-none"
-                    placeholder="Tell us about your compliance challenges or specific requirements..."
-                  ></textarea>
-                </div>
-
-                <div>
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className={`w-full py-4 px-8 text-white font-bold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-xl outfit ${
-                      isSubmitting ? "opacity-50 cursor-not-allowed" : ""
-                    }`}
-                    style={{ backgroundColor: isSubmitting ? '#8C8172' : '#C67139' }}
-                    onMouseOver={(e) => !isSubmitting && (e.currentTarget.style.backgroundColor = '#B2622D')}
-                    onMouseOut={(e) => !isSubmitting && (e.currentTarget.style.backgroundColor = '#C67139')}
-                  >
-                    {isSubmitting ? "Submitting..." : "Submit"}
-                  </button>
-                </div>
-
-                {result && (
-                  <div
-                    id="thank-you-message"
-                    className={`text-center py-4 px-6 rounded-lg ${
-                      result.includes("Thank you")
-                        ? "bg-green-500/20 text-green-200 border border-green-400"
-                        : "bg-red-500/20 text-red-200 border border-red-400"
-                    }`}
-                  >
-                    <p className="font-semibold">{result}</p>
-                    {result.includes("Thank you") && (
-                      <p className="mt-2 text-sm">
-                        We'll reach out to you shortly with more information about NexGen Management System.
-                      </p>
-                    )}
-                  </div>
-                )}
-              </form>
-            </div>
-
-            <p className="text-center text-gray-300 text-sm mt-6">
-              By submitting this form, you agree to our{" "}
-              <Link to="/privacy-policy" className="hover:underline" style={{ color: '#F6A06B' }}>
-                Privacy Policy
-              </Link>{" "}
-              and{" "}
-              <Link to="/terms-conditions" className="hover:underline" style={{ color: '#F6A06B' }}>
-                Terms & Conditions
-              </Link>
-              .
-            </p>
+            </Reveal>
+            <Stagger className="mt-10 space-y-3" delay={0.2}>
+              {INTERESTS.map(([v, l]) => (
+                <StaggerItem key={v} className="flex items-center gap-3 text-champagne-soft">
+                  <span className="grid h-6 w-6 place-items-center rounded-full border border-copper-400/30 bg-copper-400/10 text-copper-300">
+                    <Check className="h-3.5 w-3.5" aria-hidden="true" />
+                  </span>
+                  {l}
+                </StaggerItem>
+              ))}
+            </Stagger>
+            <Reveal delay={0.3}>
+              <p className="mt-10 flex items-start gap-3 text-sm leading-relaxed text-champagne-faint">
+                <Mail className="mt-0.5 h-4 w-4 shrink-0 text-copper-300" aria-hidden="true" />
+                <span>
+                  Prefer to write directly? Email{" "}
+                  <a href={`mailto:${CONTACT_EMAIL}`} className="text-copper-300 underline decoration-copper-400/40 underline-offset-4">
+                    {CONTACT_EMAIL}
+                  </a>
+                </span>
+              </p>
+            </Reveal>
           </div>
-        </section>
+          <Reveal delay={0.1}>
+            <WaitlistForm />
+          </Reveal>
+        </div>
+      </section>
 
-        {/*--------------------------------------- Final CTA Section ----------------------------------------------------------*/}
-        <section className="py-16 px-4 bg-white">
-          <div className="container mx-auto max-w-4xl text-center">
-            <h2 className="text-4xl font-bold outfit mb-6" style={{ color: '#201E1D' }}>
-              Ready to Transform Your Quality Operations?
-            </h2>
-            <p className="text-xl text-gray-600 mb-8">
-              Don't wait for regulators to find gaps. Stay ahead with NexGen Management System.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="#waitlist"
-                className="inline-flex items-center justify-center px-8 py-4 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg outfit"
-                style={{ backgroundColor: '#C67139' }}
-                onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#B2622D'}
-                onMouseOut={(e) => e.currentTarget.style.backgroundColor = '#C67139'}
-              >
-                Get Early Access
-              </a>
-              <Link
-                to="/contactus"
-                className="inline-flex items-center justify-center px-8 py-4 bg-gray-200 hover:bg-gray-300 font-semibold rounded-lg transition-all duration-300 outfit"
-                style={{ color: '#201E1D' }}
-              >
-                Contact Our Team
-              </Link>
-            </div>
-          </div>
-        </section>
-      </main>
-
-      <footer className="p-4">
-        <Footer />
-      </footer>
-    </div>
+      <CtaBand
+        title="Ready to Transform Your Quality Operations?"
+        intro="Don't wait for regulators to find gaps. Stay ahead with NexGen Management System."
+        primary={{ href: "#waitlist", label: "Get Early Access" }}
+        secondary={{ to: "/contactus", label: "Contact Our Team" }}
+      />
+    </>
   );
-};
-
-export default NexGenManagementSystem;
+}
