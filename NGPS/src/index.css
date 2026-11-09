@@ -1,69 +1,226 @@
-@import url("https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:ital,wght@0,300..900;1,300..900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-* {
-  margin: 0;
-  padding: 0;
+@layer base {
+  :root {
+    --bg: #0b0907;
+    --text: #f4eadb;
+    --copper: #f6a06b;
+    --copper-deep: #c67139;
+  }
+
+  html {
+    background: var(--bg);
+    color-scheme: dark;
+    -webkit-text-size-adjust: 100%;
+  }
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  body {
+    @apply bg-obsidian-950 font-sans text-champagne antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  .font-display {
+    font-family: "Fraunces", Georgia, serif;
+    font-optical-sizing: auto;
+    font-variation-settings: "SOFT" 50, "WONK" 0;
+    letter-spacing: -0.02em;
+  }
+
+  ::selection {
+    background: rgba(246, 160, 107, 0.35);
+    color: #fff;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--copper);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0b0907;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(#3b3127, #6e3a1a);
+    border-radius: 10px;
+    border: 2px solid #0b0907;
+  }
+
+  input,
+  select,
+  textarea {
+    color-scheme: dark;
+  }
+  select option {
+    background: #18140f;
+    color: #f4eadb;
+  }
 }
 
-:root {
-  /* Warm brand palette */
-  --cream: #f5ead8;
-  --cream-light: #f9f4ed;
-  --sand: #ebddc5;
-  --peach-card: #fff2eb;
-  --mint-card: #f0fae1;
-  --terracotta: #c67139;
-  --terracotta-dark: #b2622d;
-  --terracotta-deep: #8c491a;
-  --peach: #f6a06b;
-  --sage: #728157;
-  --sage-dark: #56633f;
-  --ink: #201e1d;
-  --ink-soft: #2e2b25;
-  --ink-mid: #3d372e;
+@layer components {
+  /* Eyebrow label above section headings */
+  .eyebrow {
+    @apply inline-flex items-center gap-2 font-mono text-[0.7rem] uppercase tracking-[0.22em] text-copper-400;
+  }
+  .eyebrow::before {
+    content: "";
+    @apply h-px w-8 bg-gradient-to-r from-transparent to-copper-400;
+  }
+
+  .text-gradient {
+    background: linear-gradient(120deg, #fbe6d4 0%, #f6a06b 40%, #e3864d 60%, #f8d2b2 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: shimmer 8s linear infinite;
+  }
+
+  .glass {
+    background: linear-gradient(180deg, rgba(46, 38, 30, 0.55), rgba(17, 14, 11, 0.55));
+    border: 1px solid rgba(246, 188, 143, 0.12);
+    backdrop-filter: blur(18px) saturate(140%);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+  }
+
+  /* Card with a copper glow that follows the cursor (see useSpotlight). */
+  .card-lux {
+    @apply relative overflow-hidden rounded-3xl border border-white/[0.07] bg-obsidian-900/80 transition-[border-color,transform,box-shadow] duration-500 ease-expo;
+    isolation: isolate;
+  }
+  .card-lux::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.5s;
+    background: radial-gradient(
+      420px circle at var(--mx, 50%) var(--my, 50%),
+      rgba(246, 160, 107, 0.16),
+      transparent 45%
+    );
+  }
+  .card-lux:hover {
+    @apply border-copper-400/30 shadow-glow;
+  }
+  .card-lux:hover::before {
+    opacity: 1;
+  }
+
+  .btn-primary {
+    @apply relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full px-7 py-3.5 text-sm font-semibold tracking-wide text-obsidian-950 transition-all duration-500 ease-expo;
+    background: linear-gradient(135deg, #f8d2b2, #f6a06b 45%, #e3864d);
+    box-shadow: 0 10px 40px -10px rgba(246, 160, 107, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  }
+  .btn-primary:hover {
+    box-shadow: 0 16px 60px -10px rgba(246, 160, 107, 0.85), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    transform: translateY(-1px);
+  }
+  .btn-primary::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(110deg, transparent 30%, rgba(255, 255, 255, 0.55) 50%, transparent 70%);
+    transform: translateX(-120%);
+    transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .btn-primary:hover::after {
+    transform: translateX(120%);
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-champagne/20 px-7 py-3.5 text-sm font-semibold tracking-wide text-champagne transition-all duration-500 ease-expo hover:border-copper-400/70 hover:bg-copper-400/10 hover:text-copper-200;
+  }
+
+  .field {
+    @apply w-full rounded-2xl border border-white/10 bg-obsidian-800/70 px-4 py-3.5 text-champagne placeholder:text-champagne-faint outline-none transition-all duration-300 focus:border-copper-400/70 focus:bg-obsidian-800 focus:shadow-[0_0_0_4px_rgba(246,160,107,0.12)];
+  }
+  .field-label {
+    @apply mb-2 block text-xs font-semibold uppercase tracking-[0.14em] text-champagne-muted;
+  }
+
+  .hairline {
+    @apply h-px w-full bg-gradient-to-r from-transparent via-copper-400/30 to-transparent;
+  }
+
+  /* Long-form legal / article copy */
+  .prose-lux {
+    @apply max-w-3xl text-[1.02rem] leading-[1.85] text-champagne-soft;
+  }
+  .prose-lux h2 {
+    @apply mb-4 mt-14 text-display-sm text-champagne;
+  }
+  .prose-lux h3 {
+    @apply mb-3 mt-8 text-xl text-champagne;
+  }
+  .prose-lux p {
+    @apply mb-5;
+  }
+  .prose-lux ul {
+    @apply mb-6 space-y-2 pl-0;
+  }
+  .prose-lux li {
+    @apply relative pl-6;
+  }
+  .prose-lux li::before {
+    content: "";
+    @apply absolute left-0 top-[0.8em] h-1.5 w-1.5 rounded-full bg-copper-400;
+  }
+  .prose-lux a {
+    @apply text-copper-300 underline decoration-copper-400/40 underline-offset-4 hover:decoration-copper-300;
+  }
+  .prose-lux strong {
+    @apply font-semibold text-champagne;
+  }
 }
 
-body {
-  font-family: "Figtree", system-ui, sans-serif;
-  color: var(--ink);
-  background: var(--cream);
-  -webkit-font-smoothing: antialiased;
+@layer utilities {
+  .grain::after {
+    content: "";
+    pointer-events: none;
+    position: fixed;
+    inset: -50%;
+    z-index: 60;
+    opacity: 0.045;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .mask-fade-x {
+    mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+  }
+  .mask-fade-b {
+    mask-image: linear-gradient(180deg, #000 60%, transparent);
+  }
+  .bg-grid {
+    background-image: linear-gradient(rgba(246, 188, 143, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(246, 188, 143, 0.06) 1px, transparent 1px);
+    background-size: 64px 64px;
+  }
 }
 
-/* Caprasimo is a single-weight display face. Headings take it at 400 so the
-   browser never synthesises a bolder cut, which smears its heavy strokes. */
-h1,
-h2,
-h3,
-h4,
-.display {
-  font-family: "Caprasimo", Georgia, serif;
-  font-weight: 400 !important;
-  letter-spacing: -0.005em;
-  line-height: 1.12;
-}
-
-h3,
-h4 {
-  line-height: 1.22;
-}
-
-/* Legacy font utility classes across the screens now resolve to the body face.
-   Headings pick up Caprasimo from the element rules above, so these stay safe
-   on the paragraphs and spans that also carry them. */
-.outfit,
-.montserrat,
-.inter {
-  font-family: "Figtree", system-ui, sans-serif;
-  font-style: normal;
-}
-
-h1.outfit,
-h2.outfit,
-h3.outfit,
-h4.outfit {
-  font-family: "Caprasimo", Georgia, serif;
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
 }
