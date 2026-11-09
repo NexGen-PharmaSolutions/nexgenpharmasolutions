@@ -4,18 +4,19 @@
 
 export const LEADER = {
   name: "Ashwani Shrivastav",
-  role: "Lead Consultant · QA, QC & Regulatory Compliance",
+  role: "Managing Director",
+  company: "NexGen Pharma Solutions Pvt. Ltd.",
   photo: "/images/ashwani-shrivastav.webp",
   email: "ashwani@nexgenpharmasolutions.com",
   short:
-    "Ashwani Shrivastav drives NexGen Pharma Solutions. A quality leader since 2001, he has run Quality as Head of Quality at API and finished-dosage manufacturers, and now leads every NexGen audit, mock inspection and remediation programme.",
+    "Ashwani Shrivastav is the Managing Director of NexGen Pharma Solutions Pvt. Ltd. A pharmaceutical quality leader since 2001 and a former Head of Quality at API and finished-dosage manufacturers, he sets the standard for every NexGen audit, mock inspection and remediation programme.",
   bio: [
-    "Ashwani Shrivastav is the person driving NexGen Pharma Solutions. He started in pharmaceutical quality in 2001 and spent the next two decades inside the plants, rising to Head of Quality at API and finished-dosage manufacturers in Vadodara, Mumbai and Faridabad.",
-    "Today he leads NexGen's audit and remediation work: FDA-style mock pre-approval inspections, data integrity audits, 483 and warning-letter responses, and the inspection management that gets a site through the day itself, from tour routes and front and back rooms to coaching the people who will face the inspector.",
+    "Ashwani Shrivastav is the Managing Director of NexGen Pharma Solutions Pvt. Ltd. He has led pharmaceutical quality since 2001, spending two decades inside the plants and rising to Head of Quality at API and finished-dosage manufacturers in Vadodara, Mumbai and Faridabad.",
+    "He leads NexGen on what he learned there: a plant is judged on inspection day, so the work has to hold up in front of the inspector. Under his leadership NexGen runs FDA-style mock pre-approval inspections, data integrity audits, 483 and warning-letter remediation and complete inspection readiness programmes for manufacturers in India and abroad, with a 100% inspection success record across USFDA, EDQM, KFDA, MHRA, WHO-GMP, EU GMP, PMDA and ANVISA.",
   ],
   approach: {
     title: "All-time readiness",
-    text: "A site should be ready for an inspector on any day of the year, not just the week before. Every NexGen engagement is built to leave that habit behind.",
+    text: "A site should be ready for an inspector on any day of the year, not just the week before. It is the principle Ashwani runs NexGen on, and the habit every engagement is designed to leave behind.",
   },
   stats: [
     ["25+", "Years in pharma quality"],

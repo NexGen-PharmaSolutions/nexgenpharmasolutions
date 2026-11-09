@@ -21,7 +21,7 @@ function Portrait({ className = "", caption = true }) {
       ) : (
         <img
           src={LEADER.photo}
-          alt={`${LEADER.name} of NexGen Pharma Solutions at Castello Sforzesco, Milan, during CPHI Milan`}
+          alt={`${LEADER.name}, ${LEADER.role} of NexGen Pharma Solutions, at Castello Sforzesco, Milan, during CPHI Milan`}
           loading="lazy"
           onError={() => setFailed(true)}
           className="h-full w-full object-cover"
@@ -31,7 +31,7 @@ function Portrait({ className = "", caption = true }) {
       {caption && (
         <div className="absolute inset-x-0 bottom-0 p-6">
           <p className="font-display text-2xl text-champagne">{LEADER.name}</p>
-          <p className="mt-1 text-xs uppercase tracking-[0.14em] text-copper-200">{LEADER.role}</p>
+          <p className="mt-1 text-xs uppercase tracking-[0.14em] text-copper-200">{LEADER.role}, {LEADER.company}</p>
         </div>
       )}
     </div>
@@ -113,11 +113,11 @@ export function LeadershipTeaser() {
         <TiltCard max={3} className="grid grid-cols-[minmax(0,1fr)] items-center gap-8 p-6 md:grid-cols-[220px_minmax(0,1fr)] md:gap-12 md:p-10">
           <Portrait caption={false} className="aspect-[4/5] w-full max-w-[220px]" />
           <div>
-            <span className="eyebrow">Who leads your audit</span>
+            <span className="eyebrow">Leadership</span>
             <h2 id="leader-teaser" className="mt-4 text-display-sm text-champagne">
               {LEADER.name}
             </h2>
-            <p className="mt-2 text-xs uppercase tracking-[0.14em] text-copper-200">{LEADER.role}</p>
+            <p className="mt-2 text-xs uppercase tracking-[0.14em] text-copper-200">{LEADER.role}, {LEADER.company}</p>
             <p className="mt-4 max-w-2xl leading-relaxed text-champagne-muted">{LEADER.short}</p>
             <Link
               to="/aboutus#leadership"

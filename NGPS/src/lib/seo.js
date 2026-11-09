@@ -48,7 +48,7 @@ export const ORGANIZATION = {
   employee: {
     "@type": "Person",
     name: LEADER.name,
-    jobTitle: LEADER.role,
+    jobTitle: `${LEADER.role}, ${LEADER.company}`,
     email: `mailto:${LEADER.email}`,
   },
   knowsAbout: [
