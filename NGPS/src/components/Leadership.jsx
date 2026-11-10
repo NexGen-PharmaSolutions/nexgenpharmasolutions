@@ -57,7 +57,7 @@ export function Leadership() {
           />
           <Reveal delay={0.1}>
             {LEADER.bio.map((p) => (
-              <p key={p.slice(0, 20)} className="mt-6 max-w-2xl text-lg leading-relaxed text-champagne-soft">
+              <p key={p.slice(0, 20)} className="mt-6 max-w-2xl hyphens-auto text-justify text-lg leading-relaxed text-champagne-soft">
                 {p}
               </p>
             ))}
@@ -76,7 +76,7 @@ export function Leadership() {
             <TiltCard max={3} className="p-7 md:p-8">
               <Quote className="h-6 w-6 text-copper-400" />
               <p className="mt-4 font-display text-2xl text-champagne">{LEADER.approach.title}</p>
-              <p className="mt-2 leading-relaxed text-champagne-muted">{LEADER.approach.text}</p>
+              <p className="mt-2 hyphens-auto text-justify leading-relaxed text-champagne-muted">{LEADER.approach.text}</p>
             </TiltCard>
           </Reveal>
 
@@ -118,7 +118,7 @@ export function LeadershipTeaser() {
               {LEADER.name}
             </h2>
             <p className="mt-2 text-xs uppercase tracking-[0.14em] text-copper-200">{LEADER.role}, {LEADER.company}</p>
-            <p className="mt-4 max-w-2xl leading-relaxed text-champagne-muted">{LEADER.short}</p>
+            <p className="mt-4 max-w-3xl hyphens-auto text-justify leading-relaxed text-champagne-muted">{LEADER.short}</p>
             <Link
               to="/aboutus#leadership"
               className="group mt-6 inline-flex items-center gap-2 text-sm font-semibold text-copper-300 hover:text-copper-200"

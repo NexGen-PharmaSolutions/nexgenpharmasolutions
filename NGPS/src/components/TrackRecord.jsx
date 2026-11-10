@@ -7,7 +7,7 @@ import { OTHER_INSPECTIONS, TRACK_RECORD } from "../lib/inspections";
 /** 100% inspection record across eight regulators. */
 export function TrackRecord({
   eyebrow = "Inspection track record",
-  title = "100% success. Eight regulators, zero failures.",
+  title = "Eight Regulators, Zero Failures.",
   intro = "USFDA, EDQM, KFDA (MFDS), MHRA, WHO-GMP, EU GMP, PMDA and ANVISA: every client we have prepared for these inspections has cleared, and several walked out of USFDA inspections with zero Form 483 observations.",
   link = true,
   as = "h2",
