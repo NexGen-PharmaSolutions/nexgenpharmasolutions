@@ -10,7 +10,7 @@ export const SITE_NAME = "NexGen Pharma Solutions";
 export const LEGAL_NAME = "NexGen Pharma Solutions Pvt. Ltd.";
 export const OG_IMAGE = `${SITE_URL}/og-image.png`;
 export const CONTACT_EMAIL = "inquiry@nexgenpharmasolutions.com";
-export const CONTACT_PHONE = "+91 70691 79666";
+export const CONTACT_PHONE = "+91 75748 85488";
 
 import { LEADER } from "./leadership.js";
 import { HOME_FAQ, SAME_AS, COMPANY_SUMMARY } from "./answers.js";
