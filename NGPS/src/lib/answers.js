@@ -18,7 +18,12 @@ export const ADDRESS_LINE =
 // Profile URLs that describe the same company (LinkedIn, Google Business
 // Profile, Crunchbase, IndiaMART, Wikidata...). Each one helps AI assistants
 // and Google confirm that this site is the official NexGen Pharma Solutions.
-export const SAME_AS = [];
+export const SAME_AS = [
+  "https://www.linkedin.com/company/nexgenpharmasolutions/",
+  "https://www.indiamart.com/nexgen-pharma-solutions-vadodara/",
+  // Google Business Profile (Maps listing).
+  "https://www.google.com/maps?cid=18185368042074753979",
+];
 
 /** One-paragraph description reused everywhere the company is summarised. */
 export const COMPANY_SUMMARY =
