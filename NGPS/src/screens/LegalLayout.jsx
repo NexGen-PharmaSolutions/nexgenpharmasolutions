@@ -165,7 +165,7 @@ export function LegalContact() {
         <MapPin className="mt-[0.45em] h-4 w-4 shrink-0 text-copper-300" aria-hidden="true" />
         <span>
           Registered Office: 413 &amp; 420 PRINCE CUBE, Beside Gangotri Exotica, Laxmipura Char Rasta, Nayaran Garden, 30
-          Mtr Road, Gotri, Vadodara, Gujarat 390023, India
+          Mtr Road, Gotri, Vadodara, Gujarat 390021, India
         </span>
       </p>
     </div>

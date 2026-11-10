@@ -73,7 +73,7 @@ export default function Footer() {
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-copper-400" />
                 <span>
                   413 &amp; 420 Prince Cube, Beside Gangotri Exotica, Laxmipura Char Rasta, Gotri, Vadodara, Gujarat
-                  390023, India
+                  390021, India
                 </span>
               </p>
             </address>

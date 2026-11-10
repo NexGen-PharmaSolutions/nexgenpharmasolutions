@@ -12,7 +12,7 @@ const MAPS_URL = "https://maps.app.goo.gl/JVyzYr2iMCrMq6XEA";
 const DIRECTIONS_URL =
   "https://www.google.com/maps/dir/?api=1&destination=22.2909475,73.1623589&destination_place_id=ChIJS-8LbM_8X0ER-FZwGwf-RuE";
 const MAP_EMBED =
-  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.499!2d73.1623589!3d22.2909475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395fc5cf97bb1f8b%3A0x9c4db4ec4e5c3db5!2sPrince%20Cube%2C%20Gotri%2C%20Vadodara%2C%20Gujarat%20390023!5e0!3m2!1sen!2sin!4v1738080000000!5m2!1sen!2sin&markers=color:red%7C22.2909475,73.1623589";
+  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.499!2d73.1623589!3d22.2909475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395fc5cf97bb1f8b%3A0x9c4db4ec4e5c3db5!2sPrince%20Cube%2C%20Gotri%2C%20Vadodara%2C%20Gujarat%20390021!5e0!3m2!1sen!2sin!4v1738080000000!5m2!1sen!2sin&markers=color:red%7C22.2909475,73.1623589";
 
 const REQUESTS = [
   ["new audit", "Request a new audit"],
@@ -153,7 +153,7 @@ const Contactus = () => {
                         <br />
                         30 Mtr Road, Gotri
                         <br />
-                        Vadodara, Gujarat 390023
+                        Vadodara, Gujarat 390021
                         <br />
                         India
                       </address>
