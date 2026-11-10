@@ -13,6 +13,7 @@ export const CONTACT_EMAIL = "inquiry@nexgenpharmasolutions.com";
 export const CONTACT_PHONE = "+91 70691 79666";
 
 import { LEADER } from "./leadership.js";
+import { HOME_FAQ, SAME_AS, COMPANY_SUMMARY } from "./answers.js";
 
 export const ORGANIZATION = {
   "@context": "https://schema.org",
@@ -29,8 +30,22 @@ export const ORGANIZATION = {
     height: 249,
   },
   image: OG_IMAGE,
-  description:
-    "Pharmaceutical consulting firm specialising in GMP audits, quality systems, regulatory affairs, computer system validation and GMP training for API, sterile and FDF manufacturers.",
+  description: COMPANY_SUMMARY,
+  ...(SAME_AS.length ? { sameAs: SAME_AS } : {}),
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Pharmaceutical GMP and regulatory consulting services",
+    itemListElement: [
+      ["GMP Audits & Mock Regulatory Inspections", "/gmpaudits"],
+      ["Pharmaceutical Quality Consulting", "/qualityconsulting"],
+      ["Computer System Validation", "/computersystemvalidations"],
+      ["Regulatory Affairs, DMF & CEP Submissions", "/regulatoryaffairs"],
+      ["GMP Training", "/training"],
+    ].map(([name, path]) => ({
+      "@type": "Offer",
+      itemOffered: { "@type": "Service", name, url: `${SITE_URL}${path}` },
+    })),
+  },
   email: CONTACT_EMAIL,
   telephone: CONTACT_PHONE,
   address: {
@@ -45,12 +60,7 @@ export const ORGANIZATION = {
   slogan: "100% inspection success: USFDA, EDQM, KFDA, MHRA, WHO-GMP, EU GMP, PMDA, ANVISA",
   foundingLocation: "Vadodara, Gujarat, India",
   areaServed: [{ "@type": "Country", name: "India" }, "Worldwide"],
-  employee: {
-    "@type": "Person",
-    name: LEADER.name,
-    jobTitle: `${LEADER.role}, ${LEADER.company}`,
-    email: `mailto:${LEADER.email}`,
-  },
+  employee: { "@id": `${SITE_URL}/aboutus#ashwani-shrivastav` },
   knowsAbout: [
     "USFDA inspections with zero Form 483 observations",
     "KFDA (MFDS) GMP inspections",
@@ -89,6 +99,20 @@ export const WEBSITE = {
   name: SITE_NAME,
   publisher: { "@id": `${SITE_URL}/#organization` },
   inLanguage: "en",
+};
+
+export const PERSON = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": `${SITE_URL}/aboutus#ashwani-shrivastav`,
+  name: LEADER.name,
+  jobTitle: LEADER.role,
+  description: LEADER.short,
+  image: `${SITE_URL}${LEADER.photo}`,
+  email: `mailto:${LEADER.email}`,
+  url: `${SITE_URL}/aboutus#leadership`,
+  worksFor: { "@id": `${SITE_URL}/#organization` },
+  knowsAbout: LEADER.expertise,
 };
 
 const service = (name, description, path, areaServed = "Worldwide") => ({
@@ -134,6 +158,7 @@ export const ROUTES = {
       "Meet the consultancy behind NexGen Pharma Solutions: former regulators, QA heads and validation specialists with 25+ years helping pharma manufacturers pass global inspections.",
     keywords: "about NexGen Pharma Solutions, pharma consultants India, GMP experts, QA consultants",
     label: "About Us",
+    extraSchema: [PERSON],
     priority: "0.8",
   },
   "/gmpaudits": {
@@ -282,10 +307,11 @@ export const EVENT_SCHEMA = [
 export function schemaFor(path) {
   const r = ROUTES[path];
   if (!r) return [];
-  if (r.schema) return path === "/" ? [...r.schema, ...EVENT_SCHEMA] : r.schema;
+  if (r.schema) return path === "/" ? [...r.schema, faqPage(HOME_FAQ), ...EVENT_SCHEMA] : r.schema;
   const out = [crumbs(r.label, path)];
   if (r.service) out.push(service(r.service, r.description, path, r.areaServed));
   if (r.faq) out.push(faqPage(r.faq));
   if (r.events) out.push(...EVENT_SCHEMA);
+  if (r.extraSchema) out.push(...r.extraSchema);
   return out;
 }
