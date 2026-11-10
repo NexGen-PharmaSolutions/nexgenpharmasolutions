@@ -54,7 +54,7 @@ export const ORGANIZATION = {
       "413 & 420 Prince Cube, Beside Gangotri Exotica, Laxmipura Char Rasta, Narayan Garden, 30 Mtr Road, Gotri",
     addressLocality: "Vadodara",
     addressRegion: "Gujarat",
-    postalCode: "390023",
+    postalCode: "390021",
     addressCountry: "IN",
   },
   slogan: "100% inspection success: USFDA, EDQM, KFDA, MHRA, WHO-GMP, EU GMP, PMDA, ANVISA",

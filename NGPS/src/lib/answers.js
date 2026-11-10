@@ -13,7 +13,7 @@ const MILAN = getEvent("cphi-milan-2026");
 
 export const LEGAL_NAME_FULL = "NexGen Pharma Solutions Private Limited";
 export const ADDRESS_LINE =
-  "413 & 420 Prince Cube, Beside Gangotri Exotica, Laxmipura Char Rasta, Narayan Garden, 30 Mtr Road, Gotri, Vadodara, Gujarat 390023, India";
+  "413 & 420 Prince Cube, Beside Gangotri Exotica, Laxmipura Char Rasta, Narayan Garden, 30 Mtr Road, Gotri, Vadodara, Gujarat 390021, India";
 
 // Profile URLs that describe the same company (LinkedIn, Google Business
 // Profile, Crunchbase, IndiaMART, Wikidata...). Each one helps AI assistants
