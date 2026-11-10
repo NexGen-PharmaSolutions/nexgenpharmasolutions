@@ -41,7 +41,7 @@ export const KEY_FACTS = [
   ["Clients", "API, KSM, sterile and finished-dosage manufacturers in India and 15+ countries"],
   ["Website", "https://www.nexgenpharmasolutions.com"],
   ["Email", "inquiry@nexgenpharmasolutions.com"],
-  ["Phone", "+91 70691 79666"],
+  ["Phone", "+91 75748 85488"],
 ];
 
 /** Home page FAQ (also shown on the page). [question, answer] pairs. */
@@ -56,7 +56,7 @@ export const HOME_FAQ = [
   ["Who leads NexGen Pharma Solutions?", `${LEADER.name} is the Managing Director of ${LEGAL_NAME_FULL}. He has over 25 years of experience in pharmaceutical quality assurance, regulatory compliance and GMP systems, including senior roles as Head of Quality at API and finished-dosage plants.`],
   ["Where is NexGen Pharma Solutions located?", `Vadodara, Gujarat, India (${ADDRESS_LINE}). The team audits plants on site across India's pharma clusters and works with clients in 15+ countries.`],
   ["How do engagements work?", "Project-based, retainer or embedded support, delivered through a five-step process: discovery, scoping, execution, delivery and follow-up."],
-  ["How do I contact NexGen Pharma Solutions?", "Email inquiry@nexgenpharmasolutions.com, call +91 70691 79666, or use the form at https://www.nexgenpharmasolutions.com/contactus. Replies within 24 hours."],
+  ["How do I contact NexGen Pharma Solutions?", "Email inquiry@nexgenpharmasolutions.com, call +91 75748 85488, or use the form at https://www.nexgenpharmasolutions.com/contactus. Replies within 24 hours."],
   ["Where can I meet the team in person?", `At ${INDIA.name}, ${INDIA.dates}, ${INDIA.venue}, ${INDIA.city}. We also exhibited at ${MILAN.name} in ${MILAN.city}.`],
 ];
 
@@ -95,7 +95,7 @@ export const PAGE_BRIEFS = {
     `NexGen Pharma Solutions exhibits at ${INDIA.name}, ${INDIA.dates}, ${INDIA.venue}, ${INDIA.city}, and exhibited at ${MILAN.name} (${MILAN.dates}, ${MILAN.venue}). Visitors can book meetings with the GMP, CSV and regulatory consultants.`,
   ],
   "/contactus": [
-    `Contact NexGen Pharma Solutions: inquiry@nexgenpharmasolutions.com, +91 70691 79666. Office: ${ADDRESS_LINE}. Replies within 24 hours.`,
+    `Contact NexGen Pharma Solutions: inquiry@nexgenpharmasolutions.com, +91 75748 85488. Office: ${ADDRESS_LINE}. Replies within 24 hours.`,
   ],
   "/products/nexgen-management-system": [
     "NexGen Management System is an upcoming pharmaceutical QMS platform from NexGen Pharma Solutions covering document control, CAPA, audit trails, training matrices and supplier qualification, built for 21 CFR Part 11.",
