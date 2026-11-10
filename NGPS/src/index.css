@@ -10,10 +10,32 @@
   h4 {
     text-wrap: balance;
   }
+  /* Justified body copy site-wide; utilities such as text-center still override this. */
   p,
   li,
   dd {
     text-wrap: pretty;
+  }
+  /* List items (short labels and bullets) stay left-aligned: justifying them leaves big gaps. */
+  p,
+  dd {
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+  }
+  /* Keep copy inside centred / right-aligned containers following its container. */
+  :is(.text-center, .text-right) :is(p, li, dd) {
+    text-align: inherit;
+  }
+  @media (min-width: 768px) {
+    .md\:text-right :is(p, li, dd) {
+      text-align: inherit;
+    }
+  }
+  @media (min-width: 1024px) {
+    .lg\:text-center :is(p, li, dd) {
+      text-align: inherit;
+    }
   }
 
   :root {
