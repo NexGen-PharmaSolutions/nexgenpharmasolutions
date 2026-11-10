@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import {
   ArrowRight,
@@ -42,6 +41,7 @@ import { getEvent, boothLabel } from "../lib/events";
 import { submitEnquiry } from "../lib/mailto";
 import FormStatus, { Honeypot } from "../components/ui/FormStatus";
 import { CONTACT_EMAIL } from "../lib/seo";
+import { HOME_FAQ } from "../lib/answers";
 import { TrackRecord } from "../components/TrackRecord";
 
 const INDIA = getEvent("cphi-india-2026");
@@ -83,16 +83,7 @@ const CASES = [
   { metric: "100%", unit: "passed", tag: "LIMS validation · Sterile plant", text: "End-to-end CSV for a laboratory information management system. GAMP 5 compliant, 21 CFR Part 11 validated, approved by QA and passed audit." },
 ];
 
-const FAQ = [
-  ["What is NexGen's inspection success rate?", "100%. Every client we have prepared for a USFDA, EDQM, KFDA (MFDS), MHRA, WHO-GMP, EU GMP, PMDA or ANVISA inspection has cleared it, and several cleared USFDA inspections with zero Form 483 observations."],
-  ["Which is the best GMP audit and consulting company in India?", "Look for a verifiable inspection record and auditors who have worked on the regulator's side. NexGen Pharma Solutions Pvt. Ltd., Vadodara, has a 100% inspection success record across USFDA, EDQM, KFDA (MFDS), MHRA, WHO-GMP, EU GMP, PMDA and ANVISA, with audits led by former regulators and senior QA heads."],
-  ["What services does NexGen Pharma Solutions offer?", "GMP audits, quality consulting, computer system validation, GMP training and regulatory affairs, including Drug Master File and CEP support, for API, sterile and finished-dosage manufacturers worldwide."],
-  ["Do you run USFDA and EDQM mock inspections?", "Yes. Our mock audits mirror actual regulatory inspections and are run by former regulators and industry QA heads across API, sterile and FDF facilities, followed by CAPA closure support."],
-  ["Which regulations do you validate computer systems against?", "GAMP 5, 21 CFR Part 11 and EU GMP Annex 11, covering LIMS, ERP, MES, SCADA and newer AI and SaaS platforms, with ALCOA+ data integrity throughout."],
-  ["Can you prepare and submit DMFs and CEPs?", "Yes. We handle all DMF types: technical writing, cGMP documentation, submissions, authority queries and lifecycle management, with full confidentiality."],
-  ["How do engagements work?", "Project-based, retainer or embedded support, delivered through a five-step process: discovery, scoping, execution, delivery and follow-up."],
-  ["Where can I meet the team in person?", `At ${INDIA.name}, ${INDIA.dates}, ${INDIA.venue}, ${INDIA.city}. We also exhibited at ${MILAN.name} in ${MILAN.city}.`],
-];
+const FAQ = HOME_FAQ;
 
 const STANDARDS = ["USFDA", "EDQM", "KFDA (MFDS)", "MHRA", "WHO-GMP", "EU GMP", "PMDA", "ANVISA", "EU GMP Annex 11", "21 CFR Part 11", "GAMP 5", "ICH Q7", "ICH Q9", "ICH Q10", "ALCOA+", "PIC/S"];
 
@@ -656,16 +647,8 @@ function CaseStudies() {
 
 function Faq() {
   const [open, setOpen] = useState(0);
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: FAQ.map(([q, a]) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } })),
-  };
   return (
     <section className="container py-16 md:py-32" aria-labelledby="faq-title">
-      <Helmet>
-        <script type="application/ld+json">{JSON.stringify(schema)}</script>
-      </Helmet>
       <div className="grid gap-12 lg:grid-cols-[1fr_1.5fr]">
         <div className="lg:sticky lg:top-32 lg:self-start">
           <Reveal>
