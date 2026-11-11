@@ -21,10 +21,10 @@ function Portrait({ className = "", caption = true }) {
       ) : (
         <img
           src={LEADER.photo}
-          alt={`${LEADER.name}, ${LEADER.role} of NexGen Pharma Solutions, at Castello Sforzesco, Milan, during CPHI Milan`}
+          alt={`Portrait of ${LEADER.name}, ${LEADER.role} of NexGen Pharma Solutions`}
           loading="lazy"
           onError={() => setFailed(true)}
-          className="h-full w-full object-cover"
+          className="h-full w-full object-cover object-top"
         />
       )}
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-obsidian-950/80 via-transparent to-transparent" />
