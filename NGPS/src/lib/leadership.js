@@ -1,12 +1,12 @@
 // Leadership profile shown on the About page, the home page and in structured data.
-// Photo: save a portrait at public/images/ashwani-shrivastav.webp (4:5 crop works best).
+// Photo: studio portrait at public/images/ashwani-shrivastav-portrait.webp (4:5), the same one Praverse uses.
 // Until that file exists the card shows initials instead.
 
 export const LEADER = {
   name: "Ashwani Shrivastav",
   role: "Managing Director",
   company: "NexGen Pharma Solutions Pvt. Ltd.",
-  photo: "/images/ashwani-shrivastav.webp",
+  photo: "/images/ashwani-shrivastav-portrait.webp",
   email: "ashwani@nexgenpharmasolutions.com",
   short:
     "Ashwani Shrivastav is the Managing Director of NexGen Pharma Solutions Pvt. Ltd., bringing over 25 years of experience in pharmaceutical quality assurance, regulatory compliance, and GMP systems. Since beginning his career in 2001, he has held senior leadership positions, including Head of Quality, across Active Pharmaceutical Ingredient (API) and finished-dosage manufacturing facilities. His expertise encompasses pharmaceutical quality management systems, regulatory audits, inspection readiness, quality risk management, data integrity, and compliance remediation. With extensive experience in evaluating complex manufacturing operations and strengthening quality systems, he provides strategic leadership and technical oversight for NexGen’s GMP audits, mock regulatory inspections, regulatory compliance assessments, and remediation programmes. His approach combines scientific understanding, regulatory expectations, and practical industry experience to deliver sustainable, inspection-ready quality systems aligned with international regulatory standards.",
